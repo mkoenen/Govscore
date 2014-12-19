@@ -28,3 +28,11 @@ label.ui-btn.ui-corner-all.ui-btn-inherit {
 label.ui-btn img {
 width: 60%;
 }
+#organization-button span {
+	font-weight: 300;
+	text-align: left;
+	color: #333;
+}
+#organization-button {
+	padding: .7em .4em;
+}
