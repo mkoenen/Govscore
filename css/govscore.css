@@ -8,7 +8,7 @@
 .ui-btn-active {
 	background-color:#34cfc6;
 }
-.ui-navbar li {
+.ui-footer .ui-navbar li {
 	height: 100%;
 }
 
