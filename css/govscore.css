@@ -1,0 +1,13 @@
+
+.ui-controlgroup-controls {
+width: 100%;
+}
+.ui-radio.ui-mini {
+width: 20%;
+}
+label.ui-btn.ui-corner-all.ui-btn-inherit {
+	font-weight: normal;
+	font-size: 12px;
+	height: 32px;
+	text-align: center;
+}

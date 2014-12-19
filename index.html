@@ -1,0 +1,163 @@
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--   <link media="Screen" href="styles.css" type="text/css" rel="stylesheet" />-->
+    <link media="handheld, only screen and (max-width:480px), only screen and (max-device-width:480px)" href="css/mobile.css" type="text/css" rel="stylesheet" />
+    <link rel="stylesheet" href="css/form-app.min.css" />
+    <link rel="stylesheet" href="css/govscore.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    
+    <title>Govscore</title>
+    
+</head>
+<body onload="init();" >
+
+    <div data-role="page" id="home" data-title="Home" data-theme="c">
+
+
+        <div data-role="content" data-theme="c">
+            <article>
+                    <h2 id="entryscreen-title" style="text-align:center;">Govscore</h2>
+                    <p>The World's first digital governance assessment tool!</p>
+
+                    <a href="#how-to" class="ui-btn">Get Started</a>
+            </article> 
+
+        </div><!-- content -->
+
+        
+
+    </div><!-- page -->
+
+
+     <!-- How-To Page -->
+    <div data-role="page" id="how-to" data-title="How-To" data-theme="c">
+
+        <div data-role="header" data-theme="c">
+            <h1>How To</h1>
+        </div><!-- header -->
+
+        <div data-role="content" data-theme="c">
+            <article>
+                <p>Risus vel, phasellus lectus vut, quis phasellus, et placerat magnis odio augue ac tincidunt non, sociis in pulvinar, facilisis rhoncus lectus ut ultrices elementum, porta parturient sit. Ac, tempor nascetur, cum lacus a, amet tortor sed, rhoncus ultricies, porttitor! Rhoncus tempor integer? Magna a, ultrices? Aliquam? Odio odio nec tristique mid eros? Pid et penatibus hac in, duis aliquet, lundium. Et eros adipiscing, adipiscing aenean amet urna amet, magna duis aliquam in augue tristique urna ac nascetur, rhoncus penatibus massa. Dictumst velit porta dolor? Pulvinar, dictumst hac dapibus augue proin rhoncus enim dolor tincidunt, risus tristique ultrices parturient integer, porta aenean porttitor sagittis ultrices diam. Natoque placerat ut hac, massa placerat in, mattis magna et penatibus tristique placerat velit urna.</p>
+                <p>Sed mauris massa auctor adipiscing, nec integer mattis tempor et cum, augue auctor natoque, lundium et aliquam duis nunc. Non quis eros turpis aliquet lundium eu sociis! Ridiculus a ut mauris? Magnis, turpis tristique odio? Diam nisi penatibus dis velit eu. A sociis? Vel? Purus enim facilisis, integer a aliquam purus urna in enim elit dolor nec diam augue lacus nisi augue sed? Magna ultrices egestas tristique nascetur risus sed odio dolor mus urna? Eros, ultricies in? Mauris, in, est rhoncus in, magna, lundium! Penatibus lorem nunc, odio purus! Proin augue, tincidunt scelerisque platea platea! Dis mus turpis placerat, in urna scelerisque mattis! Vel! Porttitor hac sociis, nec nunc phasellus urna aliquet pid, tempor cursus. Tristique dignissim cum eu.</p>
+            </article>
+        </div><!-- content -->
+
+        <div data-role="footer">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to" class="ui-btn-active">How To</a></li>
+                    <li><a href="#initial-survey">Initial Survey</a></li>
+                    <li><a href="#advanced-survey">Advanced Survey</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+    <!-- Initial Survey page -->
+    <div data-role="page" id="initial-survey" data-title="Initial Survey" data-theme="c">
+
+        <div data-role="header" data-theme="c">
+            <a href="#nav-panel" data-icon="bars-black" data-iconpos="notext">Menu</a>
+            <h1>Form</h1>
+        </div><!-- header -->
+
+        <div data-role="content" data-theme="c">
+            <article>
+                <!--action will point to a page where the form gets processed-->
+                <!--<form action="#" method="post"> -->
+                <label for="first_name" class="ui-hidden-accessible">First Name</label>
+                    <input type="text" id="first" name="first" placeholder="First Name" data-theme="c" />
+
+                <label for="last_name" class="ui-hidden-accessible">Last Name</label>
+                    <input type="text" id="last" name="last" placeholder="Last Name" data-theme="c" />
+
+                <label for="email" class="ui-hidden-accessible">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Email" data-theme="c" />
+                
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                    <legend>The governing body has a clear understanding of its purpose and role.</legend>
+                        <input type="radio" name="question1" id="1none" value="none" checked="checked">
+                        <label for="1none">Not at all</label>
+                        <input type="radio" name="question1" id="1minimally" value="minimally">
+                        <label for="1minimally">Minimally</label>
+                        <input type="radio" name="question1" id="1partly" value="partly">
+                        <label for="1partly">Partly</label>
+                        <input type="radio" name="question1" id="1mostly" value="mostly">
+                        <label for="1mostly">Mostly</label>
+                        <input type="radio" name="question1" id="1completely" value="completely">
+                        <label for="1completely">Completely</label>
+                </fieldset>
+                
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <legend>Members of the governing body understand well their responsibilities in the governing body.</legend>
+                        <input type="radio" name="question2" id="2none" value="none" checked="checked">
+                        <label for="2none">Not at all</label>
+                        <input type="radio" name="question2" id="2minimally" value="minimally">
+                        <label for="2minimally">Minimally</label>
+                        <input type="radio" name="question2" id="2partly" value="partly">
+                        <label for="2partly">Partly</label>
+                        <input type="radio" name="question2" id="2mostly" value="mostly">
+                        <label for="2mostly">Mostly</label>
+                        <input type="radio" name="question2" id="2completely" value="completely">
+                        <label for="2completely">Completely</label>
+                </fieldset>   
+                    <button class="ui-btn ui-shadow" id="btnStore">Save</button>
+                    <button id="retrieveData">Retrieve Data</button>
+                <!--</form>-->
+                <div id="result"></div>
+            </article>
+        </div><!-- content -->
+
+        <div data-role="footer">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to" class="ui-btn-active">How To</a></li>
+                    <li><a href="#initial-survey">Initial Survey</a></li>
+                    <li><a href="#advanced-survey">Advanced Survey</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+     <!-- Advanced Survey -->
+    <div data-role="page" id="advanced-survey" data-title="Advanced Survey" data-theme="c">
+
+        <div data-role="header" data-theme="c">
+            <h1>Advanced Survey</h1>
+        </div><!-- header -->
+
+        <div data-role="content" data-theme="c">
+           
+        </div><!-- content -->
+
+        <div data-role="footer">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to" class="ui-btn-active">How To</a></li>
+                    <li><a href="#initial-survey">Initial Survey</a></li>
+                    <li><a href="#advanced-survey">Advanced Survey</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+
+    <script src="phonegap.js"></script>
+    <!--<script type="text/javascript" src="PushNotification.js"></script>-->
+    <script type="text/javascript" src="js/index.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <script type="text/javascript" src="js/initialscripts.js"></script>
+
+    </body>
+</html>
