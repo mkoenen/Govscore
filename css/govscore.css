@@ -24,3 +24,7 @@ label.ui-btn.ui-corner-all.ui-btn-inherit {
 	height: 32px;
 	text-align: center;
 }
+/* questionnaire ----------------------------------*/
+label.ui-btn img {
+width: 60%;
+}
