@@ -1,4 +1,5 @@
-#home{
+#home,
+#home.ui-content {
 	background-color: #34cfc6;
 	height:100%;
 }
