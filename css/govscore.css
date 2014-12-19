@@ -2,6 +2,16 @@
 	background-color: #34cfc6;
 	height:100%;
 }
+
+/* navigation -------------------------------------*/
+
+.ui-btn-active {
+	background-color:#34cfc6;
+}
+.ui-navbar li {
+	height: 100%;
+}
+
 .ui-controlgroup-controls {
 width: 100%;
 }
