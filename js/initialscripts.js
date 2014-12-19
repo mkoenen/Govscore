@@ -67,16 +67,14 @@ function saveServer() {
 
                 
         var url ="http://margaretekoenen.com/store.php?date=" + cdate;
-        url += "&first=" + document.getElementById("first").value;
-        url += "&last=" + document.getElementById("last").value;
+        url += "&name=" + document.getElementById("name").value;
         url += "&email=" + document.getElementById("email").value;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;
         xmlhttp.open('GET', url, true);
         xmlhttp.send();
         console.log(cdate);
-        console.log(document.getElementById("first").value);
-        console.log(document.getElementById("last").value);
+        console.log(document.getElementById("name").value);
         console.log(document.getElementById("email").value);
         console.log(answer1);
         console.log(answer2);
@@ -102,37 +100,33 @@ function savelocal() {
     document.getElementById("retrieveData").addEventListener("click", retrieveData, false);
 
     var cdate = new Date();
-    var first = document.getElementById("first").value;
-    var last = document.getElementById("last").value;
+    var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     
 
     window.localStorage.setItem("date", cdate);
-    window.localStorage.setItem("first", first);
-    window.localStorage.setItem("last", last);
+    window.localStorage.setItem("name", name);
     window.localStorage.setItem("email", email);
 
     /*window.sessionStorage.setItem("first", first);
     window.sessionStorage.setItem("last", last);
     window.sessionStorage.setItem("email", email);*/
     console.log(cdate);
-    console.log(document.getElementById("first").value);
-    console.log(document.getElementById("last").value);
+    console.log(document.getElementById("name").value);
     console.log(document.getElementById("email").value);
   
 }
 
 function retrieveData(){
     var cdate = window.localStorage.getItem("date");
-    var first = window.localStorage.getItem("first");
-    var last = window.localStorage.getItem("last");
+    var name = window.localStorage.getItem("name");
     var email = window.localStorage.getItem("email");
 
     /*var first = window.sessionStorage.getItem("first");
     var last = window.sessionStorage.getItem("last");
     var email = window.sessionStorage.getItem("email");*/
 
-    var output = "Date: " + cdate + "<br />First: " + first + "<br />Last: " + last + "<br />Email: " + email + "<br />";
+    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />";
     document.getElementById("retrieveData").innerHTML = output;
 }
 
@@ -146,20 +140,17 @@ function backOnline(){
         xmlhttp.onreadystatechange = serverResponse;
         
         var cdate = window.localStorage.getItem("date");
-        var first = window.localStorage.getItem("first");
-        var last = window.localStorage.getItem("last");
+        var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
 
         var cdate = new Date();
         var url ="http://margaretekoenen.com/store.php?date=cdate";
-        url += "&first=" + document.getElementById("first").value;
-        url += "&last=" + document.getElementById("last").value;
+        url += "&name=" + document.getElementById("name").value;
         url += "&email=" + document.getElementById("email").value;
         xmlhttp.open('GET', url, true);
         xmlhttp.send();
         console.log(cdate);
-        console.log(document.getElementById("first").value);
-        console.log(document.getElementById("last").value);
+        console.log(document.getElementById("name").value);
         console.log(document.getElementById("email").value);
 
         savedAlready = true;
