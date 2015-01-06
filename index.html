@@ -7,6 +7,8 @@
     <link media="handheld, only screen and (max-width:480px), only screen and (max-device-width:480px)" href="css/mobile.css" type="text/css" rel="stylesheet" />
     <link rel="stylesheet" href="css/form-app.min.css" />
     <link rel="stylesheet" href="css/govscore.css" />
+    <link rel="stylesheet" href="css/mk.css" />
+    <link rel="stylesheet" href="css//jquery.mobile.icons.min.css" />
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
     
     <title>Govscore</title>
@@ -35,7 +37,7 @@
      <!-- How-To Page -->
     <div data-role="page" id="how-to" data-title="How-To" data-theme="c">
 
-        <div data-role="header" data-theme="c">
+        <div data-role="header" data-theme="c" data-position="fixed">
             <h1>How To</h1>
         </div><!-- header -->
 
@@ -46,8 +48,8 @@
             </article>
         </div><!-- content -->
 
-        <div data-role="footer" data-position="fixed">
-             <div data-role="navbar">
+        <div data-role="footer" data-position="fixed" data-theme="c">
+             <div data-role="navbar" data-theme="c">
                 <ul>
                     <li><a href="#how-to" class="ui-btn-active ui-state-persist">How To<br />&nbsp;</a></li>
                     <li><a href="#initial-survey">Initial<br />Survey</a></li>
@@ -60,13 +62,13 @@
 
 
     <!-- Initial Survey page -->
-    <div data-role="page" id="initial-survey" data-title="Initial Survey" data-theme="c">
+    <div data-role="page" id="initial-survey" data-title="Initial Survey" data-theme="d">
 
-        <div data-role="header" data-theme="c">
+        <div data-role="header" data-position="fixed" >
             <h1>Initial Survey</h1>
         </div><!-- header -->
 
-        <div data-role="content" data-theme="c">
+        <div data-role="content">
             <article>
                 <!--action will point to a page where the form gets processed-->
                 <!--<form action="#" method="post"> -->
@@ -448,7 +450,7 @@
         <div data-role="footer" data-position="fixed">
              <div data-role="navbar">
                 <ul>
-                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#how-to" >How To<br />&nbsp;</a></li>
                     <li><a href="#initial-survey" class="ui-btn-active ui-state-persist">Initial<br />Survey</a></li>
                     <li><a href="#advanced-survey">Advanced<br />Survey</a></li>
                 </ul>
@@ -461,17 +463,19 @@
      <!-- Advanced Survey -->
     <div data-role="page" id="advanced-survey" data-title="Advanced Survey" data-theme="c">
 
-        <div data-role="header" data-theme="c">
+        <div data-role="header">
             <h1>Advanced Survey</h1>
         </div><!-- header -->
 
-        <div data-role="content" data-theme="c">
+        <div data-role="content">
             <em>Pick the practice area you want to assess.</em>
+
+            <br />
 
             <a href="#cultivating-accountability" class="ui-btn ui-btn-a">Cultivating Accountability</a>
             <a href="#engaging-stakeholders" class="ui-btn ui-btn-a">Engaging Stakeholders</a>
             <a href="#setting-shared-strategic-direction" class="ui-btn ui-btn-a">Setting Shared Strategic Direction</a>
-            <a href="#stewarding-resources" class="ui-btn">Stewarding Resources</a>
+            <a href="#stewarding-resources" class="ui-btn ui-btn-a">Stewarding Resources</a>
             <a href="#continuous-governance-enhancement" class="ui-btn ui-btn-a">Continuous Governance Enhancement</a>        </div><!-- content -->
 
         <div data-role="footer" data-position="fixed">
@@ -486,15 +490,90 @@
 
     </div><!-- page -->
 
+
     <!-- Cultivating Accountability -->
     <div data-role="page" id="cultivating-accountability" data-title="Cultivating Accountability" data-theme="c">
+        
 
-        <div data-role="header" data-theme="c">
+        <div data-role="header">
             <h1>Cultivating Accountability</h1>
-        </div><!-- header -->
+        </div>
 
-        <div data-role="content" data-theme="c">
+        <div data-role="content">
+            <h2>Culture of personal accountability</h2>
 
+            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
+                <legend>a.There is no culture of personal accountability among the governance leaders, managers and employees of the organization.</legend>
+                    <div class="open-cq">
+                        <input type="radio" name="ac1a" id="ac1a-yes" value="yes" checked="checked">
+                        <label for="ac1a-yes">Agree</label>
+                    </div>
+                    <div class="close-cq">
+                        <input type="radio" name="ac1a" id="ac1a-no"  value="no">
+                        <label class="close-cq" for="ac1a-no">Disagree</label>
+                    </div>
+
+                    
+            </fieldset> 
+            <br />
+            <div class="questions" style="display:none;">
+            <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                    <legend>b. Governance and management leaders share information with stakeholders, community members, and medical professionals and health workers.</legend>
+                        <input type="radio" name="ac1b" id="ac1bnone" value="none" checked="checked">
+                        <label for="ac1bnone"><img src="img/empty.png" /></label>
+                        <input type="radio" name="ac1b" id="ac1bminimally" value="minimally">
+                        <label for="ac1bminimally"><img src="img/one-quarter.png" /></label>
+                        <input type="radio" name="ac1b" id="ac1bpartly" value="partly">
+                        <label for="ac1bpartly"><img src="img/half.png" /></label>
+                        <input type="radio" name="ac1b" id="ac1bmostly" value="mostly">
+                        <label for="ac1bmostly"><img src="img/three-quarter.png" /></label>
+                        <input type="radio" name="ac1b" id="ac1bcompletely" value="completely">
+                        <label for="ac1bcompletely"><img src="img/full.png" /></label>
+                </fieldset>
+                <br />
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                    <legend>c. Leaders of the organization give opportunity to the internal and external stakeholders to question their decisions. </legend>
+                        <input type="radio" name="ac1c" id="ac1cnone" value="none" checked="checked">
+                        <label for="ac1cnone"><img src="img/empty.png" /></label>
+                        <input type="radio" name="ac1c" id="ac1cminimally" value="minimally">
+                        <label for="ac1cminimally"><img src="img/one-quarter.png" /></label>
+                        <input type="radio" name="ac1c" id="ac1cpartly" value="partly">
+                        <label for="ac1cpartly"><img src="img/half.png" /></label>
+                        <input type="radio" name="ac1c" id="ac1cmostly" value="mostly">
+                        <label for="ac1cmostly"><img src="img/three-quarter.png" /></label>
+                        <input type="radio" name="ac1c" id="ac1ccompletely" value="completely">
+                        <label for="ac1ccompletely"><img src="img/full.png" /></label>
+                </fieldset>
+                <br />
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                    <legend>d. Leaders of the organization give opportunity to the internal and external stakeholders to question their decisions. </legend>
+                        <input type="radio" name="ac1d" id="ac1dnone" value="none" checked="checked">
+                        <label for="ac1dnone"><img src="img/empty.png" /></label>
+                        <input type="radio" name="ac1d" id="ac1dminimally" value="minimally">
+                        <label for="ac1dminimally"><img src="img/one-quarter.png" /></label>
+                        <input type="radio" name="ac1d" id="ac1dpartly" value="partly">
+                        <label for="ac1dpartly"><img src="img/half.png" /></label>
+                        <input type="radio" name="ac1d" id="ac1dmostly" value="mostly">
+                        <label for="ac1dmostly"><img src="img/three-quarter.png" /></label>
+                        <input type="radio" name="ac1d" id="ac1dcompletely" value="completely">
+                        <label for="ac1dcompletely"><img src="img/full.png" /></label>
+                </fieldset>
+                <br />
+                <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
+                    <legend>e. Leaders of the organization accept responsibility for the present situation and the future success of the organization. </legend>
+                        <input type="radio" name="ac1e" id="ac1enone" value="none" checked="checked">
+                        <label for="ac1enone"><img src="img/empty.png" /></label>
+                        <input type="radio" name="ac1e" id="ac1eminimally" value="minimally">
+                        <label for="ac1eminimally"><img src="img/one-quarter.png" /></label>
+                        <input type="radio" name="ac1e" id="ac1epartly" value="partly">
+                        <label for="ac1epartly"><img src="img/half.png" /></label>
+                        <input type="radio" name="ac1e" id="ac1emostly" value="mostly">
+                        <label for="ac1emostly"><img src="img/three-quarter.png" /></label>
+                        <input type="radio" name="ac1e" id="ac1ecompletely" value="completely">
+                        <label for="ac1ecompletely"><img src="img/full.png" /></label>
+                </fieldset>
+
+            </div><!-- continued-questions -->
         </div><!-- content -->
 
         <div data-role="footer" data-position="fixed">
@@ -505,14 +584,17 @@
                     <li><a href="#advanced-survey" class="ui-btn-active ui-state-persist">Advanced<br />Survey</a></li>
                 </ul>
             </div><!-- /navbar -->
+
+            
         </div><!-- footer -->
 
     </div><!-- page -->
 
+
     <!-- Engaging Stakeholders -->
     <div data-role="page" id="engaging-stakeholders" data-title="Engaging Stakeholders" data-theme="c">
 
-        <div data-role="header" data-theme="c">
+        <div data-role="header">
             <h1>Engaging Stakeholders</h1>
         </div><!-- header -->
 
@@ -532,14 +614,15 @@
 
     </div><!-- page -->
 
+
     <!-- Setting Shared Strategic Direction -->
     <div data-role="page" id="setting-shared-strategic-direction" data-title="Setting Shared Strategic Direction" data-theme="c">
 
-        <div data-role="header" data-theme="c">
+        <div data-role="header">
             <h1>Setting Shared Strategic Direction</h1>
         </div><!-- header -->
 
-        <div data-role="content" data-theme="c">
+        <div data-role="content">
 
         </div><!-- content -->
 
@@ -555,42 +638,15 @@
 
     </div><!-- page -->
 
-    <!-- Advanced Survey -->
-    <div data-role="page" id="advanced-survey" data-title="Advanced Survey" data-theme="c">
-
-        <div data-role="header" data-theme="c">
-            <h1>Advanced Survey</h1>
-        </div><!-- header -->
-
-        <div data-role="content" data-theme="c">
-            <em>Pick the practice area you want to assess.</em>
-
-            <a href="#cultivating-accountability" class="ui-btn">Cultivating Accountability</a>
-            <a href="#engaging-stakeholders" class="ui-btn ui-btn-a">Engaging Stakeholders</a>
-            <a href="#setting-shared-strategic-direction" class="ui-btn ui-btn-b">Setting Shared Strategic Direction</a>
-            <a href="#stewarding-resources" class="ui-btn">Stewarding Resources</a>
-            <a href="#continuous-governance-enhancement" class="ui-btn ui-btn-a">Continuous Governance Enhancement</a>        </div><!-- content -->
-
-        <div data-role="footer" data-position="fixed">
-             <div data-role="navbar">
-                <ul>
-                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
-                    <li><a href="#initial-survey">Initial<br />Survey</a></li>
-                    <li><a href="#advanced-survey" class="ui-btn-active ui-state-persist">Advanced<br />Survey</a></li>
-                </ul>
-            </div><!-- /navbar -->
-        </div><!-- footer -->
-
-    </div><!-- page -->
-
+    
     <!-- Stewarding Resources -->
     <div data-role="page" id="stewarding-resources" data-title="Stewarding Resources" data-theme="c">
 
-        <div data-role="header" data-theme="c">
+        <div data-role="header">
             <h1>Stewarding Resources</h1>
         </div><!-- header -->
 
-        <div data-role="content" data-theme="c">
+        <div data-role="content">
 
         </div><!-- content -->
 
@@ -605,6 +661,7 @@
         </div><!-- footer -->
 
     </div><!-- page -->
+
 
     <!-- Continuous Governance Enhancement -->
     <div data-role="page" id="continuous-governance-enhancement" data-title="Continuous Governance Enhancement" data-theme="c">
@@ -631,12 +688,23 @@
 
 
 
-    <script src="phonegap.js"></script>
+    <!-- <script src="phonegap.js"></script> -->
     <!--<script type="text/javascript" src="PushNotification.js"></script>-->
     <script type="text/javascript" src="js/index.js"></script>
     <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/initialscripts.js"></script>
+    <script>
+        $("document").ready(function(){
+            $( ".open-cq" ).click(function() {
+                $( ".questions").hide();
+            }); 
+       
+            $( ".close-cq" ).click(function() {
+                $( ".questions").show();
+            });
+        });
+    </script>
 
     </body>
 </html>
