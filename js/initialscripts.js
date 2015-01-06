@@ -181,8 +181,8 @@ function saveServer() {
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
-        var q1data = "{ 'Date': " + cdate + ", 'Name':" + name + ", 'Email':" + email + ", 'Organization': " + organization + "'Answer1': " + answer1 + "}";
-
+        var q1data = "{ 'record_date': " + cdate + ", 'name':" + name + ", 'email':" + email + ", 'organization': " + organization + "'answer1': " + answer1 + "}";
+        alert(q1data);
         var data_table = "wp_appdata";
         $.ajax({
                 type: "POST",
@@ -200,6 +200,7 @@ function saveServer() {
         xmlhttp.send();*/
 
         savedAlready = true;
+        alert("saved now");
         return savedAlready;
     }
 
