@@ -102,11 +102,65 @@ function savelocal() {
     var cdate = new Date();
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
-    
+    var organization =  $( "#myselect" ).val();
+    var answer1 = $('input[name="question1"]:checked').val();
+    var answer2 = $('input[name="question2"]:checked').val();
+    var answer3 = $('input[name="question3"]:checked').val();
+    var answer4 = $('input[name="question4"]:checked').val();
+    var answer5 = $('input[name="question5"]:checked').val();
+    var answer6 = $('input[name="question6"]:checked').val();
+    var answer7 = $('input[name="question7"]:checked').val();
+    var answer8 = $('input[name="question8"]:checked').val();
+    var answer9 = $('input[name="question9"]:checked').val();
+    var answer10 = $('input[name="question10"]:checked').val();
+    var answer11 = $('input[name="question11"]:checked').val();
+    var answer12 = $('input[name="question12"]:checked').val();
+    var answer13 = $('input[name="question13"]:checked').val();
+    var answer14 = $('input[name="question14"]:checked').val();
+    var answer15 = $('input[name="question15"]:checked').val();
+    var answer16 = $('input[name="question16"]:checked').val();
+    var answer17 = $('input[name="question17"]:checked').val();
+    var answer18 = $('input[name="question18"]:checked').val();
+    var answer19 = $('input[name="question19"]:checked').val();
+    var answer20 = $('input[name="question20"]:checked').val();
+    var answer21 = $('input[name="question21"]:checked').val();
+    var answer22 = $('input[name="question22"]:checked').val();
+    var answer23 = $('input[name="question23"]:checked').val();
+    var answer24 = $('input[name="question24"]:checked').val();
+    var answer25 = $('input[name="question25"]:checked').val();
+
 
     window.localStorage.setItem("date", cdate);
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("email", email);
+    window.localStorage.setItem("organization", organization);
+    window.localStorage.setItem("answer1", answer1);
+    window.localStorage.setItem("answer2", answer2);
+    window.localStorage.setItem("answer3", answer3);
+    window.localStorage.setItem("answer4", answer4);
+    window.localStorage.setItem("answer5", answer5);
+    window.localStorage.setItem("answer6", answer6);
+    window.localStorage.setItem("answer7", answer7);
+    window.localStorage.setItem("answer8", answer8);
+    window.localStorage.setItem("answer9", answer9);
+    window.localStorage.setItem("answer10", answer10);
+    window.localStorage.setItem("answer11", answer11);
+    window.localStorage.setItem("answer12", answer12);
+    window.localStorage.setItem("answer13", answer13);
+    window.localStorage.setItem("answer14", answer14);
+    window.localStorage.setItem("answer15", answer15);
+    window.localStorage.setItem("answer16", answer16);
+    window.localStorage.setItem("answer17", answer17);
+    window.localStorage.setItem("answer18", answer18);
+    window.localStorage.setItem("answer19", answer19);
+    window.localStorage.setItem("answer20", answer20);
+    window.localStorage.setItem("answer21", answer21);
+    window.localStorage.setItem("answer22", answer22);
+    window.localStorage.setItem("answer23", answer23);
+    window.localStorage.setItem("answer24", answer24);
+    window.localStorage.setItem("answer25", answer25);
+
+
 
     /*window.sessionStorage.setItem("first", first);
     window.sessionStorage.setItem("last", last);
@@ -114,6 +168,8 @@ function savelocal() {
     console.log(cdate);
     console.log(document.getElementById("name").value);
     console.log(document.getElementById("email").value);
+    console.log(organization);
+    console.log(answer1); 
   
 }
 
