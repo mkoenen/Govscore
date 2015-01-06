@@ -102,7 +102,7 @@ function savelocal() {
     var cdate = +new Date();
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
-    var organization =  $( "#myselect" ).val();
+    var organization =  $( "#organization" ).val();
     var answer1 = $('input[name="question1"]:checked').val();
     var answer2 = $('input[name="question2"]:checked').val();
     var answer3 = $('input[name="question3"]:checked').val();
@@ -190,6 +190,8 @@ function backOnline(){
     /*calling serverResponse function defined above*/
     if (!savedAlready) {
         
+        var xmlhttp;
+
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = serverResponse;
         
@@ -212,64 +214,7 @@ function backOnline(){
     }
 }
 
-var xmlhttp;
 
-/*function init()
-{   document.getElementById("btnGetNumbers").addEventListener("click", getData,false);
-    
-   */ /*initialize*//*
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = processResponse;
-}
-function getData(){
-    var url = "http://margaretekoenen.com/lottery.php";
-    url += "?num=" + document.getElementById("num").value;
-    url += "&max=" + document.getElementById("maxValue").value;
-    xmlhttp.open("GET", url, false);
-    xmlhttp.send();
-}
-function processResponse()
-{
-    console.log(xmlhttp.readyState + " " + xmlhttp.status);
-    if(xmlhttp.readyState ==4 && xmlhttp.status == 200)
-    {
-        //We've got a response from the server
-        document.getElementById('result').innerHTML = xmlhttp.responseText;
-    } else
-    {
-        // Indicate a waiting condition to the user
-        document.getElementById('result').innerHTML = "<strong>Waiting</strong>";
-    }
-}*/
 
-function initialize() {   /*document.getElementById("btnGetData").addEventListener("click", getData, false);*/
-    
-    /*initialize*/
-    xmlhttp = new XMLHttpRequest();
-    xmlhttp.onreadystatechange = dataReturn;
-    xmlhttp.open("GET", "http://margaretekoenen.com/wp-json/posts/1092", true);
-    xmlhttp.send();
-}
-/*function getData(){*/
-    /*xmlhttp.open("GET", "http://margaretekoenen.com/json.php", true);*/
-    /*xmlhttp.open("GET", "http://margaretekoenen.com/wp-json/posts/1092", true);
-    xmlhttp.send();
-}*/
-function dataReturn()  {
-    if(xmlhttp.readyState ==4 && xmlhttp.status == 200) {
-        //We've got a response from the server
-       var jsonResponse = xmlhttp.responseText;
-       jsonResponse = eval("(" + jsonResponse + ")");
-       var output = "";
-       output += "<h2>" + jsonResponse.title + "</h2><br />";
-       output += jsonResponse.content + "<br />";
-       output += "author: " + jsonResponse.author.name + "<br ?>";
-       output += "<img style=\"width:75px;\" src=\"" + jsonResponse.author.avatar + "\" /><br ?>";
 
-       /*document.getElementById("result").innerHTML = output;*/
-       document.getElementById("result").innerHTML = output;
-    } else {
-        // Indicate a waiting condition to the user
-        document.getElementById('result').innerHTML = "<strong>Waiting</strong>";
-    }
-}
+
