@@ -177,12 +177,10 @@ function retrieveData(){
     var cdate = window.localStorage.getItem("date");
     var name = window.localStorage.getItem("name");
     var email = window.localStorage.getItem("email");
+    var organization = window.localStorage.getItem("organization");
+    var answer1 = window.localStorage.getItem("answer1");
 
-    /*var first = window.sessionStorage.getItem("first");
-    var last = window.sessionStorage.getItem("last");
-    var email = window.sessionStorage.getItem("email");*/
-
-    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />";
+    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />organization: " + organization + "<br />Answer1: " + answer1 + "<br />";
     document.getElementById("retrieveData").innerHTML = output;
 }
 
