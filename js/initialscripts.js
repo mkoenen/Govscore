@@ -1,5 +1,4 @@
 window.onload = function() {
-    document.addEventListener("deviceready", initialize, false);
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("online", backOnline, false);
 }
@@ -189,7 +188,7 @@ function retrieveData(){
 function backOnline(){
     /*calling serverResponse function defined above*/
     if (!savedAlready) {
-        
+
         var xmlhttp;
 
         xmlhttp = new XMLHttpRequest();
