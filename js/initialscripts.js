@@ -192,7 +192,6 @@ function saveServer() {
                 cache: false,
                 url: "http://margaretekoenen.com/store.php", //URL should be fully qualified
                 data: {
-                    table: data_table,
                     json: JSON.stringify(q1data)
                 },
                 success: function(output) { console.log(output); }
