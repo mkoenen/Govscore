@@ -1,16 +1,101 @@
 window.onload = function() {
     document.addEventListener("deviceready", initialize, false);
     document.addEventListener("deviceready", setbutton, false);
-    document.addEventListener("online", checkConnection, false);
+    document.addEventListener("online", backOnline, false);
 }
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
 }
- /*save locally ------------------------------------------------------------*/
+ /*check if online ------------------------------------------------------------*/
+//-----> change: check if connection only after the save button has been hit
 
 function saveIsClicked() {
-    savelocal();
+    checkConnection();
 }
+
+function checkConnection() {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.NONE]     = 'No network connection';
+
+    alert('Connection type: ' + states[networkState]);
+
+    if( states[networkState] !== 'No network connection'){
+        alert('connection');
+        saveServer();
+    }else{
+        alert('noconnected');
+        savelocal();
+    }
+
+}
+
+/*save to server -------------------------------------------------------------*/
+var savedAlready = false;
+
+function saveServer() {
+    if (!savedAlready) {
+        alert("button has been clicked");
+    
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = serverResponse;
+    
+        var cdate = new Date();
+
+        
+        var answer1 = $('input[name="question1"]:checked').val();
+        var answer2 = $('input[name="question2"]:checked').val();
+        
+
+        /*var question1 = document.getElementsByName('question1');
+        for (var i = 0, length = question1.length; i < length; i++) {
+            if (question1[i].checked) {
+                 console.log("answer to :" + question1);
+                var answer1 = question1[i].value;
+                alert(answer1);
+                break;
+            }
+        }
+        console.log(answer1);*/
+
+                
+        var url ="http://margaretekoenen.com/store.php?date=" + cdate;
+        url += "&name=" + document.getElementById("name").value;
+        url += "&email=" + document.getElementById("email").value;
+        url += "&answer1=" + answer1;
+        url += "&answer2=" + answer2;
+        xmlhttp.open('GET', url, true);
+        xmlhttp.send();
+        console.log(cdate);
+        console.log(document.getElementById("name").value);
+        console.log(document.getElementById("email").value);
+        console.log(answer1);
+        console.log(answer2);
+        savedAlready = true;
+    }
+
+}
+
+function serverResponse()
+        {
+            if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
+            {
+                document.getElementById('result').innerHTML = xmlhttp.responseText;
+                if(xmlhttp.responseText) {
+                alert("On server" + savedAlready);
+                }
+            }
+    
+         }
+
+/*save locally-----------------------------------------------*/
 function savelocal() {
     document.getElementById("retrieveData").addEventListener("click", retrieveData, false);
 
@@ -99,99 +184,92 @@ function retrieveData(){
     document.getElementById("retrieveData").innerHTML = output;
 }
 
+/*save when back online----------------------------------*/
 
-/*check if online ------------------------------------------------------------*/
-//-----> change: check if connection only after the save button has been hit
-
-function checkConnection() {
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    alert('Connection type: ' + states[networkState]);
-
-    if( states[networkState] !== 'No network connection'){
-        alert('connection');
-        saveServer();
-    }else{
-        alert('noconnected');
-        //
-    }
-
-}
-
-/*save to server -------------------------------------------------------------*/
-var savedAlready = false;
-
-function saveServer() {
+function backOnline(){
+    /*calling serverResponse function defined above*/
     if (!savedAlready) {
-        alert("button has been clicked");
-
+        
         xmlhttp = new XMLHttpRequest();
         xmlhttp.onreadystatechange = serverResponse;
-
-        //get the data from local storage
+        
         var cdate = window.localStorage.getItem("date");
         var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
-        var organization = window.localStorage.getItem("organization");
-        var answer1 = window.localStorage.getItem("answer1");
-        var answer2 = window.localStorage.getItem("answer2");
-        var answer3 = window.localStorage.getItem("answer3");
-        var answer4 = window.localStorage.getItem("answer4");
-        var answer5 = window.localStorage.getItem("answer5");
-        var answer6 = window.localStorage.getItem("answer6");
-        var answer7 = window.localStorage.getItem("answer7");
-        var answer8 = window.localStorage.getItem("answer8");
-        var answer9 = window.localStorage.getItem("answer9");
-        var answer10 = window.localStorage.getItem("answer10");
-        var answer11 = window.localStorage.getItem("answer11");
-        var answer12 = window.localStorage.getItem("answer12");
-        var answer13 = window.localStorage.getItem("answer13");
-        var answer14 = window.localStorage.getItem("answer14");
-        var answer15 = window.localStorage.getItem("answer15");
-        var answer16 = window.localStorage.getItem("answer16");
-        var answer17 = window.localStorage.getItem("answer17");
-        var answer18 = window.localStorage.getItem("answer18");
-        var answer19 = window.localStorage.getItem("answer19");
-        var answer20 = window.localStorage.getItem("answer20");
-        var answer21 = window.localStorage.getItem("answer21");
-        var answer22 = window.localStorage.getItem("answer22");
-        var answer23 = window.localStorage.getItem("answer23");
-        var answer24 = window.localStorage.getItem("answer24");
-        var answer25 = window.localStorage.getItem("answer25");
 
-                
-        var url ="http://margaretekoenen.com/store.php?date=" + cdate;
-        url += "&name=" + name;
-        url += "&email=" + demail;
-        url += "&organization=" + organization;
-        url += "&answer1=" + answer1;
-        url += "&answer2=" + answer2;
-
+        var cdate = new Date();
+        var url ="http://margaretekoenen.com/store.php?date=cdate";
+        url += "&name=" + document.getElementById("name").value;
+        url += "&email=" + document.getElementById("email").value;
         xmlhttp.open('GET', url, true);
         xmlhttp.send();
-        
-        savedAlready = true;
-        return savedAlready;
-    }
+        console.log(cdate);
+        console.log(document.getElementById("name").value);
+        console.log(document.getElementById("email").value);
 
+        savedAlready = true;
+         
+    }
 }
 
-function serverResponse() {
-    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+var xmlhttp;
+
+/*function init()
+{   document.getElementById("btnGetNumbers").addEventListener("click", getData,false);
+    
+   */ /*initialize*//*
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = processResponse;
+}
+function getData(){
+    var url = "http://margaretekoenen.com/lottery.php";
+    url += "?num=" + document.getElementById("num").value;
+    url += "&max=" + document.getElementById("maxValue").value;
+    xmlhttp.open("GET", url, false);
+    xmlhttp.send();
+}
+function processResponse()
+{
+    console.log(xmlhttp.readyState + " " + xmlhttp.status);
+    if(xmlhttp.readyState ==4 && xmlhttp.status == 200)
+    {
+        //We've got a response from the server
         document.getElementById('result').innerHTML = xmlhttp.responseText;
-        if(xmlhttp.responseText) {
-        alert("Everything has been saved on server and the flag is set to" + savedAlready);
-        }
+    } else
+    {
+        // Indicate a waiting condition to the user
+        document.getElementById('result').innerHTML = "<strong>Waiting</strong>";
     }
+}*/
 
- }
+function initialize() {   /*document.getElementById("btnGetData").addEventListener("click", getData, false);*/
+    
+    /*initialize*/
+    xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = dataReturn;
+    xmlhttp.open("GET", "http://margaretekoenen.com/wp-json/posts/1092", true);
+    xmlhttp.send();
+}
+/*function getData(){*/
+    /*xmlhttp.open("GET", "http://margaretekoenen.com/json.php", true);*/
+    /*xmlhttp.open("GET", "http://margaretekoenen.com/wp-json/posts/1092", true);
+    xmlhttp.send();
+}*/
+function dataReturn()  {
+    if(xmlhttp.readyState ==4 && xmlhttp.status == 200) {
+        //We've got a response from the server
+       var jsonResponse = xmlhttp.responseText;
+       jsonResponse = eval("(" + jsonResponse + ")");
+       var output = "";
+       output += "<h2>" + jsonResponse.title + "</h2><br />";
+       output += jsonResponse.content + "<br />";
+       output += "author: " + jsonResponse.author.name + "<br ?>";
+       output += "<img style=\"width:75px;\" src=\"" + jsonResponse.author.avatar + "\" /><br ?>";
 
+       /*document.getElementById("result").innerHTML = output;*/
+       document.getElementById("result").innerHTML = output;
+    } else {
+        // Indicate a waiting condition to the user
+        document.getElementById('result').innerHTML = "<strong>Waiting</strong>";
+    }
+}
