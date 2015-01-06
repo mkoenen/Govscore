@@ -184,7 +184,7 @@ function saveServer() {
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
-        var q1data = "{ record_date: " + cdate + ", name: " + name + ", email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "}";
+        var q1data = "{ 'record_date': '" + cdate + "', 'name': '" + name + "', 'email': '" + email + "', 'organization': '" + organization + "', 'answer1': '" + answer1 + "'}";
      
         var mydata = JSON.stringify(q1data);
            alert(mydata);
