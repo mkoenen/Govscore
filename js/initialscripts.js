@@ -176,10 +176,13 @@ function saveServer() {
 
                 
         var url ="http://margaretekoenen.com/store.php?date=" + cdate;
-        url += "&name=" + document.getElementById("name").value;
-        url += "&email=" + document.getElementById("email").value;
+        url += "&name=" + name;
+        url += "&email=" + email;
+        url += "&organization=" + organization;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;
+
+        
         xmlhttp.open('GET', url, true);
         xmlhttp.send();
         savedAlready = true;
