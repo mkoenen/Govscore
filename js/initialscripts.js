@@ -99,7 +99,7 @@ function serverResponse()
 function savelocal() {
     document.getElementById("retrieveData").addEventListener("click", retrieveData, false);
 
-    var cdate = new Date();
+    var cdate = +new Date();
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var organization =  $( "#myselect" ).val();
