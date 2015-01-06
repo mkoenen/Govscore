@@ -141,10 +141,10 @@ function saveServer() {
     }else{
         alert("saving to server");
 
-        var xmlhttp;
+        //var xmlhttp;
     
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = serverResponse;
+        //xmlhttp = new XMLHttpRequest();
+       // xmlhttp.onreadystatechange = serverResponse;
     
          //get the data from local storage
         var cdate = window.localStorage.getItem("date");
@@ -185,15 +185,35 @@ function saveServer() {
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
         var q1data = "{ 'record_date': '" + cdate + "', 'name': '" + name + "', 'email': '" + email + "', 'organization': '" + organization + "', 'answer1': '" + answer1 + "'}";
-     
-        var mydata = JSON.stringify(q1data);
-           alert(mydata);
-        var url ="http://margaretekoenen.com/store.php?mydata=" + mydata;
-        
+        alert(q1data);
+        $.ajax({
+                url: "http://margaretekoenen.com/store.php", //URL should be fully qualified
+                type: "POST",
+                contentType:'application/json',
+                data: JSON.stringify(q1data),
+                dataType:'json',
+               success: function(data){
+                 //On ajax success do this
+                 alert(data);
+                  },
+               error: function(xhr, ajaxOptions, thrownError) {
+                  //On error do this
+                    $.mobile.loading('hide')
+                    if (xhr.status == 200) {
+
+                        alert(ajaxOptions);
+                    }
+                    else {
+                        alert(xhr.status);
+                        alert(thrownError);
+                    }
+                }
+            });
 
 
-        xmlhttp.open('GET', url, true);
-        xmlhttp.send();
+
+       /* xmlhttp.open('GET', url, true);
+        xmlhttp.send();*/
 
         savedAlready = true;
         alert("saved now");
@@ -202,7 +222,7 @@ function saveServer() {
 
 }
 
-function serverResponse()
+/*function serverResponse()
         {
             if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
             {
@@ -212,6 +232,6 @@ function serverResponse()
                 }
             }
     
-         }
+         }*/
 
 
