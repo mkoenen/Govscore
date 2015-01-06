@@ -184,8 +184,9 @@ function saveServer() {
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
-        var q1data = "{ 'record_date': " + cdate + ", 'name': " + name + ", 'email': " + email + ", 'organization': " + organization + ", 'answer1': " + answer1 + "}";
-        var url ="http://margaretekoenen.com/store.php?data=" + q1data;
+        var q1data = "{ record_date: " + cdate + ", name: " + name + ", email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "}";
+        alert(q1data);
+        var url ="http://margaretekoenen.com/store.php?mydata=" + q1data;
         
 
 
