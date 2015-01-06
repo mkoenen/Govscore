@@ -103,7 +103,7 @@ function retrieveData(){
     document.getElementById("retrieveData").innerHTML = output;
 }
 
-function checkConnection() {
+/*function checkConnection() {
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -125,7 +125,7 @@ function checkConnection() {
         savelocal();
     }
 
-}
+}*/
 
 /*save to server -------------------------------------------------------------*/
 var savedAlready = false;
@@ -136,12 +136,12 @@ function saveServer() {
         return savedAlready;
 
     }else{
-        alert("button has been clicked");
+        alert("saving to server");
 
-        var xmlhttp;
+        //var xmlhttp;
     
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = serverResponse;
+        //xmlhttp = new XMLHttpRequest();
+       // xmlhttp.onreadystatechange = serverResponse;
     
          //get the data from local storage
         var cdate = window.localStorage.getItem("date");
@@ -175,16 +175,30 @@ function saveServer() {
         var answer25 = window.localStorage.getItem("answer25");
 
                 
-        var url ="http://margaretekoenen.com/store.php?date=" + cdate;
+        /*var url ="http://margaretekoenen.com/store.php?date=" + cdate;
         url += "&name=" + name;
         url += "&email=" + email;
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
-        url += "&answer2=" + answer2;
+        url += "&answer2=" + answer2;*/
+        var q1data = "{ 'Date': " + cdate + ", 'Name':" + name + ", 'Email':" + email + ", 'Organization': " + organization + "'Answer1': " + answer1 + "}";
 
-        
-        xmlhttp.open('GET', url, true);
-        xmlhttp.send();
+        var data_table = "wp_appdata";
+        $.ajax({
+                type: "POST",
+                cache: false,
+                url: "http://margaretekoenen.com/store.php", //URL should be fully qualified
+                data: {
+                    table: data_table,
+                    json: JSON.stringify(q1data)
+                },
+                success: function(output) { console.log(output); }
+            });
+
+
+       /* xmlhttp.open('GET', url, true);
+        xmlhttp.send();*/
+
         savedAlready = true;
         return savedAlready;
     }
