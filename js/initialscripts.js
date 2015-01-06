@@ -185,8 +185,10 @@ function saveServer() {
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
         var q1data = "{ record_date: " + cdate + ", name: " + name + ", email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "}";
-        alert(q1data);
-        var url ="http://margaretekoenen.com/store.php?mydata=" + q1data;
+     
+        var mydata = JSON.stringify(q1data);
+           alert(mydata);
+        var url ="http://margaretekoenen.com/store.php?mydata=" + mydata;
         
 
 
