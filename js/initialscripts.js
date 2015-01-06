@@ -133,6 +133,7 @@ var savedAlready = false;
 function saveServer() {
     if (savedAlready) {
         savedAlready = true;
+        alert("saved already");
         return savedAlready;
 
     }else{
