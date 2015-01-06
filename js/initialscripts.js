@@ -11,7 +11,7 @@ function setbutton() {
 function saveIsClicked() {
     
     savelocal();
-
+    document.addEventListener("deviceready", checkConnection, false);
 }
 
 /*save locally-----------------------------------------------*/
@@ -103,7 +103,10 @@ function retrieveData(){
     document.getElementById("retrieveData").innerHTML = output;
 }
 
-/*function checkConnection() {
+
+/*------------check the connection --------------*/
+
+function checkConnection() {
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -118,14 +121,13 @@ function retrieveData(){
     alert('Connection type: ' + states[networkState]);
 
     if( states[networkState] !== 'No network connection'){
-        alert('connection');
+        alert('connection, will save to server');
         saveServer();
     }else{
-        alert('noconnected');
-        savelocal();
+        alert("data has been saved locally, but there is no internet connection to save to server");
     }
 
-}*/
+}
 
 /*save to server -------------------------------------------------------------*/
 var savedAlready = false;
@@ -182,7 +184,7 @@ function saveServer() {
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
-        var q1data = "{ 'record_date': " + cdate + ", 'name':" + name + ", 'email':" + email + ", 'organization': " + organization + "'answer1': " + answer1 + "}";
+        var q1data = "{ 'record_date': " + cdate + ", 'name': " + name + ", 'email': " + email + ", 'organization': " + organization + ", 'answer1': " + answer1 + "}";
         alert(q1data);
         var data_table = "wp_appdata";
         $.ajax({
