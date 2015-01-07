@@ -1,6 +1,6 @@
 window.onload = function() {
     document.addEventListener("deviceready", setbutton, false);
-    document.addEventListener("online", saveServer, false);
+    //document.addEventListener("online", saveServer, false);
 }
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
@@ -184,7 +184,7 @@ function saveServer() {
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
-        var data = "{ 'record_date': '" + cdate + "', 'name': '" + name + "', 'email': '" + email + "', 'organization': '" + organization + "', 'answer1': '" + answer1 + "'}";
+        var data = "{ record_date: " + cdate + ", name: " + name + ",email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "}";
         alert(data);
         //var data_table = "wp_appdata"; // change this for different experiments
         $.ajax({
