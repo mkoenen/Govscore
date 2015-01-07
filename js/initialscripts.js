@@ -177,7 +177,7 @@ function saveServer() {
         var answer24 = window.localStorage.getItem("answer24");
         var answer25 = window.localStorage.getItem("answer25");
 
-        /*var data = "{ 'record_date': '324235', 'name':'mk",'email': 'km@sdgsd", 'organization": 'org1", "answer1": "very"};
+        //var data = "{ 'record_date': '324235', 'name':'mk",'email': 'km@sdgsd", 'organization": 'org1", "answer1": "very"};
         
 
         var url ="http://margaretekoenen.com/store.php?date=" + cdate;
@@ -185,22 +185,21 @@ function saveServer() {
         url += "&email=" + email;
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
-        alert(url);*/
+        alert(url);
         //url += "&answer2=" + answer2;
         //var data = { "record_date" : cdate , "name" : name , "email" :  email , "organization" :  organization , "answer1":  answer1 };
         //var data = { "record_date": "324235", "name":"mk","email": "km@sdgsd", "organization": "org1", "answer1": "very"};
         //var mydata = JSON.stringify(data);
         //alert("is this json? " + mydata);
         //var data_table = "wp_appdata"; // change this for different experiments
-        $.ajax({
-                url: 'http://margaretekoenen.com/store.php', 
+        /*$.ajax({
+                url: "http://margaretekoenen.com/store.php", 
+                crossDomain: true,
                 type: "POST",
-                data: { name: "John", location: "Boston" }
-                })
-  .done(function( msg ) {
-    alert( "Data Saved: " + msg );
-  });
-              /* success: function(data){
+                contentType:'application/json',
+                data: 'mydata',
+                dataType:'json',
+               success: function(data){
                  //On ajax success do this
                  alert(data);
                   },
