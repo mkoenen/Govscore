@@ -688,7 +688,7 @@
     <script type="text/javascript" src="js/initialscripts.js"></script>
     <script>
    
-        jQuery("document").ready(function($){
+        $( '#cultivating-accountability' ).live( 'pageinit',function(event){
             $( ".open-cq" ).on("click", function(event) {
                 $( ".questions").hide();
             }); 
