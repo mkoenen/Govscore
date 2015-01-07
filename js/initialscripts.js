@@ -184,7 +184,7 @@ function saveServer() {
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
-        var data = { record_date: " + cdate + ", name: " + name + ",email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "};
+        var data = { "record_date" :  + cdate + , "name" :  + name + , "email" :  + email + , "organization" :  + organization + , "answer1":  + answer1 };
         //var data = { "record_date": "324235", "name":"mk","email": "km@sdgsd", "organization": "org1", "answer1": "very"};
         var mydata = JSON.stringify(data);
         alert("is this json? " + mydata);
