@@ -177,10 +177,10 @@ function saveServer() {
         var answer24 = window.localStorage.getItem("answer24");
         var answer25 = window.localStorage.getItem("answer25");
 
-        var data = "{ 'record_date': '324235', 'name':'mk','email': 'km@sdgsd', 'organization': 'org1', 'answer1': 'very'}";
-        
+        var data = { 'record_date': '324235', 'name':'mk','email': 'km@sdgsd', 'organization': 'org1', 'answer1': 'very'};
+        data = JSON.stringify(data);
 
-        var url ="http://margaretekoenen.com/store.php?date=" + data;
+        var url ='http://margaretekoenen.com/store.php?date="' + data + '"';
         /*url += "&name=" + name;
         url += "&email=" + email;
         url += "&organization=" + organization;
