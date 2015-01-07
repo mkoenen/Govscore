@@ -184,17 +184,14 @@ function saveServer() {
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
-        var q1data = "{ 'record_date': '" + cdate + "', 'name': '" + name + "', 'email': '" + email + "', 'organization': '" + organization + "', 'answer1': '" + answer1 + "'}";
-        alert(q1data);
-        var data_table = "wp_appdata"; // change this for different experiments
+        var data = "{ 'record_date': '" + cdate + "', 'name': '" + name + "', 'email': '" + email + "', 'organization': '" + organization + "', 'answer1': '" + answer1 + "'}";
+        alert(data);
+        //var data_table = "wp_appdata"; // change this for different experiments
         $.ajax({
                 url: "http://margaretekoenen.com/store.php", //URL should be fully qualified
                 type: "POST",
                 contentType:'application/json',
-                data: {
-                    table: data_table,
-                    data: JSON.stringify(q1data)
-                },
+                data: data,
                 dataType:'json',
                success: function(data){
                  //On ajax success do this
