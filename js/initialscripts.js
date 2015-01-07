@@ -194,7 +194,7 @@ function saveServer() {
                 type: "POST",
                 contentType:'application/json',
                 data: {
-                o: mydata
+                data: mydata
                 },
                 dataType:'json',
                success: function(data){
