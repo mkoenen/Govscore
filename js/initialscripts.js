@@ -191,7 +191,11 @@ function saveServer() {
                 url: "http://margaretekoenen.com/store.php", //URL should be fully qualified
                 type: "POST",
                 contentType:'application/json',
-                data: data,
+                data: {
+                  name:'test',
+                  key:'foo',
+                  key2:'bar'
+               },
                 dataType:'json',
                success: function(data){
                  //On ajax success do this
