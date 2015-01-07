@@ -228,7 +228,7 @@ function saveServer() {
 
 }
 
-/*function serverResponse()
+function serverResponse()
         {
             if(xmlhttp.readyState == 4 && xmlhttp.status == 200)
             {
@@ -238,6 +238,6 @@ function saveServer() {
                 }
             }
     
-         }*/
+         }
 
 
