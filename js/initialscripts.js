@@ -186,7 +186,8 @@ function saveServer() {
         url += "&answer2=" + answer2;*/
         //var data = "{ record_date: " + cdate + ", name: " + name + ",email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "}";
         var data = { 'record_date': '324235', 'name':'mk','email': 'km@sdgsd', 'organization': 'org1', 'answer1': 'very'};
-        alert(data);
+        var mydata = JSON.stringify(data);
+        alert(mydata);
         //var data_table = "wp_appdata"; // change this for different experiments
         $.ajax({
                 url: "http://margaretekoenen.com/store.php", 
