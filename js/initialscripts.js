@@ -178,7 +178,8 @@ function saveServer() {
         var answer25 = window.localStorage.getItem("answer25");
 
          
-        var data = "{ record_date: " + cdate + ", name: " + name + ",email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "}";
+        //var data = { record_date: " + cdate + ", name: " + name + ",email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "}";
+        var data = {'date' : 'Mk', 'name': 'MK', 'email': 'mk@j.com', 'answer1': 'very'};
         alert(data);
         var cleandata = JSON.stringify(data);
 
