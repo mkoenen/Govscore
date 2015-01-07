@@ -687,12 +687,13 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/initialscripts.js"></script>
     <script>
+   
         $("document").ready(function(){
-            $(document).on('click', '.open-cq', function() {
+            $( ".open-cq" ).on("tap", function(event) {
                 $( ".questions").hide();
             }); 
        
-            $(document).on('click', '.close-cq', function() {
+            $( ".close-cq" ).on("tap", function(event) {
                 $( ".questions").show();
             });
         });
