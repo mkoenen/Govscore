@@ -195,7 +195,7 @@ function saveServer() {
                 type: "POST",
                 contentType:'application/json',
                 data: 'mydata',
-                dataType:'text',
+                dataType:'json',
                success: function(data){
                  //On ajax success do this
                  alert(data);
