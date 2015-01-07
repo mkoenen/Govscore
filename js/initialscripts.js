@@ -193,7 +193,7 @@ function saveServer() {
                 contentType:'application/json',
                 data: {
                     table: data_table,
-                    json: JSON.stringify(data)
+                    data: JSON.stringify(q1data)
                 },
                 dataType:'json',
                success: function(data){
