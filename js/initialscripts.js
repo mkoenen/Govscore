@@ -141,10 +141,10 @@ function saveServer() {
     }else{
         alert("saving to server");
 
-        var xmlhttp;
+        //var xmlhttp;
     
-        xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = serverResponse;
+        //xmlhttp = new XMLHttpRequest();
+       // xmlhttp.onreadystatechange = serverResponse;
     
          //get the data from local storage
         var cdate = window.localStorage.getItem("date");
@@ -178,20 +178,17 @@ function saveServer() {
         var answer25 = window.localStorage.getItem("answer25");
 
          
-        //var data = { record_date: " + cdate + ", name: " + name + ",email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "}";
-        var data = {'date' : 'Mk', 'name': 'MK', 'email': 'mk@j.com', 'answer1': 'very'};
-        alert(data);
-        var cleandata = JSON.stringify(data);
-
-        var url ="http://margaretekoenen.com/store.php?data=" + cleandata;
-        /*url += "&name=" + name;
+        /*var url ="http://margaretekoenen.com/store.php?date=" + cdate;
+        url += "&name=" + name;
         url += "&email=" + email;
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
         url += "&answer2=" + answer2;*/
-        
+        //var data = "{ record_date: " + cdate + ", name: " + name + ",email: " + email + ", organization: " + organization + ", answer1: " + answer1 + "}";
+        var data = { 'record_date': '324235', 'name':'mk','email': 'km@sdgsd', 'organization': 'org1', 'answer1': 'very'};
+        alert(data);
         //var data_table = "wp_appdata"; // change this for different experiments
-        /*$.ajax({
+        $.ajax({
                 url: "http://margaretekoenen.com/store.php", 
                 type: "POST",
                 contentType:'application/json',
@@ -213,12 +210,12 @@ function saveServer() {
                         alert(thrownError);
                     }
                 }
-            });*/
+            });
 
 
 
-        xmlhttp.open('GET', url, true);
-        xmlhttp.send();
+       /* xmlhttp.open('GET', url, true);
+        xmlhttp.send();*/
 
         savedAlready = true;
         alert("saved now");
