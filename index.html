@@ -688,11 +688,11 @@
     <script type="text/javascript" src="js/initialscripts.js"></script>
     <script>
         $("document").ready(function(){
-            $( ".open-cq" ).click(function() {
+            $( ".open-cq" ).on("tap", function() {
                 $( ".questions").hide();
             }); 
        
-            $( ".close-cq" ).click(function() {
+            $( ".close-cq" ).on("tap", function() {
                 $( ".questions").show();
             });
         });
