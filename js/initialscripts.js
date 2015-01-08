@@ -4,8 +4,8 @@ window.onload = function() {
     //document.addEventListener("online", saveServer, false);
 }
 function listenOpenClose() {
-    document.getElementById('.open-cq').addEventListener('click', openIsClicked, false);
-    document.getElementById('.close-cq').addEventListener('click', closeIsClicked, false);
+    document.getElementById('#open-cq1').addEventListener('click', openIsClicked, false);
+    document.getElementById('#close-cq1').addEventListener('click', closeIsClicked, false);
 }
 function  openTab() {
     alert("clicked hide");
