@@ -471,7 +471,7 @@
             <a href="#cultivating-accountability" class="ui-btn ui-btn-a">Cultivating Accountability</a>
             <a href="#engaging-stakeholders" class="ui-btn ui-btn-a">Engaging Stakeholders</a>
             <a href="#setting-shared-strategic-direction" class="ui-btn ui-btn-a">Setting Shared Strategic Direction</a>
-            <a href="#stewarding-resources" class="ui-btn">Stewarding Resources</a>
+            <a href="#stewarding-resources" class="ui-btn ui-btn-a">Stewarding Resources</a>
             <a href="#continuous-governance-enhancement" class="ui-btn ui-btn-a">Continuous Governance Enhancement</a>        </div><!-- content -->
 
         <div data-role="footer" data-position="fixed">
@@ -689,11 +689,12 @@
     <script>
    
         
-            $( ".open-cq" ).on("click", function(event) {
+            $( ".open-cq" ).bind("tap", function(event) {
+                alert("clicked");
                 $( ".questions").hide();
             }); 
        
-            $( ".close-cq" ).on("click", function(event) {
+            $( ".close-cq" ).bind("tap", function(event) {
                 $( ".questions").show();
             });
         
