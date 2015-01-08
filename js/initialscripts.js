@@ -1,7 +1,20 @@
 window.onload = function() {
     document.addEventListener("deviceready", setbutton, false);
+    document.addEventListener("deviceready", listenOpenClose, false);
     //document.addEventListener("online", saveServer, false);
 }
+function listenOpenClose() {
+    document.getElementById('.open-cq').addEventListener('click', openIsClicked, false);
+    document.getElementById('.close-cq').addEventListener('click', closeIsClicked, false);
+}
+function  openTab() {
+    alert("clicked hide");
+    $( ".questions").hide();
+} 
+function closeTab() {
+    alert("clicked show");
+    $( ".questions").show();
+}          
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
 }
