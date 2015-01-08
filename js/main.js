@@ -37,7 +37,7 @@ window.onload = function() {
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", listenOpenClose, false);
-    //document.addEventListener("online", saveServer, false);
+    document.addEventListener("online", saveServer, false);
 }
 /*function listenOpenClose() {
     document.getElementById('open-cq1').addEventListener('click', openIsClicked, false);
