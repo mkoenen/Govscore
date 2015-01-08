@@ -1,9 +1,9 @@
 window.onload = function() {
     document.addEventListener("deviceready", setbutton, false);
-    document.addEventListener("deviceready", listenOpenClose, false);
+    //document.addEventListener("deviceready", listenOpenClose, false);
     //document.addEventListener("online", saveServer, false);
 }
-function listenOpenClose() {
+/*function listenOpenClose() {
     document.getElementById('open-cq1').addEventListener('click', openIsClicked, false);
     document.getElementById('close-cq1').addEventListener('click', closeIsClicked, false);
 }
@@ -14,7 +14,7 @@ function openIsClicked() {
 function closeIsClicked() {
     alert("clicked show");
     $( ".questions").show();
-}          
+} */         
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
 }
