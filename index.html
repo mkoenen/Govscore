@@ -507,7 +507,17 @@
                         <input type="radio" name="ac1a" id="ac1a-no"  value="no">
                         <label class="close-cq" for="ac1a-no">Disagree</label>
                     </div>
-
+                    <script>
+                    window.onload = function() {
+                        $(function(){
+                            $( "div.close-cq" ).bind( "tap", tapHandler );
+                             
+                            function tapHandler( event ){
+                                $( event.target ).addClass( "tap" );
+                            }
+                        });
+                    };
+                    </script>
                     
             </fieldset> 
             <br />
@@ -687,7 +697,7 @@
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="text/javascript" src="js/initialscripts.js"></script>
     <script>
-            $(function(){
+            /*$(function(){
               $( ".open-cq" ).bind( "tap", tapHandler );
              
               function tapHandler( event ){
@@ -695,7 +705,7 @@
               }
             });
         
-            /*$( ".open-cq" ).bind("tap", function(event) {
+            $( ".open-cq" ).bind("tap", function(event) {
                 alert("clicked");
                 $( ".questions").hide();
             }); 
