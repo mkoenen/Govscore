@@ -175,7 +175,6 @@ function checkConnection() {
         saveServer();
     }else{
         alert("data has been saved locally, but there is no internet connection to save to server");
-        window.plugin.backgroundMode.enable();
     }
 
 }
@@ -286,7 +285,6 @@ function serverResponse()
                 document.getElementById('result').innerHTML = xmlhttp.responseText;
                 if(xmlhttp.responseText) {
                 alert("On server" + savedAlready);
-                window.plugin.backgroundMode.disable();
                 }
             }
     
