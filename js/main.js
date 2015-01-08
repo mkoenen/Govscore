@@ -53,6 +53,8 @@ function closeIsClicked() {
 } */         
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
+    document.getElementById("retrieveData").addEventListener("click", retrieveData, false);
+
 }
  /*check if online ------------------------------------------------------------*/
 //-----> change: check if connection only after the save button has been hit
@@ -65,8 +67,7 @@ function saveIsClicked() {
 
 /*save locally-----------------------------------------------*/
 function savelocal() {
-    document.getElementById("retrieveData").addEventListener("click", retrieveData, false);
-
+    
     var cdate = +new Date();
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
@@ -174,6 +175,7 @@ function checkConnection() {
         saveServer();
     }else{
         alert("data has been saved locally, but there is no internet connection to save to server");
+        window.plugin.backgroundMode.enable();
     }
 
 }
@@ -285,6 +287,7 @@ function serverResponse()
                 document.getElementById('result').innerHTML = xmlhttp.responseText;
                 if(xmlhttp.responseText) {
                 alert("On server" + savedAlready);
+                window.plugin.backgroundMode.disable();
                 }
             }
     
