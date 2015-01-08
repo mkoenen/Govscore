@@ -7,13 +7,11 @@ function listenOpenClose() {
     document.getElementById('open-cq1').addEventListener('click', openIsClicked, false);
     document.getElementById('close-cq1').addEventListener('click', closeIsClicked, false);
 }
-function  openIsClicked() {
+function openIsClicked() {
     alert("clicked hide");
-    $( ".questions").hide();
 } 
 function closeIsClicked() {
     alert("clicked show");
-    $( ".questions").show();
 }          
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
