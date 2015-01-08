@@ -9,9 +9,11 @@ function listenOpenClose() {
 }
 function openIsClicked() {
     alert("clicked hide");
+    $( ".questions").hide();
 } 
 function closeIsClicked() {
     alert("clicked show");
+    $( ".questions").show();
 }          
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
