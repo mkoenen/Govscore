@@ -8,10 +8,10 @@ function listenOpenClose() {
     document.getElementById('close-cq1').addEventListener('click', closeIsClicked, false);
 }
 function openIsClicked() {
-    alert("clicked hide");
+    $( ".questions").hide();
 } 
 function closeIsClicked() {
-    alert("clicked show");
+    $( ".questions").show();
 }          
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
