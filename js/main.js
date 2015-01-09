@@ -55,6 +55,7 @@ function savelocal() {
     var answer23 = $('input[name="question23"]:checked').val();
     var answer24 = $('input[name="question24"]:checked').val();
     var answer25 = $('input[name="question25"]:checked').val();
+    var saved = false
 
 
     window.localStorage.setItem("date", cdate);
@@ -86,11 +87,11 @@ function savelocal() {
     window.localStorage.setItem("answer23", answer23);
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
-    window.localStorage.setItem("saved", false);
+    window.localStorage.setItem("saved", saved);
 
     //now that everything is saved check the connection
     checkConnection();
-  
+    return saved;
 }
 
 function retrieveData(){
@@ -127,7 +128,7 @@ function checkConnection() {
         
     }else{
         alert("data has been saved locally, but there is no internet connection to save to server");
-        window.localStorage.setItem("saved", false);
+        
     }
 
 }
@@ -194,8 +195,8 @@ function saveServer() {
 
         //add the button to the results page
         document.getElementById("govscore-results").addClass("see");
-
-        window.localStorage.setItem("saved", true);
+        saved = true
+        window.localStorage.setItem("saved", saved);
         alert("saved now");
     }else{
         alert("saved already");
