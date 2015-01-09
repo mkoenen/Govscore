@@ -1,78 +1,30 @@
-/*var app = {
-
-    showAlert: function (message, title) {
-        if (navigator.notification) {
-            navigator.notification.alert(message, null, title, 'OK');
-        } else {
-            alert(title ? (title + ": " + message) : message);
-        }
-    },*/
-
-    /*findByName: function() {
-        console.log('findByName');
-        this.store.findByName($('.search-key').val(), function(employees) {
-            var l = employees.length;
-            var e;
-            $('.employee-list').empty();
-            for (var i=0; i<l; i++) {
-                e = employees[i];
-                $('.employee-list').append('<li><a href="#employees/' + e.id + '">' + e.firstName + ' ' + e.lastName + '</a></li>');
-            }
-        });
-    },*/
-
-   /* initialize: function() {
-        var self = this;
-        this.store = new MemoryStore(function() {
-            self.showAlert('Store Initialized', 'Info');
-        });
-        $('.search-key').on('keyup', $.proxy(this.findByName, this));
-    }
-
-};
-app.initialize();*/
-
-
 window.onload = function() {
     document.addEventListener("online", announce, false);
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
+    document.addEventListener("deviceready", checkConnection, true);
     //document.addEventListener("deviceready", listenOpenClose, false);
     
 }
 
-
-function announce() {
-    alert("You are back online");
-    saveServer();
-}
-/*function listenOpenClose() {
-    document.getElementById('open-cq1').addEventListener('click', openIsClicked, false);
-    document.getElementById('close-cq1').addEventListener('click', closeIsClicked, false);
-}
-function openIsClicked() {
-    alert("clicked hide");
-    $( ".questions").hide();
-} 
-function closeIsClicked() {
-    alert("clicked show");
-    $( ".questions").show();
-} */         
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
     document.getElementById("retrieveData").addEventListener("click", retrieveData, false);
 
 }
- /*check if online ------------------------------------------------------------*/
-//-----> change: check if connection only after the save button has been hit
 
-function saveIsClicked() {
-    
-    savelocal();
-    
+//announce that app is back online and save
+function announce() {
+    alert("You are back online");
+    saveServer();
 }
 
-/*save locally-----------------------------------------------*/
+//first save all data locally
+function saveIsClicked() {
+    savelocal();  
+}
+
+/*save locally ----------------------------------------------*/
 function savelocal() {
     
     var cdate = new Date();
@@ -137,7 +89,7 @@ function savelocal() {
     window.localStorage.setItem("answer25", answer25);
     
 
-
+    //now that everything is saved check the connection
     checkConnection();
   
 }
@@ -173,6 +125,7 @@ function checkConnection() {
     if( states[networkState] !== 'No network connection'){
         alert('connection, will save to server');
         saveServer();
+        //in case you are coming online after the app had been closed we need to have a value saved here
         
     }else{
         alert("data has been saved locally, but there is no internet connection to save to server");
@@ -185,11 +138,9 @@ function checkConnection() {
 
 
 function saveServer() {
+    //first check if data has been saved to server already
     var saved = window.localStorage.getItem("saved");
-    if (saved) {
-        alert("saved already");
-
-    }else{
+    if(saved === false{
         alert("saving to server");
 
         var xmlhttp;
@@ -236,36 +187,7 @@ function saveServer() {
         url += "&email=" + email;
         url += "&organization=" + organization;
         url += "&answer1=" + answer1;
-        //url += "&answer2=" + answer2;
-        //var data = { "record_date" : cdate , "name" : name , "email" :  email , "organization" :  organization , "answer1":  answer1 };
-        //var data = { "record_date": "324235", "name":"mk","email": "km@sdgsd", "organization": "org1", "answer1": "very"};
-        //var mydata = JSON.stringify(data);
-        //alert("is this json? " + mydata);
-        //var data_table = "wp_appdata"; // change this for different experiments
-        /*$.ajax({
-                url: "http://margaretekoenen.com/store.php", 
-                crossDomain: true,
-                type: "POST",
-                contentType:'application/json',
-                data: 'mydata',
-                dataType:'json',
-               success: function(data){
-                 //On ajax success do this
-                 alert(data);
-                  },
-               error: function(xhr, ajaxOptions, thrownError) {
-                  //On error do this
-                    $.mobile.loading('hide')
-                    if (xhr.status == 200) {
-
-                        alert(ajaxOptions);
-                    }
-                    else {
-                        alert(xhr.status);
-                        alert(thrownError);
-                    }
-                }
-            });*/
+        
 
 
 
@@ -293,34 +215,3 @@ function serverResponse()
     
          }
 
-/*************** add Pushwoosh *******************/
-/*function initPushwoosh()
-{
-    var pushNotification = window.plugins.pushNotification;
- 
-    //set push notifications handler
-    document.addEventListener('push-notification', function(event) {
-        var title = event.notification.title;
-        var userData = event.notification.userdata;
-                                 
-        if(typeof(userData) != "undefined") {
-            console.warn('user data: ' + JSON.stringify(userData));
-        }
-                                     
-        alert(title);
-    });
- 
-    //initialize Pushwoosh with projectid: "GOOGLE_PROJECT_ID", appid : "PUSHWOOSH_APP_ID". This will trigger all pending push notifications on start.
-    pushNotification.onDeviceReady({ projectid: "999347728559", appid : "0A736-A5FA5" });
- 
-    //register for pushes
-    pushNotification.registerDevice(
-        function(status) {
-            var pushToken = status;
-            console.warn('push token: ' + pushToken);
-        },
-        function(status) {
-            console.warn(JSON.stringify(['failed to register ', status]));
-        }
-    );
-}*/
