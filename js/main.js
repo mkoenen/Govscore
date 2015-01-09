@@ -34,10 +34,16 @@
 app.initialize();*/
 
 window.onload = function() {
+    document.addEventListener("online", announce, false);
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", listenOpenClose, false);
-    document.addEventListener("online", announce, false);
+    
+}
+
+function announce() {
+    alert("You are back online and savedAlready is" + savedAlready);
+    saveServer();
 }
 /*function listenOpenClose() {
     document.getElementById('open-cq1').addEventListener('click', openIsClicked, false);
@@ -182,10 +188,8 @@ if(savedAlready){
 }else{
     savedAlready = false;
 }
-function announce() {
-    alert("You are back online and savedAlready is" + savedAlready);
-    saveServer();
-}
+
+
 function saveServer() {
     if (savedAlready) {
         alert("saved already");
