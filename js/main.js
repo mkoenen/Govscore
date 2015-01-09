@@ -185,7 +185,6 @@ if(savedAlready){
 
 function saveServer() {
     if (savedAlready) {
-        savedAlready = true;
         alert("saved already");
         return savedAlready;
 
