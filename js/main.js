@@ -41,10 +41,9 @@ window.onload = function() {
     
 }
 
-var savedAlready = true;
 
 function announce() {
-    alert("You are back online and savedAlready is" + savedAlready);
+    alert("You are back online");
     saveServer();
 }
 /*function listenOpenClose() {
@@ -136,8 +135,8 @@ function savelocal() {
     window.localStorage.setItem("answer23", answer23);
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
+    
 
-    savedAlready = false
 
     checkConnection();
   
@@ -174,8 +173,10 @@ function checkConnection() {
     if( states[networkState] !== 'No network connection'){
         alert('connection, will save to server');
         saveServer();
+        
     }else{
         alert("data has been saved locally, but there is no internet connection to save to server");
+        window.localStorage.setItem("saved", false);
     }
 
 }
@@ -184,9 +185,9 @@ function checkConnection() {
 
 
 function saveServer() {
-    if (savedAlready) {
+    var saved = window.localStorage.getItem("saved");
+    if (saved) {
         alert("saved already");
-        return savedAlready;
 
     }else{
         alert("saving to server");
@@ -274,9 +275,8 @@ function saveServer() {
         //add the button to the results page
         document.getElementById("govscore-results").addClass("see");
 
-        savedAlready = true;
+        window.localStorage.setItem("saved", true);
         alert("saved now");
-        return savedAlready;
     }
 
 }
@@ -287,7 +287,7 @@ function serverResponse()
             {
                 document.getElementById('result').innerHTML = xmlhttp.responseText;
                 if(xmlhttp.responseText) {
-                alert("On server" + savedAlready);
+                alert("On server");
                 }
             }
     
