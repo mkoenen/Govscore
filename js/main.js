@@ -138,10 +138,8 @@ function checkConnection() {
 function saveServer() {
     //first check if data has been saved to server already
     var saved = window.localStorage.getItem("saved");
-    if (saved) {
-        alert("saved already");
-
-    }else{
+    if (saved==false) {
+        
         alert("saving to server");
 
         var xmlhttp;
@@ -199,6 +197,8 @@ function saveServer() {
 
         window.localStorage.setItem("saved", true);
         alert("saved now");
+    }else{
+        alert("saved already");
     }
 
 }
