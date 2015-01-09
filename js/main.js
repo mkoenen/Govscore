@@ -2,7 +2,7 @@ window.onload = function() {
     document.addEventListener("online", announce, false);
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", checkConnection, false);
+    document.addEventListener("deviceready", checkConnection, true);
     //document.addEventListener("deviceready", listenOpenClose, false);
     
 }
