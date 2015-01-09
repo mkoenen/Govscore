@@ -86,7 +86,7 @@ function savelocal() {
     window.localStorage.setItem("answer23", answer23);
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
-    
+    window.localStorage.setItem("saved", false);
 
     //now that everything is saved check the connection
     checkConnection();
