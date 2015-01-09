@@ -62,13 +62,13 @@ function setbutton() {
 function saveIsClicked() {
     
     savelocal();
-    document.addEventListener("deviceready", checkConnection, false);
+    
 }
 
 /*save locally-----------------------------------------------*/
 function savelocal() {
     
-    var cdate = +new Date();
+    var cdate = new Date();
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var organization =  $( "#organization" ).val();
@@ -130,15 +130,11 @@ function savelocal() {
     window.localStorage.setItem("answer25", answer25);
 
 
+    checkConnection();
 
     /*window.sessionStorage.setItem("first", first);
     window.sessionStorage.setItem("last", last);
     window.sessionStorage.setItem("email", email);*/
-    console.log(cdate);
-    console.log(document.getElementById("name").value);
-    console.log(document.getElementById("email").value);
-    console.log(organization);
-    console.log(answer1); 
   
 }
 
@@ -180,7 +176,12 @@ function checkConnection() {
 }
 
 /*save to server -------------------------------------------------------------*/
-var savedAlready = false;
+var savedAlready;
+if(savedAlready){
+    savedAlready =true;
+}else{
+    savedAlready = false;
+}
 
 function saveServer() {
     if (savedAlready) {
