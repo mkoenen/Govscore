@@ -2,7 +2,7 @@ window.onload = function() {
     document.addEventListener("online", announce, false);
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", checkConnection, true);
+    document.addEventListener("deviceready", checkConnection, false);
     //document.addEventListener("deviceready", listenOpenClose, false);
     
 }
@@ -87,6 +87,7 @@ function savelocal() {
     window.localStorage.setItem("answer23", answer23);
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
+    window.localStorage.setItem("saved", false);
     
 
     //now that everything is saved check the connection
