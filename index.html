@@ -23,6 +23,7 @@
                     <p>The World's first digital governance assessment tool!</p>
 
                     <a href="#how-to" class="ui-btn entryscreen-btn">Get Started</a>
+                    <a href="#govscore-results" id="govscore-results" class="ui-btn">See Your Results</a>
             </article> 
 
         </div><!-- content -->
@@ -41,6 +42,7 @@
 
         <div data-role="content" data-theme="c">
             <article>
+                <a href="#govscore-results" id="govscore-results" class="ui-btn">See Your Results</a>
                 <p>Risus vel, phasellus lectus vut, quis phasellus, et placerat magnis odio augue ac tincidunt non, sociis in pulvinar, facilisis rhoncus lectus ut ultrices elementum, porta parturient sit. Ac, tempor nascetur, cum lacus a, amet tortor sed, rhoncus ultricies, porttitor! Rhoncus tempor integer? Magna a, ultrices? Aliquam? Odio odio nec tristique mid eros? Pid et penatibus hac in, duis aliquet, lundium. Et eros adipiscing, adipiscing aenean amet urna amet, magna duis aliquam in augue tristique urna ac nascetur, rhoncus penatibus massa. Dictumst velit porta dolor? Pulvinar, dictumst hac dapibus augue proin rhoncus enim dolor tincidunt, risus tristique ultrices parturient integer, porta aenean porttitor sagittis ultrices diam. Natoque placerat ut hac, massa placerat in, mattis magna et penatibus tristique placerat velit urna.</p>
                 <p>Sed mauris massa auctor adipiscing, nec integer mattis tempor et cum, augue auctor natoque, lundium et aliquam duis nunc. Non quis eros turpis aliquet lundium eu sociis! Ridiculus a ut mauris? Magnis, turpis tristique odio? Diam nisi penatibus dis velit eu. A sociis? Vel? Purus enim facilisis, integer a aliquam purus urna in enim elit dolor nec diam augue lacus nisi augue sed? Magna ultrices egestas tristique nascetur risus sed odio dolor mus urna? Eros, ultricies in? Mauris, in, est rhoncus in, magna, lundium! Penatibus lorem nunc, odio purus! Proin augue, tincidunt scelerisque platea platea! Dis mus turpis placerat, in urna scelerisque mattis! Vel! Porttitor hac sociis, nec nunc phasellus urna aliquet pid, tempor cursus. Tristique dignissim cum eu.</p>
             </article>
@@ -50,8 +52,8 @@
              <div data-role="navbar">
                 <ul>
                     <li><a href="#how-to" class="ui-btn-active ui-state-persist">How To<br />&nbsp;</a></li>
-                    <li><a href="#initial-survey">Initial<br />Survey</a></li>
-                    <li><a href="#advanced-survey">Advanced<br />Survey</a></li>
+                    <li><a href="#govscore">Govscore</a></li>
+                    <li><a href="#advanced-govscore">Advanced<br />Govscore</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- footer -->
@@ -59,11 +61,11 @@
     </div><!-- page -->
 
 
-    <!-- Initial Survey page -->
-    <div data-role="page" id="initial-survey" data-title="Initial Survey" data-theme="c">
+    <!-- Govscore page -->
+    <div data-role="page" id="govscore" data-title="Govscore" data-theme="c">
 
         <div data-role="header" data-theme="c">
-            <h1>Initial Survey</h1>
+            <h1>Govscore</h1>
         </div><!-- header -->
 
         <div data-role="content" data-theme="c">
@@ -440,6 +442,7 @@
 
                     <button class="ui-btn ui-shadow" id="btnStore">Save</button>
                     <button id="retrieveData">Retrieve Data</button>
+                    <a href="#govscore-results" id="govscore-results" class="ui-btn">See Your Results</a>
                 <!--</form>-->
                 <div id="result"></div>
             </article>
@@ -449,8 +452,8 @@
              <div data-role="navbar">
                 <ul>
                     <li><a href="#how-to">How To<br />&nbsp;</a></li>
-                    <li><a href="#initial-survey" class="ui-btn-active ui-state-persist">Initial<br />Survey</a></li>
-                    <li><a href="#advanced-survey">Advanced<br />Survey</a></li>
+                    <li><a href="#govscore" class="ui-btn-active ui-state-persist">Govscore</a></li>
+                    <li><a href="#advanced-govscore">Advanced<br />Govscore</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- footer -->
@@ -458,11 +461,35 @@
     </div><!-- page -->
 
 
-     <!-- Advanced Survey -->
-    <div data-role="page" id="advanced-survey" data-title="Advanced Survey" data-theme="c">
+    <!-- Govscore Results -->
+    <div data-role="page" id="govscore-results" data-title="Govscore Results" data-theme="c">
 
         <div data-role="header" data-theme="c">
-            <h1>Advanced Survey</h1>
+            <h1>Govscore Results</h1>
+        </div><!-- header -->
+
+        <div data-role="content" data-theme="c">
+            <div class="is-results"
+        </div><!-- content -->
+
+        <div data-role="footer" data-position="fixed">
+             <div data-role="navbar">
+                <ul>
+                    <li><a href="#how-to">How To<br />&nbsp;</a></li>
+                    <li><a href="#govscore">Govscore</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
+                </ul>
+            </div><!-- /navbar -->
+        </div><!-- footer -->
+
+    </div><!-- page -->
+
+
+     <!-- Advanced Govscore -->
+    <div data-role="page" id="advanced-govscore" data-title="Advanced Govscore" data-theme="c">
+
+        <div data-role="header" data-theme="c">
+            <h1>Advanced Govscore</h1>
         </div><!-- header -->
 
         <div data-role="content" data-theme="c">
@@ -478,8 +505,8 @@
              <div data-role="navbar">
                 <ul>
                     <li><a href="#how-to">How To<br />&nbsp;</a></li>
-                    <li><a href="#initial-survey">Initial<br />Survey</a></li>
-                    <li><a href="#advanced-survey" class="ui-btn-active ui-state-persist">Advanced<br />Survey</a></li>
+                    <li><a href="#govscore">Govscore</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- footer -->
@@ -573,8 +600,8 @@
              <div data-role="navbar">
                 <ul>
                     <li><a href="#how-to">How To<br />&nbsp;</a></li>
-                    <li><a href="#initial-survey">Initial<br />Survey</a></li>
-                    <li><a href="#advanced-survey" class="ui-btn-active ui-state-persist">Advanced<br />Survey</a></li>
+                    <li><a href="#govscore">Govscore</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
                 </ul>
             </div><!-- /navbar -->
 
@@ -598,8 +625,8 @@
              <div data-role="navbar">
                 <ul>
                     <li><a href="#how-to">How To<br />&nbsp;</a></li>
-                    <li><a href="#initial-survey">Initial<br />Survey</a></li>
-                    <li><a href="#advanced-survey" class="ui-btn-active ui-state-persist">Advanced<br />Survey</a></li>
+                    <li><a href="#govscore">Govscore</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- footer -->
@@ -621,8 +648,8 @@
              <div data-role="navbar">
                 <ul>
                     <li><a href="#how-to">How To<br />&nbsp;</a></li>
-                    <li><a href="#initial-survey">Initial<br />Survey</a></li>
-                    <li><a href="#advanced-survey" class="ui-btn-active ui-state-persist">Advanced<br />Survey</a></li>
+                    <li><a href="#govscore">Govscore</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- footer -->
@@ -645,8 +672,8 @@
              <div data-role="navbar">
                 <ul>
                     <li><a href="#how-to">How To<br />&nbsp;</a></li>
-                    <li><a href="#initial-survey">Initial<br />Survey</a></li>
-                    <li><a href="#advanced-survey" class="ui-btn-active ui-state-persist">Advanced<br />Survey</a></li>
+                    <li><a href="#govscore">Govscore</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- footer -->
@@ -668,8 +695,8 @@
              <div data-role="navbar">
                 <ul>
                     <li><a href="#how-to">How To<br />&nbsp;</a></li>
-                    <li><a href="#initial-survey">Initial<br />Survey</a></li>
-                    <li><a href="#advanced-survey" class="ui-btn-active ui-state-persist">Advanced<br />Survey</a></li>
+                    <li><a href="#govscore">Govscore</a></li>
+                    <li><a href="#advanced-govscore" class="ui-btn-active ui-state-persist">Advanced<br />Govscore</a></li>
                 </ul>
             </div><!-- /navbar -->
         </div><!-- footer -->

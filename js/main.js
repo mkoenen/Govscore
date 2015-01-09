@@ -33,6 +33,7 @@
 
 app.initialize();*/
 
+
 window.onload = function() {
     document.addEventListener("online", announce, false);
     document.addEventListener("deviceready", setbutton, false);
@@ -40,6 +41,8 @@ window.onload = function() {
     //document.addEventListener("deviceready", listenOpenClose, false);
     
 }
+
+var savedAlready = true;
 
 function announce() {
     alert("You are back online and savedAlready is" + savedAlready);
@@ -135,12 +138,9 @@ function savelocal() {
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
 
+    savedAlready = false
 
     checkConnection();
-
-    /*window.sessionStorage.setItem("first", first);
-    window.sessionStorage.setItem("last", last);
-    window.sessionStorage.setItem("email", email);*/
   
 }
 
@@ -182,12 +182,6 @@ function checkConnection() {
 }
 
 /*save to server -------------------------------------------------------------*/
-var savedAlready;
-if(savedAlready){
-    savedAlready =true;
-}else{
-    savedAlready = false;
-}
 
 
 function saveServer() {
@@ -275,8 +269,11 @@ function saveServer() {
 
 
 
-       xmlhttp.open('GET', url, true);
+        xmlhttp.open('GET', url, true);
         xmlhttp.send();
+
+        //add the button to the results page
+        document.getElementById("govscore-results").addClass("see");
 
         savedAlready = true;
         alert("saved now");
