@@ -138,8 +138,9 @@ function checkConnection() {
 
 function saveServer() {
     //first check if data has been saved to server already
-    var savedalready = window.localStorage.getItem("saved");
-    if (savedalready == false) {
+    var savedAlready = window.localStorage.getItem("saved");
+    alert(savedAlready);
+    if (savedAlready == false) {
         
         alert("saving to server");
 
