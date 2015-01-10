@@ -55,7 +55,7 @@ function savelocal() {
     var answer23 = $('input[name="question23"]:checked').val();
     var answer24 = $('input[name="question24"]:checked').val();
     var answer25 = $('input[name="question25"]:checked').val();
-    var saved = false;
+    var saved = "false";
 
 
     window.localStorage.setItem("date", cdate);
@@ -140,7 +140,7 @@ function saveServer() {
     //first check if data has been saved to server already
     var savedAlready = window.localStorage.getItem("saved");
     alert(savedAlready);
-    if (savedAlready == false) {
+    if (savedAlready == "false") {
         
         alert("saving to server");
 
@@ -196,7 +196,7 @@ function saveServer() {
 
         //add the button to the results page
         document.getElementById("govscore-results").addClass("see");
-        var saved = true
+        var saved = "true";
         window.localStorage.setItem("saved", saved);
         alert("saved now");
     }else{
