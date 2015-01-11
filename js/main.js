@@ -66,7 +66,7 @@ function saveIsClicked() {
 }
 
 /*save locally-----------------------------------------------*/
-function savelocal() {
+function savelocal(saved) {
     
     var cdate = new Date();
     var name = document.getElementById("name").value;
@@ -133,13 +133,15 @@ function savelocal() {
 
     //now that everything is saved check the connection
     checkConnection();
+    return saved:
 }
 
-function itsSaved() {
+function itsSaved(saved) {
     saved = "true";
     window.localStorage.setItem("saved", saved);
 
     showSaved();
+    return saved;
 }
 
 function retrieveData(){
