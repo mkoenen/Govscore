@@ -14,7 +14,7 @@ function setbutton() {
 
 }
 
-function alertDismissed() {
+/*function alertDismissed() {
     // do something
 }
 function vibrate() {
@@ -28,13 +28,13 @@ function showAlert() {
         'Info',            // title
         'That\'s OK'                  // buttonName
     );
-}
+}*/
 
 //announce that app is back online and save
 function announce() {
     alert("You are back online");//temp
-    showAlert();
-    vibrate();
+   /* showAlert();
+    vibrate();*/
 }
 
 //first save all data locally
