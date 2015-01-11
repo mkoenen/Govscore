@@ -14,9 +14,16 @@ function setbutton() {
 
 }
 
+function alertDismissed() {
+    // do something
+}
+
 //announce that app is back online and save
 function announce() {
     alert("You are back online");//temp
+
+
+    navigator.notification.alert("You are back online", alertDismissed, "Info", "That's OK");
     saveServer();
 }
 
@@ -196,6 +203,13 @@ function saveServer() {
         xmlhttp.open('GET', url, true);
         xmlhttp.send();
 
+        document.getElementById("govscore-results").addClass("see");
+
+        var onServer = "true";
+        window.localStorage.setItem("saved", onServer);
+        var savedNow = window.localStorage.getItem("saved");
+        alert("Saved to server is " + savedNow);
+
     }else{
         alert("saved previously");
     }
@@ -211,10 +225,7 @@ function serverResponse() {
         //add the button to the results page by adding the class "see" which will display the button
         document.getElementById("govscore-results").addClass("see");
 
-        var onServer = "true";
-        window.localStorage.setItem("saved", onServer);
-        var savedNow = window.localStorage.getItem("saved");
-        alert("Saved to server is " + savedNow);
+        
     }
 
 }
