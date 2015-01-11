@@ -103,7 +103,7 @@ function retrieveData(){
     var organization = window.localStorage.getItem("organization");
     var answer1 = window.localStorage.getItem("answer1");
     var testingSaved = window.localStorage.getItem("saved");
-    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />organization: " + organization + "<br />Answer1: " + answer1 + "<br />";
+    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />organization: " + organization + "<br />Answer1: " + answer1 + "<br />Saved: " + testingSaved +"<br />";
     document.getElementById("retrieveData").innerHTML = output;
 }
 
