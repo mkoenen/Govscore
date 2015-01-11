@@ -38,7 +38,7 @@ function showOnline() {
         'Dismiss'                  // buttonName
     );
 }
-function announceResume() {
+function announcingResume() {
     navigator.notification.alert(
         'You are resuming',      // message
         'Info',                     // title
@@ -66,6 +66,7 @@ function announce() {
 }
 
 function announceResume() {
+    announcingResume();
     checkConnection();
 }
 
