@@ -30,7 +30,7 @@ function showAlert() {
 function announce() {
     
     showAlert();
-    /*vibrate();*/
+    vibrate();
 }
 
 //first save all data locally
