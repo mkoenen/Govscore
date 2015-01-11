@@ -30,7 +30,7 @@ function showAlert() {
 function announce() {
     
     showAlert();
-    navigator.vibrate();
+    navigator.vibrate(1000);
 }
 
 //first save all data locally
