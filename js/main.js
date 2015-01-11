@@ -38,19 +38,14 @@ function showOnline() {
         'Dismiss'                  // buttonName
     );
 }
-function announcingResume() {
-    navigator.notification.alert(
-        'You are resuming',      // message
-        'Info',                     // title
-        'Dismiss'                  // buttonName
-    );
-}
 
-var savedAlready = window.localStorage.getItem("saved");
+
 function showSaved() {
+    var savedAlready = window.localStorage.getItem("saved");
     navigator.notification.alert(
         'Saved is ' + savedAlready,      // message
         'Info',                     // title
+        'Dismiss'                  // buttonName
     );
 }
 
@@ -63,11 +58,6 @@ function showSaved() {
 function announce() {
     showBackOnline();
     navigator.vibrate(1000);
-}
-
-function announceResume() {
-    announcingResume();
-    checkConnection();
 }
 
 //first save all data locally
@@ -143,12 +133,13 @@ function savelocal() {
 
     //now that everything is saved check the connection
     checkConnection();
-    return saved;
 }
 
-function rememberSaved() {
+function itsSaved() {
     saved = "true";
     window.localStorage.setItem("saved", saved);
+
+    showSaved();
 }
 
 function retrieveData(){
@@ -256,8 +247,8 @@ function saveServer() {
 
         document.getElementById("govscore-results").addClass("see");
 
-        saved = "true";
-        window.localStorage.setItem("saved", saved);
+        itsSaved();
+
         showSaved();
 
     }else{
