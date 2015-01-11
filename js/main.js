@@ -14,12 +14,9 @@ function setbutton() {
 
 }
 
-/*function alertDismissed() {
-    // do something
-}
 function vibrate() {
-   // navigator.notification.vibrate(1000);
- }*/
+    navigator.notification.vibrate(1000);
+ }
 
 function showAlert() {
     navigator.notification.alert(
@@ -31,7 +28,7 @@ function showAlert() {
 
 //announce that app is back online and save
 function announce() {
-    alert("You are back online");//temp
+    
     showAlert();
     /*vibrate();*/
 }
