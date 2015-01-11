@@ -138,7 +138,7 @@ function checkConnection() {
 /*save to server -------------------------------------------------------------*/
 
 
-function saveServer(saved) {
+function saveServer() {
     //first check if data has been saved to server already
     var savedAlready = window.localStorage.getItem("saved");
     alert("checked local storage and found that \'saved\' is" + savedAlready);
@@ -196,13 +196,6 @@ function saveServer(saved) {
         xmlhttp.open('GET', url, true);
         xmlhttp.send();
 
-        //add the button to the results page by adding the class "see" which will display the button
-        document.getElementById("govscore-results").addClass("see");
-        saved = "true";
-        window.localStorage.setItem("saved", saved);
-        savedNow = window.localStorage.getItem("saved");
-        alert("Saved to server is " + savedNow);
-        return saved;
     }else{
         alert("saved previously");
     }
@@ -215,6 +208,13 @@ function serverResponse() {
         if(xmlhttp.responseText) {
         alert("On server");
         }
+        //add the button to the results page by adding the class "see" which will display the button
+        document.getElementById("govscore-results").addClass("see");
+
+        var onServer = "true";
+        window.localStorage.setItem("saved", onServer);
+        var savedNow = window.localStorage.getItem("saved");
+        alert("Saved to server is " + savedNow);
     }
 
 }
