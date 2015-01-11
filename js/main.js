@@ -7,6 +7,10 @@ window.onload = function() {
     document.addEventListener("deviceready", checkConnection, true); 
 
 }
+
+var saved
+
+
  //listen for click events      
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
@@ -14,22 +18,43 @@ function setbutton() {
 
 }
 
+/*----------------- Notifications ---------------*/
 function vibrate() {
     navigator.notification.vibrate(1000);
  }
 
-function showAlert() {
+function showBackOnline() {
     navigator.notification.alert(
-        'You are back online',  // message
-        'Info',            // title
-        'That\'s OK'                  // buttonName
+        'You are back online',      // message
+        'Info',                     // title
+        'Dismiss'                  // buttonName
+    );
+}
+function showOnline() {
+    navigator.notification.alert(
+        'You are online',      // message
+        'Info',                     // title
+        'Dismiss'                  // buttonName
     );
 }
 
+var savedAlready = window.localStorage.getItem("saved");
+function showSaved() {
+    navigator.notification.alert(
+        'Saved is' + savedAlready,      // message
+        'Info',                     // title
+        'Dismiss'                  // buttonName
+    );
+}
+
+
+
+/*-----------------------------------------------*/
+
+
 //announce that app is back online and save
 function announce() {
-    
-    showAlert();
+    showBackOnline();
     navigator.vibrate(1000);
 }
 
@@ -70,7 +95,7 @@ function savelocal() {
     var answer23 = $('input[name="question23"]:checked').val();
     var answer24 = $('input[name="question24"]:checked').val();
     var answer25 = $('input[name="question25"]:checked').val();
-    var saved = "false";
+    saved = "false";
 
 
     window.localStorage.setItem("date", cdate);
@@ -109,14 +134,19 @@ function savelocal() {
     return saved;
 }
 
+function rememberSaved() {
+    saved = "true";
+    window.localStorage.setItem("saved", saved);
+}
+
 function retrieveData(){
     var cdate = window.localStorage.getItem("date");
     var name = window.localStorage.getItem("name");
     var email = window.localStorage.getItem("email");
     var organization = window.localStorage.getItem("organization");
     var answer1 = window.localStorage.getItem("answer1");
-    var testingSaved = window.localStorage.getItem("saved");
-    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />organization: " + organization + "<br />Answer1: " + answer1 + "<br />Saved: " + testingSaved +"<br />";
+    var savedFromLocal = window.localStorage.getItem("saved");
+    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />organization: " + organization + "<br />Answer1: " + answer1 + "<br />Saved: " + savedFromLocal +"<br />";
     document.getElementById("retrieveData").innerHTML = output;
 }
 
@@ -138,8 +168,11 @@ function checkConnection() {
     alert('Connection type: ' + states[networkState]);
 
     if( states[networkState] !== 'No network connection'){
-        alert('We have a connection'); //temp
-        saveServer(saved);
+        showOnline(); //temp
+        var savedAlready = window.localStorage.getItem("saved");
+        if (savedAlready == "false"){
+            saveServer();
+        }
         
     }else{
         alert("data has been saved locally, but there is no internet connection to save to server");//temp
@@ -153,9 +186,9 @@ function checkConnection() {
 
 function saveServer() {
     //first check if data has been saved to server already
-    var savedAlready = window.localStorage.getItem("saved");
-    alert("checked local storage and found that \'saved\' is" + savedAlready);
-    if (savedAlready == "false") {
+    showSaved();
+
+    if (saved == "false") {
         
         alert("saving to server");//temp
 
@@ -211,10 +244,9 @@ function saveServer() {
 
         document.getElementById("govscore-results").addClass("see");
 
-        var onServer = "true";
-        window.localStorage.setItem("saved", onServer);
-        var savedNow = window.localStorage.getItem("saved");
-        alert("Saved to server is " + savedNow);
+        saved = "true";
+        window.localStorage.setItem("saved", saved);
+        showSaved();
 
     }else{
         alert("saved previously");
