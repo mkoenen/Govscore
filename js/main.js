@@ -17,14 +17,19 @@ function setbutton() {
 function alertDismissed() {
     // do something
 }
+function showAlert() {
+        navigator.notification.alert(
+            'You are back online',  // message
+            alertDismissed,         // callback
+            'Info',            // title
+            'That\'s OK'                  // buttonName
+        );
 
 //announce that app is back online and save
 function announce() {
     alert("You are back online");//temp
+    showAlert();
 
-
-    navigator.notification.alert("You are back online", alertDismissed, "Info", "That's OK");
-    saveServer();
 }
 
 //first save all data locally
