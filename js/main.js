@@ -4,7 +4,8 @@ window.onload = function() {
     document.addEventListener("online", announce, false);
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", checkConnection, true); 
+    //document.addEventListener("deviceready", checkConnection, true); 
+    document.addEventListener("resume", announceResume, false);
 
 }
 
@@ -37,13 +38,19 @@ function showOnline() {
         'Dismiss'                  // buttonName
     );
 }
+function announceResume() {
+    navigator.notification.alert(
+        'You are resuming',      // message
+        'Info',                     // title
+        'Dismiss'                  // buttonName
+    );
+}
 
 var savedAlready = window.localStorage.getItem("saved");
 function showSaved() {
     navigator.notification.alert(
-        'Saved is' + savedAlready,      // message
+        'Saved is ' + savedAlready,      // message
         'Info',                     // title
-        'Dismiss'                  // buttonName
     );
 }
 
@@ -56,6 +63,10 @@ function showSaved() {
 function announce() {
     showBackOnline();
     navigator.vibrate(1000);
+}
+
+function announceResume() {
+    checkConnection();
 }
 
 //first save all data locally
