@@ -58,6 +58,12 @@ function showSaved() {
 function announce() {
     showBackOnline();
     navigator.vibrate(1000);
+    saveServer();
+}
+function announceResume() {
+    showBackOnline();
+    navigator.vibrate(1000);
+    saveServer();
 }
 
 //first save all data locally
