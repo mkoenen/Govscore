@@ -1,11 +1,11 @@
 //adds event listeners to the dom?
 window.onload = function() {
 
-    document.addEventListener("online", announce, false);
+    document.addEventListener("online", saveServer, false);
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", checkConnection, true); 
-    document.addEventListener("resume", announceResume, false);
+    //document.addEventListener("resume", announceResume, false);
 
 }
 
@@ -14,7 +14,7 @@ var saved
 
  //listen for click events      
 function setbutton() {
-    document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
+    document.getElementById('btnStore').addEventListener('click', savelocal, false);
     document.getElementById("retrieveData").addEventListener("click", retrieveData, false); //temp: checks if data has been saved
 
 }
@@ -31,51 +31,26 @@ function showBackOnline() {
         'Dismiss'                  // buttonName
     );
 }
-function showOnline() {
+function afterSaveLocal() {
     navigator.notification.alert(
-        'You are online',      // message
-        'Info',                     // title
-        'Dismiss'                  // buttonName
+        'Your data has been stored on your device and will be saved on the server when you are back online.',
+        'Info title',
+        'Info button'
     );
 }
 
 
-function showSaved() {
-    var savedAlready = window.localStorage.getItem("saved");
+function afterSavedServer() {
     navigator.notification.alert(
-        'Saved is ' + savedAlready,      // message
-        'Info',                     // title
-        'Dismiss'                  // buttonName
+        'Your data has been saved. Thank you for your submission.',
+        'Info title',
+        'Info button'
     );
 }
 
-
-
-/*-----------------------------------------------*/
-
-
-//announce that app is back online and save
-function announce() {
-    alert("coming from online");
-    navigator.vibrate(1000);
-
-    saveServer();
-    
-}
-function announceResume() {
-    alert("coming from online");
-    navigator.vibrate(1000);
-    
-    saveServer();
-
-}
-
-//first save all data locally
-function saveIsClicked() {
-    savelocal();
-}
 
 /*save locally-----------------------------------------------*/
+
 function savelocal() {
     
     var cdate = new Date();
@@ -140,18 +115,15 @@ function savelocal() {
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
 
+
     //now that everything is saved check the connection
     checkConnection();
+
+    afterSaveLocal();
 }
 
-function itsSaved() {
-    saved = "true";
-    window.localStorage.setItem("saved", saved);
 
-    showSaved();
-}
-
-function retrieveData(){
+function result(){
     var cdate = window.localStorage.getItem("date");
     var name = window.localStorage.getItem("name");
     var email = window.localStorage.getItem("email");
@@ -261,7 +233,9 @@ function saveServer() {
 
         isSaved();
 
-        showSaved();
+        afterSavedServer();
+
+        
 
     }else{
         alert("saved previously");
