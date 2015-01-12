@@ -171,7 +171,7 @@ function checkConnection() {
 
 function saveServer() {
 
-     getSaved = window.localStorage.getItem("saved");
+    var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
     alert( "saved is " + getSaved + "and name is " + savedName); //temp
 
