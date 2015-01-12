@@ -40,13 +40,9 @@ width: 60%;
 .questions {
 	display: none;
 }
-/*div#open-cq1, div#close-cq1 {
-background: rgba(0, 0, 0, 0);
-border: 0;
-width: 30%;
-padding: 0;
+#govscore-results {
+display: none;
 }
-div#open-cq1 .ui-radio,
-div#close-cq1 .ui-radio{
-width: 100%;
-} */
+#govscore-results.see {
+display: block;
+}
