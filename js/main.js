@@ -130,7 +130,7 @@ function savelocal() {
 
 function resultsButton() {
 
-    var mybutton = document.getElementById('govscore-results');
+    var mybutton = document.getElementsByClassName('govscore-results');
     alert(mybutton.className);
     mybutton.className = mybutton.className + " see";
     alert(mybutton.className);
