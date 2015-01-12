@@ -128,7 +128,8 @@ function savelocal() {
 }
 
 function resultsButton() {
-    document.getElementById('govscore-results').addClass('see');
+    var mybutton = document.getElementById('govscore-results');
+    mybutton.className = mybutton.className + " see";
 }
 
 function result(){
