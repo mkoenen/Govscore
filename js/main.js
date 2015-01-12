@@ -58,12 +58,23 @@ function showSaved() {
 function announce() {
     showBackOnline();
     navigator.vibrate(1000);
-    saveServer();
+    var savedAlready = window.localStorage.getItem("name");
+    if(savedAlready == NULL) {
+        //do nothing
+    }else{
+        saveServer();
+    }
+    
 }
 function announceResume() {
     showBackOnline();
     navigator.vibrate(1000);
-    saveServer();
+    var savedAlready = window.localStorage.getItem("name");
+    if(savedAlready == NULL) {
+        //do nothing
+    }else{
+        saveServer();
+    }s
 }
 
 //first save all data locally
