@@ -1,6 +1,6 @@
 //adds event listeners to the dom?
 window.onload = function() {
-    window.setTimeout(beonline, 3000);            //set a timer for the online finction so it doesn't fire too repidly and repeatedly
+    //window.setTimeout(beonline, 3000);            //set a timer for the online finction so it doesn't fire too repidly and repeatedly
    // document.addEventListener("online", checkOnline, true);
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
