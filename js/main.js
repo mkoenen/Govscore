@@ -123,7 +123,7 @@ function savelocal() {
 
     //send saved locally alert
     messageAfterSaveLocal();
-    //resultsButton();
+    resultsButton();
     //$( "div" ).addClass( "see" );
 
 }
