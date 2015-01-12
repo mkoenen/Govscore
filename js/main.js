@@ -5,7 +5,7 @@ window.onload = function() {
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", checkConnection, true); 
-    //document.addEventListener("resume", announceResume, false);
+    document.addEventListener("resume", saveServer, false);
 
 }
 
@@ -235,7 +235,7 @@ function saveServer() {
 
         afterSavedServer();
 
-        
+
 
     }else{
         alert("saved previously");
