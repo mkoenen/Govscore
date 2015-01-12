@@ -1,4 +1,3 @@
-//adds event listeners to the dom?
 function init() {
     window.setTimeout(beonline, 3000);                              //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
@@ -26,13 +25,6 @@ function setbutton() {
 /*----------------- Notifications ---------------*/
 
 
-function showBackOnline() {
-    navigator.notification.alert(
-        'You are back online',      // message
-        'Info',                     // title
-        'Dismiss'                  // buttonName
-    );
-}
 function messageAfterSaveLocal() {
     navigator.notification.alert(
         'Your data has been stored on your device and will be saved on the server when you are back online.',
@@ -45,6 +37,14 @@ function messageAfterSaveLocal() {
 function afterSavedServer() {
     navigator.notification.alert(
         'Your data has been saved. Thank you for your submission.',
+        'Info title',
+        'Update'
+    );
+}
+
+function alreadySaved() {
+    navigator.notification.alert (
+        'RYour data has already been saved',
         'Info title',
         'Update'
     );
@@ -121,7 +121,10 @@ function savelocal() {
     //now that everything is saved check the connection
     checkConnection();
 
+    //send saved locally alert
     messageAfterSaveLocal();
+
+    document.getElementById("govscore-results").addClass("see");
 }
 
 
@@ -151,7 +154,7 @@ function checkConnection() {
     states[Connection.CELL_4G]  = 'Cell 4G connection';
     states[Connection.NONE]     = 'No network connection';
 
-    alert('Connection type: ' + states[networkState]);
+    //alert('Connection type: ' + states[networkState]);
 
     if( states[networkState] !== 'No network connection'){
 
@@ -171,11 +174,10 @@ function checkConnection() {
 
 function saveServer() {
     //first check if data has been saved to server already
-    alert('going to save to server now');
 
     var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
-    alert( "saved is " + getSaved + "and name is " + savedName); //temp
+    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
 
     if (getSaved !== "true" && savedName !== null ) {
 
@@ -227,11 +229,9 @@ function saveServer() {
         url += "&answer1=" + answer1;
         
 
-
         xmlhttp.open('GET', url, true);
         xmlhttp.send();
 
-        //document.getElementById("govscore-results").addClass("see");
 
         isSaved();
 
@@ -240,17 +240,20 @@ function saveServer() {
 
 
     }else{
-        alert("saved previously");
+
+        alreadySaved();
+
     }
 
 }
 
 function serverResponse() {
     if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        //document.getElementById('result').innerHTML = xmlhttp.responseText;
+        
         if(xmlhttp.responseText) {
-        alert("Response : On server");
-        document.getElementById("govscore-results").addClass("see");
+        
+            afterSavedServer();
+        
         }
         //add the button to the results page by adding the class "see" which will display the button
         
