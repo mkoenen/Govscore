@@ -170,6 +170,8 @@ function checkConnection() {
 
 
 function saveServer() {
+    //first check if data has been saved to server already
+    alert('going to save to server now');
 
     var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
@@ -177,10 +179,10 @@ function saveServer() {
 
     if (getSaved !== "true" && savedName !== null ) {
 
-        /*var xmlhttp;
+        var xmlhttp;
     
         xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = serverResponse;*/
+        xmlhttp.onreadystatechange = serverResponse;
     
          //get the data from local storage
         var cdate = window.localStorage.getItem("date");
@@ -215,15 +217,10 @@ function saveServer() {
 
         saved = window.localStorage.setItem("saved", "true");
 
-        var allAnswers = [ record_date: cdate, name: name, email: email, organization: organization, answer1: answer1 ];
+        //var data = { 'record_date': '324235', 'name':'mk",'email': 'km@sdgsd", 'organization": 'org1", "answer1": "very"};
         
-        $.ajax({
-            url: "http://margaretekoenen.com/store.php",
-            type: "POST",
-            data: {myArray : allAnswers}
-        });
 
-        /*var url ="http://margaretekoenen.com/store.php?date=" + cdate;
+        var url ="http://margaretekoenen.com/store.php?date=" + cdate;
         url += "&name=" + name;
         url += "&email=" + email;
         url += "&organization=" + organization;
@@ -232,13 +229,15 @@ function saveServer() {
 
 
         xmlhttp.open('GET', url, true);
-        xmlhttp.send();*/
+        xmlhttp.send();
 
         //document.getElementById("govscore-results").addClass("see");
 
         isSaved();
 
         afterSavedServer();
+
+
 
     }else{
         alert("saved previously");
