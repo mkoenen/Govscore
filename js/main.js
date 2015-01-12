@@ -170,7 +170,7 @@ function checkConnection() {
 
 
 function saveServer() {
-    
+
      getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
     alert( "saved is " + getSaved + "and name is " + savedName); //temp
@@ -218,7 +218,7 @@ function saveServer() {
         var allAnswers = [ record_date: cdate, name: name, email: email, organization: organization, answer1: answer1 ];
         
         $.ajax({
-            url: "/http://margaretekoenen.com/store.php",
+            url: "http://margaretekoenen.com/store.php",
             type: "POST",
             data: {myArray : allAnswers}
         });
