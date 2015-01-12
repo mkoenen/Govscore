@@ -217,10 +217,15 @@ function saveServer() {
 
         saved = window.localStorage.setItem("saved", "true");
 
-        //var data = { 'record_date': '324235', 'name':'mk",'email': 'km@sdgsd", 'organization": 'org1", "answer1": "very"};
+        var allData = { 'date': cdate, 'name':name,'email': email, 'organization': organization, 'answer1': answer };
         
+        $.ajax({
+            url: "http://margaretekoenen.com",
+            type: "POST",
+            data: {myArray : allData}
+        });
 
-        var url ="http://margaretekoenen.com/store.php?date=" + cdate;
+        /*var url ="http://margaretekoenen.com/store.php?date=" + cdate;
         url += "&name=" + name;
         url += "&email=" + email;
         url += "&organization=" + organization;
@@ -229,7 +234,7 @@ function saveServer() {
 
 
         xmlhttp.open('GET', url, true);
-        xmlhttp.send();
+        xmlhttp.send();*/
 
         //document.getElementById("govscore-results").addClass("see");
 
