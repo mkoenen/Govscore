@@ -3,7 +3,7 @@ window.onload = function() {
     window.setTimeout(beonline, 6000);
    // document.addEventListener("online", checkOnline, true);
     document.addEventListener("deviceready", setbutton, false);
-    document.addEventListener("deviceready", initPushwoosh, true);
+    //document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", checkConnection, true); 
     document.addEventListener("resume", checkEvent, false);
 
@@ -17,6 +17,7 @@ function checkEvent(){
 }
 function checkOnline(){
     alert("online");
+    saveServer();
 }
 
 var saved
