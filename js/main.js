@@ -236,8 +236,6 @@ function saveServer() {
         xmlhttp.send();
 
 
-        isSaved();
-
         afterSavedServer();
 
 
