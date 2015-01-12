@@ -1,7 +1,7 @@
 //adds event listeners to the dom?
 window.onload = function() {
 
-    document.addEventListener("online", checkOnline, false);
+    document.addEventListener("online", checkOnline, true);
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", checkConnection, true); 
