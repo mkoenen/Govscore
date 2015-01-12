@@ -9,7 +9,7 @@ window.onload = function() {
 
 //check if online according to the above interval
 function beonline() {
-   document.addEventListener("online", checkOnline, true); 
+   document.addEventListener("online", saveServer, true); 
 }
 
 
@@ -37,7 +37,7 @@ function messageAfterSaveLocal() {
     navigator.notification.alert(
         'Your data has been stored on your device and will be saved on the server when you are back online.',
         'Info title',
-        'Info button'
+        'Update'
     );
 }
 
@@ -46,7 +46,7 @@ function afterSavedServer() {
     navigator.notification.alert(
         'Your data has been saved. Thank you for your submission.',
         'Info title',
-        'Info button'
+        'Update'
     );
 }
 
