@@ -58,23 +58,16 @@ function showSaved() {
 function announce() {
     alert("coming from online");
     navigator.vibrate(1000);
-    var savedAlready = window.localStorage.getItem("name");
-    if(savedAlready == NULL) {
-        //do nothing
-    }else{
-        saveServer();
-    }
+
+    saveServer();
     
 }
 function announceResume() {
     alert("coming from online");
     navigator.vibrate(1000);
-    var savedAlready = window.localStorage.getItem("name");
-    if(savedAlready == NULL) {
-        //do nothing
-    }else{
-        saveServer();
-    }s
+    
+    saveServer();
+
 }
 
 //first save all data locally
@@ -208,8 +201,9 @@ function saveServer() {
     alert('going to save to server now');
 
     var savedNow = window.localStorage.getItem("saved");
+    var savedName = window.localStorage.getItem("name");
     alert( savedNow );
-    if (saved !== "true") {
+    if (savedNow !== "true" && savedName !== null ) {
         
         alert("saving to server");//temp
 
