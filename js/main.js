@@ -123,15 +123,17 @@ function savelocal() {
 
     //send saved locally alert
     messageAfterSaveLocal();
-    //resultsButton();
-    $( "#govscore-results" ).addClass( "see" );
+    resultsButton();
+    //$( "div" ).addClass( "see" );
 
 }
 
-/*function resultsButton() {
+function resultsButton() {
+    
     var mybutton = document.getElementById('govscore-results');
-    mybutton.className = mybutton.className + " see";
-}*/
+    alert(mybutton);
+    mybutton.className = mybutton + " see";
+}
 
 function result(){
     var cdate = window.localStorage.getItem("date");
