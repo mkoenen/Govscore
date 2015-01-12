@@ -173,11 +173,11 @@ function saveServer() {
     //first check if data has been saved to server already
     alert('going to save to server now');
 
-    var savedNow = window.localStorage.getItem("saved");
+    var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
-    alert( "saved is " + savedNow + "and name is " + savedName); //temp
+    alert( "saved is " + getSaved + "and name is " + savedName); //temp
 
-    if (savedNow !== "true" && savedName !== null ) {
+    if (getSaved !== "true" && savedName !== null ) {
 
         var xmlhttp;
     
@@ -214,6 +214,8 @@ function saveServer() {
         var answer23 = window.localStorage.getItem("answer23");
         var answer24 = window.localStorage.getItem("answer24");
         var answer25 = window.localStorage.getItem("answer25");
+
+        saved = window.localStorage.setItem("saved", "true");
 
         //var data = { 'record_date': '324235', 'name':'mk",'email': 'km@sdgsd", 'organization": 'org1", "answer1": "very"};
         
