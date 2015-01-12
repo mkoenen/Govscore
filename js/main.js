@@ -56,7 +56,7 @@ function showSaved() {
 
 //announce that app is back online and save
 function announce() {
-    showBackOnline();
+    alert("coming from online");
     navigator.vibrate(1000);
     var savedAlready = window.localStorage.getItem("name");
     if(savedAlready == NULL) {
@@ -67,7 +67,7 @@ function announce() {
     
 }
 function announceResume() {
-    showBackOnline();
+    alert("coming from online");
     navigator.vibrate(1000);
     var savedAlready = window.localStorage.getItem("name");
     if(savedAlready == NULL) {
