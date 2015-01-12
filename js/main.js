@@ -1,5 +1,5 @@
 //adds event listeners to the dom?
-window.onload = function() {
+function init() {
     window.setTimeout(beonline, 3000);                              //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
