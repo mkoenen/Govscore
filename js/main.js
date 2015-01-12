@@ -1,23 +1,12 @@
 //adds event listeners to the dom?
 window.onload = function() {
-    window.setTimeout(beonline, 3000);
-   // document.addEventListener("online", checkOnline, true);
+
+    document.addEventListener("online", announce, false);
     document.addEventListener("deviceready", setbutton, false);
-    //document.addEventListener("deviceready", initPushwoosh, true);
+    document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", checkConnection, true); 
-    document.addEventListener("resume", checkEvent, false);
+    document.addEventListener("resume", announceResume, false);
 
-}
-function beonline() {
-   document.addEventListener("online", checkOnline, true); 
-}
-
-function checkEvent(){
-    alert("resuming");
-}
-function checkOnline(){
-    alert("online");
-    saveServer();
 }
 
 var saved
@@ -25,7 +14,7 @@ var saved
 
  //listen for click events      
 function setbutton() {
-    document.getElementById('btnStore').addEventListener('click', savelocal, false);
+    document.getElementById('btnStore').addEventListener('click', saveIsClicked, false);
     document.getElementById("retrieveData").addEventListener("click", retrieveData, false); //temp: checks if data has been saved
 
 }
@@ -42,26 +31,51 @@ function showBackOnline() {
         'Dismiss'                  // buttonName
     );
 }
-function afterSaveLocal() {
+function showOnline() {
     navigator.notification.alert(
-        'Your data has been stored on your device and will be saved on the server when you are back online.',
-        'Info title',
-        'Info button'
+        'You are online',      // message
+        'Info',                     // title
+        'Dismiss'                  // buttonName
     );
 }
 
 
-function afterSavedServer() {
+function showSaved() {
+    var savedAlready = window.localStorage.getItem("saved");
     navigator.notification.alert(
-        'Your data has been saved. Thank you for your submission.',
-        'Info title',
-        'Info button'
+        'Saved is ' + savedAlready,      // message
+        'Info',                     // title
+        'Dismiss'                  // buttonName
     );
 }
 
+
+
+/*-----------------------------------------------*/
+
+
+//announce that app is back online and save
+function announce() {
+    alert("coming from online");
+    navigator.vibrate(1000);
+
+    saveServer();
+    
+}
+function announceResume() {
+    alert("coming from online");
+    navigator.vibrate(1000);
+    
+    saveServer();
+
+}
+
+//first save all data locally
+function saveIsClicked() {
+    savelocal();
+}
 
 /*save locally-----------------------------------------------*/
-
 function savelocal() {
     
     var cdate = new Date();
@@ -126,15 +140,18 @@ function savelocal() {
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
 
-
     //now that everything is saved check the connection
     checkConnection();
-
-    afterSaveLocal();
 }
 
+function itsSaved() {
+    saved = "true";
+    window.localStorage.setItem("saved", saved);
 
-function result(){
+    showSaved();
+}
+
+function retrieveData(){
     var cdate = window.localStorage.getItem("date");
     var name = window.localStorage.getItem("name");
     var email = window.localStorage.getItem("email");
@@ -244,9 +261,7 @@ function saveServer() {
 
         isSaved();
 
-        afterSavedServer();
-
-
+        showSaved();
 
     }else{
         alert("saved previously");
