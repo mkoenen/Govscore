@@ -27,7 +27,7 @@ function setbutton() {
 
 function messageAfterSaveLocal() {
     navigator.notification.alert(
-        'Your data has been stored on your device and will be saved on the server when you are back online.',
+        'Your data has been stored on your device and will be moved to the server as soon as possible.',
         'Info title',
         'Update'
     );
@@ -44,7 +44,7 @@ function afterSavedServer() {
 
 function alreadySaved() {
     navigator.notification.alert (
-        'RYour data has already been saved',
+        'Your data has already been saved',
         'Info title',
         'Update'
     );
