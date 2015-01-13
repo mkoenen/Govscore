@@ -714,27 +714,7 @@
     <!--<script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
     <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
     <script type="text/javascript" src="js/main.js"></script>
-    <script>
-    $('#btnStore').bind('click', function(e)  {
-    e.preventDefault();
-    $.ajax({
-    type       : "POST",
-    url        : "http://margaretekoenen.com/store",
-    crossDomain: true,
-    beforeSend : function() {$.mobile.loading('show')},
-    complete   : function() {$.mobile.loading('hide')},
-    data       : {username : 'subin', password : 'passwordx'},
-    dataType   : 'json',
-    success    : function(response) {
-        //console.error(JSON.stringify(response));
-        alert('Works!');
-    },
-    error      : function() {
-        //console.error("error");
-        alert('Now working!');                  
-    }
-});   
-</script>
+   
     <script>
             /*$(function(){
               $( ".open-cq" ).bind( "tap", tapHandler );

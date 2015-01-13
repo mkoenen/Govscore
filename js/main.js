@@ -224,7 +224,22 @@ function saveServer() {
         saved = window.localStorage.setItem("saved", "true");
 
         //var data = { 'record_date': '324235', 'name':'mk",'email': 'km@sdgsd", 'organization": 'org1", "answer1": "very"};
-        
+        $.ajax({
+    type       : "POST",
+    url        : "http://margaretekoenen.com/store",
+    crossDomain: true,
+    beforeSend : function() {$.mobile.loading('show')},
+    complete   : function() {$.mobile.loading('hide')},
+    data       : {username : 'subin', password : 'passwordx'},
+    dataType   : 'json',
+    success    : function(response) {
+        //console.error(JSON.stringify(response));
+        alert('Works!');
+    },
+    error      : function() {
+        //console.error("error");
+        alert('Now working!');                  
+    }
 
         /*var url ="http://margaretekoenen.com/store.php?date=" + cdate;
         url += "&name=" + name;
