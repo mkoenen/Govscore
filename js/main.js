@@ -1,7 +1,7 @@
 /* Events -----------------------------------------*/
 function init() {
     window.setTimeout(beonline, 3000);                              //limit how fast the online event can fire
-    document.addEventListener("deviceready", setbutton, false);
+    //document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("resume", checkEvent, false);
@@ -19,7 +19,7 @@ var saved
 
  //listen for click events      
 function setbutton() {
-    document.getElementById('btnStore').addEventListener('click', savelocal, false);
+    //document.getElementById('btnStore').addEventListener('click', savelocal, false);
     document.getElementById("retrieveData").addEventListener("click", result, false); //temp: checks if data has been saved
 
 }
@@ -226,7 +226,7 @@ function saveServer() {
         //var data = { 'record_date': '324235', 'name':'mk",'email': 'km@sdgsd", 'organization": 'org1", "answer1": "very"};
         
 
-        var url ="http://margaretekoenen.com/store.php?date=" + cdate;
+        /*var url ="http://margaretekoenen.com/store.php?date=" + cdate;
         url += "&name=" + name;
         url += "&email=" + email;
         url += "&organization=" + organization;
@@ -234,7 +234,7 @@ function saveServer() {
         
 
         xmlhttp.open('GET', url, true);
-        xmlhttp.send();
+        xmlhttp.send();*/
 
 
         afterSavedServer();
