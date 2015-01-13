@@ -271,7 +271,7 @@ function resultsButton() {
     var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
 
-    if (getSaved !== "true" && savedName !== null ) {
+    if (getSaved == "true" && savedName !== null ) {
 
         var mybutton1 = document.getElementById('govscore-results1');
         var mybutton2 = document.getElementById('govscore-results2');
