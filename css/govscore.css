@@ -37,9 +37,9 @@ width: 60%;
 #organization-button {
 	padding: .7em .4em;
 }
-.questions {
+/*.questions {
 	display: none;
-}
+}*/
 #govscore-results1,
 #govscore-results2 {
 display: none;
