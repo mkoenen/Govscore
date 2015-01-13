@@ -223,14 +223,14 @@ function saveServer() {
 
         saved = window.localStorage.setItem("saved", "true");
 
-        //var data = { 'record_date': '324235', 'name':'mk",'email': 'km@sdgsd", 'organization": 'org1", "answer1": "very"};
+        var data = { record_date: '324235', name:'mk',email: 'km@sdgsd', organization: 'org1', answer1: 'very'};
         $.ajax({
     type       : "POST",
     url        : "http://margaretekoenen.com/store",
     crossDomain: true,
     beforeSend : function() {$.mobile.loading('show')},
     complete   : function() {$.mobile.loading('hide')},
-    data       : {username : 'subin', password : 'passwordx'},
+    data       : data,
     dataType   : 'json',
     success    : function(response) {
         //console.error(JSON.stringify(response));
