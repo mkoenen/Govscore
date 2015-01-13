@@ -230,7 +230,7 @@ function saveServer() {
     crossDomain: true,
     beforeSend : function() {$.mobile.loading('show')},
     complete   : function() {$.mobile.loading('hide')},
-    data       : data,
+    data       : JSON.stringify(data),
     dataType   : 'json',
     success    : function(response) {
         //console.error(JSON.stringify(response));
