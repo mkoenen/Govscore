@@ -1,7 +1,7 @@
 /* Events -----------------------------------------*/
 function init() {
     window.setTimeout(beonline, 3000);                              //limit how fast the online event can fire
-    //document.addEventListener("deviceready", setbutton, false);
+    document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("resume", checkEvent, false);
@@ -19,7 +19,7 @@ var saved
 
  //listen for click events      
 function setbutton() {
-    //document.getElementById('btnStore').addEventListener('click', savelocal, false);
+    document.getElementById('btnStore').addEventListener('click', savelocal, false);
     document.getElementById("retrieveData").addEventListener("click", result, false); //temp: checks if data has been saved
 
 }
@@ -127,7 +127,6 @@ function savelocal() {
     //send saved locally alert
     messageAfterSaveLocal();
     resultsButton();
-    //$( "div" ).addClass( "see" );
 
 }
 
@@ -223,25 +222,23 @@ function saveServer() {
 
         saved = window.localStorage.setItem("saved", "true");
 
-        var data = { record_date: '324235', name:'mk',email: 'km@sdgsd', organization: 'org1', answer1: 'very'};
+        /*var data = { record_date: '324235', name:'mk',email: 'km@sdgsd', organization: 'org1', answer1: 'very'};
         $.ajax({
-    type       : "POST",
-    url        : "http://margaretekoenen.com/store",
-    crossDomain: true,
-    beforeSend : function() {$.mobile.loading('show')},
-    complete   : function() {$.mobile.loading('hide')},
-    data       : JSON.stringify(data),
-    dataType   : 'json',
-    success    : function(response) {
-        //console.error(JSON.stringify(response));
-        alert('Works!');
-    },
-    error      : function() {
-        //console.error("error");
-        alert('Now working!');                  
-    }
+            type       : "POST",
+            url        : "http://margaretekoenen.com/store",
+            crossDomain: true,
+            beforeSend : function() {$.mobile.loading('show')},
+            complete   : function() {$.mobile.loading('hide')},
+            data       : JSON.stringify(data),
+            dataType   : 'json',
+            success    : function(response) {
+                alert('Works!');
+            },
+            error      : function() {
+                alert('Now working!');                  
+            }*/
 
-        /*var url ="http://margaretekoenen.com/store.php?date=" + cdate;
+        var url ="http://margaretekoenen.com/store.php?date=" + cdate;
         url += "&name=" + name;
         url += "&email=" + email;
         url += "&organization=" + organization;
@@ -249,7 +246,7 @@ function saveServer() {
         
 
         xmlhttp.open('GET', url, true);
-        xmlhttp.send();*/
+        xmlhttp.send();
 
 
         afterSavedServer();
