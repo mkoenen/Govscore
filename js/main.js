@@ -52,21 +52,6 @@ function alreadySaved() {
     );
 }
 
-/* Interface changes -----------------------------------------*/
-
-function resultsButton() {
-    var getSaved = window.localStorage.getItem("saved");
-    var savedName = window.localStorage.getItem("name");
-
-    if (getSaved !== "true" && savedName !== null ) {
-
-        var mybutton1 = document.getElementById('govscore-results1');
-        var mybutton2 = document.getElementById('govscore-results2');
-        mybutton1.className = mybutton1.className + " see";
-        mybutton2.className = mybutton2.className + " see";
-
-    }
-}
 
 
 /*Save locally-----------------------------------------------*/
@@ -278,5 +263,21 @@ function serverResponse() {
         
     }
 
+}
+
+/* Interface changes -----------------------------------------*/
+
+function resultsButton() {
+    var getSaved = window.localStorage.getItem("saved");
+    var savedName = window.localStorage.getItem("name");
+
+    if (getSaved !== "true" && savedName !== null ) {
+
+        var mybutton1 = document.getElementById('govscore-results1');
+        var mybutton2 = document.getElementById('govscore-results2');
+        mybutton1.className = mybutton1.className + " see";
+        mybutton2.className = mybutton2.className + " see";
+
+    }
 }
 
