@@ -227,9 +227,8 @@ function saveServer() {
             type       : "POST",
             url        : "http://margaretekoenen.com/store",
             crossDomain: true,
-            beforeSend : function() {$.mobile.loading('show')},
-            complete   : function() {$.mobile.loading('hide')},
             data       : JSON.stringify(data),
+            contentType: 'application/json; charset=utf-8',
             //dataType   : 'json',
             success    : function(response) {
                 alert('Works!');
