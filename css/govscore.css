@@ -40,9 +40,11 @@ width: 60%;
 .questions {
 	display: none;
 }
-#govscore-results {
+#govscore-results1,
+#govscore-results2 {
 display: none;
 }
-#govscore-results.see {
+#govscore-results1.see,
+#govscore-results2.see {
 display: block;
 }
