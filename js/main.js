@@ -1,6 +1,8 @@
+/* Events -----------------------------------------*/
 function init() {
     window.setTimeout(beonline, 3000);                              //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
+    document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("resume", checkEvent, false);
 
@@ -22,7 +24,7 @@ function setbutton() {
 
 }
 
-/*----------------- Notifications ---------------*/
+/* Notifications ----------------------------------*/
 
 
 function messageAfterSaveLocal() {
@@ -50,8 +52,24 @@ function alreadySaved() {
     );
 }
 
+/* Interface changes -----------------------------------------*/
 
-/*save locally-----------------------------------------------*/
+function resultsButton() {
+    var getSaved = window.localStorage.getItem("saved");
+    var savedName = window.localStorage.getItem("name");
+
+    if (getSaved !== "true" && savedName !== null ) {
+
+        var mybutton1 = document.getElementById('govscore-results1');
+        var mybutton2 = document.getElementById('govscore-results2');
+        mybutton1.className = mybutton1.className + " see";
+        mybutton2.className = mybutton2.className + " see";
+
+    }
+}
+
+
+/*Save locally-----------------------------------------------*/
 
 function savelocal() {
     
@@ -128,13 +146,6 @@ function savelocal() {
 
 }
 
-function resultsButton() {
-
-    var mybutton1 = document.getElementById('govscore-results1');
-    var mybutton2 = document.getElementById('govscore-results2');
-    mybutton1.className = mybutton1.className + " see";
-    mybutton2.className = mybutton2.className + " see";
-}
 
 function result(){
     var cdate = window.localStorage.getItem("date");
