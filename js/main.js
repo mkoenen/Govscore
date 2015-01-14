@@ -232,7 +232,7 @@ alert("got here");
             crossDomain: true,
             data       : '{ "record_date" : "324235", "name":"mk"}',
             contentType: 'application/json; charset=utf-8',
-            dataType   : 'json',
+            //dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
             },
