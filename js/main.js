@@ -234,10 +234,10 @@ alert("got here");
             contentType: 'application/json; charset=utf-8',
             //dataType   : 'json',
             success    : function(response) {
-                alert('Works!');
+                alert(response);
             },
-            error      : function() {
-                alert('Now working!');                  
+            error      : function(response) {
+                alert(response);                  
             }
         });
 
