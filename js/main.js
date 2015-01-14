@@ -181,8 +181,8 @@ function saveServer() {
     var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
     //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-
-    if (getSaved !== "true" && savedName !== null ) {
+//getSaved !== "true" && 
+    if (savedName !== null ) {
 
         /*var xmlhttp;
     
