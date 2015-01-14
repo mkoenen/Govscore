@@ -230,11 +230,11 @@ alert("got here");
             type       : "POST",
             url        : "http://sensi.wpengine.com/store.php",
             crossDomain: true,
-            data       : JSON.stringify(data),
-            contentType: 'application/json; charset=utf-8',
-            //dataType   : 'json',
-            success    : function(response) {
-                alert(response);
+            data       : '{ "record_date" : "324235", "name":"mk"}',
+            //contentType: 'application/json; charset=utf-8',
+            dataType   : 'json',
+            success    : function(responseData, textStatus, jqXHR) {
+                alert(responseData + ", " + textStatus + ", " + jqXHR);
             },
             error      : function(response) {
                 alert(response);                  
