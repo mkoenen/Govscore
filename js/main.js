@@ -225,7 +225,7 @@ function saveServer() {
 
 alert("got here");
 
-        var data = { record_date: '324235', name:'mk',email: 'km@gmail.com', organization: 'org1', answer1: 'very'};
+        var data = { "record_date" : "324235", "name":"mk"};
         $.ajax({
             type       : "POST",
             url        : "http://sensi.wpengine.com/store.php",
