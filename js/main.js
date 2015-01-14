@@ -184,10 +184,10 @@ function saveServer() {
 
     if (getSaved !== "true" && savedName !== null ) {
 
-        /*var xmlhttp;
+        var xmlhttp;
     
         xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = serverResponse;*/
+        xmlhttp.onreadystatechange = serverResponse;
     
          //get the data from local storage
         var cdate = window.localStorage.getItem("date");
