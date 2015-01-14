@@ -222,7 +222,7 @@ function saveServer() {
 
         saved = window.localStorage.setItem("saved", "true");
 
-        var data = { record_date: '324235', name:'mk',email: 'km@gmail.com', organization: 'org1', answer1: 'very'};
+        /*var data = { record_date: '324235', name:'mk',email: 'km@gmail.com', organization: 'org1', answer1: 'very'};
         $.ajax({
             type       : "POST",
             url        : "http://margaretekoenen.com/store",
@@ -236,9 +236,9 @@ function saveServer() {
             error      : function() {
                 alert('Now working!');                  
             }
-        });
+        });*/
 
-        /*var url ="http://margaretekoenen.com/store.php?date=" + cdate;
+        var url ="http://sensi.wpengine.com/store.php?date=" + cdate;
         url += "&name=" + name;
         url += "&email=" + email;
         url += "&organization=" + organization;
@@ -246,7 +246,7 @@ function saveServer() {
         
 
         xmlhttp.open('GET', url, true);
-        xmlhttp.send();*/
+        xmlhttp.send();
 
 
         afterSavedServer();
