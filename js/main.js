@@ -227,11 +227,11 @@ alert("got here");
 
         var data = { "record_date" : "324235", "name":"mk"};
         $.ajax({
-            type       : "POST",
-            url        : "http://sensi.wpengine.com/store.php",
+            type       : "GET",
+            url        : "http://sensi.wpengine.com/store.php?id=hello",
             crossDomain: true,
-            data       : 'hello',
-            contentType: 'application/text; charset=utf-8',
+            //data       : 'hello',
+            contentType: 'application/html; charset=utf-8',
             //dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
