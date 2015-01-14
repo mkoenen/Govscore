@@ -184,10 +184,10 @@ function saveServer() {
 
     if (getSaved !== "true" && savedName !== null ) {
 
-        var xmlhttp;
+        /*var xmlhttp;
     
         xmlhttp = new XMLHttpRequest();
-        xmlhttp.onreadystatechange = serverResponse;
+        xmlhttp.onreadystatechange = serverResponse;*/
     
          //get the data from local storage
         var cdate = window.localStorage.getItem("date");
@@ -222,10 +222,10 @@ function saveServer() {
 
         saved = window.localStorage.setItem("saved", "true");
 
-        /*var data = { record_date: '324235', name:'mk',email: 'km@gmail.com', organization: 'org1', answer1: 'very'};
+        var data = { record_date: '324235', name:'mk',email: 'km@gmail.com', organization: 'org1', answer1: 'very'};
         $.ajax({
             type       : "POST",
-            url        : "http://margaretekoenen.com/store",
+            url        : "http://sensi.wpengine.com/store.php",
             crossDomain: true,
             data       : JSON.stringify(data),
             contentType: 'application/json; charset=utf-8',
@@ -238,7 +238,7 @@ function saveServer() {
             }
         });*/
 
-        var url ="http://sensi.wpengine.com/store.php?date=" + cdate;
+        /*var url ="http://sensi.wpengine.com/store.php?date=" + cdate;
         url += "&name=" + name;
         url += "&email=" + email;
         url += "&organization=" + organization;
@@ -246,10 +246,10 @@ function saveServer() {
         
 
         xmlhttp.open('GET', url, true);
-        xmlhttp.send();
+        xmlhttp.send();*/
 
 
-        afterSavedServer();
+        //afterSavedServer();
 
 
 
