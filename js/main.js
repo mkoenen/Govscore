@@ -224,13 +224,13 @@ function saveServer() {
 
 
 alert("got here");
-
+        //  var data = { "record_date" : "324235", "name":"mk"};
         var data = { "date" : cdate, "name": name, "email": email, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25 };
         $.ajax({
             type       : "GET",
             url        : "http://sensi.wpengine.com/store.php",
             crossDomain: true,
-            data       : data,
+            data       : JSON.stringify(data),
             contentType: 'application/json; charset=utf-8',
             //dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
