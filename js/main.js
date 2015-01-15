@@ -231,7 +231,6 @@ alert("got here");
             type       : "GET",
             url        : "http://sensi.wpengine.com/store.php",
             crossDomain: true,
-            data       : data,
             data       : parseddata,
             contentType: 'application/json; charset=utf-8',
             //dataType   : 'json',
