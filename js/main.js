@@ -225,7 +225,7 @@ function saveServer() {
 
 alert("got here");
 
-        var data = { "date" : date, "name": name };
+        var data = { "date" : cdate, "name": name };
         //var parseddata= JSON.parse(data);
         $.ajax({
             type       : "GET",
