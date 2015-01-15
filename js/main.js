@@ -226,11 +226,13 @@ function saveServer() {
 alert("got here");
 
         var data = { "record_date" : "324235", "name":"mk"};
+        var parseddata= JSON.parse(data);
         $.ajax({
             type       : "GET",
             url        : "http://sensi.wpengine.com/store.php",
             crossDomain: true,
             data       : data,
+            data       : parseddata,
             contentType: 'application/json; charset=utf-8',
             //dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
