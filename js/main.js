@@ -194,38 +194,38 @@ function saveServer() {
         var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
         var organization = window.localStorage.getItem("organization");
-        var g1 = window.localStorage.getItem("answer1");
-        var g2 = window.localStorage.getItem("answer2");
-        var g3 = window.localStorage.getItem("answer3");
-        var g4 = window.localStorage.getItem("answer4");
-        var g5 = window.localStorage.getItem("answer5");
-        var g6 = window.localStorage.getItem("answer6");
-        var g7 = window.localStorage.getItem("answer7");
-        var g8 = window.localStorage.getItem("answer8");
-        var g9 = window.localStorage.getItem("answer9");
-        var g10 = window.localStorage.getItem("answer10");
-        var g11 = window.localStorage.getItem("answer11");
-        var g12 = window.localStorage.getItem("answer12");
-        var g13 = window.localStorage.getItem("answer13");
-        var g14 = window.localStorage.getItem("answer14");
-        var g15 = window.localStorage.getItem("answer15");
-        var g16 = window.localStorage.getItem("answer16");
-        var g17 = window.localStorage.getItem("answer17");
-        var g18 = window.localStorage.getItem("answer18");
-        var g19 = window.localStorage.getItem("answer19");
-        var g20 = window.localStorage.getItem("answer20");
-        var g21 = window.localStorage.getItem("answer21");
-        var g22 = window.localStorage.getItem("answer22");
-        var g23 = window.localStorage.getItem("answer23");
-        var g24 = window.localStorage.getItem("answer24");
-        var g25 = window.localStorage.getItem("answer25");
+        var answer1 = window.localStorage.getItem("answer1");
+        var answer2 = window.localStorage.getItem("answer2");
+        var answer3 = window.localStorage.getItem("answer3");
+        var answer4 = window.localStorage.getItem("answer4");
+        var answer5 = window.localStorage.getItem("answer5");
+        var answer6 = window.localStorage.getItem("answer6");
+        var answer7 = window.localStorage.getItem("answer7");
+        var answer8 = window.localStorage.getItem("answer8");
+        var answer9 = window.localStorage.getItem("answer9");
+        var answer10 = window.localStorage.getItem("answer10");
+        var answer11 = window.localStorage.getItem("answer11");
+        var answer12 = window.localStorage.getItem("answer12");
+        var answer13 = window.localStorage.getItem("answer13");
+        var answer14 = window.localStorage.getItem("answer14");
+        var answer15 = window.localStorage.getItem("answer15");
+        var answer16 = window.localStorage.getItem("answer16");
+        var answer17 = window.localStorage.getItem("answer17");
+        var answer18 = window.localStorage.getItem("answer18");
+        var answer19 = window.localStorage.getItem("answer19");
+        var answer20 = window.localStorage.getItem("answer20");
+        var answer21 = window.localStorage.getItem("answer21");
+        var answer22 = window.localStorage.getItem("answer22");
+        var answer23 = window.localStorage.getItem("answer23");
+        var answer24 = window.localStorage.getItem("answer24");
+        var answer25 = window.localStorage.getItem("answer25");
 
         saved = window.localStorage.setItem("saved", "true");
 
 
 alert("got here");
-          var data = { "record_date" : "324235", "name":"mk"};
-        //var data = { "date" : cdate, "name": name, "email": email, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25 };
+
+        var data = { "record_date" : "324235", "name":"mk"};
         $.ajax({
             type       : "GET",
             url        : "http://sensi.wpengine.com/store.php",
