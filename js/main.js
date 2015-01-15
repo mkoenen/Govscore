@@ -202,7 +202,7 @@ function saveServer() {
         var g6 = window.localStorage.getItem("answer6");
         var g7 = window.localStorage.getItem("answer7");
         var g8 = window.localStorage.getItem("answer8");
-        var ag9 = window.localStorage.getItem("answer9");
+        var g9 = window.localStorage.getItem("answer9");
         var g10 = window.localStorage.getItem("answer10");
         var g11 = window.localStorage.getItem("answer11");
         var g12 = window.localStorage.getItem("answer12");
