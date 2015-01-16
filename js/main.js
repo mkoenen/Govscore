@@ -125,12 +125,14 @@ function savelocal() {
     window.localStorage.setItem("answer25", answer25);
 
 
-    //now that everything is saved check the connection
-    checkConnection( "govscore");
-
     //send saved locally alert
     messageAfterSaveLocal();
     resultsButton();
+
+    //now that everything is saved check the connection
+    checkConnection( "govscore");
+
+    
 
 }
 
@@ -168,7 +170,7 @@ function checkConnection(whichfunction) {
             //ag1saveServer();
         }
     }else{
-
+        alert("we are not getting this saved despite connecton"); //temp
         messageAfterSaveLocal()  //temp
         
     }
@@ -338,11 +340,14 @@ function ag1savelocal() {
     
     alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
 
-    //now that everything is saved check the connection
-    checkConnection("ag1");
 
     //send saved locally alert
     messageAfterSaveLocal();
+
+    //now that everything is saved check the connection
+    checkConnection("ag1");
+
+    
 
 }
 
