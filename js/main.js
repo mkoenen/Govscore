@@ -14,7 +14,7 @@ function beonline() {
 }
 
 
-var saved, savedag1, savedag2, savedag3, savedag4, savedag5
+var saved, savedag1
 
  //listen for click events      
 function setbutton() {
@@ -234,10 +234,10 @@ function checkConnection() {
         
         saveServer();
         ag1saveServer();
-        ag2saveServer();
-        ag3saveServer();
-        ag4saveServer();
-        ag5saveServer();
+        //ag2saveServer();
+        //ag3saveServer();
+        //ag4saveServer();
+        //ag5saveServer();
        
         
     }else{
