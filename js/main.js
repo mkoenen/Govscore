@@ -126,7 +126,7 @@ function savelocal() {
 
 
     //now that everything is saved check the connection
-    checkConnection(saveServer);
+    checkConnection(whichsave);
 
     //send saved locally alert
     messageAfterSaveLocal();
@@ -149,7 +149,7 @@ function result(){
 
 /*------------check the connection --------------*/
 
-function checkConnection(savefunction) {
+function checkConnection(whichsave) {
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -163,7 +163,7 @@ function checkConnection(savefunction) {
 
     if( states[networkState] !== 'No network connection'){
         
-       savefunction();
+       whichsave();
 
     }else{
 
@@ -277,7 +277,7 @@ function resultsButton() {
 
 /* store locally */
 
-function ag1savelocal() {
+/*function ag1savelocal() {
     
     var ag1date = new Date();
     var ag1a = $('input[name="a1a"]:checked').val();
@@ -342,13 +342,13 @@ function ag1savelocal() {
     //send saved locally alert
     messageAfterSaveLocal();
 
-}
+}*/
 
 
 
 /* check the connection */
 
-function ag1checkConnection() {
+/*function ag1checkConnection() {
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -372,11 +372,11 @@ function ag1checkConnection() {
         
     }
 
-}
+}*/
 
 /* Save on Server */
 
-function ag1saveServer() {
+/*function ag1saveServer() {
     //first check if data has been saved to server already
 
     var getag1Saved = window.localStorage.getItem("ag1saved");
@@ -448,6 +448,6 @@ alert("got here");
 
     }
 
-}
+}*/
 
 /*-----------------*/
