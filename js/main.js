@@ -14,7 +14,7 @@ function beonline() {
 }
 
 
-var saved, savedag1
+var saved, ag1saved
 
  //listen for click events      
 function setbutton() {
@@ -163,9 +163,7 @@ function checkConnection(savefunction) {
 
     if( states[networkState] !== 'No network connection'){
         
-     if(savefunction) {   
-        
-        savefunction();
+       savefunction();
 
     }else{
 
