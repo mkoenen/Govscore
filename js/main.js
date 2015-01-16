@@ -262,7 +262,7 @@ function saveServer() {
        
     
          //get the data from local storage
-        var ag1date = window.localStorage.getItem("date");
+        var cdate = window.localStorage.getItem("date");
         var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
         var organization = window.localStorage.getItem("organization");
