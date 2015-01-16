@@ -126,7 +126,7 @@ function savelocal() {
 
 
     //now that everything is saved check the connection
-    checkConnection();
+    checkConnection( "govscore");
 
     //send saved locally alert
     messageAfterSaveLocal();
@@ -149,7 +149,7 @@ function result(){
 
 /*------------check the connection --------------*/
 
-function checkConnection() {
+function checkConnection(whichfunction) {
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -162,9 +162,11 @@ function checkConnection() {
     states[Connection.NONE]     = 'No network connection';
 
     if( states[networkState] !== 'No network connection'){
-        
-       saveServer();
-
+        if(whichfunction == "govscore") {
+            saveServer();
+        }else if(whichfunction == "ag1"){
+            //ag1saveServer();
+        }
     }else{
 
         messageAfterSaveLocal()  //temp
