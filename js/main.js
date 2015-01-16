@@ -19,7 +19,7 @@ var saved, ag1saved
  //listen for click events      
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', savelocal, false);
-    //document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
+    document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
     //document.getElementById('ag2Store').addEventListener('click', ag2savelocal, false);
     ////document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
     //document.getElementById('ag4Store').addEventListener('click', ag4savelocal, false);
@@ -279,7 +279,7 @@ function resultsButton() {
 
 /* store locally */
 
-/*function ag1savelocal() {
+function ag1savelocal() {
     
     var ag1date = new Date();
     var ag1a = $('input[name="a1a"]:checked').val();
@@ -339,46 +339,18 @@ function resultsButton() {
     alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
 
     //now that everything is saved check the connection
-    ag1checkConnection();
+    checkConnection("ag1");
 
     //send saved locally alert
     messageAfterSaveLocal();
 
-}*/
+}
 
 
-
-/* check the connection */
-
-/*function ag1checkConnection() {
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    //alert('Connection type: ' + states[networkState]);
-
-    if( states[networkState] !== 'No network connection'){
-
-        ag1saveServer();
-               
-    }else{
-
-        messageAfterSaveLocal()  //temp
-        
-    }
-
-}*/
 
 /* Save on Server */
 
-/*function ag1saveServer() {
+function ag1saveServer() {
     //first check if data has been saved to server already
 
     var getag1Saved = window.localStorage.getItem("ag1saved");
@@ -450,6 +422,6 @@ alert("got here");
 
     }
 
-}*/
+}
 
 /*-----------------*/
