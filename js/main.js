@@ -126,7 +126,7 @@ function savelocal() {
 
 
     //now that everything is saved check the connection
-    checkConnection(whichsave);
+    checkConnection();
 
     //send saved locally alert
     messageAfterSaveLocal();
@@ -149,7 +149,7 @@ function result(){
 
 /*------------check the connection --------------*/
 
-function checkConnection(whichsave) {
+function checkConnection() {
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -163,7 +163,7 @@ function checkConnection(whichsave) {
 
     if( states[networkState] !== 'No network connection'){
         
-       whichsave();
+       saveServer();
 
     }else{
 
