@@ -301,7 +301,7 @@ alert("got here");
         
         $.ajax({
             type       : "GET",
-            url        : "http://sensi.wpengine.com/store.php",
+            url        : "http://sensi.wpengine.com/ag1store.php",
             crossDomain: true,
             data       : JSON.stringify(data),
             contentType: 'application/json; charset=utf-8',
