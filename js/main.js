@@ -165,30 +165,30 @@ function ag1savelocal() {
 
 
     window.localStorage.setItem("ag1date", ag1date);
-    window.localStorage.setItem("ag1b", ag1a);
-    window.localStorage.setItem("ag1c", ag1b);
-    window.localStorage.setItem("ag1d", ag1c);
-    window.localStorage.setItem("ag1e", ag1d);
-    window.localStorage.setItem("ag2b", ag2a);
-    window.localStorage.setItem("ag2c", ag2b);
-    window.localStorage.setItem("ag2d", ag2c);
-    window.localStorage.setItem("ag2e", ag2d);
-    window.localStorage.setItem("ag3b", ag3a);
-    window.localStorage.setItem("ag3c", ag3b);
-    window.localStorage.setItem("ag3d", ag3c);
-    window.localStorage.setItem("ag3e", ag3d);
-    window.localStorage.setItem("ag4b", ag4a);
-    window.localStorage.setItem("ag4c", ag4b);
-    window.localStorage.setItem("ag4d", ag4c);
-    window.localStorage.setItem("ag4e", ag4d);
-    window.localStorage.setItem("ag5b", ag5a);
-    window.localStorage.setItem("ag5c", ag5b);
-    window.localStorage.setItem("ag5d", ag5c);
-    window.localStorage.setItem("ag5e", ag5d);
-    window.localStorage.setItem("ag6b", ag6a);
-    window.localStorage.setItem("ag6c", ag6b);
-    window.localStorage.setItem("ag6d", ag6c);
-    window.localStorage.setItem("ag6e", ag6d);
+    window.localStorage.setItem("ag1a", ag1a);
+    window.localStorage.setItem("ag1b", ag1b);
+    window.localStorage.setItem("ag1c", ag1c);
+    window.localStorage.setItem("ag1d", ag1d);
+    window.localStorage.setItem("ag2a", ag2a);
+    window.localStorage.setItem("ag2b", ag2b);
+    window.localStorage.setItem("ag2c", ag2c);
+    window.localStorage.setItem("ag2d", ag2d);
+    window.localStorage.setItem("ag3a", ag3a);
+    window.localStorage.setItem("ag3b", ag3b);
+    window.localStorage.setItem("ag3c", ag3c);
+    window.localStorage.setItem("ag3d", ag3d);
+    window.localStorage.setItem("ag4a", ag4a);
+    window.localStorage.setItem("ag4b", ag4b);
+    window.localStorage.setItem("ag4c", ag4c);
+    window.localStorage.setItem("ag4d", ag4d);
+    window.localStorage.setItem("ag5a", ag5a);
+    window.localStorage.setItem("ag5b", ag5b);
+    window.localStorage.setItem("ag5c", ag5c);
+    window.localStorage.setItem("ag5d", ag5d);
+    window.localStorage.setItem("ag6a", ag6a);
+    window.localStorage.setItem("ag6b", ag6b);
+    window.localStorage.setItem("ag6c", ag6c);
+    window.localStorage.setItem("ag6d", ag6d);
     
     alert(window.localStorage.getItem("ag1a") + window.localStorage.getItem("ag6d"));
 
