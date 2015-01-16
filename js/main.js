@@ -126,13 +126,159 @@ function savelocal() {
 
 
     //now that everything is saved check the connection
-    checkConnection();
+    checkConnection(saveServer);
 
     //send saved locally alert
     messageAfterSaveLocal();
     resultsButton();
 
 }
+
+
+function result(){
+    var cdate = window.localStorage.getItem("date");
+    var name = window.localStorage.getItem("name");
+    var email = window.localStorage.getItem("email");
+    var organization = window.localStorage.getItem("organization");
+    var answer1 = window.localStorage.getItem("answer1");
+    var savedFromLocal = window.localStorage.getItem("saved");
+    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />organization: " + organization + "<br />Answer1: " + answer1 + "<br />Saved: " + savedFromLocal +"<br />";
+    document.getElementById("retrieveData").innerHTML = output;
+}
+
+
+/*------------check the connection --------------*/
+
+function checkConnection(savefunction) {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.NONE]     = 'No network connection';
+
+    if( states[networkState] !== 'No network connection'){
+        
+     if(savefunction) {   
+        
+        savefunction();
+
+    }else{
+
+        messageAfterSaveLocal()  //temp
+        
+    }
+}
+
+/*save to server -------------------------------------------------------------*/
+
+
+function saveServer() {
+    //first check if data has been saved to server already
+
+    var getSaved = window.localStorage.getItem("saved");
+    var savedName = window.localStorage.getItem("name");
+    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
+//getSaved !== "true" && 
+    if (savedName !== null ) {
+
+       
+    
+         //get the data from local storage
+        var cdate = window.localStorage.getItem("date");
+        var name = window.localStorage.getItem("name");
+        var email = window.localStorage.getItem("email");
+        var organization = window.localStorage.getItem("organization");
+        var g1 = window.localStorage.getItem("answer1");
+        var g2 = window.localStorage.getItem("answer2");
+        var g3 = window.localStorage.getItem("answer3");
+        var g4 = window.localStorage.getItem("answer4");
+        var g5 = window.localStorage.getItem("answer5");
+        var g6 = window.localStorage.getItem("answer6");
+        var g7 = window.localStorage.getItem("answer7");
+        var g8 = window.localStorage.getItem("answer8");
+        var g9 = window.localStorage.getItem("answer9");
+        var g10 = window.localStorage.getItem("answer10");
+        var g11 = window.localStorage.getItem("answer11");
+        var g12 = window.localStorage.getItem("answer12");
+        var g13 = window.localStorage.getItem("answer13");
+        var g14 = window.localStorage.getItem("answer14");
+        var g15 = window.localStorage.getItem("answer15");
+        var g16 = window.localStorage.getItem("answer16");
+        var g17 = window.localStorage.getItem("answer17");
+        var g18 = window.localStorage.getItem("answer18");
+        var g19 = window.localStorage.getItem("answer19");
+        var g20 = window.localStorage.getItem("answer20");
+        var g21 = window.localStorage.getItem("answer21");
+        var g22 = window.localStorage.getItem("answer22");
+        var g23 = window.localStorage.getItem("answer23");
+        var g24 = window.localStorage.getItem("answer24");
+        var g25 = window.localStorage.getItem("answer25");
+
+        saved = window.localStorage.setItem("saved", "true");
+
+
+alert("got here");
+
+        var data = { "date" : cdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
+        
+        $.ajax({
+            type       : "GET",
+            url        : "http://sensi.wpengine.com/store.php",
+            crossDomain: true,
+            data       : JSON.stringify(data),
+            contentType: 'application/json; charset=utf-8',
+            ////dataType   : 'json',
+            success    : function(responseData, textStatus, jqXHR) {
+                alert(responseData + ", " + textStatus + ", " + jqXHR);
+            },
+            error      : function(response) {
+                alert(response);                  
+            }
+        });
+
+        //afterSavedServer();
+
+    }else{
+        alreadySaved();
+    }
+}
+
+
+function serverResponse() {
+    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+        if(xmlhttp.responseText) {
+            afterSavedServer();
+        }
+        //add the button to the results page by adding the class "see" which will display the button  
+    }
+}
+
+/* Interface changes -----------------------------------------*/
+
+function resultsButton() {
+    var getSaved = window.localStorage.getItem("saved");
+    var savedName = window.localStorage.getItem("name");
+
+    if (getSaved == "true" && savedName !== null ) {
+
+        var mybutton1 = document.getElementById('govscore-results1');
+        var mybutton2 = document.getElementById('govscore-results2');
+        mybutton1.className = mybutton1.className + " see";
+        mybutton2.className = mybutton2.className + " see";
+
+    }
+}
+
+
+/* AG 1 -------------------------------------------------------*/
+
+/* store locally */
+
 function ag1savelocal() {
     
     var ag1date = new Date();
@@ -190,10 +336,10 @@ function ag1savelocal() {
     window.localStorage.setItem("ag6c", ag6c);
     window.localStorage.setItem("ag6d", ag6d);
     
-    alert(window.localStorage.getItem("ag1a") + window.localStorage.getItem("ag6d"));
+    alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
 
     //now that everything is saved check the connection
-    checkConnection();
+    ag1checkConnection();
 
     //send saved locally alert
     messageAfterSaveLocal();
@@ -201,21 +347,10 @@ function ag1savelocal() {
 }
 
 
-function result(){
-    var cdate = window.localStorage.getItem("date");
-    var name = window.localStorage.getItem("name");
-    var email = window.localStorage.getItem("email");
-    var organization = window.localStorage.getItem("organization");
-    var answer1 = window.localStorage.getItem("answer1");
-    var savedFromLocal = window.localStorage.getItem("saved");
-    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />organization: " + organization + "<br />Answer1: " + answer1 + "<br />Saved: " + savedFromLocal +"<br />";
-    document.getElementById("retrieveData").innerHTML = output;
-}
 
+/* check the connection */
 
-/*------------check the connection --------------*/
-
-function checkConnection() {
+function ag1checkConnection() {
     var networkState = navigator.connection.type;
 
     var states = {};
@@ -231,102 +366,17 @@ function checkConnection() {
 
     if( states[networkState] !== 'No network connection'){
 
-        
-        saveServer();
         ag1saveServer();
-        //ag2saveServer();
-        //ag3saveServer();
-        //ag4saveServer();
-        //ag5saveServer();
-       
-        
+               
     }else{
+
         messageAfterSaveLocal()  //temp
         
     }
 
 }
 
-/*save to server -------------------------------------------------------------*/
-
-
-function saveServer() {
-    //first check if data has been saved to server already
-
-    var getSaved = window.localStorage.getItem("saved");
-    var savedName = window.localStorage.getItem("name");
-    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-//getSaved !== "true" && 
-    if (savedName !== null ) {
-
-       
-    
-         //get the data from local storage
-        var cdate = window.localStorage.getItem("date");
-        var name = window.localStorage.getItem("name");
-        var email = window.localStorage.getItem("email");
-        var organization = window.localStorage.getItem("organization");
-        var g1 = window.localStorage.getItem("answer1");
-        var g2 = window.localStorage.getItem("answer2");
-        var g3 = window.localStorage.getItem("answer3");
-        var g4 = window.localStorage.getItem("answer4");
-        var g5 = window.localStorage.getItem("answer5");
-        var g6 = window.localStorage.getItem("answer6");
-        var g7 = window.localStorage.getItem("answer7");
-        var g8 = window.localStorage.getItem("answer8");
-        var g9 = window.localStorage.getItem("answer9");
-        var g10 = window.localStorage.getItem("answer10");
-        var g11 = window.localStorage.getItem("answer11");
-        var g12 = window.localStorage.getItem("answer12");
-        var g13 = window.localStorage.getItem("answer13");
-        var g14 = window.localStorage.getItem("answer14");
-        var g15 = window.localStorage.getItem("answer15");
-        var g16 = window.localStorage.getItem("answer16");
-        var g17 = window.localStorage.getItem("answer17");
-        var g18 = window.localStorage.getItem("answer18");
-        var g19 = window.localStorage.getItem("answer19");
-        var g20 = window.localStorage.getItem("answer20");
-        var g21 = window.localStorage.getItem("answer21");
-        var g22 = window.localStorage.getItem("answer22");
-        var g23 = window.localStorage.getItem("answer23");
-        var g24 = window.localStorage.getItem("answer24");
-        var g25 = window.localStorage.getItem("answer25");
-
-        saved = window.localStorage.setItem("saved", "true");
-
-
-alert("got here");
-
-        var data = { "date" : cdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
-        
-        $.ajax({
-            type       : "GET",
-            url        : "http://sensi.wpengine.com/ag1store.php",
-            crossDomain: true,
-            data       : JSON.stringify(data),
-            contentType: 'application/json; charset=utf-8',
-            ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                alert(responseData + ", " + textStatus + ", " + jqXHR);
-            },
-            error      : function(response) {
-                alert(response);                  
-            }
-        });
-
-
-        //afterSavedServer();
-
-
-
-    }else{
-
-        alreadySaved();
-
-    }
-
-}
-
+/* Save on Server */
 
 function ag1saveServer() {
     //first check if data has been saved to server already
@@ -367,7 +417,7 @@ function ag1saveServer() {
         var ag6c = window.localStorage.getItem("ag6c");
         var ag6d = window.localStorage.getItem("ag6d");
 
-        savedag1 = window.localStorage.setItem("savedag1", "true");
+        ag1saved = window.localStorage.setItem("ag1saved", "true");
 
 
 alert("got here");
@@ -376,7 +426,7 @@ alert("got here");
        
         $.ajax({
             type       : "GET",
-            url        : "http://sensi.wpengine.com/store.php",
+            url        : "http://sensi.wpengine.com/ag1store.php",
             crossDomain: true,
             data       : JSON.stringify(ag1data),
             contentType: 'application/json; charset=utf-8',
@@ -402,36 +452,4 @@ alert("got here");
 
 }
 
-
-function serverResponse() {
-    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        
-        if(xmlhttp.responseText) {
-        
-            afterSavedServer();
-        
-        }
-        //add the button to the results page by adding the class "see" which will display the button
-        
-
-        
-    }
-
-}
-
-/* Interface changes -----------------------------------------*/
-
-function resultsButton() {
-    var getSaved = window.localStorage.getItem("saved");
-    var savedName = window.localStorage.getItem("name");
-
-    if (getSaved == "true" && savedName !== null ) {
-
-        var mybutton1 = document.getElementById('govscore-results1');
-        var mybutton2 = document.getElementById('govscore-results2');
-        mybutton1.className = mybutton1.className + " see";
-        mybutton2.className = mybutton2.className + " see";
-
-    }
-}
-
+/*-----------------*/
