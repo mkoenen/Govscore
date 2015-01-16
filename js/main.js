@@ -167,7 +167,7 @@ function checkConnection(whichfunction) {
         if(whichfunction == "govscore") {
             saveServer();
         }else if(whichfunction == "ag1"){
-            //ag1saveServer();
+            ag1saveServer();
         }
     }else{
         alert("we are not getting this saved despite connecton"); //temp
