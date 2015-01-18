@@ -445,30 +445,30 @@ function ag2savelocal() {
     alert("Got to ag2savelocal");
     
     var ag2date = new Date();
-    var ag7a = $('input[name="a1a"]:checked').val();
-    var ag7b = $('input[name="a1b"]:checked').val();
-    var ag7c = $('input[name="a1c"]:checked').val();
-    var ag7d = $('input[name="a1d"]:checked').val();
-    var ag8a = $('input[name="a2a"]:checked').val();
-    var ag8b = $('input[name="a2b"]:checked').val();
-    var ag8c = $('input[name="a2c"]:checked').val();
-    var ag8d = $('input[name="a2d"]:checked').val();
-    var ag9a = $('input[name="a3a"]:checked').val();
-    var ag9b = $('input[name="a3b"]:checked').val();
-    var ag9c = $('input[name="a3c"]:checked').val();
-    var ag9d = $('input[name="a3d"]:checked').val();
-    var ag10a = $('input[name="a4a"]:checked').val();
-    var ag10b = $('input[name="a4b"]:checked').val();
-    var ag10c = $('input[name="a4c"]:checked').val();
-    var ag10d = $('input[name="a4d"]:checked').val();
-    var ag11a = $('input[name="a5a"]:checked').val();
-    var ag11b = $('input[name="a5b"]:checked').val();
-    var ag11c = $('input[name="a5c"]:checked').val();
-    var ag11d = $('input[name="a5d"]:checked').val();
-    var ag12a = $('input[name="a6a"]:checked').val();
-    var ag12b = $('input[name="a6b"]:checked').val();
-    var ag12c = $('input[name="a6c"]:checked').val();
-    var ag12d = $('input[name="a6d"]:checked').val();
+    var ag7a = $('input[name="a7a"]:checked').val();
+    var ag7b = $('input[name="a7b"]:checked').val();
+    var ag7c = $('input[name="a7c"]:checked').val();
+    var ag7d = $('input[name="a7d"]:checked').val();
+    var ag8a = $('input[name="a8a"]:checked').val();
+    var ag8b = $('input[name="a8b"]:checked').val();
+    var ag8c = $('input[name="a8c"]:checked').val();
+    var ag8d = $('input[name="a8d"]:checked').val();
+    var ag9a = $('input[name="a9a"]:checked').val();
+    var ag9b = $('input[name="a9b"]:checked').val();
+    var ag9c = $('input[name="a9c"]:checked').val();
+    var ag9d = $('input[name="a9d"]:checked').val();
+    var ag10a = $('input[name="a10a"]:checked').val();
+    var ag10b = $('input[name="a10b"]:checked').val();
+    var ag10c = $('input[name="a10c"]:checked').val();
+    var ag10d = $('input[name="a10d"]:checked').val();
+    var ag11a = $('input[name="a11a"]:checked').val();
+    var ag11b = $('input[name="a11b"]:checked').val();
+    var ag11c = $('input[name="a11c"]:checked').val();
+    var ag11d = $('input[name="a11d"]:checked').val();
+    var ag12a = $('input[name="a12a"]:checked').val();
+    var ag12b = $('input[name="a12b"]:checked').val();
+    var ag12c = $('input[name="a12c"]:checked').val();
+    var ag12d = $('input[name="a12d"]:checked').val();
     
     
 
