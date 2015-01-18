@@ -442,6 +442,7 @@ alert("got here");
 /* store locally */
 
 function ag2savelocal() {
+    alert("Got to ag2savelocal");
     
     var ag2date = new Date();
     var ag7a = $('input[name="a1a"]:checked').val();
