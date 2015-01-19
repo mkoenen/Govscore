@@ -80,9 +80,9 @@ function hideSaveButton(form) {
 
     switch(form) {
         case "govscore":
+            alert("i am here, govescore");
             var answer1 = window.localStorage.getItem("answer1");
-            var getSaved = window.localStorage.getItem("saved");
-            if(getSaved == "true" && answer1 != null){
+            if( answer1 != null){
                 var gsSaveButton = document.getElementById('btnStore');
                 gsSaveButton.className = gsSaveButton.className + " hide";
                 var resultButton1 = document.getElementById('govscore-results1');
@@ -92,7 +92,7 @@ function hideSaveButton(form) {
             }
             break;
         case "ag1":
-            alert("i am here");
+            alert("i am here, ag1");
             var ag1a = window.localStorage.getItem("ag1a");
             alert(ag1a);
             if(ag1a != null){
