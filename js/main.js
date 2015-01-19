@@ -6,6 +6,7 @@ function init() {
         var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";
     }
+    alert("answer1 is " + answer1);
     var ag1a = window.localStorage.getItem("ag1a");
     if(ag1a != null){
         var ag1SaveButton = document.getElementById('ag1Store');
