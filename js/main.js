@@ -6,7 +6,7 @@ function init() {
     //window.setTimeout(beonline, 6000);
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
-    document.addEventListener("deviceready", resultsButton, false);
+    //document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", hideSaveButton("govscore"), false);
     document.addEventListener("deviceready", hideSaveButton("ag1"), false);
