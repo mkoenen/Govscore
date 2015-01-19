@@ -56,8 +56,10 @@ function messageAfterSaveLocal() {
 
 
 function afterSavedServer(form) {
+    var orgcode = window.localStorage.getItem("organization");
     navigator.notification.alert(
-        'Your answers to quesionnaire ' + form + 'have been saved. Thank you for your submission.',
+
+        'Your answers to the questionnaire ' + form + ' have been saved. Thank you for your submission.<br />To see the results for your organization go to our website and enter the organization code<br />' + orgcode,
         'Info title',
         'Update'
     );
@@ -71,24 +73,7 @@ function alreadySaved() {
     );
 }
 
-/* Interface changes -----------------------------------------*/
-
-function showResultsButton() {
-    var getSaved = window.localStorage.getItem("saved");
-    var savedName = window.localStorage.getItem("name");
-
-    if (getSaved == "true" && savedName !== null ) {
-
-        var mybutton1 = document.getElementById('govscore-results1');
-        var mybutton2 = document.getElementById('govscore-results2');
-        mybutton1.className = mybutton1.className + " see";
-        alert(mybutton1.className);
-        mybutton2.className = mybutton2.className + " see";
-        alert(mybutton1.className);
-
-    }
-}
- 
+/* Interface changes -----------------------------------------*/ 
 
 function hideSaveButton(form) {
     switch(form) {
@@ -101,9 +86,7 @@ function hideSaveButton(form) {
                 var resultButton1 = document.getElementById('govscore-results1');
                 var resultButton2 = document.getElementById('govscore-results2');
                 resultButton1.className = resultButton1.className + " see";
-                alert(resultButton1.className);
                 resultButton2.className = resultButton2.className + " see";
-                alert(resultButton2.className);
             }
             break;
         case "ag1":
@@ -145,6 +128,48 @@ function hideSaveButton(form) {
 
 }
 
+/*------------check the connection --------------*/
+
+function checkConnection(whichfunction) {
+    var networkState = navigator.connection.type;
+
+    var states = {};
+    states[Connection.UNKNOWN]  = 'Unknown connection';
+    states[Connection.ETHERNET] = 'Ethernet connection';
+    states[Connection.WIFI]     = 'WiFi connection';
+    states[Connection.CELL_2G]  = 'Cell 2G connection';
+    states[Connection.CELL_3G]  = 'Cell 3G connection';
+    states[Connection.CELL_4G]  = 'Cell 4G connection';
+    states[Connection.NONE]     = 'No network connection';
+
+    if( states[networkState] !== 'No network connection'){
+        switch(whichfunction) {
+            case "govscore":
+                saveServer();
+                break;
+            case "ag1":
+                ag1saveServer();
+                break;
+            case "ag2":
+                ag2saveServer();
+                break;
+            case "ag3":
+                ag3saveServer();
+                break;
+            case "ag4":
+                ag4saveServer();
+                break;
+            case "ag5":
+                ag5saveServer();
+                break;
+        }
+
+    }else{
+
+        messageAfterSaveLocal()  
+        
+    }
+}
 
 /*Save locally-----------------------------------------------*/
 
@@ -236,48 +261,6 @@ function savelocal() {
 }*/
 
 
-/*------------check the connection --------------*/
-
-function checkConnection(whichfunction) {
-    var networkState = navigator.connection.type;
-
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.NONE]     = 'No network connection';
-
-    if( states[networkState] !== 'No network connection'){
-        switch(whichfunction) {
-            case "govscore":
-                saveServer();
-                break;
-            case "ag1":
-                ag1saveServer();
-                break;
-            case "ag2":
-                ag2saveServer();
-                break;
-            case "ag3":
-                ag3saveServer();
-                break;
-            case "ag4":
-                ag4saveServer();
-                break;
-            case "ag5":
-                ag5saveServer();
-                break;
-        }
-
-    }else{
-
-        messageAfterSaveLocal()  
-        
-    }
-}
 
 /*save to server -------------------------------------------------------------*/
 
@@ -339,7 +322,6 @@ function saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                alert(responseData);
                 afterSavedServer("Govscore");
                             },
             error      : function(response) {
@@ -488,7 +470,7 @@ function ag1saveServer() {
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
-                alert(responseData + ", " + textStatus + ", " + jqXHR);
+                //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 afterSavedServer("Cultivating Accountability");
             },
             error      : function(response) {
@@ -636,7 +618,7 @@ function ag2saveServer() {
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
-                alert(responseData + ", " + textStatus + ", " + jqXHR);
+                //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 afterSavedServer("Engaging Stakeholders");
             },
             error      : function(response) {
@@ -749,7 +731,7 @@ function ag3saveServer() {
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
-                alert(responseData + ", " + textStatus + ", " + jqXHR);
+                //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 afterSavedServer("Setting Shared Strategic Directions");
             },
             error      : function(response) {
@@ -895,7 +877,7 @@ function ag4saveServer() {
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
-                alert(responseData + ", " + textStatus + ", " + jqXHR);
+                //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 afterSavedServer("Stewarding Resources");
             },
             error      : function(response) {
@@ -1016,7 +998,7 @@ function ag5saveServer() {
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
-                alert(responseData + ", " + textStatus + ", " + jqXHR);
+                //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 afterSavedServer("Continuous Governance Enhancement");
             },
             error      : function(response) {
