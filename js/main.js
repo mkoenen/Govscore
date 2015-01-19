@@ -1,5 +1,37 @@
 /* Events -----------------------------------------*/
 function init() {
+    //remove save buttons
+    var answer1 = window.localStorage.getItem("answer1");
+    if(answer1 != null){
+        var gsSaveButton = document.getElementById('btnStore');
+        gsSaveButton.className = gsSaveButton.className + " hide";
+    }
+    var ag1a = window.localStorage.getItem("ag1a");
+    if(ag1a != null){
+        var ag1SaveButton = document.getElementById('ag1Store');
+        ag1SaveButton.className = ag1SaveButton.className + " hide";
+    }
+    var ag7a = window.localStorage.getItem("ag7a");
+    if(ag7a != null) {
+        var ag2SaveButton = document.getElementById('ag2Store');
+        ag2SaveButton.className = ag2SaveButton.className + " hide";
+    }
+    var ag13a = window.localStorage.getItem("ag13a");
+    if(ag13a != null){
+        var ag3SaveButton = document.getElementById('ag3Store');
+        ag3SaveButton.className = ag3SaveButton.className + " hide";
+    }
+    var ag16a = window.localStorage.getItem("ag16a");
+    if( ag16a != null) {
+        var ag4SaveButton = document.getElementById('ag4Store');
+        ag4SaveButton.className = ag4SaveButton.className + " hide";
+    }
+    var ag22a = window.localStorage.getItem("ag22a");
+    if( ag22a != null){
+        var ag5SaveButton = document.getElementById('ag5Store');
+        ag5SaveButton.className = ag5SaveButton.className + " hide";
+    }
+
     //window.setTimeout(beonline, 6000);
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
@@ -62,16 +94,58 @@ function alreadySaved() {
     );
 }
 
+/* Interface changes -----------------------------------------*/
+
+function resultsButton() {
+    var getSaved = window.localStorage.getItem("saved");
+    var savedName = window.localStorage.getItem("name");
+
+    if (getSaved == "true" && savedName !== null ) {
+
+        var mybutton1 = document.getElementById('govscore-results1');
+        var mybutton2 = document.getElementById('govscore-results2');
+        mybutton1.className = mybutton1.className + " see";
+        mybutton2.className = mybutton2.className + " see";
+
+    }
+}
+
+function hideSaveButton(form) {
+    switch(form) {
+        case "govscore":
+            var gsSaveButton = document.getElementById('btnStore');
+            gsSaveButton.className = gsSaveButton.className + " hide";
+            break;
+        case "ag1":
+            var ag1SaveButton = document.getElementById('ag1Store');
+            ag1SaveButton.className = ag1SaveButton.className + " hide";
+            break;
+        case "ag2":
+            var ag2SaveButton = document.getElementById('ag2Store');
+            ag2SaveButton.className = ag2SaveButton.className + " hide";
+            break;
+        case "ag3":
+            var ag3SaveButton = document.getElementById('ag3Store');
+            ag3SaveButton.className = ag3SaveButton.className + " hide";
+            break;
+        case "ag4":
+            avar ag4SaveButton = document.getElementById('ag4Store');
+            ag4SaveButton.className = ag4SaveButton.className + " hide";
+            break;
+        case "ag5":
+            var ag5SaveButton = document.getElementById('ag5Store');
+            ag5SaveButton.className = ag5SaveButton.className + " hide";
+            break;
+    }
+
+}
 
 
 /*Save locally-----------------------------------------------*/
 
 function savelocal() {
 
-    //remove the button
-    var gsSaveButton = document.getElementById('btnStore');
-    gsSaveButton.className = gsSaveButton.className + " hide";
-
+    
     
     var cdate = new Date();
     var name = document.getElementById("name").value;
@@ -135,6 +209,7 @@ function savelocal() {
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
 
+    hideSaveButton("govscore");
 
     //send saved locally alert
     resultsButton();
@@ -278,21 +353,6 @@ function saveServer() {
 }
 
 
-/* Interface changes -----------------------------------------*/
-
-function resultsButton() {
-    var getSaved = window.localStorage.getItem("saved");
-    var savedName = window.localStorage.getItem("name");
-
-    if (getSaved == "true" && savedName !== null ) {
-
-        var mybutton1 = document.getElementById('govscore-results1');
-        var mybutton2 = document.getElementById('govscore-results2');
-        mybutton1.className = mybutton1.className + " see";
-        mybutton2.className = mybutton2.className + " see";
-
-    }
-}
 
 
 /* AG 1 -------------------------------------------------------*/
@@ -301,9 +361,7 @@ function resultsButton() {
 
 function ag1savelocal() {
 
-    //remove the button
-    var ag1SaveButton = document.getElementById('ag1Store');
-    ag1SaveButton.className = ag1SaveButton.className + " hide";
+    
     
     var ag1date = new Date();
     var ag1a = $('input[name="a1a"]:checked').val();
@@ -362,6 +420,8 @@ function ag1savelocal() {
     
     //alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
 
+    //hide save button
+    hideSaveButton("ag1");
 
     //now that everything is saved check the connection
     checkConnection("ag1");
@@ -453,9 +513,7 @@ function ag1saveServer() {
 
 function ag2savelocal() {
 
-    //remove the button
-    var ag2SaveButton = document.getElementById('ag2Store');
-    ag2SaveButton.className = ag2SaveButton.className + " hide";
+   
     
     var ag2date = new Date();
     var ag7a = $('input[name="a7a"]:checked').val();
@@ -512,6 +570,9 @@ function ag2savelocal() {
     window.localStorage.setItem("ag12c", ag12c);
     window.localStorage.setItem("ag12d", ag12d);
 
+
+    //hide save button
+    hideSaveButton("ag2");
 
     //now that everything is saved check the connection
     checkConnection("ag2");
@@ -600,9 +661,7 @@ function ag2saveServer() {
 
 function ag3savelocal() {
 
-    //remove the button
-    var ag3SaveButton = document.getElementById('ag3Store');
-    ag3SaveButton.className = ag3SaveButton.className + " hide";
+    
     
     var ag3date = new Date();
     var ag13a = $('input[name="a13a"]:checked').val();
@@ -635,6 +694,9 @@ function ag3savelocal() {
     window.localStorage.setItem("ag15b", ag15b);
     window.localStorage.setItem("ag15c", ag15c);
     window.localStorage.setItem("ag15d", ag15d);
+
+    //hide save button
+    hideSaveButton("ag3");
 
     //now that everything is saved check the connection
     checkConnection("ag3");
@@ -712,9 +774,7 @@ function ag3saveServer() {
 
 function ag4savelocal() {
 
-    //remove the button
-    var ag4SaveButton = document.getElementById('ag4Store');
-    ag4SaveButton.className = ag4SaveButton.className + " hide";
+    
     
     var ag4date = new Date();
     var ag16a = $('input[name="a16a"]:checked').val();
@@ -768,6 +828,9 @@ function ag4savelocal() {
     window.localStorage.setItem("ag21b", ag21b);
     window.localStorage.setItem("ag21c", ag21c);
     window.localStorage.setItem("ag21d", ag21d);
+
+    //hide save button
+    hideSaveButton("ag4");
 
     //now that everything is saved check the connection
     checkConnection("ag4");
@@ -857,9 +920,7 @@ function ag4saveServer() {
 
 function ag5savelocal() {
 
-    //remove the button
-    var ag5SaveButton = document.getElementById('ag5Store');
-    ag5SaveButton.className = ag5SaveButton.className + " hide";
+    
     
     var ag5date = new Date();
     var ag22a = $('input[name="a22a"]:checked').val();
@@ -897,6 +958,9 @@ function ag5savelocal() {
     window.localStorage.setItem("ag25b", ag25b);
     window.localStorage.setItem("ag25c", ag25c);
     window.localStorage.setItem("ag25d", ag25d);
+
+    //hide save button
+    hideSaveButton("ag5");
 
     //now that everything is saved check the connection
     checkConnection("ag5");
