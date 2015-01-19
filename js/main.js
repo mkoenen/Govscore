@@ -1,46 +1,20 @@
 /* Events -----------------------------------------*/
 function init() {
     //remove save buttons
-    var answer1 = window.localStorage.getItem("answer1");
-    if(answer1 != null){
-        var gsSaveButton = document.getElementById('btnStore');
-        alert(gsSaveButton.className);
-        gsSaveButton.className = gsSaveButton.className + " hide";
-        alert(gsSaveButton.className);
-    }
-    alert("answer1 is " + answer1);
-    var ag1a = window.localStorage.getItem("ag1a");
-    if(ag1a != null){
-        var ag1SaveButton = document.getElementById('ag1Store');
-        ag1SaveButton.className = ag1SaveButton.className + " hide";
-    }
-    var ag7a = window.localStorage.getItem("ag7a");
-    if(ag7a != null) {
-        var ag2SaveButton = document.getElementById('ag2Store');
-        ag2SaveButton.className = ag2SaveButton.className + " hide";
-    }
-    var ag13a = window.localStorage.getItem("ag13a");
-    if(ag13a != null){
-        var ag3SaveButton = document.getElementById('ag3Store');
-        ag3SaveButton.className = ag3SaveButton.className + " hide";
-    }
-    var ag16a = window.localStorage.getItem("ag16a");
-    if( ag16a != null) {
-        var ag4SaveButton = document.getElementById('ag4Store');
-        ag4SaveButton.className = ag4SaveButton.className + " hide";
-    }
-    var ag22a = window.localStorage.getItem("ag22a");
-    if( ag22a != null){
-        var ag5SaveButton = document.getElementById('ag5Store');
-        ag5SaveButton.className = ag5SaveButton.className + " hide";
-    }
+    
 
     //window.setTimeout(beonline, 6000);
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
-    //document.addEventListener("resume", checkEvent, false);
+    document.addEventListener("resume", hideSaveButton("govscore"), false);
+    document.addEventListener("resume", hideSaveButton("ag1"), false);
+    document.addEventListener("resume", hideSaveButton("ag2"), false);
+    document.addEventListener("resume", hideSaveButton("ag3"), false);
+    document.addEventListener("resume", hideSaveButton("ag4"), false);
+    document.addEventListener("resume", hideSaveButton("ag5"), false);
+
 
 }
 
@@ -113,31 +87,57 @@ function resultsButton() {
     }
 }
 
+
+    
+    
+    
+    
+   
+   
+
 function hideSaveButton(form) {
     switch(form) {
         case "govscore":
-            var gsSaveButton = document.getElementById('btnStore');
-            gsSaveButton.className = gsSaveButton.className + " hide";
+            var answer1 = window.localStorage.getItem("answer1");
+            if(answer1 != null){
+                var gsSaveButton = document.getElementById('btnStore');
+                gsSaveButton.className = gsSaveButton.className + " hide";
+            }
             break;
         case "ag1":
-            var ag1SaveButton = document.getElementById('ag1Store');
-            ag1SaveButton.className = ag1SaveButton.className + " hide";
+            var ag1a = window.localStorage.getItem("ag1a");
+            if(ag1a != null){
+                var ag1SaveButton = document.getElementById('ag1Store');
+                ag1SaveButton.className = ag1SaveButton.className + " hide";
+            }
             break;
         case "ag2":
-            var ag2SaveButton = document.getElementById('ag2Store');
-            ag2SaveButton.className = ag2SaveButton.className + " hide";
+            var ag7a = window.localStorage.getItem("ag7a");
+            if(ag7a != null) {
+                var ag2SaveButton = document.getElementById('ag2Store');
+                ag2SaveButton.className = ag2SaveButton.className + " hide";
+            }
             break;
         case "ag3":
-            var ag3SaveButton = document.getElementById('ag3Store');
-            ag3SaveButton.className = ag3SaveButton.className + " hide";
+            var ag13a = window.localStorage.getItem("ag13a");
+            if(ag13a != null){
+                var ag3SaveButton = document.getElementById('ag3Store');
+                ag3SaveButton.className = ag3SaveButton.className + " hide";
+            }
             break;
         case "ag4":
-            var ag4SaveButton = document.getElementById('ag4Store');
-            ag4SaveButton.className = ag4SaveButton.className + " hide";
+             var ag16a = window.localStorage.getItem("ag16a");
+            if( ag16a != null) {
+                var ag4SaveButton = document.getElementById('ag4Store');
+                ag4SaveButton.className = ag4SaveButton.className + " hide";
+            }
             break;
         case "ag5":
-            var ag5SaveButton = document.getElementById('ag5Store');
-            ag5SaveButton.className = ag5SaveButton.className + " hide";
+             var ag22a = window.localStorage.getItem("ag22a");
+            if( ag22a != null){
+                var ag5SaveButton = document.getElementById('ag5Store');
+                ag5SaveButton.className = ag5SaveButton.className + " hide";
+            }
             break;
     }
 
