@@ -129,7 +129,7 @@ function hideSaveButton(form) {
             ag3SaveButton.className = ag3SaveButton.className + " hide";
             break;
         case "ag4":
-            avar ag4SaveButton = document.getElementById('ag4Store');
+            var ag4SaveButton = document.getElementById('ag4Store');
             ag4SaveButton.className = ag4SaveButton.className + " hide";
             break;
         case "ag5":
