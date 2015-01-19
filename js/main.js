@@ -30,6 +30,7 @@ function onOnline() {
 
 
 var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved
+var orgcode = window.localStorage.getItem("organization");
 
  //listen for click events      
 function setbutton() {
@@ -59,7 +60,7 @@ function afterSavedServer(form, orgcode) {
 
     navigator.notification.alert(
 
-        'Your answers to the questionnaire ' + form + ' have been saved. Thank you for your submission. To see the results for your organization go to our website and enter the organization code' + orgcode + '.',
+        'Your answers to the questionnaire ' + form + ' have been saved. Thank you for your submission. To see the results for your organization go to our website and enter the organization code ' + orgcode + '.',
         'Info title',
         'Update'
     );
@@ -322,7 +323,7 @@ function saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                var orgcode = window.localStorage.getItem("organization");
+                
                 afterSavedServer("Govscore",orgcode);
                             },
             error      : function(response) {
