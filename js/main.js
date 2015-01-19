@@ -24,8 +24,7 @@ function onOnline() {
 }
 
 
-var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved
-var orgcode = window.localStorage.getItem("organization");
+var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode
 
  //listen for click events      
 function setbutton() {
@@ -229,10 +228,13 @@ function savelocal() {
 
     hideSaveButton();
 
+    orgcode = window.localStorage.getItem("organization");
+
     //now that everything is saved check the connection
     checkConnection( "govscore");
 
     
+
 
 }
 
