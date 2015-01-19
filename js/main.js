@@ -8,12 +8,12 @@ function init() {
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("resume", hideSaveButton("govscore"), false);
-    document.addEventListener("resume", hideSaveButton("ag1"), false);
-    document.addEventListener("resume", hideSaveButton("ag2"), false);
-    document.addEventListener("resume", hideSaveButton("ag3"), false);
-    document.addEventListener("resume", hideSaveButton("ag4"), false);
-    document.addEventListener("resume", hideSaveButton("ag5"), false);
+    document.addEventListener("deviceready", hideSaveButton("govscore"), false);
+    document.addEventListener("deviceready", hideSaveButton("ag1"), false);
+    document.addEventListener("deviceready", hideSaveButton("ag2"), false);
+    document.addEventListener("deviceready", hideSaveButton("ag3"), false);
+    document.addEventListener("deviceready", hideSaveButton("ag4"), false);
+    document.addEventListener("deviceready", hideSaveButton("ag5"), false);
 
 
 }
@@ -60,7 +60,7 @@ function afterSavedServer(form, orgcode) {
 
     navigator.notification.alert(
 
-        'Your answers to the questionnaire ' + form + ' have been saved. Thank you for your submission. To see the results for your organization go to our website and enter the organization code ' + orgcode + '.',
+        'Your answers to the questionnaire ' + form + ' have been saved. Thank you for your submission. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
         'Info title',
         'Update'
     );
@@ -324,7 +324,7 @@ function saveServer() {
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
-                afterSavedServer("Govscore",orgcode);
+                afterSavedServer("Govscore", orgcode);
                             },
             error      : function(response) {
                 alert(response);                  
@@ -473,7 +473,7 @@ function ag1saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Cultivating Accountability");
+                afterSavedServer("Cultivating Accountability", orgcode);
             },
             error      : function(response) {
                 alert(response);                  
@@ -621,7 +621,7 @@ function ag2saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Engaging Stakeholders");
+                afterSavedServer("Engaging Stakeholders", orgcode);
             },
             error      : function(response) {
                 alert(response);                  
@@ -734,7 +734,7 @@ function ag3saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Setting Shared Strategic Directions");
+                afterSavedServer("Setting Shared Strategic Directions", orgcode);
             },
             error      : function(response) {
                 alert(response);                  
@@ -880,7 +880,7 @@ function ag4saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Stewarding Resources");
+                afterSavedServer("Stewarding Resources", orgcode);
             },
             error      : function(response) {
                 alert(response);                  
@@ -1001,7 +1001,7 @@ function ag5saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Continuous Governance Enhancement");
+                afterSavedServer("Continuous Governance Enhancement", orgcode);
             },
             error      : function(response) {
                 alert(response);                  
