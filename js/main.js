@@ -55,7 +55,7 @@ function afterSavedServer(form, orgcode) {
 
     navigator.notification.alert(
 
-        'Your answers to the questionnaire ' + form + ' have been saved. Thank you for your submission. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
+        'Your answers to the questionnaire ' + form + ' have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
         'Info title',
         'Update'
     );
@@ -453,7 +453,7 @@ function ag1saveServer() {
        
         $.ajax({
             type       : "GET",
-            url        : "http://sensi.wpengine.com/ag1store.php",
+            url        : "http://sensi.wpengine.com/store.php",
             crossDomain: true,
             data       : JSON.stringify(ag1data),
             contentType: 'application/json; charset=utf-8',
