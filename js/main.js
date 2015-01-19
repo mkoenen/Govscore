@@ -14,16 +14,16 @@ function beonline() {
 }
 
 
-var saved, ag1saved, ag2saved
+var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved
 
  //listen for click events      
 function setbutton() {
     document.getElementById('btnStore').addEventListener('click', savelocal, false);
     document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
     document.getElementById('ag2Store').addEventListener('click', ag2savelocal, false);
-    ////document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
-    //document.getElementById('ag4Store').addEventListener('click', ag4savelocal, false);
-    //document.getElementById('ag5Store').addEventListener('click', ag5savelocal, false);
+    document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
+    document.getElementById('ag4Store').addEventListener('click', ag4savelocal, false);
+    document.getElementById('ag5Store').addEventListener('click', ag5savelocal, false);
     document.getElementById("retrieveData").addEventListener("click", result, false); //temp: checks if data has been saved
 
 }
@@ -173,6 +173,15 @@ function checkConnection(whichfunction) {
                 break;
             case "ag2":
                 ag2saveServer();
+                break;
+            case "ag3":
+                ag3saveServer();
+                break;
+            case "ag4":
+                ag4saveServer();
+                break;
+            case "ag5":
+                ag5saveServer();
                 break;
             default:
                 alert("not sure which file to use");
@@ -567,6 +576,417 @@ alert("got here");
             url        : "http://sensi.wpengine.com/ag2store.php",
             crossDomain: true,
             data       : JSON.stringify(ag2data),
+            contentType: 'application/json; charset=utf-8',
+            ////dataType   : 'json',
+            success    : function(responseData, textStatus, jqXHR) {
+                alert(responseData + ", " + textStatus + ", " + jqXHR);
+            },
+            error      : function(response) {
+                alert(response);                  
+            }
+        });
+
+       
+        //afterSavedServer();
+
+
+
+    }else{
+
+        alreadySaved();
+
+    }
+
+}
+
+/* AG 3 -------------------------------------------------------*/
+
+/* store locally */
+
+function ag3savelocal() {
+    alert("Got to ag3savelocal");
+    
+    var ag3date = new Date();
+    var ag13a = $('input[name="a13a"]:checked').val();
+    var ag13b = $('input[name="a13b"]:checked').val();
+    var ag13c = $('input[name="a13c"]:checked').val();
+    var ag13d = $('input[name="a13d"]:checked').val();
+    var ag14a = $('input[name="a14a"]:checked').val();
+    var ag14b = $('input[name="a14b"]:checked').val();
+    var ag14c = $('input[name="a14c"]:checked').val();
+    var ag14d = $('input[name="a14d"]:checked').val();
+    var ag15a = $('input[name="a15a"]:checked').val();
+    var ag15b = $('input[name="a15b"]:checked').val();
+    var ag15c = $('input[name="a15c"]:checked').val();
+    var ag15d = $('input[name="a15d"]:checked').val();
+    
+    
+    
+
+
+    window.localStorage.setItem("ag3date", ag3date);
+    window.localStorage.setItem("ag13a", ag13a);
+    window.localStorage.setItem("ag13b", ag13b);
+    window.localStorage.setItem("ag13c", ag13c);
+    window.localStorage.setItem("ag13d", ag13d);
+    window.localStorage.setItem("ag14a", ag14a);
+    window.localStorage.setItem("ag14b", ag14b);
+    window.localStorage.setItem("ag14c", ag14c);
+    window.localStorage.setItem("ag14d", ag14d);
+    window.localStorage.setItem("ag15a", ag15a);
+    window.localStorage.setItem("ag15b", ag15b);
+    window.localStorage.setItem("ag15c", ag15c);
+    window.localStorage.setItem("ag15d", ag15d);
+    
+    
+    alert(window.localStorage.getItem("ag13a") + ", " + window.localStorage.getItem("ag15d"));
+
+
+    //send saved locally alert
+    messageAfterSaveLocal();
+
+    //now that everything is saved check the connection
+    checkConnection("ag3");
+
+    
+
+}
+
+
+
+/* Save on Server */
+
+function ag3saveServer() {
+    //first check if data has been saved to server already
+
+    var getag3Saved = window.localStorage.getItem("ag3saved");
+    var savedag13b = window.localStorage.getItem("ag13b");
+    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
+//getag1Saved !== "true" && 
+    if (savedag13b !== null ) {
+    
+         //get the data from local storage
+        var ag3date = window.localStorage.getItem("ag3date");
+        var name = window.localStorage.getItem("name");
+        var email = window.localStorage.getItem("email");
+        var organization = window.localStorage.getItem("organization");
+        var ag13a = window.localStorage.getItem("ag13a");
+        var ag13b = window.localStorage.getItem("ag13b");
+        var ag13c = window.localStorage.getItem("ag13c");
+        var ag13d = window.localStorage.getItem("ag13d");
+        var ag14a = window.localStorage.getItem("ag14a");
+        var ag14b = window.localStorage.getItem("ag14b");
+        var ag14c = window.localStorage.getItem("ag14c");
+        var ag14d = window.localStorage.getItem("ag14d");
+        var ag15a = window.localStorage.getItem("ag15a");
+        var ag15b = window.localStorage.getItem("ag15d");
+        var ag15c = window.localStorage.getItem("ag15c");
+        var ag15d = window.localStorage.getItem("ag15d");
+        
+
+        ag3saved = window.localStorage.setItem("ag3saved", "true");
+
+
+alert("got here");
+
+        var ag3data = { "ag3date" : ag3date, "name": name, "email": email, "organization": organization, "ag13a": ag13a, "ag13b": ag13b, "ag13c": ag13c, "ag13d": ag13d, "ag14a": ag14a, "ag14b": ag14b, "ag14c": ag14c, "ag14d": ag14d, "ag15a": ag15a, "ag15b": ag15b, "ag15c": ag15c, "ag15d": ag15d };
+       
+        $.ajax({
+            type       : "GET",
+            url        : "http://sensi.wpengine.com/ag3store.php",
+            crossDomain: true,
+            data       : JSON.stringify(ag3data),
+            contentType: 'application/json; charset=utf-8',
+            ////dataType   : 'json',
+            success    : function(responseData, textStatus, jqXHR) {
+                alert(responseData + ", " + textStatus + ", " + jqXHR);
+            },
+            error      : function(response) {
+                alert(response);                  
+            }
+        });
+
+       
+        //afterSavedServer();
+
+
+
+    }else{
+
+        alreadySaved();
+
+    }
+
+}
+
+/* AG 4 -------------------------------------------------------*/
+
+/* store locally */
+
+function ag4savelocal() {
+    alert("Got to ag4savelocal");
+    
+    var ag4date = new Date();
+    var ag16a = $('input[name="a16a"]:checked').val();
+    var ag16b = $('input[name="a16b"]:checked').val();
+    var ag16c = $('input[name="a16c"]:checked').val();
+    var ag16d = $('input[name="a16d"]:checked').val();
+    var ag17a = $('input[name="a17a"]:checked').val();
+    var ag17b = $('input[name="a17b"]:checked').val();
+    var ag17c = $('input[name="a17c"]:checked').val();
+    var ag17d = $('input[name="a17d"]:checked').val();
+    var ag18a = $('input[name="a18a"]:checked').val();
+    var ag18b = $('input[name="a18b"]:checked').val();
+    var ag18c = $('input[name="a18c"]:checked').val();
+    var ag18d = $('input[name="a18d"]:checked').val();
+    var ag19a = $('input[name="a19a"]:checked').val();
+    var ag19b = $('input[name="a19b"]:checked').val();
+    var ag19c = $('input[name="a19c"]:checked').val();
+    var ag19d = $('input[name="a19d"]:checked').val();
+    var ag20a = $('input[name="a20a"]:checked').val();
+    var ag20b = $('input[name="a20b"]:checked').val();
+    var ag20c = $('input[name="a20c"]:checked').val();
+    var ag20d = $('input[name="a20d"]:checked').val();
+    var ag21a = $('input[name="a21a"]:checked').val();
+    var ag21b = $('input[name="a21b"]:checked').val();
+    var ag21c = $('input[name="a21c"]:checked').val();
+    var ag21d = $('input[name="a21d"]:checked').val();
+    
+    
+    
+
+
+    window.localStorage.setItem("ag4date", ag4date);
+    window.localStorage.setItem("ag16a", ag16a);
+    window.localStorage.setItem("ag16b", ag16b);
+    window.localStorage.setItem("ag16c", ag16c);
+    window.localStorage.setItem("ag16d", ag16d);
+    window.localStorage.setItem("ag17a", ag17a);
+    window.localStorage.setItem("ag17b", ag17b);
+    window.localStorage.setItem("ag17c", ag17c);
+    window.localStorage.setItem("ag17d", ag17d);
+    window.localStorage.setItem("ag18a", ag18a);
+    window.localStorage.setItem("ag18b", ag18b);
+    window.localStorage.setItem("ag18c", ag18c);
+    window.localStorage.setItem("ag18d", ag18d);
+    window.localStorage.setItem("ag19a", ag19a);
+    window.localStorage.setItem("ag19b", ag19b);
+    window.localStorage.setItem("ag19c", ag19c);
+    window.localStorage.setItem("ag19d", ag19d);
+    window.localStorage.setItem("ag20a", ag20a);
+    window.localStorage.setItem("ag20b", ag20b);
+    window.localStorage.setItem("ag20c", ag20c);
+    window.localStorage.setItem("ag20d", ag20d);
+    window.localStorage.setItem("ag21a", ag21a);
+    window.localStorage.setItem("ag21b", ag21b);
+    window.localStorage.setItem("ag21c", ag21c);
+    window.localStorage.setItem("ag21d", ag21d);
+    
+    
+    alert(window.localStorage.getItem("ag16a") + ", " + window.localStorage.getItem("ag21d"));
+
+
+    //send saved locally alert
+    messageAfterSaveLocal();
+
+    //now that everything is saved check the connection
+    checkConnection("ag4");
+
+    
+
+}
+
+
+
+/* Save on Server */
+
+function ag4saveServer() {
+    //first check if data has been saved to server already
+
+    var getag4Saved = window.localStorage.getItem("ag4saved");
+    var savedag16b = window.localStorage.getItem("ag16b");
+    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
+//getag1Saved !== "true" && 
+    if (savedag16b !== null ) {
+    
+         //get the data from local storage
+        var ag4date = window.localStorage.getItem("ag4date");
+        var name = window.localStorage.getItem("name");
+        var email = window.localStorage.getItem("email");
+        var organization = window.localStorage.getItem("organization");
+        var ag16a = window.localStorage.getItem("ag16a");
+        var ag16b = window.localStorage.getItem("ag16b");
+        var ag16c = window.localStorage.getItem("ag16c");
+        var ag16d = window.localStorage.getItem("ag16d");
+        var ag17a = window.localStorage.getItem("ag17a");
+        var ag17b = window.localStorage.getItem("ag17b");
+        var ag17c = window.localStorage.getItem("ag17c");
+        var ag17d = window.localStorage.getItem("ag17d");
+        var ag18a = window.localStorage.getItem("ag18a");
+        var ag18b = window.localStorage.getItem("ag18d");
+        var ag18c = window.localStorage.getItem("ag18c");
+        var ag18d = window.localStorage.getItem("ag18d");
+        var ag19a = window.localStorage.getItem("ag19a");
+        var ag19b = window.localStorage.getItem("ag19b");
+        var ag19c = window.localStorage.getItem("ag19c");
+        var ag19d = window.localStorage.getItem("ag19d");
+        var ag20a = window.localStorage.getItem("ag20a");
+        var ag20b = window.localStorage.getItem("ag20b");
+        var ag20c = window.localStorage.getItem("ag20c");
+        var ag20d = window.localStorage.getItem("ag20d");
+        var ag21a = window.localStorage.getItem("ag21a");
+        var ag21b = window.localStorage.getItem("ag21d");
+        var ag21c = window.localStorage.getItem("ag21c");
+        var ag21d = window.localStorage.getItem("ag21d");
+        
+
+        ag3saved = window.localStorage.setItem("ag4saved", "true");
+
+
+alert("got here");
+
+        var ag4data = { "ag4date" : ag4date, "name": name, "email": email, "organization": organization, "ag16a": ag16a, "ag16b": ag16b, "ag16c": ag16c, "ag16d": ag16d, "ag17a": ag17a, "ag17b": ag17b, "ag17c": ag17c, "ag17d": ag17d, "ag18a": ag18a, "ag18b": ag18b, "ag18c": ag18c, "ag18d": ag18d, "ag19a": ag19a, "ag19b": ag19b, "ag19c": ag19c, "ag19d": ag19d, "ag20a": ag20a, "ag20b": ag20b, "ag20c": ag20c, "ag20d": ag20d, "ag21a": ag21a, "ag21b": ag21b, "ag21c": ag21c, "ag21d": ag21d };
+       
+        $.ajax({
+            type       : "GET",
+            url        : "http://sensi.wpengine.com/ag4store.php",
+            crossDomain: true,
+            data       : JSON.stringify(ag4data),
+            contentType: 'application/json; charset=utf-8',
+            ////dataType   : 'json',
+            success    : function(responseData, textStatus, jqXHR) {
+                alert(responseData + ", " + textStatus + ", " + jqXHR);
+            },
+            error      : function(response) {
+                alert(response);                  
+            }
+        });
+
+       
+        //afterSavedServer();
+
+
+
+    }else{
+
+        alreadySaved();
+
+    }
+
+}
+
+/* AG 5 -------------------------------------------------------*/
+
+/* store locally */
+
+function ag5savelocal() {
+    alert("Got to ag4savelocal");
+    
+    var ag5date = new Date();
+    var ag22a = $('input[name="a22a"]:checked').val();
+    var ag22b = $('input[name="a22b"]:checked').val();
+    var ag22c = $('input[name="a22c"]:checked').val();
+    var ag22d = $('input[name="a22d"]:checked').val();
+    var ag23a = $('input[name="a23a"]:checked').val();
+    var ag23b = $('input[name="a23b"]:checked').val();
+    var ag23c = $('input[name="a23c"]:checked').val();
+    var ag23d = $('input[name="a23d"]:checked').val();
+    var ag24a = $('input[name="a24a"]:checked').val();
+    var ag24b = $('input[name="a24b"]:checked').val();
+    var ag24c = $('input[name="a24c"]:checked').val();
+    var ag24d = $('input[name="a24d"]:checked').val();
+    var ag25a = $('input[name="a25a"]:checked').val();
+    var ag25b = $('input[name="a25b"]:checked').val();
+    var ag25c = $('input[name="a25c"]:checked').val();
+    var ag25d = $('input[name="a25d"]:checked').val();
+    
+    
+    
+    
+
+
+    window.localStorage.setItem("ag5date", ag5date);
+    window.localStorage.setItem("ag22a", ag22a);
+    window.localStorage.setItem("ag22b", ag22b);
+    window.localStorage.setItem("ag22c", ag22c);
+    window.localStorage.setItem("ag22d", ag22d);
+    window.localStorage.setItem("ag23a", ag23a);
+    window.localStorage.setItem("ag23b", ag23b);
+    window.localStorage.setItem("ag23c", ag23c);
+    window.localStorage.setItem("ag23d", ag23d);
+    window.localStorage.setItem("ag24a", ag24a);
+    window.localStorage.setItem("ag24b", ag24b);
+    window.localStorage.setItem("ag24c", ag24c);
+    window.localStorage.setItem("ag24d", ag24d);
+    window.localStorage.setItem("ag25a", ag25a);
+    window.localStorage.setItem("ag25b", ag25b);
+    window.localStorage.setItem("ag25c", ag25c);
+    window.localStorage.setItem("ag25d", ag25d);
+   
+    
+    
+    alert(window.localStorage.getItem("ag22a") + ", " + window.localStorage.getItem("ag25d"));
+
+
+    //send saved locally alert
+    messageAfterSaveLocal();
+
+    //now that everything is saved check the connection
+    checkConnection("ag5");
+
+    
+
+}
+
+
+
+/* Save on Server */
+
+function ag5saveServer() {
+    //first check if data has been saved to server already
+
+    var getag5Saved = window.localStorage.getItem("ag5saved");
+    var savedag22b = window.localStorage.getItem("ag22b");
+    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
+//getag1Saved !== "true" && 
+    if (savedag22b !== null ) {
+    
+         //get the data from local storage
+        var ag5date = window.localStorage.getItem("ag5date");
+        var name = window.localStorage.getItem("name");
+        var email = window.localStorage.getItem("email");
+        var organization = window.localStorage.getItem("organization");
+        var ag22a = window.localStorage.getItem("ag22a");
+        var ag22b = window.localStorage.getItem("ag22b");
+        var ag22c = window.localStorage.getItem("ag22c");
+        var ag22d = window.localStorage.getItem("ag22d");
+        var ag23a = window.localStorage.getItem("ag23a");
+        var ag23b = window.localStorage.getItem("ag23b");
+        var ag23c = window.localStorage.getItem("ag23c");
+        var ag23d = window.localStorage.getItem("ag23d");
+        var ag24a = window.localStorage.getItem("ag24a");
+        var ag24b = window.localStorage.getItem("ag24d");
+        var ag24c = window.localStorage.getItem("ag24c");
+        var ag24d = window.localStorage.getItem("ag24d");
+        var ag25a = window.localStorage.getItem("ag25a");
+        var ag25b = window.localStorage.getItem("ag25b");
+        var ag25c = window.localStorage.getItem("ag25c");
+        var ag25d = window.localStorage.getItem("ag25d");
+        
+        
+
+        ag5saved = window.localStorage.setItem("ag5saved", "true");
+
+
+alert("got here");
+
+        var ag5data = { "ag5date" : ag5date, "name": name, "email": email, "organization": organization, "ag22a": ag22a, "ag22b": ag22b, "ag22c": ag22c, "ag22d": ag22d, "ag23a": ag23a, "ag23b": ag23b, "ag23c": ag23c, "ag23d": ag23d, "ag24a": ag24a, "ag24b": ag24b, "ag24c": ag24c, "ag24d": ag24d, "ag25a": ag25a, "ag25b": ag25b, "ag25c": ag25c, "ag25d": ag25d };
+       
+        $.ajax({
+            type       : "GET",
+            url        : "http://sensi.wpengine.com/ag5store.php",
+            crossDomain: true,
+            data       : JSON.stringify(ag5data),
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
