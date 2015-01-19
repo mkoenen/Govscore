@@ -8,12 +8,7 @@ function init() {
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", hideSaveButton("govscore"), false);
-    document.addEventListener("deviceready", hideSaveButton("ag1"), false);
-    document.addEventListener("deviceready", hideSaveButton("ag2"), false);
-    document.addEventListener("deviceready", hideSaveButton("ag3"), false);
-    document.addEventListener("deviceready", hideSaveButton("ag4"), false);
-    document.addEventListener("deviceready", hideSaveButton("ag5"), false);
+    document.addEventListener("deviceready", hideSaveButton(), false);
 
 
 }
@@ -76,58 +71,47 @@ function alreadySaved() {
 
 /* Interface changes -----------------------------------------*/ 
 
-function hideSaveButton(form) {
+function hideSaveButton() {
 
-    switch(form) {
-        case "govscore":
-            alert("i am here, govescore");
-            var answer1 = window.localStorage.getItem("answer1");
-            if( answer1 != null){
-                var gsSaveButton = document.getElementById('btnStore');
-                gsSaveButton.className = gsSaveButton.className + " hide";
-                var resultButton1 = document.getElementById('govscore-results1');
-                var resultButton2 = document.getElementById('govscore-results2');
-                resultButton1.className = resultButton1.className + " see";
-                resultButton2.className = resultButton2.className + " see";
-            }
-            break;
-        case "ag1":
-            alert("i am here, ag1");
-            var ag1a = window.localStorage.getItem("ag1a");
-            alert(ag1a);
-            if(ag1a != null){
-                var ag1SaveButton = document.getElementById('ag1Store');
-                ag1SaveButton.className = ag1SaveButton.className + " hide";
-            }
-            break;
-        case "ag2":
-            var ag7a = window.localStorage.getItem("ag7a");
-            if(ag7a != null) {
-                var ag2SaveButton = document.getElementById('ag2Store');
-                ag2SaveButton.className = ag2SaveButton.className + " hide";
-            }
-            break;
-        case "ag3":
-            var ag13a = window.localStorage.getItem("ag13a");
-            if(ag13a != null){
-                var ag3SaveButton = document.getElementById('ag3Store');
-                ag3SaveButton.className = ag3SaveButton.className + " hide";
-            }
-            break;
-        case "ag4":
-             var ag16a = window.localStorage.getItem("ag16a");
-            if( ag16a != null) {
-                var ag4SaveButton = document.getElementById('ag4Store');
-                ag4SaveButton.className = ag4SaveButton.className + " hide";
-            }
-            break;
-        case "ag5":
-             var ag22a = window.localStorage.getItem("ag22a");
-            if( ag22a != null){
-                var ag5SaveButton = document.getElementById('ag5Store');
-                ag5SaveButton.className = ag5SaveButton.className + " hide";
-            }
-            break;
+    
+    var answer1 = window.localStorage.getItem("answer1");
+    if( answer1 != null){
+        var gsSaveButton = document.getElementById('btnStore');
+        gsSaveButton.className = gsSaveButton.className + " hide";
+        var resultButton1 = document.getElementById('govscore-results1');
+        var resultButton2 = document.getElementById('govscore-results2');
+        resultButton1.className = resultButton1.className + " see";
+        resultButton2.className = resultButton2.className + " see";
+    }
+    
+    var ag1a = window.localStorage.getItem("ag1a");
+    if(ag1a != null){
+        var ag1SaveButton = document.getElementById('ag1Store');
+        ag1SaveButton.className = ag1SaveButton.className + " hide";
+    }
+   
+    var ag7a = window.localStorage.getItem("ag7a");
+    if(ag7a != null) {
+        var ag2SaveButton = document.getElementById('ag2Store');
+        ag2SaveButton.className = ag2SaveButton.className + " hide";
+    }
+    
+    var ag13a = window.localStorage.getItem("ag13a");
+    if(ag13a != null){
+        var ag3SaveButton = document.getElementById('ag3Store');
+        ag3SaveButton.className = ag3SaveButton.className + " hide";
+    }
+    
+    var ag16a = window.localStorage.getItem("ag16a");
+    if( ag16a != null) {
+        var ag4SaveButton = document.getElementById('ag4Store');
+        ag4SaveButton.className = ag4SaveButton.className + " hide";
+    }
+   
+    var ag22a = window.localStorage.getItem("ag22a");
+    if( ag22a != null){
+        var ag5SaveButton = document.getElementById('ag5Store');
+        ag5SaveButton.className = ag5SaveButton.className + " hide";
     }
 
 }
@@ -243,7 +227,7 @@ function savelocal() {
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
 
-    hideSaveButton("govscore");
+    hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection( "govscore");
@@ -410,7 +394,7 @@ function ag1savelocal() {
     //alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
 
     //hide save button
-    hideSaveButton("ag1");
+    hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection("ag1");
@@ -561,7 +545,7 @@ function ag2savelocal() {
 
 
     //hide save button
-    hideSaveButton("ag2");
+    hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection("ag2");
@@ -685,7 +669,7 @@ function ag3savelocal() {
     window.localStorage.setItem("ag15d", ag15d);
 
     //hide save button
-    hideSaveButton("ag3");
+    hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection("ag3");
@@ -819,7 +803,7 @@ function ag4savelocal() {
     window.localStorage.setItem("ag21d", ag21d);
 
     //hide save button
-    hideSaveButton("ag4");
+    hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection("ag4");
@@ -949,7 +933,7 @@ function ag5savelocal() {
     window.localStorage.setItem("ag25d", ag25d);
 
     //hide save button
-    hideSaveButton("ag5");
+    hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection("ag5");
