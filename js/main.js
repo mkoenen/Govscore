@@ -55,11 +55,11 @@ function messageAfterSaveLocal() {
 }
 
 
-function afterSavedServer(form) {
-    var orgcode = window.localStorage.getItem("organization");
+function afterSavedServer(form, orgcode) {
+
     navigator.notification.alert(
 
-        'Your answers to the questionnaire ' + form + ' have been saved. Thank you for your submission.<br />To see the results for your organization go to our website and enter the organization code<br />' + orgcode,
+        'Your answers to the questionnaire ' + form + ' have been saved. Thank you for your submission. To see the results for your organization go to our website and enter the organization code' + orgcode + '.',
         'Info title',
         'Update'
     );
@@ -322,7 +322,8 @@ function saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Govscore");
+                var orgcode = window.localStorage.getItem("organization");
+                afterSavedServer("Govscore",orgcode);
                             },
             error      : function(response) {
                 alert(response);                  
