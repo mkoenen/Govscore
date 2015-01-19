@@ -77,6 +77,7 @@ function alreadySaved() {
 /* Interface changes -----------------------------------------*/ 
 
 function hideSaveButton(form) {
+    alert("i am here");
     switch(form) {
         case "govscore":
             var answer1 = window.localStorage.getItem("answer1");
