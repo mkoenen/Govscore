@@ -1,6 +1,7 @@
 /* Events -----------------------------------------*/
 function init() {
-    window.setTimeout(beonline, 3000);                              //limit how fast the online event can fire
+    //window.setTimeout(beonline, 6000);
+    document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
@@ -9,8 +10,13 @@ function init() {
 }
 
 //check if online according to the above interval
-function beonline() {
-   document.addEventListener("online", saveServer, true); 
+function onOnline() {
+   saveServer(); 
+   ag1saveServer(); 
+   ag2saveServer(); 
+   ag3saveServer(); 
+   ag4saveServer(); 
+   ag5saveServer(); 
 }
 
 
@@ -24,7 +30,7 @@ function setbutton() {
     document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
     document.getElementById('ag4Store').addEventListener('click', ag4savelocal, false);
     document.getElementById('ag5Store').addEventListener('click', ag5savelocal, false);
-    document.getElementById("retrieveData").addEventListener("click", result, false); //temp: checks if data has been saved
+    //document.getElementById("retrieveData").addEventListener("click", result, false); //temp: checks if data has been saved
 
 }
 
@@ -126,7 +132,6 @@ function savelocal() {
 
 
     //send saved locally alert
-    messageAfterSaveLocal();
     resultsButton();
 
     //now that everything is saved check the connection
@@ -137,7 +142,7 @@ function savelocal() {
 }
 
 
-function result(){
+/*function result(){
     var cdate = window.localStorage.getItem("date");
     var name = window.localStorage.getItem("name");
     var email = window.localStorage.getItem("email");
@@ -146,7 +151,7 @@ function result(){
     var savedFromLocal = window.localStorage.getItem("saved");
     var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />organization: " + organization + "<br />Answer1: " + answer1 + "<br />Saved: " + savedFromLocal +"<br />";
     document.getElementById("retrieveData").innerHTML = output;
-}
+}*/
 
 
 /*------------check the connection --------------*/
@@ -183,12 +188,11 @@ function checkConnection(whichfunction) {
             case "ag5":
                 ag5saveServer();
                 break;
-            default:
-                alert("not sure which file to use");
         }
+
     }else{
-        alert("we are not getting this saved despite connecton"); //temp
-        messageAfterSaveLocal()  //temp
+
+        messageAfterSaveLocal()  
         
     }
 }
@@ -202,8 +206,7 @@ function saveServer() {
     var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
     //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-//getSaved !== "true" && 
-    if (savedName !== null ) {
+    if (getSaved !== "true" && savedName !== null ) {
 
        
     
@@ -241,7 +244,7 @@ function saveServer() {
         saved = window.localStorage.setItem("saved", "true");
 
 
-alert("got here");
+        //alert("got here");
 
         var data = { "date" : cdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
         
@@ -253,14 +256,15 @@ alert("got here");
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
-                alert(responseData + ", " + textStatus + ", " + jqXHR);
+                //alert(responseData + ", " + textStatus + ", " + jqXHR);
+                serverResponse();
             },
             error      : function(response) {
                 alert(response);                  
             }
         });
 
-        //afterSavedServer();
+        
 
     }else{
         alreadySaved();
@@ -271,6 +275,7 @@ alert("got here");
 function serverResponse() {
     if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
         if(xmlhttp.responseText) {
+            alert(xmlhttp.responseText);
             afterSavedServer();
         }
         //add the button to the results page by adding the class "see" which will display the button  
