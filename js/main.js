@@ -455,7 +455,7 @@ function ag1saveServer() {
        
         $.ajax({
             type       : "GET",
-            url        : "http://sensi.wpengine.com/store.php",
+            url        : "http://sensi.wpengine.com/store-ag1.php",
             crossDomain: true,
             data       : JSON.stringify(ag1data),
             contentType: 'application/json; charset=utf-8',
@@ -603,7 +603,7 @@ function ag2saveServer() {
        
         $.ajax({
             type       : "GET",
-            url        : "http://sensi.wpengine.com/store.php",
+            url        : "http://sensi.wpengine.com/store-ag2.php",
             crossDomain: true,
             data       : JSON.stringify(ag2data),
             contentType: 'application/json; charset=utf-8',
@@ -716,7 +716,7 @@ function ag3saveServer() {
        
         $.ajax({
             type       : "GET",
-            url        : "http://sensi.wpengine.com/store.php",
+            url        : "http://sensi.wpengine.com/store-ag3.php",
             crossDomain: true,
             data       : JSON.stringify(ag3data),
             contentType: 'application/json; charset=utf-8',
@@ -819,7 +819,7 @@ function ag4savelocal() {
 function ag4saveServer() {
 
     //first check if data has been saved to server already
-    var getag4Saved = window.localStorage.getItem("saved");
+    var getag4Saved = window.localStorage.getItem("ag4saved");
     var savedag16b = window.localStorage.getItem("ag16b");
     //alert( "saved is " + getag4Saved + "and data is " + savedag16b); //temp
 
@@ -862,7 +862,7 @@ function ag4saveServer() {
        
         $.ajax({
             type       : "GET",
-            url        : "http://sensi.wpengine.com/store.php",
+            url        : "http://sensi.wpengine.com/store-ag4.php",
             crossDomain: true,
             data       : JSON.stringify(ag4data),
             contentType: 'application/json; charset=utf-8',
@@ -983,7 +983,7 @@ function ag5saveServer() {
        
         $.ajax({
             type       : "GET",
-            url        : "http://sensi.wpengine.com/store.php",
+            url        : "http://sensi.wpengine.com/store-ag5.php",
             crossDomain: true,
             data       : JSON.stringify(ag5data),
             contentType: 'application/json; charset=utf-8',
