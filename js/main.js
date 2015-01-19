@@ -257,8 +257,8 @@ function saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                serverResponse();
-            },
+                alert(textStatus);
+                            },
             error      : function(response) {
                 alert(response);                  
             }
@@ -271,16 +271,6 @@ function saveServer() {
     }
 }
 
-
-function serverResponse() {
-    if(xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-        if(xmlhttp.responseText) {
-            alert(xmlhttp.responseText);
-            afterSavedServer();
-        }
-        //add the button to the results page by adding the class "see" which will display the button  
-    }
-}
 
 /* Interface changes -----------------------------------------*/
 
