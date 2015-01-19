@@ -205,7 +205,7 @@ function saveServer() {
 
     var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
-    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
+    alert( "saved is " + getSaved + "and name is " + savedName); //temp
     if (getSaved !== "true" && savedName !== null ) {
 
        
@@ -360,11 +360,8 @@ function ag1savelocal() {
     window.localStorage.setItem("ag6c", ag6c);
     window.localStorage.setItem("ag6d", ag6d);
     
-    alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
+    //alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
 
-
-    //send saved locally alert
-    messageAfterSaveLocal();
 
     //now that everything is saved check the connection
     checkConnection("ag1");
@@ -382,9 +379,9 @@ function ag1saveServer() {
 
     var getag1Saved = window.localStorage.getItem("ag1saved");
     var savedag1b = window.localStorage.getItem("ag1b");
-    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-//getag1Saved !== "true" && 
-    if (savedag1b !== null ) {
+    alert( "saved is " + getSaved + "and name is " + savedName); //temp
+
+    if (getag1Saved !== "true" && savedag1b !== null ) {
     
          //get the data from local storage
         var ag1date = window.localStorage.getItem("ag1date");
@@ -418,8 +415,6 @@ function ag1saveServer() {
 
         ag1saved = window.localStorage.setItem("ag1saved", "true");
 
-
-alert("got here");
 
         var ag1data = { "ag1date" : ag1date, "name": name, "email": email, "organization": organization, "ag1a": ag1a, "ag1b": ag1b, "ag1c": ag1c, "ag1d": ag1d, "ag2a": ag2a, "ag2b": ag2b, "ag2c": ag2c, "ag2d": ag2d, "ag3a": ag3a, "ag3b": ag3b, "ag3c": ag3c, "ag3d": ag3d, "ag4a": ag4a, "ag4b": ag4b, "ag4c": ag4c, "ag4d": ag4d, "ag5a": ag5a, "ag5b": ag5b, "ag5c": ag5c, "ag5d": ag5d, "ag6a": ag6a, "ag6b": ag6b, "ag6c": ag6c, "ag6d": ag6d };
        
@@ -456,7 +451,6 @@ alert("got here");
 /* store locally */
 
 function ag2savelocal() {
-    alert("Got to ag2savelocal");
     
     var ag2date = new Date();
     var ag7a = $('input[name="a7a"]:checked').val();
@@ -512,17 +506,10 @@ function ag2savelocal() {
     window.localStorage.setItem("ag12b", ag12b);
     window.localStorage.setItem("ag12c", ag12c);
     window.localStorage.setItem("ag12d", ag12d);
-    
-    alert(window.localStorage.getItem("ag7a") + ", " + window.localStorage.getItem("ag12d"));
 
-
-    //send saved locally alert
-    messageAfterSaveLocal();
 
     //now that everything is saved check the connection
     checkConnection("ag2");
-
-    
 
 }
 
@@ -535,9 +522,9 @@ function ag2saveServer() {
 
     var getag2Saved = window.localStorage.getItem("ag2saved");
     var savedag7b = window.localStorage.getItem("ag7b");
-    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-//getag1Saved !== "true" && 
-    if (savedag7b !== null ) {
+    alert( "saved is " + getag2Saved + "and data is " + savedag7b); //temp
+
+    if (getag2Saved !== "true" && savedag7b !== null ) {
     
          //get the data from local storage
         var ag2date = window.localStorage.getItem("ag2date");
@@ -570,9 +557,6 @@ function ag2saveServer() {
         var ag12d = window.localStorage.getItem("ag12d");
 
         ag2saved = window.localStorage.setItem("ag2saved", "true");
-
-
-alert("got here");
 
         var ag2data = { "ag2date" : ag2date, "name": name, "email": email, "organization": organization, "ag7a": ag7a, "ag7b": ag7b, "ag7c": ag7c, "ag7d": ag7d, "ag8a": ag8a, "ag8b": ag8b, "ag8c": ag8c, "ag8d": ag8d, "ag9a": ag9a, "ag9b": ag9b, "ag9c": ag9c, "ag9d": ag9d, "ag10a": ag10a, "ag10b": ag10b, "ag10c": ag10c, "ag10d": ag10d, "ag11a": ag11a, "ag11b": ag11b, "ag11c": ag11c, "ag11d": ag11d, "ag12a": ag12a, "ag12b": ag12b, "ag12c": ag12c, "ag12d": ag12d };
        
@@ -609,7 +593,6 @@ alert("got here");
 /* store locally */
 
 function ag3savelocal() {
-    alert("Got to ag3savelocal");
     
     var ag3date = new Date();
     var ag13a = $('input[name="a13a"]:checked').val();
@@ -642,18 +625,9 @@ function ag3savelocal() {
     window.localStorage.setItem("ag15b", ag15b);
     window.localStorage.setItem("ag15c", ag15c);
     window.localStorage.setItem("ag15d", ag15d);
-    
-    
-    alert(window.localStorage.getItem("ag13a") + ", " + window.localStorage.getItem("ag15d"));
-
-
-    //send saved locally alert
-    messageAfterSaveLocal();
 
     //now that everything is saved check the connection
     checkConnection("ag3");
-
-    
 
 }
 
@@ -662,13 +636,13 @@ function ag3savelocal() {
 /* Save on Server */
 
 function ag3saveServer() {
-    //first check if data has been saved to server already
 
+    //first check if data has been saved to server already
     var getag3Saved = window.localStorage.getItem("ag3saved");
     var savedag13b = window.localStorage.getItem("ag13b");
-    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-//getag1Saved !== "true" && 
-    if (savedag13b !== null ) {
+    alert( "saved is " + getag3Saved + "and data is " + savedag13b); //temp
+
+    if (getag3Saved !== "true" && savedag13b !== null ) {
     
          //get the data from local storage
         var ag3date = window.localStorage.getItem("ag3date");
@@ -690,9 +664,6 @@ function ag3saveServer() {
         
 
         ag3saved = window.localStorage.setItem("ag3saved", "true");
-
-
-alert("got here");
 
         var ag3data = { "ag3date" : ag3date, "name": name, "email": email, "organization": organization, "ag13a": ag13a, "ag13b": ag13b, "ag13c": ag13c, "ag13d": ag13d, "ag14a": ag14a, "ag14b": ag14b, "ag14c": ag14c, "ag14d": ag14d, "ag15a": ag15a, "ag15b": ag15b, "ag15c": ag15c, "ag15d": ag15d };
        
@@ -729,7 +700,6 @@ alert("got here");
 /* store locally */
 
 function ag4savelocal() {
-    alert("Got to ag4savelocal");
     
     var ag4date = new Date();
     var ag16a = $('input[name="a16a"]:checked').val();
@@ -756,10 +726,7 @@ function ag4savelocal() {
     var ag21b = $('input[name="a21b"]:checked').val();
     var ag21c = $('input[name="a21c"]:checked').val();
     var ag21d = $('input[name="a21d"]:checked').val();
-    
-    
-    
-
+ 
 
     window.localStorage.setItem("ag4date", ag4date);
     window.localStorage.setItem("ag16a", ag16a);
@@ -786,18 +753,9 @@ function ag4savelocal() {
     window.localStorage.setItem("ag21b", ag21b);
     window.localStorage.setItem("ag21c", ag21c);
     window.localStorage.setItem("ag21d", ag21d);
-    
-    
-    alert(window.localStorage.getItem("ag16a") + ", " + window.localStorage.getItem("ag21d"));
-
-
-    //send saved locally alert
-    messageAfterSaveLocal();
 
     //now that everything is saved check the connection
     checkConnection("ag4");
-
-    
 
 }
 
@@ -806,13 +764,13 @@ function ag4savelocal() {
 /* Save on Server */
 
 function ag4saveServer() {
-    //first check if data has been saved to server already
 
+    //first check if data has been saved to server already
     var getag4Saved = window.localStorage.getItem("ag4saved");
     var savedag16b = window.localStorage.getItem("ag16b");
-    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-//getag1Saved !== "true" && 
-    if (savedag16b !== null ) {
+    alert( "saved is " + getag4Saved + "and data is " + savedag16b); //temp
+
+    if (getag4Saved !== "true" && savedag16b !== null ) {
     
          //get the data from local storage
         var ag4date = window.localStorage.getItem("ag4date");
@@ -846,9 +804,6 @@ function ag4saveServer() {
         
 
         ag3saved = window.localStorage.setItem("ag4saved", "true");
-
-
-alert("got here");
 
         var ag4data = { "ag4date" : ag4date, "name": name, "email": email, "organization": organization, "ag16a": ag16a, "ag16b": ag16b, "ag16c": ag16c, "ag16d": ag16d, "ag17a": ag17a, "ag17b": ag17b, "ag17c": ag17c, "ag17d": ag17d, "ag18a": ag18a, "ag18b": ag18b, "ag18c": ag18c, "ag18d": ag18d, "ag19a": ag19a, "ag19b": ag19b, "ag19c": ag19c, "ag19d": ag19d, "ag20a": ag20a, "ag20b": ag20b, "ag20c": ag20c, "ag20d": ag20d, "ag21a": ag21a, "ag21b": ag21b, "ag21c": ag21c, "ag21d": ag21d };
        
@@ -885,7 +840,6 @@ alert("got here");
 /* store locally */
 
 function ag5savelocal() {
-    alert("Got to ag4savelocal");
     
     var ag5date = new Date();
     var ag22a = $('input[name="a22a"]:checked').val();
@@ -904,10 +858,6 @@ function ag5savelocal() {
     var ag25b = $('input[name="a25b"]:checked').val();
     var ag25c = $('input[name="a25c"]:checked').val();
     var ag25d = $('input[name="a25d"]:checked').val();
-    
-    
-    
-    
 
 
     window.localStorage.setItem("ag5date", ag5date);
@@ -927,19 +877,9 @@ function ag5savelocal() {
     window.localStorage.setItem("ag25b", ag25b);
     window.localStorage.setItem("ag25c", ag25c);
     window.localStorage.setItem("ag25d", ag25d);
-   
-    
-    
-    alert(window.localStorage.getItem("ag22a") + ", " + window.localStorage.getItem("ag25d"));
-
-
-    //send saved locally alert
-    messageAfterSaveLocal();
 
     //now that everything is saved check the connection
     checkConnection("ag5");
-
-    
 
 }
 
@@ -952,9 +892,9 @@ function ag5saveServer() {
 
     var getag5Saved = window.localStorage.getItem("ag5saved");
     var savedag22b = window.localStorage.getItem("ag22b");
-    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-//getag1Saved !== "true" && 
-    if (savedag22b !== null ) {
+    alert( "saved is " + getag5Saved + "and name is " + savedName); //temp
+
+    if (getag5Saved !== "true" &&  savedag22b !== null ) {
     
          //get the data from local storage
         var ag5date = window.localStorage.getItem("ag5date");
@@ -978,12 +918,7 @@ function ag5saveServer() {
         var ag25c = window.localStorage.getItem("ag25c");
         var ag25d = window.localStorage.getItem("ag25d");
         
-        
-
         ag5saved = window.localStorage.setItem("ag5saved", "true");
-
-
-alert("got here");
 
         var ag5data = { "ag5date" : ag5date, "name": name, "email": email, "organization": organization, "ag22a": ag22a, "ag22b": ag22b, "ag22c": ag22c, "ag22d": ag22d, "ag23a": ag23a, "ag23b": ag23b, "ag23c": ag23c, "ag23d": ag23d, "ag24a": ag24a, "ag24b": ag24b, "ag24c": ag24c, "ag24d": ag24d, "ag25a": ag25a, "ag25b": ag25b, "ag25c": ag25c, "ag25d": ag25d };
        
