@@ -77,7 +77,7 @@ function alreadySaved() {
 /* Interface changes -----------------------------------------*/ 
 
 function hideSaveButton(form) {
-    alert("i am here");
+
     switch(form) {
         case "govscore":
             var answer1 = window.localStorage.getItem("answer1");
@@ -92,7 +92,9 @@ function hideSaveButton(form) {
             }
             break;
         case "ag1":
+            alert("i am here");
             var ag1a = window.localStorage.getItem("ag1a");
+            alert(ag1a);
             if(ag1a != null){
                 var ag1SaveButton = document.getElementById('ag1Store');
                 ag1SaveButton.className = ag1SaveButton.className + " hide";
