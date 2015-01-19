@@ -369,7 +369,7 @@ function ag1saveServer() {
 
     var getag1Saved = window.localStorage.getItem("ag1saved");
     var savedag1b = window.localStorage.getItem("ag1b");
-    alert( "saved is " + getSaved + "and name is " + savedName); //temp
+    alert( "saved is " + getag1Saved + "and data is " + savedag1b); //temp
 
     if (getag1Saved !== "true" && savedag1b !== null ) {
     
