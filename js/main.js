@@ -4,7 +4,9 @@ function init() {
     var answer1 = window.localStorage.getItem("answer1");
     if(answer1 != null){
         var gsSaveButton = document.getElementById('btnStore');
+        alert(gsSaveButton);
         gsSaveButton.className = gsSaveButton.className + " hide";
+        alert(gsSaveButton);
     }
     alert("answer1 is " + answer1);
     var ag1a = window.localStorage.getItem("ag1a");
