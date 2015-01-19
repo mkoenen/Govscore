@@ -48,6 +48,6 @@ label.ui-btn img {
 #govscore-results2.see {
 	display: block;
 }
-.hide {
+button.hide {
 	display:none;
 }
