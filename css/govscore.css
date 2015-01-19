@@ -27,7 +27,7 @@ label.ui-btn.ui-corner-all.ui-btn-inherit {
 }
 /* questionnaire ---------------------------------*/
 label.ui-btn img {
-width: 60%;
+	width: 60%;
 }
 #organization-button span {
 	font-weight: 300;
@@ -42,9 +42,12 @@ width: 60%;
 }*/
 #govscore-results1,
 #govscore-results2 {
-display: none;
+	display: none;
 }
 #govscore-results1.see,
 #govscore-results2.see {
-display: block;
+	display: block;
+}
+.hide {
+	display:none;
 }

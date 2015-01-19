@@ -39,16 +39,16 @@ function setbutton() {
 
 function messageAfterSaveLocal() {
     navigator.notification.alert(
-        'Your data has been stored on your device and will be moved to the server as soon as possible.',
+        'Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.',
         'Info title',
         'Update'
     );
 }
 
 
-function afterSavedServer() {
+function afterSavedServer(form) {
     navigator.notification.alert(
-        'Your data has been saved. Thank you for your submission.',
+        'Your answers to quesionnaire ' + form + 'have been saved. Thank you for your submission.',
         'Info title',
         'Update'
     );
@@ -67,6 +67,11 @@ function alreadySaved() {
 /*Save locally-----------------------------------------------*/
 
 function savelocal() {
+
+    //remove the button
+    var gsSaveButton = document.getElementById('btnStore');
+    gsSaveButton.className = gsSaveButton.className + " hide";
+
     
     var cdate = new Date();
     var name = document.getElementById("name").value;
@@ -205,7 +210,7 @@ function saveServer() {
 
     var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
-    alert( "saved is " + getSaved + "and name is " + savedName); //temp
+    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
     if (getSaved !== "true" && savedName !== null ) {
 
        
@@ -257,7 +262,8 @@ function saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                alert(textStatus);
+                alert(responseData);
+                afterSavedServer("Govscore");
                             },
             error      : function(response) {
                 alert(response);                  
@@ -267,7 +273,7 @@ function saveServer() {
         
 
     }else{
-        alreadySaved();
+       // alreadySaved();
     }
 }
 
@@ -294,6 +300,10 @@ function resultsButton() {
 /* store locally */
 
 function ag1savelocal() {
+
+    //remove the button
+    var ag1SaveButton = document.getElementById('ag1Store');
+    ag1SaveButton.className = ag1SaveButton.className + " hide";
     
     var ag1date = new Date();
     var ag1a = $('input[name="a1a"]:checked').val();
@@ -369,7 +379,7 @@ function ag1saveServer() {
 
     var getag1Saved = window.localStorage.getItem("ag1saved");
     var savedag1b = window.localStorage.getItem("ag1b");
-    alert( "saved is " + getag1Saved + "and data is " + savedag1b); //temp
+    //alert( "saved is " + getag1Saved + "and data is " + savedag1b); //temp
 
     if (getag1Saved !== "true" && savedag1b !== null ) {
     
@@ -417,6 +427,7 @@ function ag1saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
+                afterSavedServer("Cultivating Accountability");
             },
             error      : function(response) {
                 alert(response);                  
@@ -430,7 +441,7 @@ function ag1saveServer() {
 
     }else{
 
-        alreadySaved();
+        //alreadySaved();
 
     }
 
@@ -441,6 +452,10 @@ function ag1saveServer() {
 /* store locally */
 
 function ag2savelocal() {
+
+    //remove the button
+    var ag2SaveButton = document.getElementById('ag2Store');
+    ag2SaveButton.className = ag2SaveButton.className + " hide";
     
     var ag2date = new Date();
     var ag7a = $('input[name="a7a"]:checked').val();
@@ -512,7 +527,7 @@ function ag2saveServer() {
 
     var getag2Saved = window.localStorage.getItem("ag2saved");
     var savedag7b = window.localStorage.getItem("ag7b");
-    alert( "saved is " + getag2Saved + "and data is " + savedag7b); //temp
+    //alert( "saved is " + getag2Saved + "and data is " + savedag7b); //temp
 
     if (getag2Saved !== "true" && savedag7b !== null ) {
     
@@ -559,6 +574,7 @@ function ag2saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
+                afterSavedServer("Engaging Stakeholders");
             },
             error      : function(response) {
                 alert(response);                  
@@ -572,7 +588,7 @@ function ag2saveServer() {
 
     }else{
 
-        alreadySaved();
+      //  alreadySaved();
 
     }
 
@@ -583,6 +599,10 @@ function ag2saveServer() {
 /* store locally */
 
 function ag3savelocal() {
+
+    //remove the button
+    var ag3SaveButton = document.getElementById('ag3Store');
+    ag3SaveButton.className = ag3SaveButton.className + " hide";
     
     var ag3date = new Date();
     var ag13a = $('input[name="a13a"]:checked').val();
@@ -630,7 +650,7 @@ function ag3saveServer() {
     //first check if data has been saved to server already
     var getag3Saved = window.localStorage.getItem("ag3saved");
     var savedag13b = window.localStorage.getItem("ag13b");
-    alert( "saved is " + getag3Saved + "and data is " + savedag13b); //temp
+    //alert( "saved is " + getag3Saved + "and data is " + savedag13b); //temp
 
     if (getag3Saved !== "true" && savedag13b !== null ) {
     
@@ -666,6 +686,7 @@ function ag3saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
+                afterSavedServer("Setting Shared Strategic Directions");
             },
             error      : function(response) {
                 alert(response);                  
@@ -679,7 +700,7 @@ function ag3saveServer() {
 
     }else{
 
-        alreadySaved();
+       // alreadySaved();
 
     }
 
@@ -690,6 +711,10 @@ function ag3saveServer() {
 /* store locally */
 
 function ag4savelocal() {
+
+    //remove the button
+    var ag4SaveButton = document.getElementById('ag4Store');
+    ag4SaveButton.className = ag4SaveButton.className + " hide";
     
     var ag4date = new Date();
     var ag16a = $('input[name="a16a"]:checked').val();
@@ -758,7 +783,7 @@ function ag4saveServer() {
     //first check if data has been saved to server already
     var getag4Saved = window.localStorage.getItem("ag4saved");
     var savedag16b = window.localStorage.getItem("ag16b");
-    alert( "saved is " + getag4Saved + "and data is " + savedag16b); //temp
+    //alert( "saved is " + getag4Saved + "and data is " + savedag16b); //temp
 
     if (getag4Saved !== "true" && savedag16b !== null ) {
     
@@ -806,6 +831,7 @@ function ag4saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
+                afterSavedServer("Stewarding Resources");
             },
             error      : function(response) {
                 alert(response);                  
@@ -819,7 +845,7 @@ function ag4saveServer() {
 
     }else{
 
-        alreadySaved();
+        //alreadySaved();
 
     }
 
@@ -830,6 +856,10 @@ function ag4saveServer() {
 /* store locally */
 
 function ag5savelocal() {
+
+    //remove the button
+    var ag5SaveButton = document.getElementById('ag5Store');
+    ag5SaveButton.className = ag5SaveButton.className + " hide";
     
     var ag5date = new Date();
     var ag22a = $('input[name="a22a"]:checked').val();
@@ -882,7 +912,7 @@ function ag5saveServer() {
 
     var getag5Saved = window.localStorage.getItem("ag5saved");
     var savedag22b = window.localStorage.getItem("ag22b");
-    alert( "saved is " + getag5Saved + "and name is " + savedName); //temp
+    //alert( "saved is " + getag5Saved + "and name is " + savedag22b); //temp
 
     if (getag5Saved !== "true" &&  savedag22b !== null ) {
     
@@ -921,6 +951,7 @@ function ag5saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
+                afterSavedServer("Continuous Governance Enhancement");
             },
             error      : function(response) {
                 alert(response);                  
@@ -934,7 +965,7 @@ function ag5saveServer() {
 
     }else{
 
-        alreadySaved();
+      //  alreadySaved();
 
     }
 
