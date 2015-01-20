@@ -44,14 +44,14 @@ function validate()
 {
     if( document.gsForm.name.value == "" ) {
 
-         alert( "Please provide your name!" );
+         navigator.notification.alert( "Please enter your full name!" );
          document.gsForm.name.focus() ;
          return false;
     }
 
     if( document.gsForm.email.value == "" ) {
 
-         alert( "Please provide your Email!" );
+         navigator.notification.alert( "Please enter your email address!" );
          document.gsForm.email.focus() ;
          return false;
 
@@ -68,7 +68,7 @@ function validate()
 
    if( document.gsForm.organization.value == "-1" ) {
 
-     alert( "Please provide your organization!" );
+     navigator.notification.alert( "Please enter your organization!" );
      return false;
 
    }
@@ -84,7 +84,7 @@ function validateEmail() {
    dotpos = emailID.lastIndexOf(".");
    if (atpos < 1 || ( dotpos - atpos < 2 )) {
 
-       alert("Please enter correct email ID")
+       navigator.notification.alert("Please enter a correct email address")
        document.gsForm.email.focus() ;
        return false;
 
