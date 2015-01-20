@@ -28,13 +28,69 @@ var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode
 
  //listen for click events      
 function setbutton() {
-    document.getElementById('btnStore').addEventListener('click', savelocal, false);
+    document.getElementById('btnStore').addEventListener('click', validate, false);
     document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
     document.getElementById('ag2Store').addEventListener('click', ag2savelocal, false);
     document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
     document.getElementById('ag4Store').addEventListener('click', ag4savelocal, false);
     document.getElementById('ag5Store').addEventListener('click', ag5savelocal, false);
     //document.getElementById("retrieveData").addEventListener("click", result, false); //temp: checks if data has been saved
+
+}
+
+/* Validation -------------------------------------*/
+
+function validate()
+{
+    if( document.gsForm.name.value == "" ) {
+
+         alert( "Please provide your name!" );
+         document.gsForm.name.focus() ;
+         return false;
+    }
+
+    if( document.gsForm.email.value == "" ) {
+
+         alert( "Please provide your Email!" );
+         document.gsForm.email.focus() ;
+         return false;
+
+    }else{
+
+        // Put extra check for data format
+        var ret = validateEmail();
+        if( ret == false ) {
+
+              return false;
+
+         }
+   }
+
+   if( document.gsForm.organization.value == "-1" ) {
+
+     alert( "Please provide your organization!" );
+     return false;
+
+   }
+
+   
+   savelocal();
+}
+
+function validateEmail() {
+
+   var emailID = document.gsForm.email.value;
+   atpos = emailID.indexOf("@");
+   dotpos = emailID.lastIndexOf(".");
+   if (atpos < 1 || ( dotpos - atpos < 2 )) {
+
+       alert("Please enter correct email ID")
+       document.gsForm.email.focus() ;
+       return false;
+
+   }
+
+   return( true );
 
 }
 
