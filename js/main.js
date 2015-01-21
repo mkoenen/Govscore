@@ -1092,6 +1092,7 @@ function checkResults(){
 }
 //add up the numbers
 function calcResults(){
+    alert(g1);
     alert("parseInt: " + parseInt(g1));
     accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
     var accPossible = 24;
