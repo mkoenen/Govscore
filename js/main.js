@@ -9,7 +9,7 @@ function init() {
     //document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", hideSaveButton, false);
-    document.addEventListener("deviceready", checkResults, false);
+    document.addEventListener("deviceready", checkResults(orgcode), false);
 
 }
 
@@ -1080,7 +1080,7 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 
 var accScore, stakeScore, dirScore, resScore, enhanceScore
 
-function checkResults(){
+function checkResults(orgcode){
     alert("orgcode is " + orgcode);
 
     if( orgcode != "-1" ){
