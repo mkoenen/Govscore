@@ -92,7 +92,7 @@ function calcResults(){
     eval += "<h2>Recommendation</h2><p>The areas that your organization should focus on are, in order,</p>"
 
    for (i = 0; i < weakest.length; i++){
-    eval += "<h3>" + weakest[1] + "</h2>;
+    eval += "<h3>" + weakest[i] + "</h2>;
    }
 
     //alert("eval is " + eval);
