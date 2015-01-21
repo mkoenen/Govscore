@@ -1092,7 +1092,7 @@ function checkResults(){
 }
 //add up the numbers
 function calcResults(){
-  
+    alert(parseInt(g1));
     accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
     var accPossible = 24;
     stakeScore = parseInt(g11)+parseInt(g14)+parseInt(g22);
@@ -1103,8 +1103,7 @@ function calcResults(){
     var resPossible = 24;
     enhScore = parseInt(g9)+parseInt(g15)+parseInt(g18)+parseInt(g19)+parseInt(g20)+parseInt(g24);
     var enhPossible = 24;
-    alert(parseInt(g1));
-    alert(accScore);
+    //alert(accScore);
 
     var eval = "<p>According to your assessment your Organization scores as follows: </p>";
 
