@@ -8,7 +8,7 @@ function init() {
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", hideSaveButton(), false);
+    document.addEventListener("deviceready", hideSaveButton, false);
     document.addEventListener("deviceready", checkResults, false);
 
 }
@@ -1081,12 +1081,12 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 var accScore, stakeScore, dirScore, resScore, enhanceScore
 
 function checkResults(){
+    alert(orgcode);
 
     if( orgcode != "-1" ){
         calcResults();
     }else{
-        var notice = "<p>You need to complete the Govscore assessment in order to see results.</p>"
-        document.getElementById('gs-results').innerHTML = notice;
+        document.getElementById("gs-results").innerHTML = "<p>You need to complete the Govscore assessment in order to see results.</p>";
     }
 
 }
@@ -1103,6 +1103,7 @@ function calcResults(){
     var resPossible = 24;
     enhScore = parseInt(g9)+parseInt(g15)+parseInt(g18)+parseInt(g19)+parseInt(g20)+parseInt(g24);
     var enhPossible = 24;
+    alert(accScore);
 
     var eval = "<p>According to your assessment your Organization scores as follows: </p>";
 
@@ -1113,6 +1114,7 @@ function calcResults(){
     eval += "<tr><td>Stewarding Resources</td><td>" + resScore + "</td><td>" + resPossible + "</td><td>" + resScore/resPossible*100 + "</td></tr>";
     eval += "<tr><td>Continuous Governance Enhancement</td><td>" + enhScore + "</td><td>" + enhPossible + "</td><td>" + enhScore/enhPossible*100 + "</td></tr></table>";
 
+    alert(eval);
     document.getElementById('gs-results').innerHTML = eval;
 
 }
