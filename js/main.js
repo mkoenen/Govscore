@@ -1080,7 +1080,7 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 
 var accScore, stakeScore, dirScore, resScore, enhanceScore
 
-checkResults(){
+function checkResults(){
 
     if( orgcode != "-1" ){
         calcResults();
