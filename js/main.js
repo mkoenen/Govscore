@@ -330,7 +330,7 @@ function saveServer() {
         var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
         var organization = window.localStorage.getItem("organization");
-        var g1 = window.localStorage.getItem("answer1");
+        g1 = window.localStorage.getItem("answer1");
         var g2 = window.localStorage.getItem("answer2");
         var g3 = window.localStorage.getItem("answer3");
         var g4 = window.localStorage.getItem("answer4");
