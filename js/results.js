@@ -46,28 +46,44 @@ function calcResults(){
         var g24 = window.localStorage.getItem("answer24");
         var g25 = window.localStorage.getItem("answer25");
 
-    //alert(g1);
-    //alert("parseInt: " + parseInt(g1));
+    var percentArray;
+
     accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
     var accPossible = 24;
+    var accPercent = Math.round(accScore/accPossible*100);
+    percentArray.push(accPercent);
     stakeScore = parseInt(g11)+parseInt(g14)+parseInt(g22);
     var stakePossible = 12;
+    var stakePercent = Math.round(stakeScore/stakePossible*100);
+    percentArray.push(stakePercent);
     dirScore = parseInt(g6)+parseInt(g7)+parseInt(g12)+parseInt(g16);
     var dirPossible = 16;
+    var dirPercent = Math.round(dirScore/dirPossible*100);
+    percentArray.push(dirPercent);
     resScore = parseInt(g3)+parseInt(g4)+parseInt(g17)+parseInt(g21)+parseInt(g23)+parseInt(g25);
     var resPossible = 24;
+    var resPossible = Math.round(resScore/resPossible*100);
+    percentArray.push(resPercent);
     enhScore = parseInt(g9)+parseInt(g15)+parseInt(g18)+parseInt(g19)+parseInt(g20)+parseInt(g24);
     var enhPossible = 24;
-    //alert(accScore);
+    var enhPossible = Math.round(enhScore/enhPossible*100);
+    percentArray.push(enhPercent);
+    
+    function compareNumbers(a, b) {
+        return a - b;
+    }
+
+    percentArray.sort(compareNumbers);
+    alert("sorted Array : " + percentArray);
 
     var eval = "<p>According to your assessment your Organization scores as follows: </p>";
 
-    eval += "<table data-role='table' data-mode='columntoggle' class='ui-responsive' id='gs-table'><tr><th data-priority='1'>Practice Area</th><th data-priority='3'>Points</th><th data-priority='4'>Out Of</th><th data-priority='2'>Percent</th></tr>";
-    eval += "<tr><td>Cultivating Accountability</td><td>" + accScore + "</td><td>" + accPossible + "</td><td>" + Math.round(accScore/accPossible*100) + "%</td></tr>";
-    eval += "<tr><td>Engaging Stakeholders</td><td>" + stakeScore + "</td><td>" + stakePossible + "</td><td>" + Math.round(stakeScore/stakePossible*100) + "%</td></tr>";
-    eval += "<tr><td>Shared Strategic Direction</td><td>" + dirScore + "</td><td>" + dirPossible + "</td><td>" + Math.round(dirScore/dirPossible*100) + "%</td></tr>";
-    eval += "<tr><td>Stewarding Resources</td><td>" + resScore + "</td><td>" + resPossible + "</td><td>" + Math.round(resScore/resPossible*100) + "%</td></tr>";
-    eval += "<tr><td>Continuous Governance Enhancement</td><td>" + enhScore + "</td><td>" + enhPossible + "</td><td>" + Math.round(enhScore/enhPossible*100) + "%</td></tr></table>";
+    eval += "<h2>Cultivating Accountability</h2><p>Your organization scored " + accScore + " out of a possible " + accPossible + " points. This means that the organization achieved " + accPercent + "%</p>";
+    eval += "<h2>Engaging Stakeholders</h2><p>Your organization scored " + stakeScore + " out of a possible " + stakePossible + " points. This means that the organization achieved " + stakePercent + "%</p>";
+    eval += "<h2>Shared Strategic Direction</h2><p>Your organization scored " + dirScore + " out of a possible " + dirPossible + " points. This means that the organization achieved " + dirPercent + "%</p>";
+    eval += "<h2>Stewarding Resources</h2><p>Your organization scored " + resScore + " out of a possible " + resPossible + " points. This means that the organization achieved " + resPossible + "%</p>";
+    eval += "<h2>Continuous Governance Enhancement</h2><p>Your organization scored " + enhScore + " out of a possible " + enhPossible + " points. This means that the organization achieved " + enhPossible + "%</p>";
+
 
     //alert("eval is " + eval);
     document.getElementById('gs-results').innerHTML = eval;
