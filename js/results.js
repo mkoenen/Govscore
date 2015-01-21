@@ -45,9 +45,9 @@ function calcResults(){
         var g23 = window.localStorage.getItem("answer23");
         var g24 = window.localStorage.getItem("answer24");
         var g25 = window.localStorage.getItem("answer25");
-        
-    alert(g1);
-    alert("parseInt: " + parseInt(g1));
+
+    //alert(g1);
+    //alert("parseInt: " + parseInt(g1));
     accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
     var accPossible = 24;
     stakeScore = parseInt(g11)+parseInt(g14)+parseInt(g22);
@@ -63,13 +63,13 @@ function calcResults(){
     var eval = "<p>According to your assessment your Organization scores as follows: </p>";
 
     eval += "<table><tr><th>Practice Area</th><th>Points</th><Out Of</th>Percent</th></tr>";
-    eval += "<tr><td>Cultivating Accountability</td><td>" + accScore + "</td><td>" + accPossible + "</td><td>" + accScore/accPossible*100 + "</td></tr>";
-    eval += "<tr><td>Engaging Stakeholders</td><td>" + stakeScore + "</td><td>" + stakePossible + "</td><td>" + stakeScore/stakePossible*100 + "</td></tr>";
-    eval += "<tr><td>Shared Strategic Direction</td><td>" + dirScore + "</td><td>" + dirPossible + "</td><td>" + dirScore/dirPossible*100 + "</td></tr>";
-    eval += "<tr><td>Stewarding Resources</td><td>" + resScore + "</td><td>" + resPossible + "</td><td>" + resScore/resPossible*100 + "</td></tr>";
-    eval += "<tr><td>Continuous Governance Enhancement</td><td>" + enhScore + "</td><td>" + enhPossible + "</td><td>" + enhScore/enhPossible*100 + "</td></tr></table>";
+    eval += "<tr><td>Cultivating Accountability</td><td>" + accScore + "</td><td>" + accPossible + "</td><td>" + Math.round(accScore/accPossible*100) + "%</td></tr>";
+    eval += "<tr><td>Engaging Stakeholders</td><td>" + stakeScore + "</td><td>" + stakePossible + "</td><td>" + Math.round(stakeScore/stakePossible*100) + "%</td></tr>";
+    eval += "<tr><td>Shared Strategic Direction</td><td>" + dirScore + "</td><td>" + dirPossible + "</td><td>" + Math.round(dirScore/dirPossible*100) + "%</td></tr>";
+    eval += "<tr><td>Stewarding Resources</td><td>" + resScore + "</td><td>" + resPossible + "</td><td>" + Math.round(resScore/resPossible*100) + "%</td></tr>";
+    eval += "<tr><td>Continuous Governance Enhancement</td><td>" + enhScore + "</td><td>" + enhPossible + "</td><td>" + Math.round(enhScore/enhPossible*100) + "%</td></tr></table>";
 
-    alert("eval is " + eval);
+    //alert("eval is " + eval);
     document.getElementById('gs-results').innerHTML = eval;
 
 }
