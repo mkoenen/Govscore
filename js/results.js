@@ -46,7 +46,7 @@ function calcResults(){
         var g24 = window.localStorage.getItem("answer24");
         var g25 = window.localStorage.getItem("answer25");
 
-    var percentArray = [];
+    var percentArray = new Array();
 
     accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
     var accPossible = 24;
