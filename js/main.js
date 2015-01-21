@@ -1103,6 +1103,7 @@ function calcResults(){
     var resPossible = 24;
     enhScore = parseInt(g9)+parseInt(g15)+parseInt(g18)+parseInt(g19)+parseInt(g20)+parseInt(g24);
     var enhPossible = 24;
+    alert(parseInt(g1));
     alert(accScore);
 
     var eval = "<p>According to your assessment your Organization scores as follows: </p>";
