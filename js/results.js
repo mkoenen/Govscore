@@ -62,11 +62,11 @@ function calcResults(){
     percentArray.push(dirPercent);
     resScore = parseInt(g3)+parseInt(g4)+parseInt(g17)+parseInt(g21)+parseInt(g23)+parseInt(g25);
     var resPossible = 24;
-    var resPossible = Math.round(resScore/resPossible*100);
+    var resPercent = Math.round(resScore/resPossible*100);
     percentArray.push(resPercent);
     enhScore = parseInt(g9)+parseInt(g15)+parseInt(g18)+parseInt(g19)+parseInt(g20)+parseInt(g24);
     var enhPossible = 24;
-    var enhPossible = Math.round(enhScore/enhPossible*100);
+    var enhPercent = Math.round(enhScore/enhPossible*100);
     percentArray.push(enhPercent);
     
     function compareNumbers(a, b) {
