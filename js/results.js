@@ -32,4 +32,3 @@ function calcResults(){
 
 }
 
-//display the result
