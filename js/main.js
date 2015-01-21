@@ -1083,15 +1083,15 @@ var accScore, stakeScore, dirScore, resScore, enhanceScore
 //add up the numbers
 function calcResults(){
   
-    accScore = g1+g2+g5+g8+g10+g13;
+    accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
     var accPossible = 24;
-    stakeScore = g11+g14+g22;
+    stakeScore = parseInt(g11)+parseInt(g14)+parseInt(g22);
     var stakePossible = 12;
-    dirScore = g6+g7+g12+g16;
+    dirScore = parseInt(g6)+parseInt(g7)+parseInt(g12)+parseInt(g16);
     var dirPossible = 16;
-    resScore = g3+g4+g17+g21+g23+g25;
+    resScore = parseInt(g3)+parseInt(g4)+parseInt(g17)+parseInt(g21)+parseInt(g23)+parseInt(g25);
     var resPossible = 24;
-    enhScore = g9+g15+g18+g19+g20+g24;
+    enhScore = parseInt(g9)+parseInt(g15)+parseInt(g18)+parseInt(g19)+parseInt(g20)+parseInt(g24);
     var enhPossible = 24;
 
     var eval = "<p>According to your assessment your Organization scores as follows: </p>";
