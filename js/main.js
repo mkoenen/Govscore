@@ -1143,12 +1143,12 @@ function calcResults(){
         return a - b;
     }
 
-    percentArray.sort(compareNumbers);
-    alert("sorted Array : " + percentArray);
-    if(percentArray[0]==percentArray[1] || percentArray[1] == percentArray[2]){
-        var weakest = percentArray.slice(0,2);
+    var sortedPercent = percentArray.sort(compareNumbers);
+    alert("sorted Array : " + sortedPercent);
+    if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
+        var weakest = sortedPercent.slice(0,3);
     }else{
-        var weakest = percentArray.slice(0,1);
+        var weakest = sortedPercent.slice(0,2);
     }
     alert(weakest);
 
