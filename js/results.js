@@ -24,9 +24,9 @@ function calcResults(){
 	eval += "<table><tr><th>Practice Area</th><th>Points</th><Out Of</th>Percent</th></tr>";
 	eval += "<tr><td>Cultivating Accountability</td><td>" + accScore + "</td><td>" + accPossible + "</td><td>" + accScore/accPossible*100 + "</td></tr>";
 	eval += "<tr><td>Engaging Stakeholders</td><td>" + stakeScore + "</td><td>" + stakePossible + "</td><td>" + stakeScore/stakePossible*100 + "</td></tr>";
-	eval += "<tr><td>Shared Strategic Direction</td><td>" + dirScore + "</td><td>" + dirPossile + "</td><td>" + dirScore/dirPossible*100 + "</td></tr>";
-	eval += "<tr><td>Stewarding Resources</td><td>" + resScore + "</td><td>" + resPossile + "</td><td>" + resScore/resPossible*100 + "</td></tr>";
-	eval += "<tr><td>Continuous Governance Enhancement</td><td>" + enhScore + "</td><td>" + enhPossile + "</td><td>" + enhScore/enhPossible*100 + "</td></tr></table>";
+	eval += "<tr><td>Shared Strategic Direction</td><td>" + dirScore + "</td><td>" + dirPossible + "</td><td>" + dirScore/dirPossible*100 + "</td></tr>";
+	eval += "<tr><td>Stewarding Resources</td><td>" + resScore + "</td><td>" + resPossible + "</td><td>" + resScore/resPossible*100 + "</td></tr>";
+	eval += "<tr><td>Continuous Governance Enhancement</td><td>" + enhScore + "</td><td>" + enhPossible + "</td><td>" + enhScore/enhPossible*100 + "</td></tr></table>";
 
 	document.getElementById('gs-results').innerHTML = eval;
 
