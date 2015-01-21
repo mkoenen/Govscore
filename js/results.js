@@ -16,7 +16,7 @@ function calcResults(){
 	var dirPossible = 16;
 	resScore = g3+g4+g17+g21+g23+g25;
 	var resPossible = 24;
-	enhanceScore = g9+g15+g18+g19+g20+g24;
+	enhScore = g9+g15+g18+g19+g20+g24;
 	var enhPossible = 24;
 
 	var eval = "<p>According to your assessment your Organization scores as follows: </p>";
