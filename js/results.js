@@ -75,15 +75,25 @@ function calcResults(){
 
     percentArray.sort(compareNumbers);
     alert("sorted Array : " + percentArray);
+    if(percentArray[0]==percentArray[1] || percentArray[1] == percentArray[2]){
+        var weakest = percentArray.slice(0,2);
+    }else{
+        var weakest = percentArray.slice(0,1);
+    }
+    alert(weakest);
 
     var eval = "<p>According to your assessment your Organization scores as follows: </p>";
 
-    eval += "<h2>Cultivating Accountability</h2><p>Your organization scored " + accScore + " out of a possible " + accPossible + " points. This means that the organization achieved " + accPercent + "%</p>";
-    eval += "<h2>Engaging Stakeholders</h2><p>Your organization scored " + stakeScore + " out of a possible " + stakePossible + " points. This means that the organization achieved " + stakePercent + "%</p>";
-    eval += "<h2>Shared Strategic Direction</h2><p>Your organization scored " + dirScore + " out of a possible " + dirPossible + " points. This means that the organization achieved " + dirPercent + "%</p>";
-    eval += "<h2>Stewarding Resources</h2><p>Your organization scored " + resScore + " out of a possible " + resPossible + " points. This means that the organization achieved " + resPossible + "%</p>";
-    eval += "<h2>Continuous Governance Enhancement</h2><p>Your organization scored " + enhScore + " out of a possible " + enhPossible + " points. This means that the organization achieved " + enhPossible + "%</p>";
+    eval += "<h2>Cultivating Accountability</h2><p>Your organization scored " + accScore + " out of a possible " + accPossible + " points. This means that the organization achieved " + accPercent + "%.</p>";
+    eval += "<h2>Engaging Stakeholders</h2><p>Your organization scored " + stakeScore + " out of a possible " + stakePossible + " points. This means that the organization achieved " + stakePercent + "%.</p>";
+    eval += "<h2>Shared Strategic Direction</h2><p>Your organization scored " + dirScore + " out of a possible " + dirPossible + " points. This means that the organization achieved " + dirPercent + "%.</p>";
+    eval += "<h2>Stewarding Resources</h2><p>Your organization scored " + resScore + " out of a possible " + resPossible + " points. This means that the organization achieved " + resPossible + "%.</p>";
+    eval += "<h2>Continuous Governance Enhancement</h2><p>Your organization scored " + enhScore + " out of a possible " + enhPossible + " points. This means that the organization achieved " + enhPossible + "%.</p>";
+    eval += "<h2>Recommendation</h2><p>The areas that your organization should focus on are, in order,</p>"
 
+   for (i = 0; i < weakest.length; i++){
+    eval += "<h3>" + weakest[1] + "</h2>;
+   }
 
     //alert("eval is " + eval);
     document.getElementById('gs-results').innerHTML = eval;
