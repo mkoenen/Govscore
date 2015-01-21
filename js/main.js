@@ -38,7 +38,7 @@ function setbutton() {
 
 }
 
-/* Validation -------------------------------------*/
+/* Form Validation -------------------------------------*/
 
 function validate()
 {
@@ -69,13 +69,15 @@ function validate()
    if( document.gsForm.organization.value == "-1" ) {
 
      navigator.notification.alert( "Please enter your organization!" );
+     document.gsForm.organization.focus() ;
      return false;
 
    }
 
-   
    savelocal();
+   
 }
+
 
 function validateEmail() {
 
