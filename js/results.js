@@ -8,6 +8,9 @@ var accScore, stakeScore, dirScore, resScore, enhanceScore
 
 //add up the numbers
 function calcResults(){
+	alert(g1);
+	alert(g13);
+	alert(g1 + g13);
 	accScore = g1+g2+g5+g8+g10+g13;
 	var accPossible = 24;
 	stakeScore = g11+g14+g22;
