@@ -1081,7 +1081,7 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 var accScore, stakeScore, dirScore, resScore, enhanceScore
 
 function checkResults(){
-    alert(orgcode);
+    alert("orgcode is " + orgcode);
 
     if( orgcode != "-1" ){
         calcResults();
@@ -1092,7 +1092,7 @@ function checkResults(){
 }
 //add up the numbers
 function calcResults(){
-    alert(parseInt(g1));
+    alert("parseInt: " + parseInt(g1));
     accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
     var accPossible = 24;
     stakeScore = parseInt(g11)+parseInt(g14)+parseInt(g22);
@@ -1114,7 +1114,7 @@ function calcResults(){
     eval += "<tr><td>Stewarding Resources</td><td>" + resScore + "</td><td>" + resPossible + "</td><td>" + resScore/resPossible*100 + "</td></tr>";
     eval += "<tr><td>Continuous Governance Enhancement</td><td>" + enhScore + "</td><td>" + enhPossible + "</td><td>" + enhScore/enhPossible*100 + "</td></tr></table>";
 
-    alert(eval);
+    alert("eval is " + eval);
     document.getElementById('gs-results').innerHTML = eval;
 
 }
