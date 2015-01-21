@@ -62,7 +62,7 @@ function calcResults(){
 
     var eval = "<p>According to your assessment your Organization scores as follows: </p>";
 
-    eval += "<table data-role='table' data-mode='columntoggle' class='ui-responsive' id='gs-table'><tr><th data-priority="1">Practice Area</th><th data-priority="3">Points</th><th data-priority="4">Out Of</th><th data-priority="2">Percent</th></tr>";
+    eval += "<table data-role='table' data-mode='columntoggle' class='ui-responsive' id='gs-table'><tr><th data-priority='1'>Practice Area</th><th data-priority='3'>Points</th><th data-priority='4'>Out Of</th><th data-priority='2'>Percent</th></tr>";
     eval += "<tr><td>Cultivating Accountability</td><td>" + accScore + "</td><td>" + accPossible + "</td><td>" + Math.round(accScore/accPossible*100) + "%</td></tr>";
     eval += "<tr><td>Engaging Stakeholders</td><td>" + stakeScore + "</td><td>" + stakePossible + "</td><td>" + Math.round(stakeScore/stakePossible*100) + "%</td></tr>";
     eval += "<tr><td>Shared Strategic Direction</td><td>" + dirScore + "</td><td>" + dirPossible + "</td><td>" + Math.round(dirScore/dirPossible*100) + "%</td></tr>";
