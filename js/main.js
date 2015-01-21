@@ -1084,6 +1084,9 @@ checkResults(){
 
     if( orgcode != "-1" ){
         calcResults();
+    }else{
+        var notice = "<p>You need to complete the Govscore assessment in order to see results.</p>"
+        document.getElementById('gs-results').innerHTML = notice;
     }
 
 }
