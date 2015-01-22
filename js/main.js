@@ -1089,7 +1089,7 @@ function checkResults(){
 
 }
 //add up the numbers
-function calcResults(){
+function calcResults(orgcode){
         var g1 = window.localStorage.getItem("answer1");
         var g2 = window.localStorage.getItem("answer2");
         var g3 = window.localStorage.getItem("answer3");
@@ -1171,8 +1171,8 @@ function calcResults(){
         var weakest = sortedPercent.slice(0,2);
     }
 
-    var eval = "<h2>Govscore Assessment</h2><p>According to your assessment your Organization scores as follows: </p>";
-    eval += "<h4>Overall Assessment</h4><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>" + mlevel + ".</p>";
+    var eval = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
+    eval += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p>";
     eval += "<h4>Cultivating Accountability</h4><p>Your organization scored " + accScore + " out of a possible " + accPossible + " points. This means that the organization achieved " + accPercent + "%.</p>";
     eval += "<h4>Engaging Stakeholders</h4><p>Your organization scored " + stakeScore + " out of a possible " + stakePossible + " points. This means that the organization achieved " + stakePercent + "%.</p>";
     eval += "<h4>Shared Strategic Direction</h4><p>Your organization scored " + dirScore + " out of a possible " + dirPossible + " points. This means that the organization achieved " + dirPercent + "%.</p>";
@@ -1201,7 +1201,7 @@ function calcResults(){
    }
 
    eval += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
-   eval += "<p>To find out how your organization was evaluated by other members of your group, log into th ewebsite and use the organization code \"" + orgcode + "\".";
+   eval += "<p>To find out how your organization was evaluated by other members of your group, log into the website and use the organization code \"" + orgcode + "\".";
 
     //alert("eval is " + eval);
     document.getElementById('gs-results').innerHTML = eval;
