@@ -1148,43 +1148,42 @@ function calcResults(){
     }
 
     var sortedPercent = percentArray.sort(compareNumbers);
-    alert("sorted Array : " + sortedPercent);
     if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
         var weakest = sortedPercent.slice(0,3);
     }else{
         var weakest = sortedPercent.slice(0,2);
     }
-    alert(weakest);
 
-    var eval = "<p>According to your assessment your Organization scores as follows: </p>";
+    var eval = "<h2>Govscore Assessment</h2><p>According to your assessment your Organization scores as follows: </p>";
 
-    eval += "<h2>Cultivating Accountability</h2><p>Your organization scored " + accScore + " out of a possible " + accPossible + " points. This means that the organization achieved " + accPercent + "%.</p>";
-    eval += "<h2>Engaging Stakeholders</h2><p>Your organization scored " + stakeScore + " out of a possible " + stakePossible + " points. This means that the organization achieved " + stakePercent + "%.</p>";
-    eval += "<h2>Shared Strategic Direction</h2><p>Your organization scored " + dirScore + " out of a possible " + dirPossible + " points. This means that the organization achieved " + dirPercent + "%.</p>";
-    eval += "<h2>Stewarding Resources</h2><p>Your organization scored " + resScore + " out of a possible " + resPossible + " points. This means that the organization achieved " + resPercent + "%.</p>";
-    eval += "<h2>Continuous Governance Enhancement</h2><p>Your organization scored " + enhScore + " out of a possible " + enhPossible + " points. This means that the organization achieved " + enhPercent + "%.</p>";
-    eval += "<h2>Recommendation</h2><p>The areas that your organization should focus on are, in order,</p>"
+    eval += "<h3>Cultivating Accountability</h3><p>Your organization scored " + accScore + " out of a possible " + accPossible + " points. This means that the organization achieved " + accPercent + "%.</p>";
+    eval += "<h3>Engaging Stakeholders</h3><p>Your organization scored " + stakeScore + " out of a possible " + stakePossible + " points. This means that the organization achieved " + stakePercent + "%.</p>";
+    eval += "<h3>Shared Strategic Direction</h3><p>Your organization scored " + dirScore + " out of a possible " + dirPossible + " points. This means that the organization achieved " + dirPercent + "%.</p>";
+    eval += "<h3>Stewarding Resources</h3><p>Your organization scored " + resScore + " out of a possible " + resPossible + " points. This means that the organization achieved " + resPercent + "%.</p>";
+    eval += "<h3>Continuous Governance Enhancement</h3><p>Your organization scored " + enhScore + " out of a possible " + enhPossible + " points. This means that the organization achieved " + enhPercent + "%.</p>";
+    eval += "<h3>Recommendation</h3><p>The areas that your organization should focus on are, in order,</p>"
 
    for (var i = 0; i < weakest.length; i++){
         switch(weakest[i]){
             case accPercent:
-                eval += "<li>" + (i+1) + " Cultivating Accountability (" + accPercent + "%) </li>";
+                eval += "<li>" + (i+1) + ". Cultivating Accountability (" + accPercent + "%) </li>";
                 break;
             case stakePercent:
-                eval += "<li>" + (i+1) + " Engaging Stakeholders (" + stakePercent + "%)</li>";
+                eval += "<li>" + (i+1) + ". Engaging Stakeholders (" + stakePercent + "%)</li>";
                 break;
             case dirPercent:
-                eval += "<li>" + (i+1) + "Shared Strategic Direction (" + dirPercent + "%)</li>";
+                eval += "<li>" + (i+1) + ". Shared Strategic Direction (" + dirPercent + "%)</li>";
                 break;
             case resPercent:
-                eval += "<h3>Stewarding Resources (" + resPercent + "%)</h3>";
+                eval += "<li>" + (i+1) + ". Stewarding Resources (" + resPercent + "%)</li>";
                 break;
             case enhPercent:
-                eval += "<h3>Continuous Governance Enhancement (" + enhPercent + "%)</h3>";
+                eval += "<li>" + (i+1) + ". Continuous Governance Enhancement (" + enhPercent + "%)</li>";
                 break;
         }
    }
 
+   eval += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
     //alert("eval is " + eval);
     document.getElementById('gs-results').innerHTML = eval;
 
