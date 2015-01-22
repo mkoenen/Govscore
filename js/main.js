@@ -1170,12 +1170,12 @@ function calcResults(){
 
     var eval = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
     eval += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
-    eval += "<h4>Cultivating Accountability</h4><p>Your organization scored " + accScore + " out of a possible " + accPossible + " points. This means that the organization achieved " + accPercent + "%.</p>";
-    eval += "<h4>Engaging Stakeholders</h4><p>Your organization scored " + stakeScore + " out of a possible " + stakePossible + " points. This means that the organization achieved " + stakePercent + "%.</p>";
-    eval += "<h4>Shared Strategic Direction</h4><p>Your organization scored " + dirScore + " out of a possible " + dirPossible + " points. This means that the organization achieved " + dirPercent + "%.</p>";
-    eval += "<h4>Stewarding Resources</h4><p>Your organization scored " + resScore + " out of a possible " + resPossible + " points. This means that the organization achieved " + resPercent + "%.</p>";
-    eval += "<h4>Continuous Governance Enhancement</h4><p>Your organization scored " + enhScore + " out of a possible " + enhPossible + " points. This means that the organization achieved " + enhPercent + "%.</p>";
-    eval += "<h3>Recommendation</h3><p>The areas that your organization should focus on are, in order,</p>"
+    eval += "<h4>Cultivating Accountability</h4><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
+    eval += "<h4>Engaging Stakeholders</h4><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
+    eval += "<h4>Shared Strategic Direction</h4><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
+    eval += "<h4>Stewarding Resources</h4><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
+    eval += "<h4>Continuous Governance Enhancement</h4><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
+    eval += "<h3>Recommendation</h3><p>The areas that your organization should focus on are:</p>"
 
    for (var i = 0; i < weakest.length; i++){
         switch(weakest[i]){
