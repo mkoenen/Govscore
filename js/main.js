@@ -1161,26 +1161,26 @@ function calcResults(){
     eval += "<h2>Cultivating Accountability</h2><p>Your organization scored " + accScore + " out of a possible " + accPossible + " points. This means that the organization achieved " + accPercent + "%.</p>";
     eval += "<h2>Engaging Stakeholders</h2><p>Your organization scored " + stakeScore + " out of a possible " + stakePossible + " points. This means that the organization achieved " + stakePercent + "%.</p>";
     eval += "<h2>Shared Strategic Direction</h2><p>Your organization scored " + dirScore + " out of a possible " + dirPossible + " points. This means that the organization achieved " + dirPercent + "%.</p>";
-    eval += "<h2>Stewarding Resources</h2><p>Your organization scored " + resScore + " out of a possible " + resPossible + " points. This means that the organization achieved " + resPossible + "%.</p>";
-    eval += "<h2>Continuous Governance Enhancement</h2><p>Your organization scored " + enhScore + " out of a possible " + enhPossible + " points. This means that the organization achieved " + enhPossible + "%.</p>";
+    eval += "<h2>Stewarding Resources</h2><p>Your organization scored " + resScore + " out of a possible " + resPossible + " points. This means that the organization achieved " + resPercent + "%.</p>";
+    eval += "<h2>Continuous Governance Enhancement</h2><p>Your organization scored " + enhScore + " out of a possible " + enhPossible + " points. This means that the organization achieved " + enhPercent + "%.</p>";
     eval += "<h2>Recommendation</h2><p>The areas that your organization should focus on are, in order,</p>"
 
    for (var i = 0; i < weakest.length; i++){
         switch(weakest[i]){
             case accPercent:
-                eval += "<h3>cultivating accountability</h3>";
+                eval += "<li>" + (i+1) + " Cultivating Accountability (" + accPercent + "%) </li>";
                 break;
             case stakePercent:
-                eval += "<h3>engaging stakeholders</h3>";
+                eval += "<li>" + (i+1) + " Engaging Stakeholders (" + stakePercent + "%)</li>";
                 break;
             case dirPercent:
-                eval += "<h3>shared strategic direction</h3>";
+                eval += "<li>" + (i+1) + "Shared Strategic Direction (" + dirPercent + "%)</li>";
                 break;
             case resPercent:
-                eval += "<h3>stewarding resources</h3>";
+                eval += "<h3>Stewarding Resources (" + resPercent + "%)</h3>";
                 break;
             case enhPercent:
-                eval += "<h3>continuous governance enhancement</h3>";
+                eval += "<h3>Continuous Governance Enhancement (" + enhPercent + "%)</h3>";
                 break;
         }
    }
