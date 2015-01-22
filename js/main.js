@@ -1116,51 +1116,38 @@ function calcResults(){
         var g24 = window.localStorage.getItem("answer24");
         var g25 = window.localStorage.getItem("answer25");
 
-    
+    var percentArray = new Array();
 
     accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
     var accPossible = 24;
     var accPercent = Math.round(accScore/accPossible*100);
+    percentArray.push(accPercent);
 
     stakeScore = parseInt(g11)+parseInt(g14)+parseInt(g22);
     var stakePossible = 12;
     var stakePercent = Math.round(stakeScore/stakePossible*100);
-    
+    percentArray.push(stakePercent);
+
     dirScore = parseInt(g6)+parseInt(g7)+parseInt(g12)+parseInt(g16);
     var dirPossible = 16;
     var dirPercent = Math.round(dirScore/dirPossible*100);
-    
+    percentArray.push(dirPercent);
+
     resScore = parseInt(g3)+parseInt(g4)+parseInt(g17)+parseInt(g21)+parseInt(g23)+parseInt(g25);
     var resPossible = 24;
     var resPercent = Math.round(resScore/resPossible*100);
+    percentArray.push(resPercent);
 
     enhScore = parseInt(g9)+parseInt(g15)+parseInt(g18)+parseInt(g19)+parseInt(g20)+parseInt(g24);
     var enhPossible = 24;
     var enhPercent = Math.round(enhScore/enhPossible*100);
-
-    var percentArray = {accPercent: "Cultivating Accountability", stakePercent: "Engaging Stakeholders", dirPercent: "Shared Strategic Direction", resPercent: "Stewarding Resources", enhPercent: "Continuous Governance Enhancement"};
+    percentArray.push(enhPercent);
     
-    console.log(percentArray);
-
-    var keys = [], k, i;
-
-    for (k in percentArray) {
-        if (percentArray.hasOwnProperty(k)) {
-            keys.push(k);
-        }
-    }
-
     function compareNumbers(a, b) {
         return a - b;
     }
 
-    var sortedkeys = keys.sort(compareNumbers);
-
-    for (i = 0; i < sortedkeys.length; i++) {
-        k = keys[i];
-        alert(k + ':' + percentArray[k]);
-    }
-
+    var sortedPercent = percentArray.sort(compareNumbers);
     alert("sorted Array : " + sortedPercent);
     if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
         var weakest = sortedPercent.slice(0,3);
@@ -1179,7 +1166,23 @@ function calcResults(){
     eval += "<h2>Recommendation</h2><p>The areas that your organization should focus on are, in order,</p>"
 
    for (var i = 0; i < weakest.length; i++){
-    eval += "<h3>" + weakest[i] + "</h3>";
+        switch(weakest[i]){
+            case accPercent:
+                eval += "<h3>cultivating accountability</h3>";
+                break;
+            case stakePercent:
+                eval += "<h3>engaging stakeholders</h3>";
+                break;
+            case dirPercent:
+                eval += "<h3>shared strategic direction</h3>";
+                break;
+            case resPercent:
+                eval += "<h3>stewarding resources</h3>";
+                break;
+            case enhPercent:
+                eval += "<h3>continuous governance enhancement</h3>";
+                break;
+        }
    }
 
     //alert("eval is " + eval);
