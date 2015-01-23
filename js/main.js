@@ -126,6 +126,20 @@ function alreadySaved() {
     );
 }
 
+/* Get Date --------------------------------------------------*/
+function getDate() {
+    var cdate;
+    cdate = new Date();
+    cdate = date.getUTCFullYear() + '-' +
+            ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
+            ('00' + date.getUTCDate()).slice(-2) + ' ' +
+            ('00' + date.getUTCHours()).slice(-2) + ':' +
+            ('00' + date.getUTCMinutes()).slice(-2) + ':' +
+            ('00' + date.getUTCSeconds()).slice(-2);
+
+    return cdate;
+
+}
 /* Interface changes -----------------------------------------*/ 
 
 function hideSaveButton() {
@@ -222,7 +236,8 @@ function savelocal() {
 
     
     
-    var cdate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    cdate = getDate();
+    alert(cdate);
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var organization =  $( "#organization" ).val();
