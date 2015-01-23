@@ -222,7 +222,8 @@ function savelocal() {
 
     
     
-    var cdate = new Date();
+    var cdate = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    alert(cdate);
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var organization =  $( "#organization" ).val();
