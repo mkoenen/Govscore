@@ -28,7 +28,7 @@ var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode = window.lo
 
  //listen for click events      
 function setbutton() {
-    document.getElementById('btnStore').addEventListener('click', savelocal, false);
+    document.getElementById('btnStore').addEventListener('click', validate, false);
     document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
     document.getElementById('ag2Store').addEventListener('click', ag2savelocal, false);
     document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
@@ -286,7 +286,7 @@ function savelocal() {
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
 
-    hideSaveButton();
+    //hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection( "govscore");
@@ -313,10 +313,10 @@ function savelocal() {
 function saveServer() {
     //first check if data has been saved to server already
 
-    var getSaved = window.localStorage.getItem("saved");
-    var savedName = window.localStorage.getItem("name");
+   // var getSaved = window.localStorage.getItem("saved");
+   // var savedName = window.localStorage.getItem("name");
     //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-    if (getSaved !== "true" && savedName !== null ) {
+    //if (getSaved !== "true" && savedName !== null ) {
 
        
     
@@ -375,9 +375,11 @@ function saveServer() {
             }
         });
 
-    }else{
+         calcResults();
+
+   // }else{
        // alreadySaved();
-    }
+   // }
 }
 
 
