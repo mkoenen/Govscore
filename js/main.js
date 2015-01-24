@@ -526,7 +526,7 @@ function saveServer() {
     }
 
     alert("at the end of the function");
-)
+}
 
 
 
