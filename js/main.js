@@ -509,9 +509,9 @@ function saveServer() {
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
-                //alert(responseData + ", " + textStatus + ", " + jqXHR);
+                alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
-                afterSavedServer("Govscore", orgcode);
+                //afterSavedServer("Govscore", orgcode);
                             },
             error      : function(response) {
                 alert(response);                  
