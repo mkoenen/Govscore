@@ -512,7 +512,6 @@ function saveServer() {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
                 afterSavedServer("Govscore", orgcode);
-                loadPage("#govscore");
                             },
             error      : function(response) {
                 alert(response);                  
