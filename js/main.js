@@ -24,7 +24,7 @@ function onOnline() {
 }
 
 
-var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode = window.localStorage.getItem("organization");
+var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode;
 
  //listen for click events      
 function setbutton() {
@@ -134,7 +134,8 @@ Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic 
 Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
 Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
 
-var accScore, stakeScore, dirScore, resScore, enhanceScore
+var accScore, stakeScore, dirScore, resScore, enhanceScore;
+orgcode = window.localStorage.getItem("organization");
 
 function checkResults(){
     var saved = window.localStorage.getItem("saved");
