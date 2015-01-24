@@ -597,7 +597,7 @@ function ag1savelocal() {
     //alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
 
     //hide save button
-    hideSaveButton();
+    //hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection("ag1");
