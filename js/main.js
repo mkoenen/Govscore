@@ -286,8 +286,8 @@ function hideSaveButton() {
     
     var ag1a = window.localStorage.getItem("ag1a");
     if(ag1a != null){
-        var ag1SaveButton = document.getElementById('ag1Store');
-        ag1SaveButton.className = ag1SaveButton.className + " hide";
+       // var ag1SaveButton = document.getElementById('ag1Store');
+       // ag1SaveButton.className = ag1SaveButton.className + " hide";
     }
    
     var ag7a = window.localStorage.getItem("ag7a");
