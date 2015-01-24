@@ -288,12 +288,8 @@ function savelocal() {
 
     hideSaveButton();
 
-    calcResults();
-
     //now that everything is saved check the connection
     checkConnection( "govscore");
-
-
 
 }
 
@@ -378,6 +374,8 @@ function saveServer() {
                 alert(response);                  
             }
         });
+
+         calcResults();
 
     }else{
        // alreadySaved();
