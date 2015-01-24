@@ -613,11 +613,11 @@ function ag1savelocal() {
 function ag1saveServer() {
     //first check if data has been saved to server already
 
-    var getag1Saved = window.localStorage.getItem("ag1saved");
-    var savedag1b = window.localStorage.getItem("ag1b");
+   // var getag1Saved = window.localStorage.getItem("ag1saved");
+  //  var savedag1b = window.localStorage.getItem("ag1b");
     //alert( "saved is " + getag1Saved + "and data is " + savedag1b); //temp
 
-    if (getag1Saved !== "true" && savedag1b !== null ) {
+   // if (getag1Saved !== "true" && savedag1b !== null ) {
     
          //get the data from local storage
         var ag1date = window.localStorage.getItem("ag1date");
@@ -675,11 +675,11 @@ function ag1saveServer() {
 
 
 
-    }else{
+  //  }else{
 
         //alreadySaved();
 
-    }
+   // }
 
 }
 
