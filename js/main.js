@@ -209,13 +209,13 @@ function calcResults(){
         case( totalScore < 25 ):
             mlevel = "Clear need of governance development (first level/4)";
             break;
-        case( totalScore >= 25 && totalscore < 50 ):
+        case( totalScore >= 25 && totalScore < 50 ):
             mlevel = "Basic level of governance (second level/4)";
             break;
-        case( totalScore >= 50 && totalscore < 75 ):
+        case( totalScore >= 50 && totalScore < 75 ):
             mlevel = "Goal-Driven and dynamic governance (third level/4)";
             break;
-        case( totalscore >= 75 ): 
+        case( totalScore >= 75 ): 
             mlevel = "Transformational governance (highest level/4)";
     }
     
