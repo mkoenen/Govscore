@@ -28,7 +28,7 @@ var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode = window.lo
 
  //listen for click events      
 function setbutton() {
-    document.getElementById('btnStore').addEventListener('click', validate, false);
+    document.getElementById('btnStore').addEventListener('click', savelocal, false);
     document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
     document.getElementById('ag2Store').addEventListener('click', ag2savelocal, false);
     document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
