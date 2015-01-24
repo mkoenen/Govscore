@@ -432,6 +432,8 @@ function savelocal() {
     //now that everything is saved check the connection
     checkConnection( "govscore");
 
+    calcResults();
+
 }
 
 
@@ -516,7 +518,7 @@ function saveServer() {
             }
         });
 
-         calcResults();
+         
 
     }else{
        // alreadySaved();
