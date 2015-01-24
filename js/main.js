@@ -429,10 +429,10 @@ function savelocal() {
 
     hideSaveButton();
 
+    calcResults();
+
     //now that everything is saved check the connection
     checkConnection( "govscore");
-
-    calcResults();
 
 }
 
