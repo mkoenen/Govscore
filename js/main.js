@@ -540,6 +540,7 @@ function ag1savelocal() {
     
     var ag1date = new Date();
     var ag1a = $('input[name="a1a"]:checked').val();
+    alert(ag1a);
     var ag1b = $('input[name="a1b"]:checked').val();
     var ag1c = $('input[name="a1c"]:checked').val();
     var ag1d = $('input[name="a1d"]:checked').val();
