@@ -519,12 +519,14 @@ function saveServer() {
             }
         });
 
-         
+        alert("right after ajax");    
 
     }else{
        // alreadySaved();
     }
-}
+
+    alert("at the end of the function");
+)
 
 
 
