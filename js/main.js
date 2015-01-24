@@ -286,7 +286,7 @@ function savelocal() {
     window.localStorage.setItem("answer24", answer24);
     window.localStorage.setItem("answer25", answer25);
 
-    hideSaveButton();
+    //hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection( "govscore");
@@ -313,10 +313,10 @@ function savelocal() {
 function saveServer() {
     //first check if data has been saved to server already
 
-    var getSaved = window.localStorage.getItem("saved");
-    var savedName = window.localStorage.getItem("name");
+   // var getSaved = window.localStorage.getItem("saved");
+   // var savedName = window.localStorage.getItem("name");
     //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-    if (getSaved !== "true" && savedName !== null ) {
+    //if (getSaved !== "true" && savedName !== null ) {
 
        
     
@@ -377,9 +377,9 @@ function saveServer() {
 
          calcResults();
 
-    }else{
+   // }else{
        // alreadySaved();
-    }
+   // }
 }
 
 
