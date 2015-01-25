@@ -1177,10 +1177,14 @@ function calcResults(){
     }
 
     var sortedPercent = percentArray.sort(compareNumbers);
-    if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
-        var weakest = sortedPercent.slice(0,3);
-    }else{
+    if(sortedPercent[0]!=sortedPercent[1] && sortedPercent[1] != sortedPercent[2]){
         var weakest = sortedPercent.slice(0,2);
+    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
+        var weakest = sortedPercent.slice(0,3);
+    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]) && sortedPercent[2] == sortedPercent[3]){
+        var weakest = sortedPercent.slice(0,4);
+    }else {
+        var weakest = sortedPercent;
     }
 
     var eval = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
@@ -1196,23 +1200,18 @@ function calcResults(){
         switch(weakest[i]){
             case accPercent:
                 eval += "<li>" + (i+1) + ". Cultivating Accountability (" + accPercent + "%) </li>";
-                weakest.splice(i,1);
                 break;
             case stakePercent:
                 eval += "<li>" + (i+1) + ". Engaging Stakeholders (" + stakePercent + "%)</li>";
-                weakest.splice(i,1);
                 break;
             case dirPercent:
                 eval += "<li>" + (i+1) + ". Shared Strategic Direction (" + dirPercent + "%)</li>";
-                weakest.splice(i,1);
                 break;
             case resPercent:
                 eval += "<li>" + (i+1) + ". Stewarding Resources (" + resPercent + "%)</li>";
-                weakest.splice(i,1);
                 break;
             case enhPercent:
                 eval += "<li>" + (i+1) + ". Continuous Governance Enhancement (" + enhPercent + "%)</li>";
-                weakest.splice(i,1);
                 break;
         }
    }
