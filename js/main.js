@@ -20,7 +20,7 @@ function onOnline() {
 }
 
 
-var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
+var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode, gsdate, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
 
  //listen for click events      
 function setbutton() {
@@ -127,9 +127,13 @@ function alreadySaved() {
 /* Get Date --------------------------------------------------*/
 
 function formatDate(date) {
-  return date.getFullYear() + '-' +
-    (date.getMonth() < 9 ? '0' : '') + (date.getMonth()+1) + '-' +
-    (date.getDate() < 10 ? '0' : '') + date.getDate();
+    date = date.getUTCFullYear() + '-' +
+            ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
+            ('00' + date.getUTCDate()).slice(-2) + ' ' +
+            ('00' + date.getUTCHours()).slice(-2) + ':' +
+            ('00' + date.getUTCMinutes()).slice(-2) + ':' +
+            ('00' + date.getUTCSeconds()).slice(-2); 
+    return date;   
 }
 
 /* Interface changes -----------------------------------------*/ 
@@ -228,9 +232,9 @@ function savelocal() {
 
     
     
-    newdate = new Date();
-    cdate = formatDate(newdate);
-    alert(cdate);
+    var newdate = new Date();
+    gsdate = formatDate(newdate);
+    alert(gsdate);
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var organization =  $( "#organization" ).val();
