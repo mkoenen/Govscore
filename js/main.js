@@ -1,8 +1,5 @@
 /* Events -----------------------------------------*/
 function init() {
-    //remove save buttons
-    
-
     //window.setTimeout(beonline, 6000);
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
@@ -10,7 +7,6 @@ function init() {
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", hideSaveButton, false);
     document.addEventListener("deviceready", checkResults, false);
-
 }
 
 //check if online according to the above interval
@@ -24,7 +20,7 @@ function onOnline() {
 }
 
 
-var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode;
+var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
 
  //listen for click events      
 function setbutton() {
@@ -126,148 +122,15 @@ function alreadySaved() {
     );
 }
 
-/* Results -----------------*/
 
-/*Questions 1, 2, 5, 8, 10 and 13 are based on the practice of cultivating accountability.
-Questions 11, 14 and 22 are based on the practice of engaging stakeholders.
-Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic direction.
-Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
-Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
-
-var accScore, stakeScore, dirScore, resScore, enhanceScore;
-orgcode = window.localStorage.getItem("organization");
-
-function checkResults(){
-    var saved = window.localStorage.getItem("saved");
-
-    if( saved == "true" ){
-        calcResults();
-    }else{
-        document.getElementById("gs-results").innerHTML = "<p>You need to complete the Govscore assessment in order to see results.</p>";
-    }
-
-}
-//add up the numbers
-function calcResults(){
-        var g1 = window.localStorage.getItem("answer1");
-        var g2 = window.localStorage.getItem("answer2");
-        var g3 = window.localStorage.getItem("answer3");
-        var g4 = window.localStorage.getItem("answer4");
-        var g5 = window.localStorage.getItem("answer5");
-        var g6 = window.localStorage.getItem("answer6");
-        var g7 = window.localStorage.getItem("answer7");
-        var g8 = window.localStorage.getItem("answer8");
-        var g9 = window.localStorage.getItem("answer9");
-        var g10 = window.localStorage.getItem("answer10");
-        var g11 = window.localStorage.getItem("answer11");
-        var g12 = window.localStorage.getItem("answer12");
-        var g13 = window.localStorage.getItem("answer13");
-        var g14 = window.localStorage.getItem("answer14");
-        var g15 = window.localStorage.getItem("answer15");
-        var g16 = window.localStorage.getItem("answer16");
-        var g17 = window.localStorage.getItem("answer17");
-        var g18 = window.localStorage.getItem("answer18");
-        var g19 = window.localStorage.getItem("answer19");
-        var g20 = window.localStorage.getItem("answer20");
-        var g21 = window.localStorage.getItem("answer21");
-        var g22 = window.localStorage.getItem("answer22");
-        var g23 = window.localStorage.getItem("answer23");
-        var g24 = window.localStorage.getItem("answer24");
-        var g25 = window.localStorage.getItem("answer25");
-
-    var percentArray = new Array();
-
-    accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
-    var accPossible = 24;
-    var accPercent = Math.round(accScore/accPossible*100);
-    percentArray.push(accPercent);
-
-    stakeScore = parseInt(g11)+parseInt(g14)+parseInt(g22);
-    var stakePossible = 12;
-    var stakePercent = Math.round(stakeScore/stakePossible*100);
-    percentArray.push(stakePercent);
-
-    dirScore = parseInt(g6)+parseInt(g7)+parseInt(g12)+parseInt(g16);
-    var dirPossible = 16;
-    var dirPercent = Math.round(dirScore/dirPossible*100);
-    percentArray.push(dirPercent);
-
-    resScore = parseInt(g3)+parseInt(g4)+parseInt(g17)+parseInt(g21)+parseInt(g23)+parseInt(g25);
-    var resPossible = 24;
-    var resPercent = Math.round(resScore/resPossible*100);
-    percentArray.push(resPercent);
-
-    enhScore = parseInt(g9)+parseInt(g15)+parseInt(g18)+parseInt(g19)+parseInt(g20)+parseInt(g24);
-    var enhPossible = 24;
-    var enhPercent = Math.round(enhScore/enhPossible*100);
-    percentArray.push(enhPercent);
-
-    var totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
-    var mlevel;
-
-    switch(true) {
-        case( totalScore < 25 ):
-            mlevel = "Clear need of governance development (first level/4)";
-            break;
-        case( totalScore >= 25 && totalScore < 50 ):
-            mlevel = "Basic level of governance (second level/4)";
-            break;
-        case( totalScore >= 50 && totalScore < 75 ):
-            mlevel = "Goal-Driven and dynamic governance (third level/4)";
-            break;
-        case( totalScore >= 75 ): 
-            mlevel = "Transformational governance (highest level/4)";
-    }
-    
-    function compareNumbers(a, b) {
-        return a - b;
-    }
-
-    var sortedPercent = percentArray.sort(compareNumbers);
-    if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
-        var weakest = sortedPercent.slice(0,3);
-    }else{
-        var weakest = sortedPercent.slice(0,2);
-    }
-
-    var eval = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
-    eval += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
-    eval += "<h4>Cultivating Accountability</h4><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
-    eval += "<h4>Engaging Stakeholders</h4><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
-    eval += "<h4>Shared Strategic Direction</h4><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
-    eval += "<h4>Stewarding Resources</h4><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
-    eval += "<h4>Continuous Governance Enhancement</h4><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
-    eval += "<h3>Recommendation</h3><p>The areas that your organization should focus on are:</p>"
-
-   for (var i = 0; i < weakest.length; i++){
-        switch(weakest[i]){
-            case accPercent:
-                eval += "<li>" + (i+1) + ". Cultivating Accountability (" + accPercent + "%) </li>";
-                break;
-            case stakePercent:
-                eval += "<li>" + (i+1) + ". Engaging Stakeholders (" + stakePercent + "%)</li>";
-                break;
-            case dirPercent:
-                eval += "<li>" + (i+1) + ". Shared Strategic Direction (" + dirPercent + "%)</li>";
-                break;
-            case resPercent:
-                eval += "<li>" + (i+1) + ". Stewarding Resources (" + resPercent + "%)</li>";
-                break;
-            case enhPercent:
-                eval += "<li>" + (i+1) + ". Continuous Governance Enhancement (" + enhPercent + "%)</li>";
-                break;
-        }
-   }
-
-   eval += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
-   eval += "<p>To find out how your organization was evaluated by other members of your group, log into the website and use the organization code \"" + orgcode + "\".";
-
-    //alert("eval is " + eval);
-    document.getElementById('gs-results').innerHTML = eval;
-
-}
 
 /* Get Date --------------------------------------------------*/
+
+function formatDate(date) {
+  return date.getFullYear() + '-' +
+    (date.getMonth() < 9 ? '0' : '') + (date.getMonth()+1) + '-' +
+    (date.getDate() < 10 ? '0' : '') + date.getDate();
+}
 
 /* Interface changes -----------------------------------------*/ 
 
@@ -365,7 +228,9 @@ function savelocal() {
 
     
     
-    cdate = new Date();
+    newdate = new Date();
+    cdate = formatDate(newdate);
+    alert(cdate);
     var name = document.getElementById("name").value;
     var email = document.getElementById("email").value;
     var organization =  $( "#organization" ).val();
@@ -468,9 +333,9 @@ function saveServer() {
         var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
         var organization = window.localStorage.getItem("organization");
-        g1 = window.localStorage.getItem("answer1");
-        var g2 = window.localStorage.getItem("answer2");
-        var g3 = window.localStorage.getItem("answer3");
+        //var g1 = window.localStorage.getItem("answer1");
+        //var g2 = window.localStorage.getItem("answer2");
+        //var g3 = window.localStorage.getItem("answer3");
         var g4 = window.localStorage.getItem("answer4");
         var g5 = window.localStorage.getItem("answer5");
         var g6 = window.localStorage.getItem("answer6");
@@ -497,7 +362,7 @@ function saveServer() {
         saved = window.localStorage.setItem("saved", "true");
 
 
-        alert(g1);
+        alert(g1 + "," + g2);
 
         var data = { "date" : cdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
         
@@ -540,7 +405,6 @@ function ag1savelocal() {
     
     var ag1date = new Date();
     var ag1a = $('input[name="a1a"]:checked').val();
-    alert(ag1a);
     var ag1b = $('input[name="a1b"]:checked').val();
     var ag1c = $('input[name="a1c"]:checked').val();
     var ag1d = $('input[name="a1d"]:checked').val();
@@ -597,7 +461,7 @@ function ag1savelocal() {
     //alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
 
     //hide save button
-    //hideSaveButton();
+    hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection("ag1");
@@ -1210,4 +1074,145 @@ function ag5saveServer() {
     }
 
 } 
+
+/* Results -----------------*/
+
+/*Questions 1, 2, 5, 8, 10 and 13 are based on the practice of cultivating accountability.
+Questions 11, 14 and 22 are based on the practice of engaging stakeholders.
+Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic direction.
+Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
+Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
+
+var accScore, stakeScore, dirScore, resScore, enhanceScore;
+orgcode = window.localStorage.getItem("organization");
+
+function checkResults(){
+    var saved = window.localStorage.getItem("saved");
+
+    if( saved == "true" ){
+        calcResults();
+    }else{
+        document.getElementById("gs-results").innerHTML = "<p>You need to complete the Govscore assessment in order to see results.</p>";
+    }
+
+}
+//add up the numbers
+function calcResults(){
+        var g1 = window.localStorage.getItem("answer1");
+        var g2 = window.localStorage.getItem("answer2");
+        var g3 = window.localStorage.getItem("answer3");
+        var g4 = window.localStorage.getItem("answer4");
+        var g5 = window.localStorage.getItem("answer5");
+        var g6 = window.localStorage.getItem("answer6");
+        var g7 = window.localStorage.getItem("answer7");
+        var g8 = window.localStorage.getItem("answer8");
+        var g9 = window.localStorage.getItem("answer9");
+        var g10 = window.localStorage.getItem("answer10");
+        var g11 = window.localStorage.getItem("answer11");
+        var g12 = window.localStorage.getItem("answer12");
+        var g13 = window.localStorage.getItem("answer13");
+        var g14 = window.localStorage.getItem("answer14");
+        var g15 = window.localStorage.getItem("answer15");
+        var g16 = window.localStorage.getItem("answer16");
+        var g17 = window.localStorage.getItem("answer17");
+        var g18 = window.localStorage.getItem("answer18");
+        var g19 = window.localStorage.getItem("answer19");
+        var g20 = window.localStorage.getItem("answer20");
+        var g21 = window.localStorage.getItem("answer21");
+        var g22 = window.localStorage.getItem("answer22");
+        var g23 = window.localStorage.getItem("answer23");
+        var g24 = window.localStorage.getItem("answer24");
+        var g25 = window.localStorage.getItem("answer25");
+
+    var percentArray = new Array();
+
+    accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
+    var accPossible = 24;
+    var accPercent = Math.round(accScore/accPossible*100);
+    percentArray.push(accPercent);
+
+    stakeScore = parseInt(g11)+parseInt(g14)+parseInt(g22);
+    var stakePossible = 12;
+    var stakePercent = Math.round(stakeScore/stakePossible*100);
+    percentArray.push(stakePercent);
+
+    dirScore = parseInt(g6)+parseInt(g7)+parseInt(g12)+parseInt(g16);
+    var dirPossible = 16;
+    var dirPercent = Math.round(dirScore/dirPossible*100);
+    percentArray.push(dirPercent);
+
+    resScore = parseInt(g3)+parseInt(g4)+parseInt(g17)+parseInt(g21)+parseInt(g23)+parseInt(g25);
+    var resPossible = 24;
+    var resPercent = Math.round(resScore/resPossible*100);
+    percentArray.push(resPercent);
+
+    enhScore = parseInt(g9)+parseInt(g15)+parseInt(g18)+parseInt(g19)+parseInt(g20)+parseInt(g24);
+    var enhPossible = 24;
+    var enhPercent = Math.round(enhScore/enhPossible*100);
+    percentArray.push(enhPercent);
+
+    var totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
+    var mlevel;
+
+    switch(true) {
+        case( totalScore < 25 ):
+            mlevel = "Clear need of governance development (first level/4)";
+            break;
+        case( totalScore >= 25 && totalScore < 50 ):
+            mlevel = "Basic level of governance (second level/4)";
+            break;
+        case( totalScore >= 50 && totalScore < 75 ):
+            mlevel = "Goal-Driven and dynamic governance (third level/4)";
+            break;
+        case( totalScore >= 75 ): 
+            mlevel = "Transformational governance (highest level/4)";
+    }
+    
+    function compareNumbers(a, b) {
+        return a - b;
+    }
+
+    var sortedPercent = percentArray.sort(compareNumbers);
+    if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
+        var weakest = sortedPercent.slice(0,3);
+    }else{
+        var weakest = sortedPercent.slice(0,2);
+    }
+
+    var eval = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
+    eval += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
+    eval += "<h4>Cultivating Accountability</h4><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
+    eval += "<h4>Engaging Stakeholders</h4><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
+    eval += "<h4>Shared Strategic Direction</h4><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
+    eval += "<h4>Stewarding Resources</h4><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
+    eval += "<h4>Continuous Governance Enhancement</h4><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
+    eval += "<h3>Recommendation</h3><p>The areas that your organization should focus on are:</p>"
+
+   for (var i = 0; i < weakest.length; i++){
+        switch(weakest[i]){
+            case accPercent:
+                eval += "<li>" + (i+1) + ". Cultivating Accountability (" + accPercent + "%) </li>";
+                break;
+            case stakePercent:
+                eval += "<li>" + (i+1) + ". Engaging Stakeholders (" + stakePercent + "%)</li>";
+                break;
+            case dirPercent:
+                eval += "<li>" + (i+1) + ". Shared Strategic Direction (" + dirPercent + "%)</li>";
+                break;
+            case resPercent:
+                eval += "<li>" + (i+1) + ". Stewarding Resources (" + resPercent + "%)</li>";
+                break;
+            case enhPercent:
+                eval += "<li>" + (i+1) + ". Continuous Governance Enhancement (" + enhPercent + "%)</li>";
+                break;
+        }
+   }
+
+   eval += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
+   eval += "<p>To find out how your organization was evaluated by other members of your group, log into the website and use the organization code \"" + orgcode + "\".";
+
+    //alert("eval is " + eval);
+    document.getElementById('gs-results').innerHTML = eval;
+
+}
 
