@@ -1181,7 +1181,7 @@ function calcResults(){
         var weakest = sortedPercent.slice(0,2);
     }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
         var weakest = sortedPercent.slice(0,3);
-    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]) && sortedPercent[2] == sortedPercent[3]){
+    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2] && sortedPercent[2] == sortedPercent[3]){
         var weakest = sortedPercent.slice(0,4);
     }else {
         var weakest = sortedPercent;
