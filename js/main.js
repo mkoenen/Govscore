@@ -14,7 +14,7 @@ function onOnline() {
    saveServer(); 
    ag1saveServer(); 
    ag2saveServer(); 
-   ag3saveServer(); 
+   ag3saveServer();
    ag4saveServer(); 
    ag5saveServer(); 
 }
@@ -266,7 +266,7 @@ function savelocal() {
     
 
 
-    window.localStorage.setItem("date", gsdate);
+    window.localStorage.setItem("date", cdate);
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("email", email);
     window.localStorage.setItem("organization", organization);
@@ -332,7 +332,7 @@ function saveServer() {
        
     
          //get the data from local storage
-        var gsdate = window.localStorage.getItem("date");
+        var cdate = window.localStorage.getItem("date");
         var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
         var organization = window.localStorage.getItem("organization");
@@ -364,8 +364,15 @@ function saveServer() {
 
         saved = window.localStorage.setItem("saved", "true");
 
+<<<<<<< HEAD
         //send to server
         var data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
+=======
+
+        alert(g1 + "," + g2);
+
+        var data = { "date" : cdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
+>>>>>>> parent of a9829d1... fixes
         
         $.ajax({
             type       : "GET",
