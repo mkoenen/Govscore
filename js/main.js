@@ -145,9 +145,7 @@ function hideSaveButton() {
     if( answer1 != null){
         var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";
-        var resultButton1 = document.getElementById('govscore-results1');
         var resultButton2 = document.getElementById('govscore-results2');
-        resultButton1.className = resultButton1.className + " see";
         resultButton2.className = resultButton2.className + " see";
     }
     
