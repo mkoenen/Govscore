@@ -215,6 +215,8 @@ html .ui-alt-icon .ui-radio-off:after {
 -----------------------------------------------------------------------------------------------------------*/
 /* Bar: Toolbars, dividers, slider track */
 .ui-bar-c,
+.ui-page-theme-c .ui-navbar .ui-btn.ui-btn-active, 
+.ui-page-theme-c .ui-navbar .ui-btn:hover,
 .ui-page-theme-c .ui-bar-inherit,
 html .ui-bar-c .ui-bar-inherit,
 html .ui-body-c .ui-bar-inherit,
@@ -256,26 +258,26 @@ html .ui-panel-page-container-c {
 html .ui-bar-c a,
 html .ui-body-c a,
 html body .ui-group-theme-c a {
-	color: #2fb116 /*{c-link-color}*/;
+	color: #CBE8C5 /*{c-link-color}*/;
 	font-weight: bold;
 }
 .ui-page-theme-c a:visited,
 html .ui-bar-c a:visited,
 html .ui-body-c a:visited,
 html body .ui-group-theme-c a:visited {
-    color: #2fb116 /*{c-link-visited}*/;
+    color: #CBE8C5 /*{c-link-visited}*/;
 }
 .ui-page-theme-c a:hover,
 html .ui-bar-c a:hover,
 html .ui-body-c a:hover,
 html body .ui-group-theme-c a:hover {
-	color: #2fb116 /*{c-link-hover}*/;
+	color: #CBE8C5 /*{c-link-hover}*/;
 }
 .ui-page-theme-c a:active,
 html .ui-bar-c a:active,
 html .ui-body-c a:active,
 html body .ui-group-theme-c a:active {
-	color: #2fb116 /*{c-link-active}*/;
+	color: #CBE8C5 /*{c-link-active}*/;
 }
 /* Button up */
 .ui-page-theme-c .ui-btn,
@@ -299,7 +301,7 @@ html .ui-bar-c .ui-btn:hover,
 html .ui-body-c .ui-btn:hover,
 html body .ui-group-theme-c .ui-btn:hover,
 html head + body .ui-btn.ui-btn-c:hover {
-	background-color: #2fb116 /*{c-bhover-background-color}*/;
+	background-color: #CBE8C5 /*{c-bhover-background-color}*/;
 	border-color: #cccccc /*{c-bhover-border}*/;
 	color: #333333 /*{c-bhover-color}*/;
 }
@@ -309,7 +311,7 @@ html .ui-bar-c .ui-btn:active,
 html .ui-body-c .ui-btn:active,
 html body .ui-group-theme-c .ui-btn:active,
 html head + body .ui-btn.ui-btn-c:active {
-	background-color: #2fb116 /*{c-bdown-background-color}*/;
+	background-color: #CBE8C5 /*{c-bdown-background-color}*/;
 	border-color: #dddddd /*{c-bdown-border}*/;
 	color: #333333 /*{c-bdown-color}*/;
 }
@@ -337,9 +339,9 @@ html .ui-bar-c .ui-slider-track .ui-btn-active,
 html .ui-body-c .ui-slider-track .ui-btn-active,
 html body .ui-group-theme-c .ui-slider-track .ui-btn-active,
 html body div.ui-slider-track.ui-body-c .ui-btn-active {
-	background-color: #2fb116 /*{c-active-background-color}*/;
-	border-color: #00c1b8 /*{c-active-border}*/;
-	color:#ffffff /*{c-active-color}*/;
+	background-color: #CBE8C5 /*{c-active-background-color}*/;
+	border-color: #CBE8C5 /*{c-active-border}*/;
+	color:#333333 /*{c-active-color}*/;
 }
 /* Active radio button icon */
 .ui-page-theme-c .ui-radio-on:after,
@@ -347,7 +349,7 @@ html .ui-bar-c .ui-radio-on:after,
 html .ui-body-c .ui-radio-on:after,
 html body .ui-group-theme-c .ui-radio-on:after,
 .ui-btn.ui-radio-on.ui-btn-c:after {
-	border-color: #00d1c8 /*{c-active-background-color}*/;
+	border-color: #CBE8C5 /*{c-active-background-color}*/;
 }
 /* Focus */
 .ui-page-theme-c .ui-btn:focus,
