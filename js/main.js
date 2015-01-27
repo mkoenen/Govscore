@@ -387,7 +387,9 @@ function saveServer() {
             }
         });
 
-        alert("right after ajax");    
+        
+    window.location = "#govscore";
+}   
 
     }else{
        // alreadySaved();
