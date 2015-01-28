@@ -122,7 +122,7 @@ function alreadySaved() {
     );
 }
 
-function showPlace() {
+function goPlace() {
     window.location.hash = "#govscore";
 }
 
