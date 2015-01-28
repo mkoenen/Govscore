@@ -376,7 +376,7 @@ function saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
-                showPlace();
+                
                // afterSavedServer("Govscore", orgcode);
                             },
             error      : function(response) {
@@ -393,10 +393,10 @@ function saveServer() {
     }else{
        // alreadySaved();
     }
-
+showPlace();
     
 }
-
+showPlace();
 
 
 
