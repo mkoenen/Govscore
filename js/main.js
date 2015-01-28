@@ -378,11 +378,13 @@ function saveServer() {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
                 afterSavedServer("Govscore", orgcode);
-                //put a redirect here
-                goPlace();
+                
                             },
             error      : function(response) {
                 alert(response);                  
+            }
+            complete: function(){
+                goPlace();
             }
         
                 
