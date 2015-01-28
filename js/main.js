@@ -1202,31 +1202,31 @@ function calcResults(){
         switch(weakest[i]){
             case accPercent:
                 eval += "<li>" + (i+1) + ". Cultivating Accountability (" + accPercent + "%) </li>";
-                if (index > -1) {
+                if (i > -1) {
                     weakest.splice(i, 1);
                 }
                 break;
             case stakePercent:
                 eval += "<li>" + (i+1) + ". Engaging Stakeholders (" + stakePercent + "%)</li>";
-                if (index > -1) {
+                if (i > -1) {
                     weakest.splice(i, 1);
                 }
                 break;
             case dirPercent:
                 eval += "<li>" + (i+1) + ". Shared Strategic Direction (" + dirPercent + "%)</li>";
-                if (index > -1) {
+                if (i > -1) {
                     weakest.splice(i, 1);
                 }
                 break;
             case resPercent:
                 eval += "<li>" + (i+1) + ". Stewarding Resources (" + resPercent + "%)</li>";
-                if (index > -1) {
+                if (i > -1) {
                     weakest.splice(i, 1);
                 }
                 break;
             case enhPercent:
                 eval += "<li>" + (i+1) + ". Continuous Governance Enhancement (" + enhPercent + "%)</li>";
-                if (index > -1) {
+                if (i > -1) {
                     weakest.splice(i, 1);
                 }
                 break;
