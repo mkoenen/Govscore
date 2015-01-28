@@ -123,7 +123,7 @@ function alreadySaved() {
 }
 
 function showPlace() {
-    alert(window.location.pathname);
+    alert(window.location.hash);
 }
 
 /* Get Date --------------------------------------------------*/
@@ -377,7 +377,7 @@ function saveServer() {
             success    : function(responseData, textStatus, jqXHR) {
                 showPlace();
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
-                window.location.assign(index.html#govscore);
+                showPlace();
                // afterSavedServer("Govscore", orgcode);
                             },
             error      : function(response) {
@@ -388,8 +388,8 @@ function saveServer() {
         });
 
         
-    
-  
+    //window.location = "#govscore";
+   showPlace();
 
     }else{
        // alreadySaved();
