@@ -383,9 +383,7 @@ function saveServer() {
             error      : function(response) {
                 alert(response);                  
             }
-            complete: function(){
-                goPlace();
-            }
+            
         
                 
         });
