@@ -1202,19 +1202,19 @@ function calcResults(){
         switch(weakest[i]){
             case accPercent:
                 eval += "<li>" + (i+1) + ". Cultivating Accountability (" + accPercent + "%) </li>";
-                break;
+                //break;
             case stakePercent:
                 eval += "<li>" + (i+1) + ". Engaging Stakeholders (" + stakePercent + "%)</li>";
-                break;
+                //break;
             case dirPercent:
                 eval += "<li>" + (i+1) + ". Shared Strategic Direction (" + dirPercent + "%)</li>";
-                break;
+                //break;
             case resPercent:
                 eval += "<li>" + (i+1) + ". Stewarding Resources (" + resPercent + "%)</li>";
-                break;
+                //break;
             case enhPercent:
                 eval += "<li>" + (i+1) + ". Continuous Governance Enhancement (" + enhPercent + "%)</li>";
-                break;
+                //break;
         }
    }
 
