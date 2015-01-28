@@ -375,6 +375,7 @@ function saveServer() {
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
+                showPlace();
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
                // afterSavedServer("Govscore", orgcode);
