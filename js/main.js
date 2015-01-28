@@ -1173,22 +1173,8 @@ function calcResults(){
         case( totalScore >= 75 ): 
             mlevel = "Transformational governance (highest level/4)";
     }
-    
-    function compareNumbers(a, b) {
-        return a - b;
-    }
 
-    var sortedPercent = percentArray.sort(compareNumbers);
-    if(sortedPercent[0]!=sortedPercent[1] && sortedPercent[1] != sortedPercent[2]){
-        var weakest = sortedPercent.slice(0,2);
-    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
-        var weakest = sortedPercent.slice(0,3);
-    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2] && sortedPercent[2] == sortedPercent[3]){
-        var weakest = sortedPercent.slice(0,4);
-    }else {
-        var weakest = sortedPercent;
-    }
-
+    //list each area with the score
     var eval = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
     eval += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
     eval += "<h4>Cultivating Accountability</h4><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
@@ -1197,41 +1183,60 @@ function calcResults(){
     eval += "<h4>Stewarding Resources</h4><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
     eval += "<h4>Continuous Governance Enhancement</h4><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
     eval += "<h3>Recommendation</h3><p>The areas that your organization should focus on are:</p>"
+    
+    //sort numbers lowest to highest
+    function compareNumbers(a, b) {
+        return a - b;
+    }
 
-   for (var i = 0; i < weakest.length; i++){
+    //get only the weakest percentages in an array
+    var sortedPercent = percentArray.sort(compareNumbers);
+    if(sortedPercent[0]!=sortedPercent[1] && sortedPercent[1] != sortedPercent[2]){
+        var weakest = sortedPercent.slice(0,3);
+    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
+        var weakest = sortedPercent.slice(0,4);
+    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2] && sortedPercent[2] == sortedPercent[3]){
+        var weakest = sortedPercent.slice(0,5);
+    }else {
+        var weakest = sortedPercent;
+    }
+
+    //find the areas the percentages belong in
+    //no break so that fo each pass we get all the possible answers and put them into a new array
+    var weakAreas = [];
+    for (var i = 0; i < weakest.length; i++){
         switch(weakest[i]){
             case accPercent:
-                eval += "<li>" + (i+1) + ". Cultivating Accountability (" + accPercent + "%) </li>";
-                if (i > -1) {
-                    weakest.splice(i, 1);
-                }
-                break;
+                weakAreas.push("Cultivating Accountability");
             case stakePercent:
-                eval += "<li>" + (i+1) + ". Engaging Stakeholders (" + stakePercent + "%)</li>";
-                if (i > -1) {
-                    weakest.splice(i, 1);
-                }
-                break;
+                weakAreas.push("Engaging Stakeholders");
             case dirPercent:
-                eval += "<li>" + (i+1) + ". Shared Strategic Direction (" + dirPercent + "%)</li>";
-                if (i > -1) {
-                    weakest.splice(i, 1);
-                }
-                break;
+                weakAreas.push("Shared Strategic Direction");
             case resPercent:
-                eval += "<li>" + (i+1) + ". Stewarding Resources (" + resPercent + "%)</li>";
-                if (i > -1) {
-                    weakest.splice(i, 1);
-                }
-                break;
+                weakAreas.push('Stewarding Resources');
             case enhPercent:
-                eval += "<li>" + (i+1) + ". Continuous Governance Enhancement (" + enhPercent + "%)</li>";
-                if (i > -1) {
-                    weakest.splice(i, 1);
-                }
-                break;
+                weakAreas.push('Continuous Governance Enhancement');
         }
-   }
+    }
+
+   //eliminate duplicates from the resulting array
+    var resultAreas = [];
+    function array_unique(array) {
+    
+        for (var i = 0; i < array.length; i++) {
+            if (resultAreas.indexOf(array[i]) == -1) {
+                resultAreas.push(array[i]);
+             } 
+        }
+    }
+
+    array_unique(weakAreas);
+    alert(resultAreas);
+
+    //loop through the resultAreas array and print each element
+    for (var j = 0; j < resultAreas.length; j++){
+        eval += (j+1) + ". " + resultAreas[j] + "<br />";
+    }
 
    eval += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
    eval += "<p>To find out how your organization was evaluated by other members of your group, log into the website and use the organization code \"" + orgcode + "\".";
