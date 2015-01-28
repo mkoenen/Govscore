@@ -382,7 +382,7 @@ function saveServer() {
             error      : function(response) {
                 alert(response);                  
             }
-            alert(
+        
                 showPlace();
         });
 
