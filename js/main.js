@@ -122,7 +122,9 @@ function alreadySaved() {
     );
 }
 
-
+function showPlace() {
+    alert(window.location.pathname);
+}
 
 /* Get Date --------------------------------------------------*/
 
@@ -374,18 +376,19 @@ function saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
-                alert("Page path is " + window.location.pathname);
+                showPlace();
                // afterSavedServer("Govscore", orgcode);
                             },
             error      : function(response) {
                 alert(response);                  
             }
-            alert("Page path is " + window.location.pathname);
+            alert(
+                showPlace();
         });
 
         
     //window.location = "#govscore";
-   alert( "Page path is " + window.location.pathname);
+   showPlace();
 
     }else{
        // alreadySaved();
