@@ -378,7 +378,7 @@ function saveServer() {
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
-                afterSavedServer("Govscore", orgcode);
+               // afterSavedServer("Govscore", orgcode);
                             },
             error      : function(response) {
                 alert(response);                  
@@ -386,14 +386,14 @@ function saveServer() {
         });
 
         
-    window.location = "#govscore";
+    //window.location = "#govscore";
   
 
     }else{
        // alreadySaved();
     }
 
-    alert("at the end of the function");
+    
 }
 
 
