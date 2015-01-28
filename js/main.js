@@ -374,17 +374,18 @@ function saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 alert(responseData + ", " + textStatus + ", " + jqXHR);
-                
+                alert("Page path is " + window.location.pathname);
                // afterSavedServer("Govscore", orgcode);
                             },
             error      : function(response) {
                 alert(response);                  
             }
+            alert("Page path is " + window.location.pathname);
         });
 
         
     //window.location = "#govscore";
-  
+   alert( "Page path is " + window.location.pathname);
 
     }else{
        // alreadySaved();
