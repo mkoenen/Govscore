@@ -383,7 +383,7 @@ function saveServer() {
                 alert(response);                  
             }
         
-                showPlace();
+                
         });
 
         
