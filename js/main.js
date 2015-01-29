@@ -40,14 +40,14 @@ function setbutton() {
 /* Form Validation -------------------------------------*/
 
 function validate() {
-    if( document.gsForm.name.value == "" ) {
+    if( document.gsForm.name.value === "" ) {
 
          navigator.notification.alert( "Please enter your full name!" );
          document.gsForm.name.focus() ;
          return false;
     }
 
-    if( document.gsForm.email.value == "" ) {
+    if( document.gsForm.email.value === "" ) {
 
          navigator.notification.alert( "Please enter your email address!" );
          document.gsForm.email.focus() ;
@@ -57,14 +57,14 @@ function validate() {
 
         // Put extra check for data format
         var ret = validateEmail();
-        if( ret == false ) {
+        if( ret === false ) {
 
               return false;
 
          }
    }
 
-   if( document.gsForm.organization.value == "-1" ) {
+   if( document.gsForm.organization.value === "-1" ) {
 
      navigator.notification.alert( "Please enter your organization!" );
      document.gsForm.organization.focus() ;
@@ -146,7 +146,7 @@ function hideSaveButton() {
 
     
     var gs1 = window.localStorage.getItem("gs1");
-    if( gs1 != null){
+    if( gs1 !== null){
         var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";
         var resultButton2 = document.getElementById('govscore-results2');
@@ -154,31 +154,31 @@ function hideSaveButton() {
     }
     
     var ag1a = window.localStorage.getItem("ag1a");
-    if(ag1a != null){
+    if(ag1a !== null){
        // var ag1SaveButton = document.getElementById('ag1Store');
        // ag1SaveButton.className = ag1SaveButton.className + " hide";
     }
    
     var ag7a = window.localStorage.getItem("ag7a");
-    if(ag7a != null) {
+    if(ag7a !== null) {
         var ag2SaveButton = document.getElementById('ag2Store');
         ag2SaveButton.className = ag2SaveButton.className + " hide";
     }
     
     var ag13a = window.localStorage.getItem("ag13a");
-    if(ag13a != null){
+    if(ag13a !== null){
         var ag3SaveButton = document.getElementById('ag3Store');
         ag3SaveButton.className = ag3SaveButton.className + " hide";
     }
     
     var ag16a = window.localStorage.getItem("ag16a");
-    if( ag16a != null) {
+    if( ag16a !== null) {
         var ag4SaveButton = document.getElementById('ag4Store');
         ag4SaveButton.className = ag4SaveButton.className + " hide";
     }
    
     var ag22a = window.localStorage.getItem("ag22a");
-    if( ag22a != null){
+    if( ag22a !== null){
         var ag5SaveButton = document.getElementById('ag5Store');
         ag5SaveButton.className = ag5SaveButton.className + " hide";
     }
@@ -1073,7 +1073,7 @@ orgcode = window.localStorage.getItem("organization");
 function checkResults(){
     var saved = window.localStorage.getItem("saved");
 
-    if( saved == "true" ){
+    if( saved === "true" ){
         calcResults();
     }else{
         document.getElementById("gs-results").innerHTML = "<p>You need to complete the Govscore assessment in order to see results.</p>";
