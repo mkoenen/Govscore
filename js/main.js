@@ -1,4 +1,5 @@
 /* Events -----------------------------------------*/
+window.onload = init;
 function init() {
     //window.setTimeout(beonline, 6000);
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
