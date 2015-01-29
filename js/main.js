@@ -84,7 +84,7 @@ function validateEmail() {
    dotpos = emailID.lastIndexOf(".");
    if (atpos < 1 || ( dotpos - atpos < 2 )) {
 
-       navigator.notification.alert("Please enter a correct email address")
+       navigator.notification.alert("Please enter a correct email address");
        document.gsForm.email.focus() ;
        return false;
 
@@ -145,8 +145,8 @@ function formatDate(date) {
 function hideSaveButton() {
 
     
-    var answer1 = window.localStorage.getItem("answer1");
-    if( answer1 != null){
+    var gs1 = window.localStorage.getItem("gs1");
+    if( gs1 != null){
         var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";
         var resultButton2 = document.getElementById('govscore-results2');
@@ -223,7 +223,7 @@ function checkConnection(whichfunction) {
 
     }else{
 
-        messageAfterSaveLocal()  
+        messageAfterSaveLocal();  
         
     }
 }
@@ -232,38 +232,38 @@ function checkConnection(whichfunction) {
 
 function savelocal() {
 
+ var newdate, name, email, organization, gs1, gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, gs13, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25   
     
-    
-    var newdate = new Date();
+    newdate = new Date();
     gsdate = formatDate(newdate);
-    var name = document.getElementById("name").value;
-    var email = document.getElementById("email").value;
-    var organization =  $( "#organization" ).val();
-    var answer1 = $('input[name="question1"]:checked').val();
-    var answer2 = $('input[name="question2"]:checked').val();
-    var answer3 = $('input[name="question3"]:checked').val();
-    var answer4 = $('input[name="question4"]:checked').val();
-    var answer5 = $('input[name="question5"]:checked').val();
-    var answer6 = $('input[name="question6"]:checked').val();
-    var answer7 = $('input[name="question7"]:checked').val();
-    var answer8 = $('input[name="question8"]:checked').val();
-    var answer9 = $('input[name="question9"]:checked').val();
-    var answer10 = $('input[name="question10"]:checked').val();
-    var answer11 = $('input[name="question11"]:checked').val();
-    var answer12 = $('input[name="question12"]:checked').val();
-    var answer13 = $('input[name="question13"]:checked').val();
-    var answer14 = $('input[name="question14"]:checked').val();
-    var answer15 = $('input[name="question15"]:checked').val();
-    var answer16 = $('input[name="question16"]:checked').val();
-    var answer17 = $('input[name="question17"]:checked').val();
-    var answer18 = $('input[name="question18"]:checked').val();
-    var answer19 = $('input[name="question19"]:checked').val();
-    var answer20 = $('input[name="question20"]:checked').val();
-    var answer21 = $('input[name="question21"]:checked').val();
-    var answer22 = $('input[name="question22"]:checked').val();
-    var answer23 = $('input[name="question23"]:checked').val();
-    var answer24 = $('input[name="question24"]:checked').val();
-    var answer25 = $('input[name="question25"]:checked').val();
+    name = document.getElementById("name").value;
+    email = document.getElementById("email").value;
+    organization =  $( "#organization" ).val();
+    gs1 = $('input[name="question1"]:checked').val();
+    gs2 = $('input[name="question2"]:checked').val();
+    gs3 = $('input[name="question3"]:checked').val();
+    gs4 = $('input[name="question4"]:checked').val();
+    gs5 = $('input[name="question5"]:checked').val();
+    gs6 = $('input[name="question6"]:checked').val();
+    gs7 = $('input[name="question7"]:checked').val();
+    gs8 = $('input[name="question8"]:checked').val();
+    gs9 = $('input[name="question9"]:checked').val();
+    gs10 = $('input[name="question10"]:checked').val();
+    gs11 = $('input[name="question11"]:checked').val();
+    gs12 = $('input[name="question12"]:checked').val();
+    gs13 = $('input[name="question13"]:checked').val();
+    gs14 = $('input[name="question14"]:checked').val();
+    gs15 = $('input[name="question15"]:checked').val();
+    gs16 = $('input[name="question16"]:checked').val();
+    gs17 = $('input[name="question17"]:checked').val();
+    gs18 = $('input[name="question18"]:checked').val();
+    gs19 = $('input[name="question19"]:checked').val();
+    gs20 = $('input[name="question20"]:checked').val();
+    gs21 = $('input[name="question21"]:checked').val();
+    gs22 = $('input[name="question22"]:checked').val();
+    gs23 = $('input[name="question23"]:checked').val();
+    gs24 = $('input[name="question24"]:checked').val();
+    gs25 = $('input[name="question25"]:checked').val();
     
 
 
@@ -271,31 +271,31 @@ function savelocal() {
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("email", email);
     window.localStorage.setItem("organization", organization);
-    window.localStorage.setItem("answer1", answer1);
-    window.localStorage.setItem("answer2", answer2);
-    window.localStorage.setItem("answer3", answer3);
-    window.localStorage.setItem("answer4", answer4);
-    window.localStorage.setItem("answer5", answer5);
-    window.localStorage.setItem("answer6", answer6);
-    window.localStorage.setItem("answer7", answer7);
-    window.localStorage.setItem("answer8", answer8);
-    window.localStorage.setItem("answer9", answer9);
-    window.localStorage.setItem("answer10", answer10);
-    window.localStorage.setItem("answer11", answer11);
-    window.localStorage.setItem("answer12", answer12);
-    window.localStorage.setItem("answer13", answer13);
-    window.localStorage.setItem("answer14", answer14);
-    window.localStorage.setItem("answer15", answer15);
-    window.localStorage.setItem("answer16", answer16);
-    window.localStorage.setItem("answer17", answer17);
-    window.localStorage.setItem("answer18", answer18);
-    window.localStorage.setItem("answer19", answer19);
-    window.localStorage.setItem("answer20", answer20);
-    window.localStorage.setItem("answer21", answer21);
-    window.localStorage.setItem("answer22", answer22);
-    window.localStorage.setItem("answer23", answer23);
-    window.localStorage.setItem("answer24", answer24);
-    window.localStorage.setItem("answer25", answer25);
+    window.localStorage.setItem("gs1", gs1);
+    window.localStorage.setItem("gs2", gs2);
+    window.localStorage.setItem("gs3", gs3);
+    window.localStorage.setItem("gs4", gs4);
+    window.localStorage.setItem("gs5", gs5);
+    window.localStorage.setItem("gs6", gs6);
+    window.localStorage.setItem("gs7", gs7);
+    window.localStorage.setItem("gs8", gs8);
+    window.localStorage.setItem("gs9", gs9);
+    window.localStorage.setItem("gs10", gs10);
+    window.localStorage.setItem("gs11", gs11);
+    window.localStorage.setItem("gs12", gs12);
+    window.localStorage.setItem("gs13", gs13);
+    window.localStorage.setItem("gs14", gs14);
+    window.localStorage.setItem("gs15", gs15);
+    window.localStorage.setItem("gs16", gs16);
+    window.localStorage.setItem("gs17", gs17);
+    window.localStorage.setItem("gs18", gs18);
+    window.localStorage.setItem("gs19", gs19);
+    window.localStorage.setItem("gs20", gs20);
+    window.localStorage.setItem("gs21", gs21);
+    window.localStorage.setItem("gs22", gs22);
+    window.localStorage.setItem("gs23", gs23);
+    window.localStorage.setItem("gs24", gs24);
+    window.localStorage.setItem("gs25", gs25);
 
     hideSaveButton();
 
@@ -306,26 +306,12 @@ function savelocal() {
 
 }
 
-
-/*function result(){
-    var cdate = window.localStorage.getItem("date");
-    var name = window.localStorage.getItem("name");
-    var email = window.localStorage.getItem("email");
-    var organization = window.localStorage.getItem("organization");
-    var answer1 = window.localStorage.getItem("answer1");
-    var savedFromLocal = window.localStorage.getItem("saved");
-    var output = "Date: " + cdate + "<br />Name: " + name + "<br />Email: " + email + "<br />organization: " + organization + "<br />Answer1: " + answer1 + "<br />Saved: " + savedFromLocal +"<br />";
-    document.getElementById("retrieveData").innerHTML = output;
-}*/
-
-
-
 /*save to server -------------------------------------------------------------*/
 
 
 function saveServer() {
     //first check if data has been saved to server already
-
+    var saved
     var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
     //alert( "saved is " + getSaved + "and name is " + savedName); //temp
@@ -338,31 +324,31 @@ function saveServer() {
         var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
         var organization = window.localStorage.getItem("organization");
-        var g1 = window.localStorage.getItem("answer1");
-        var g2 = window.localStorage.getItem("answer2");
-        var g3 = window.localStorage.getItem("answer3");
-        var g4 = window.localStorage.getItem("answer4");
-        var g5 = window.localStorage.getItem("answer5");
-        var g6 = window.localStorage.getItem("answer6");
-        var g7 = window.localStorage.getItem("answer7");
-        var g8 = window.localStorage.getItem("answer8");
-        var g9 = window.localStorage.getItem("answer9");
-        var g10 = window.localStorage.getItem("answer10");
-        var g11 = window.localStorage.getItem("answer11");
-        var g12 = window.localStorage.getItem("answer12");
-        var g13 = window.localStorage.getItem("answer13");
-        var g14 = window.localStorage.getItem("answer14");
-        var g15 = window.localStorage.getItem("answer15");
-        var g16 = window.localStorage.getItem("answer16");
-        var g17 = window.localStorage.getItem("answer17");
-        var g18 = window.localStorage.getItem("answer18");
-        var g19 = window.localStorage.getItem("answer19");
-        var g20 = window.localStorage.getItem("answer20");
-        var g21 = window.localStorage.getItem("answer21");
-        var g22 = window.localStorage.getItem("answer22");
-        var g23 = window.localStorage.getItem("answer23");
-        var g24 = window.localStorage.getItem("answer24");
-        var g25 = window.localStorage.getItem("answer25");
+        var g1 = window.localStorage.getItem("gs1");
+        var g2 = window.localStorage.getItem("gs2");
+        var g3 = window.localStorage.getItem("gs3");
+        var g4 = window.localStorage.getItem("gs4");
+        var g5 = window.localStorage.getItem("gs5");
+        var g6 = window.localStorage.getItem("gs6");
+        var g7 = window.localStorage.getItem("gs7");
+        var g8 = window.localStorage.getItem("gs8");
+        var g9 = window.localStorage.getItem("gs9");
+        var g10 = window.localStorage.getItem("gs10");
+        var g11 = window.localStorage.getItem("gs11");
+        var g12 = window.localStorage.getItem("gs12");
+        var g13 = window.localStorage.getItem("gs13");
+        var g14 = window.localStorage.getItem("gs14");
+        var g15 = window.localStorage.getItem("gs15");
+        var g16 = window.localStorage.getItem("gs16");
+        var g17 = window.localStorage.getItem("gs17");
+        var g18 = window.localStorage.getItem("gs18");
+        var g19 = window.localStorage.getItem("gs19");
+        var g20 = window.localStorage.getItem("gs20");
+        var g21 = window.localStorage.getItem("gs21");
+        var g22 = window.localStorage.getItem("gs22");
+        var g23 = window.localStorage.getItem("gs23");
+        var g24 = window.localStorage.getItem("gs24");
+        var g25 = window.localStorage.getItem("gs25");
 
         saved = window.localStorage.setItem("saved", "true");
 
@@ -632,11 +618,11 @@ function ag2saveServer() {
     if (getag2Saved !== "true" && savedag7b !== null ) {
     
          //get the data from local storage
-        var ag2date = window.localStorage.getItem("ag2date");
-        var email = window.localStorage.getItem("email");
-        var ag7a = window.localStorage.getItem("ag7a");
-        var ag7b = window.localStorage.getItem("ag7b");
-        var ag7c = window.localStorage.getItem("ag7c");
+        ag2date = window.localStorage.getItem("ag2date");
+        email = window.localStorage.getItem("email");
+        ag7a = window.localStorage.getItem("ag7a");
+        ag7b = window.localStorage.getItem("ag7b");
+        ag7c = window.localStorage.getItem("ag7c");
         var ag7d = window.localStorage.getItem("ag7d");
         var ag8a = window.localStorage.getItem("ag8a");
         var ag8b = window.localStorage.getItem("ag8b");
@@ -1099,33 +1085,33 @@ function checkResults(){
 //add up the numbers
 function calcResults() {
 
-        var g1 = window.localStorage.getItem("answer1");
-        var g2 = window.localStorage.getItem("answer2");
-        var g3 = window.localStorage.getItem("answer3");
-        var g4 = window.localStorage.getItem("answer4");
-        var g5 = window.localStorage.getItem("answer5");
-        var g6 = window.localStorage.getItem("answer6");
-        var g7 = window.localStorage.getItem("answer7");
-        var g8 = window.localStorage.getItem("answer8");
-        var g9 = window.localStorage.getItem("answer9");
-        var g10 = window.localStorage.getItem("answer10");
-        var g11 = window.localStorage.getItem("answer11");
-        var g12 = window.localStorage.getItem("answer12");
-        var g13 = window.localStorage.getItem("answer13");
-        var g14 = window.localStorage.getItem("answer14");
-        var g15 = window.localStorage.getItem("answer15");
-        var g16 = window.localStorage.getItem("answer16");
-        var g17 = window.localStorage.getItem("answer17");
-        var g18 = window.localStorage.getItem("answer18");
-        var g19 = window.localStorage.getItem("answer19");
-        var g20 = window.localStorage.getItem("answer20");
-        var g21 = window.localStorage.getItem("answer21");
-        var g22 = window.localStorage.getItem("answer22");
-        var g23 = window.localStorage.getItem("answer23");
-        var g24 = window.localStorage.getItem("answer24");
-        var g25 = window.localStorage.getItem("answer25");
+        var g1 = window.localStorage.getItem("gs1");
+        var g2 = window.localStorage.getItem("gs2");
+        var g3 = window.localStorage.getItem("gs3");
+        var g4 = window.localStorage.getItem("gs4");
+        var g5 = window.localStorage.getItem("gs5");
+        var g6 = window.localStorage.getItem("gs6");
+        var g7 = window.localStorage.getItem("gs7");
+        var g8 = window.localStorage.getItem("gs8");
+        var g9 = window.localStorage.getItem("gs9");
+        var g10 = window.localStorage.getItem("gs10");
+        var g11 = window.localStorage.getItem("gs11");
+        var g12 = window.localStorage.getItem("gs12");
+        var g13 = window.localStorage.getItem("gs13");
+        var g14 = window.localStorage.getItem("gs14");
+        var g15 = window.localStorage.getItem("gs15");
+        var g16 = window.localStorage.getItem("gs16");
+        var g17 = window.localStorage.getItem("gs17");
+        var g18 = window.localStorage.getItem("gs18");
+        var g19 = window.localStorage.getItem("gs19");
+        var g20 = window.localStorage.getItem("gs20");
+        var g21 = window.localStorage.getItem("gs21");
+        var g22 = window.localStorage.getItem("gs22");
+        var g23 = window.localStorage.getItem("gs23");
+        var g24 = window.localStorage.getItem("gs24");
+        var g25 = window.localStorage.getItem("gs25");
 
-    var percentArray = new Array();
+    var percentArray = [];
 
     accScore = parseInt(g1)+parseInt(g2)+parseInt(g5)+parseInt(g8)+parseInt(g10)+parseInt(g13);
     var accPossible = 24;
@@ -1170,14 +1156,14 @@ function calcResults() {
     }
 
     //list each area with the score
-    var eval = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
-    eval += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
-    eval += "<h4>Cultivating Accountability</h4><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
-    eval += "<h4>Engaging Stakeholders</h4><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
-    eval += "<h4>Shared Strategic Direction</h4><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
-    eval += "<h4>Stewarding Resources</h4><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
-    eval += "<h4>Continuous Governance Enhancement</h4><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
-    eval += "<h3>Recommendation</h3><p>The areas that your organization should focus on are:</p>"
+    var res = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
+    res += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
+    res += "<h4>Cultivating Accountability</h4><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
+    res += "<h4>Engaging Stakeholders</h4><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
+    res += "<h4>Shared Strategic Direction</h4><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
+    res += "<h4>Stewarding Resources</h4><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
+    res += "<h4>Continuous Governance Enhancement</h4><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
+    res += "<h3>Recommendation</h3><p>The areas that your organization should focus on are:</p>";
     
     //sort numbers lowest to highest
     function compareNumbers(a, b) {
@@ -1229,14 +1215,14 @@ function calcResults() {
 
     //loop through the resultAreas array and print each element
     for (var j = 0; j < resultAreas.length; j++){
-        eval += (j+1) + ". " + resultAreas[j] + "<br />";
+        res += (j+1) + ". " + resultAreas[j] + "<br />";
     }
 
-   eval += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
-   eval += "<p>To find out how your organization was evaluated by other members of your group, log into the website and use the organization code \"" + orgcode + "\".";
+   res += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
+   res += "<p>To find out how your organization was resuated by other members of your group, log into the website and use the organization code \"" + orgcode + "\".";
 
     
-    document.getElementById('gs-results').innerHTML = eval;
+    document.getElementById('gs-results').innerHTML = res;
 
 }
 
