@@ -228,7 +228,7 @@ function checkConnection(whichfunction) {
     }
 }
 
-function saveAnswers(answer, question) {
+function saveAnswer(answer, question) {
     answer = $('input[name = question]:checked').val();
     window.localStorage.setItem("answer", answer);
 }
