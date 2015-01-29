@@ -227,7 +227,7 @@ function checkConnection(whichfunction) {
         
     }
 }
-
+var gs1;
 function saveAnswer(answer, question) {
     answer = $('input[name = question]:checked').val();
     window.localStorage.setItem("answer", answer);
@@ -237,7 +237,7 @@ function saveAnswer(answer, question) {
 
 function savelocal() {
 
- var newdate, name, email, organization, gs1, gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, gs13, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25   
+ var newdate, name, email, organization,  gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, gs13, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25   
     
     newdate = new Date();
     gsdate = formatDate(newdate);
