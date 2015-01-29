@@ -39,8 +39,7 @@ function setbutton() {
 
 /* Form Validation -------------------------------------*/
 
-function validate()
-{
+function validate() {
     if( document.gsForm.name.value == "" ) {
 
          navigator.notification.alert( "Please enter your full name!" );
@@ -538,11 +537,11 @@ function ag1saveServer() {
 
 
 
-  //  }else{
+    }else{
 
         //alreadySaved();
 
-   // }
+    }
 
 }
 
@@ -1094,8 +1093,10 @@ function checkResults(){
     }
 
 }
+
+
 //add up the numbers
-function calcResults(){
+function calcResults() {
         var g1 = window.localStorage.getItem("answer1");
         var g2 = window.localStorage.getItem("answer2");
         var g3 = window.localStorage.getItem("answer3");
