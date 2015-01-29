@@ -389,6 +389,7 @@ function saveServer() {
         
                 
         });
+        return false;
 
     }else{
         alreadySaved();
@@ -407,8 +408,8 @@ function saveServer() {
 function ag1savelocal() {
 
     
-    
-    var ag1date = new Date();
+    var newdate = new Date();
+    var ag1date = formatDate(newdate);
     var ag1a = $('input[name="a1a"]:checked').val();
     var ag1b = $('input[name="a1b"]:checked').val();
     var ag1c = $('input[name="a1c"]:checked').val();
@@ -552,8 +553,8 @@ function ag1saveServer() {
 function ag2savelocal() {
 
    
-    
-    var ag2date = new Date();
+    var newdate = new Date();
+    var ag2date = formatDate(newdate);
     var ag7a = $('input[name="a7a"]:checked').val();
     var ag7b = $('input[name="a7b"]:checked').val();
     var ag7c = $('input[name="a7c"]:checked').val();
@@ -699,8 +700,8 @@ function ag2saveServer() {
 function ag3savelocal() {
 
     
-    
-    var ag3date = new Date();
+    var newdate = new Date();
+    var ag3date = formatDate(newdate);
     var ag13a = $('input[name="a13a"]:checked').val();
     var ag13b = $('input[name="a13b"]:checked').val();
     var ag13c = $('input[name="a13c"]:checked').val();
@@ -812,8 +813,8 @@ function ag3saveServer() {
 function ag4savelocal() {
 
     
-    
-    var ag4date = new Date();
+    var newdate = new Date();
+    var ag4date = formatDate(newdate);
     var ag16a = $('input[name="a16a"]:checked').val();
     var ag16b = $('input[name="a16b"]:checked').val();
     var ag16c = $('input[name="a16c"]:checked').val();
@@ -958,8 +959,8 @@ function ag4saveServer() {
 function ag5savelocal() {
 
     
-    
-    var ag5date = new Date();
+    var newdate = new Date();
+    var ag5date = formatDate(newdate);
     var ag22a = $('input[name="a22a"]:checked').val();
     var ag22b = $('input[name="a22b"]:checked').val();
     var ag22c = $('input[name="a22c"]:checked').val();
@@ -1097,6 +1098,7 @@ function checkResults(){
 
 //add up the numbers
 function calcResults() {
+
         var g1 = window.localStorage.getItem("answer1");
         var g2 = window.localStorage.getItem("answer2");
         var g3 = window.localStorage.getItem("answer3");
