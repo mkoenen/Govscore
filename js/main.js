@@ -532,7 +532,7 @@ function ag1saveServer() {
             }
         });
 
-        return false;
+        
        
         //afterSavedServer();
 
