@@ -529,6 +529,7 @@ function ag1saveServer() {
             }
         });
 
+        return false;
        
         //afterSavedServer();
 
@@ -629,9 +630,7 @@ function ag2saveServer() {
     
          //get the data from local storage
         var ag2date = window.localStorage.getItem("ag2date");
-        var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
-        var organization = window.localStorage.getItem("organization");
         var ag7a = window.localStorage.getItem("ag7a");
         var ag7b = window.localStorage.getItem("ag7b");
         var ag7c = window.localStorage.getItem("ag7c");
@@ -659,7 +658,7 @@ function ag2saveServer() {
 
         ag2saved = window.localStorage.setItem("ag2saved", "true");
 
-        var ag2data = { "ag2date" : ag2date, "name": name, "email": email, "organization": organization, "ag7a": ag7a, "ag7b": ag7b, "ag7c": ag7c, "ag7d": ag7d, "ag8a": ag8a, "ag8b": ag8b, "ag8c": ag8c, "ag8d": ag8d, "ag9a": ag9a, "ag9b": ag9b, "ag9c": ag9c, "ag9d": ag9d, "ag10a": ag10a, "ag10b": ag10b, "ag10c": ag10c, "ag10d": ag10d, "ag11a": ag11a, "ag11b": ag11b, "ag11c": ag11c, "ag11d": ag11d, "ag12a": ag12a, "ag12b": ag12b, "ag12c": ag12c, "ag12d": ag12d };
+        var ag2data = { "ag2date" : ag2date, "email": email, "ag7a": ag7a, "ag7b": ag7b, "ag7c": ag7c, "ag7d": ag7d, "ag8a": ag8a, "ag8b": ag8b, "ag8c": ag8c, "ag8d": ag8d, "ag9a": ag9a, "ag9b": ag9b, "ag9c": ag9c, "ag9d": ag9d, "ag10a": ag10a, "ag10b": ag10b, "ag10c": ag10c, "ag10d": ag10d, "ag11a": ag11a, "ag11b": ag11b, "ag11c": ag11c, "ag11d": ag11d, "ag12a": ag12a, "ag12b": ag12b, "ag12c": ag12c, "ag12d": ag12d };
        
         $.ajax({
             type       : "GET",
@@ -677,6 +676,7 @@ function ag2saveServer() {
             }
         });
 
+        
        
         //afterSavedServer();
 
