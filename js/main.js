@@ -389,7 +389,7 @@ function saveServer() {
         });
 
     }else{
-       // alreadySaved();
+        alreadySaved();
     }
 
     
@@ -460,16 +460,12 @@ function ag1savelocal() {
     window.localStorage.setItem("ag6b", ag6b);
     window.localStorage.setItem("ag6c", ag6c);
     window.localStorage.setItem("ag6d", ag6d);
-    
-    //alert(window.localStorage.getItem("ag1a") + ", " + window.localStorage.getItem("ag6d"));
 
     //hide save button
     hideSaveButton();
 
     //now that everything is saved check the connection
     checkConnection("ag1");
-
-    
 
 }
 
@@ -479,18 +475,14 @@ function ag1savelocal() {
 
 function ag1saveServer() {
     //first check if data has been saved to server already
+    var getag1Saved = window.localStorage.getItem("ag1saved");
+    var savedag1b = window.localStorage.getItem("ag1b");
 
-   // var getag1Saved = window.localStorage.getItem("ag1saved");
-  //  var savedag1b = window.localStorage.getItem("ag1b");
-    //alert( "saved is " + getag1Saved + "and data is " + savedag1b); //temp
-
-   // if (getag1Saved !== "true" && savedag1b !== null ) {
+    if (getag1Saved !== "true" && savedag1b !== null ) {
     
-         //get the data from local storage
+        //get the data from local storage
         var ag1date = window.localStorage.getItem("ag1date");
-        var name = window.localStorage.getItem("name");
         var email = window.localStorage.getItem("email");
-        var organization = window.localStorage.getItem("organization");
         var ag1a = window.localStorage.getItem("ag1a");
         var ag1b = window.localStorage.getItem("ag1b");
         var ag1c = window.localStorage.getItem("ag1c");
@@ -519,7 +511,7 @@ function ag1saveServer() {
         ag1saved = window.localStorage.setItem("ag1saved", "true");
 
 
-        var ag1data = { "ag1date" : ag1date, "name": name, "email": email, "organization": organization, "ag1a": ag1a, "ag1b": ag1b, "ag1c": ag1c, "ag1d": ag1d, "ag2a": ag2a, "ag2b": ag2b, "ag2c": ag2c, "ag2d": ag2d, "ag3a": ag3a, "ag3b": ag3b, "ag3c": ag3c, "ag3d": ag3d, "ag4a": ag4a, "ag4b": ag4b, "ag4c": ag4c, "ag4d": ag4d, "ag5a": ag5a, "ag5b": ag5b, "ag5c": ag5c, "ag5d": ag5d, "ag6a": ag6a, "ag6b": ag6b, "ag6c": ag6c, "ag6d": ag6d };
+        var ag1data = { "ag1date" : ag1date, "email": email, "ag1a": ag1a, "ag1b": ag1b, "ag1c": ag1c, "ag1d": ag1d, "ag2a": ag2a, "ag2b": ag2b, "ag2c": ag2c, "ag2d": ag2d, "ag3a": ag3a, "ag3b": ag3b, "ag3c": ag3c, "ag3d": ag3d, "ag4a": ag4a, "ag4b": ag4b, "ag4c": ag4c, "ag4d": ag4d, "ag5a": ag5a, "ag5b": ag5b, "ag5c": ag5c, "ag5d": ag5d, "ag6a": ag6a, "ag6b": ag6b, "ag6c": ag6c, "ag6d": ag6d };
        
         $.ajax({
             type       : "GET",
@@ -529,8 +521,8 @@ function ag1saveServer() {
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
-                alert(responseData + ", " + textStatus + ", " + jqXHR);
-                //afterSavedServer("Cultivating Accountability", orgcode);
+                //alert(responseData + ", " + textStatus + ", " + jqXHR);
+                afterSavedServer("Cultivating Accountability", orgcode);
             },
             error      : function(response) {
                 alert(response);                  
@@ -1228,7 +1220,6 @@ function calcResults(){
     }
 
     array_unique(weakAreas);
-    alert(resultAreas);
 
     //loop through the resultAreas array and print each element
     for (var j = 0; j < resultAreas.length; j++){
@@ -1238,7 +1229,7 @@ function calcResults(){
    eval += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
    eval += "<p>To find out how your organization was evaluated by other members of your group, log into the website and use the organization code \"" + orgcode + "\".";
 
-    //alert("eval is " + eval);
+    
     document.getElementById('gs-results').innerHTML = eval;
 
 }
