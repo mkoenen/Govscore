@@ -228,9 +228,10 @@ function checkConnection(whichfunction) {
     }
 }
 var gs1;
-function saveAnswer(answer, question) {
-    answer = $('input[name = question]:checked').val();
-    window.localStorage.setItem("answer", answer);
+function saveAnswer(question) {
+    gs1 = $('input[name = question]:checked').val();
+    alert(gs1);
+    return gs1;
 }
 
 /*Save locally-----------------------------------------------*/
@@ -244,7 +245,7 @@ function savelocal() {
     name = document.getElementById("name").value;
     email = document.getElementById("email").value;
     organization =  $( "#organization" ).val();
-    saveAnswer(gs1,"question1");
+    saveAnswer("question1");
     alert(gs1);
     gs2 = $('input[name="question2"]:checked').val();
     gs3 = $('input[name="question3"]:checked').val();
