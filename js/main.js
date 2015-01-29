@@ -311,7 +311,7 @@ function savelocal() {
 
 function saveServer() {
     //first check if data has been saved to server already
-    var saved
+    var saved, data, gsdate, name, email, organization, gs1, gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, gs13, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25 
     var getSaved = window.localStorage.getItem("saved");
     var savedName = window.localStorage.getItem("name");
     //alert( "saved is " + getSaved + "and name is " + savedName); //temp
@@ -320,40 +320,40 @@ function saveServer() {
        
     
          //get the data from local storage
-        var gsdate = window.localStorage.getItem("date");
-        var name = window.localStorage.getItem("name");
-        var email = window.localStorage.getItem("email");
-        var organization = window.localStorage.getItem("organization");
-        var g1 = window.localStorage.getItem("gs1");
-        var g2 = window.localStorage.getItem("gs2");
-        var g3 = window.localStorage.getItem("gs3");
-        var g4 = window.localStorage.getItem("gs4");
-        var g5 = window.localStorage.getItem("gs5");
-        var g6 = window.localStorage.getItem("gs6");
-        var g7 = window.localStorage.getItem("gs7");
-        var g8 = window.localStorage.getItem("gs8");
-        var g9 = window.localStorage.getItem("gs9");
-        var g10 = window.localStorage.getItem("gs10");
-        var g11 = window.localStorage.getItem("gs11");
-        var g12 = window.localStorage.getItem("gs12");
-        var g13 = window.localStorage.getItem("gs13");
-        var g14 = window.localStorage.getItem("gs14");
-        var g15 = window.localStorage.getItem("gs15");
-        var g16 = window.localStorage.getItem("gs16");
-        var g17 = window.localStorage.getItem("gs17");
-        var g18 = window.localStorage.getItem("gs18");
-        var g19 = window.localStorage.getItem("gs19");
-        var g20 = window.localStorage.getItem("gs20");
-        var g21 = window.localStorage.getItem("gs21");
-        var g22 = window.localStorage.getItem("gs22");
-        var g23 = window.localStorage.getItem("gs23");
-        var g24 = window.localStorage.getItem("gs24");
-        var g25 = window.localStorage.getItem("gs25");
+         gsdate = window.localStorage.getItem("date");
+         name = window.localStorage.getItem("name");
+         email = window.localStorage.getItem("email");
+         organization = window.localStorage.getItem("organization");
+         g1 = window.localStorage.getItem("gs1");
+         g2 = window.localStorage.getItem("gs2");
+         g3 = window.localStorage.getItem("gs3");
+         g4 = window.localStorage.getItem("gs4");
+         g5 = window.localStorage.getItem("gs5");
+         g6 = window.localStorage.getItem("gs6");
+         g7 = window.localStorage.getItem("gs7");
+         g8 = window.localStorage.getItem("gs8");
+         g9 = window.localStorage.getItem("gs9");
+         g10 = window.localStorage.getItem("gs10");
+         g11 = window.localStorage.getItem("gs11");
+         g12 = window.localStorage.getItem("gs12");
+         g13 = window.localStorage.getItem("gs13");
+         g14 = window.localStorage.getItem("gs14");
+         g15 = window.localStorage.getItem("gs15");
+         g16 = window.localStorage.getItem("gs16");
+         g17 = window.localStorage.getItem("gs17");
+         g18 = window.localStorage.getItem("gs18");
+         g19 = window.localStorage.getItem("gs19");
+         g20 = window.localStorage.getItem("gs20");
+         g21 = window.localStorage.getItem("gs21");
+         g22 = window.localStorage.getItem("gs22");
+         g23 = window.localStorage.getItem("gs23");
+         g24 = window.localStorage.getItem("gs24");
+         g25 = window.localStorage.getItem("gs25");
 
         saved = window.localStorage.setItem("saved", "true");
 
 
-        var data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
+        data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
         
         $.ajax({
             type       : "GET",
