@@ -380,7 +380,7 @@ function saveServer() {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
                 afterSavedServer("Govscore", orgcode);
-                return false;
+              
                             },
             error      : function(response) {
                 alert(response);                  
@@ -389,7 +389,7 @@ function saveServer() {
         
                 
         });
-        
+
 
     }else{
         alreadySaved();
