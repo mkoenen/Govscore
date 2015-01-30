@@ -255,7 +255,7 @@ var gsSaved, gsdate, name, email, organization, g1,  g2, g3, g4, g5, g6, g7, g8,
 function savelocal() {
  
     gsdate = new Date();
-    gsdate = formatDate(newdate);
+    gsdate = formatDate(gsdate);
     window.localStorage.setItem("date", gsdate);
 
     name = document.getElementById("name").value;
@@ -300,6 +300,7 @@ function savelocal() {
 function saveServer() {
     //first check if data has been saved to server already
     var data, gsdate, data;
+
     var name = window.localStorage.getItem("name");
     var gsSaved = window.localStorage.getItem("gsSaved");
     if (gsSaved !== "true" && name !== null ) {
