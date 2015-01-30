@@ -227,13 +227,17 @@ function checkConnection(whichfunction) {
         
     }
 }
-var gs1, gs2, answers = [] ;
 
-/*function saveAnswer(answer) {
-    answer = $('input[name = "question1"]:checked').val();
-    alert(answer);
-    return answer;
-}*/
+
+
+
+
+
+
+
+/*Save locally-----------------------------------------------*/
+
+var gs1, gs2, answers = [] ;
 
 function getAnswer(answer,question){
     var a = document.getElementsByName(question);
@@ -245,10 +249,6 @@ function getAnswer(answer,question){
     answers.push(answer);
     return answer;
 }
-
-
-
-/*Save locally-----------------------------------------------*/
 
 function savelocal() {
 
@@ -267,13 +267,13 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     window.localStorage.setItem("organization", organization);
 
-    /*for(i=1; 1<=9; i++) {
+    for(i=1; 1<=25; i++) {
       k = gs + i;
       k = getAnswers(k, "question" + i);
-    }*/
+    }
     //use getAnswers function to execute: gs10 = $('input[name="question10"]:checked').val();
     //and create array from answers.
-    gs1 = getAnswer(gs1,"question1");
+    /*gs1 = getAnswer(gs1,"question1");
     gs2 = getAnswer(gs2, "question2");
     gs3 = getAnswer(gs3, "question3");
     gs4 = getAnswer(gs4, "question4");
@@ -297,7 +297,7 @@ function savelocal() {
     gs22 = getAnswer(gs22, "question22");
     gs23 = getAnswer(gs23, "question23");
     gs24 = getAnswer(gs24, "question24");
-    gs25 = getAnswer(gs25, "question25");
+    gs25 = getAnswer(gs25, "question25");*/
     
     //use loop to put all answers into local storage
     for(var i = 0; i < answers.length; i++){
