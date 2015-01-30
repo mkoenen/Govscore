@@ -386,7 +386,7 @@ function ag1savelocal() {
     window.localStorage.setItem("ag1date", ag1date);
 
 
-    var i, var j;
+    var i, j;
 
     //loop through the inputs and add to array
     var ag1date = new Date();
