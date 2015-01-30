@@ -227,23 +227,26 @@ function checkConnection(whichfunction) {
         
     }
 }
-var gs1, gs2, x;
+var gs1, gs2, answers = [] ;
+
 function saveAnswer(answer) {
     answer = $('input[name = "question1"]:checked').val();
     alert(answer);
     return answer;
 }
 
-function getAnswer(letter){
-    var a = document.getElementsByName(letter);
+function getAnswer(answer,question){
+    var a = document.getElementsByName(question);
     for(var i = 0; i < a.length; i++){
         if(a[i].checked){
-            gs2 = a[i].value;
+            answer = a[i].value;
         }
     }
-    alert(gs2);
-    return gs2;
+    answers.push(answer);
+    return answer;
 }
+
+
 
 /*Save locally-----------------------------------------------*/
 
@@ -258,7 +261,7 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     gs1 = saveAnswer(gs1);
     alert(gs1);
-    gs2 = getAnswer("question2");
+    gs2 = getAnswer(gs2, "question2");
     alert(gs2);
     gs3 = $('input[name="question3"]:checked').val();
     gs4 = $('input[name="question4"]:checked').val();
