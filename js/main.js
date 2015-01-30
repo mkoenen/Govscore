@@ -269,7 +269,7 @@ function savelocal() {
 
     for(i=1; 1<=25; i++) {
       k = "gs" + i;
-      k = getAnswers(k, "question" + i);
+      k = getAnswer(k, "question" + i);
     }
     //use getAnswers function to execute: gs10 = $('input[name="question10"]:checked').val();
     //and create array from answers.
