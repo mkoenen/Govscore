@@ -421,7 +421,7 @@ function ag1savelocal() {
 function ag1saveServer() {
     //first check if data has been saved to server already
     var getag1Saved = window.localStorage.getItem("ag1saved");
-    var savedag1b = window.localStorage.getItem("ag1b");
+    var savedag1 = window.localStorage.getItem("ag1");
 
     if (getag1Saved !== "true" && savedag1b !== null ) {
     
