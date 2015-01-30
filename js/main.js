@@ -201,22 +201,22 @@ function checkConnection(whichfunction) {
 
     if( states[networkState] !== 'No network connection'){
         switch(whichfunction) {
-            case "govscore":
+            case "cgovscore":
                 saveServer();
                 break;
-            case "ag1":
+            case "cag1":
                 ag1saveServer();
                 break;
-            case "ag2":
+            case "cag2":
                 ag2saveServer();
                 break;
-            case "ag3":
+            case "cag3":
                 ag3saveServer();
                 break;
-            case "ag4":
+            case "cag4":
                 ag4saveServer();
                 break;
-            case "ag5":
+            case "cag5":
                 ag5saveServer();
                 break;
         }
@@ -287,7 +287,7 @@ function savelocal() {
     calcResults();
 
     //now that everything is saved check the connection
-    checkConnection( "govscore");
+    checkConnection( "cgovscore");
 
 }
 
@@ -375,7 +375,7 @@ function saveServer() {
 /* AG 1 -------------------------------------------------------*/
 
 
-var ag1answers = [], gag1Saved, ag1date, ag1,ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12,ag13,ag14,ag15,ag16,ag17,ag18,ag19,ag20,ag21,ag22,ag23,ag24;
+var ag1answers = [], ag1sSaved, ag1date, ag1,ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12,ag13,ag14,ag15,ag16,ag17,ag18,ag19,ag20,ag21,ag22,ag23,ag24;
 
 /* store locally */
 
@@ -386,21 +386,21 @@ function ag1savelocal() {
     window.localStorage.setItem("ag1date", ag1date);
 
 
-    var i, j;
+    var i, j, k, v;
 
     //loop through the inputs and add to array
     var ag1date = new Date();
     var ag1date = formatDate(ag1date);
     for(i=1; i<=24; i++) {
-      var k = "ag" + i;
+      k = "ag" + i;
       k = $('input[name = ' + k + ']:checked').val();
       ag1answers.push(k);
     }
     
     //loop through the array and put all answers into local storage
-    for(var j = 0; j < ag1answers.length; j++){
-      var k = "gs"+(j+1);
-      var v = ag1answers[j];
+    for(j = 0; j < ag1answers.length; j++){
+      k = "gs"+(j+1);
+      v = ag1answers[j];
         window.localStorage.setItem(k,v);
         //alert(k + ", " + v);
     }
@@ -410,7 +410,7 @@ function ag1savelocal() {
     hideSaveButton();
 
     //now that everything is saved check the connection
-    checkConnection("ag1");
+    checkConnection("cag1");
 
 }
 
@@ -420,10 +420,10 @@ function ag1savelocal() {
 
 function ag1saveServer() {
     //first check if data has been saved to server already
-    var ag1saved = window.localStorage.getItem("ag1saved");
-    var ag1 = window.localStorage.getItem("ag1");
+    ag1saved = window.localStorage.getItem("ag1saved");
+    ag1 = window.localStorage.getItem("ag1");
 
-    if (getag1Saved !== "true" && savedag1 !== null ) {
+    if (ag1saved !== "true" && ag1 !== null ) {
     
         //get the data from local storage
         ag1date = window.localStorage.getItem("ag1date");
@@ -556,7 +556,7 @@ function ag2savelocal() {
     hideSaveButton();
 
     //now that everything is saved check the connection
-    checkConnection("ag2");
+    checkConnection("cag2");
 
 }
 
@@ -679,7 +679,7 @@ function ag3savelocal() {
     hideSaveButton();
 
     //now that everything is saved check the connection
-    checkConnection("ag3");
+    checkConnection("cag3");
 
 }
 
@@ -813,7 +813,7 @@ function ag4savelocal() {
     hideSaveButton();
 
     //now that everything is saved check the connection
-    checkConnection("ag4");
+    checkConnection("cag4");
 
 }
 
@@ -943,7 +943,7 @@ function ag5savelocal() {
     hideSaveButton();
 
     //now that everything is saved check the connection
-    checkConnection("ag5");
+    checkConnection("cag5");
 
 }
 
