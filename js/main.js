@@ -267,11 +267,13 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     window.localStorage.setItem("organization", organization);
 
-    //var gs1 = $('input[name="question1"]:checked').val();
+    //run a loop for: var gs1 = $('input[name="question1"]:checked').val();
+    //and put answers into an array
     for(i=1; i<=25; i++) {
       var k = "gs" + i;
       var q = "question" + i;
       k = $('input[name = ' + q + ']:checked').val();
+      answers.push(k);
     }
 
 
@@ -307,7 +309,7 @@ function savelocal() {
     gs24 = getAnswer(gs24, "question24");
     gs25 = getAnswer(gs25, "question25");*/
     
-    //use loop to put all answers into local storage
+    //loop through the array and put all answers into local storage
     for(var i = 0; i < answers.length; i++){
       var k = "gs"+(i+1);
       var v = answers[i];
