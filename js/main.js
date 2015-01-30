@@ -299,7 +299,7 @@ function savelocal() {
 
 function saveServer() {
     //first check if data has been saved to server already
-    var data, dataString, gsdate;
+    var data;
 
     var name = window.localStorage.getItem("name");
     var gsSaved = window.localStorage.getItem("gsSaved");
@@ -307,60 +307,41 @@ function saveServer() {
 
        
     
-         //get the data from local storage
-         gsdate = window.localStorage.getItem("date");
-         dataString = '{"date": gsdate,';
-         name = window.localStorage.getItem("name");
-         dataString += '"name": name, ';
-         email = window.localStorage.getItem("email");
-         dataString += '"email": email, ';
-         organization = window.localStorage.getItem("organization");
-         dataString += '"organization": organization';
-
-         for(i=1; i<=25; i++){
-          k = "gs"+i;
-          v = window.localStorage.getItem(k);
-          dataString += ', "' + k + '": ' + v ;
-         }
-         dataString += '}';
-         
-        /* g1 = window.localStorage.getItem("gs1");
-         g2 = window.localStorage.getItem("gs2");
-         g3 = window.localStorage.getItem("gs3");
-         g4 = window.localStorage.getItem("gs4");
-         g5 = window.localStorage.getItem("gs5");
-         g6 = window.localStorage.getItem("gs6");
-         g7 = window.localStorage.getItem("gs7");
-         g8 = window.localStorage.getItem("gs8");
-         g9 = window.localStorage.getItem("gs9");
-         g10 = window.localStorage.getItem("gs10");
-         g11 = window.localStorage.getItem("gs11");
-         g12 = window.localStorage.getItem("gs12");
-         g13 = window.localStorage.getItem("gs13");
-         g14 = window.localStorage.getItem("gs14");
-         g15 = window.localStorage.getItem("gs15");
-         g16 = window.localStorage.getItem("gs16");
-         g17 = window.localStorage.getItem("gs17");
-         g18 = window.localStorage.getItem("gs18");
-         g19 = window.localStorage.getItem("gs19");
-         g20 = window.localStorage.getItem("gs20");
-         g21 = window.localStorage.getItem("gs21");
-         g22 = window.localStorage.getItem("gs22");
-         g23 = window.localStorage.getItem("gs23");
-         g24 = window.localStorage.getItem("gs24");
-         g25 = window.localStorage.getItem("gs25");*/
+        //get the data from local storage
+        gsdate = window.localStorage.getItem("date");
+        name = window.localStorage.getItem("name");
+        email = window.localStorage.getItem("email");
+        organization = window.localStorage.getItem("organization");
+        g1 = window.localStorage.getItem("gs1");
+        g2 = window.localStorage.getItem("gs2");
+        g3 = window.localStorage.getItem("gs3");
+        g4 = window.localStorage.getItem("gs4");
+        g5 = window.localStorage.getItem("gs5");
+        g6 = window.localStorage.getItem("gs6");
+        g7 = window.localStorage.getItem("gs7");
+        g8 = window.localStorage.getItem("gs8");
+        g9 = window.localStorage.getItem("gs9");
+        g10 = window.localStorage.getItem("gs10");
+        g11 = window.localStorage.getItem("gs11");
+        g12 = window.localStorage.getItem("gs12");
+        g13 = window.localStorage.getItem("gs13");
+        g14 = window.localStorage.getItem("gs14");
+        g15 = window.localStorage.getItem("gs15");
+        g16 = window.localStorage.getItem("gs16");
+        g17 = window.localStorage.getItem("gs17");
+        g18 = window.localStorage.getItem("gs18");
+        g19 = window.localStorage.getItem("gs19");
+        g20 = window.localStorage.getItem("gs20");
+        g21 = window.localStorage.getItem("gs21");
+        g22 = window.localStorage.getItem("gs22");
+        g23 = window.localStorage.getItem("gs23");
+        g24 = window.localStorage.getItem("gs24");
+        g25 = window.localStorage.getItem("gs25");
 
         gsSaved = window.localStorage.setItem("saved", "true");
 
-        alert(dataString);
-
-        data = JSON.stringify(dataString);
-        alert(data)
-
-        data = JSON.parse(data);
-
-        alert(data);
-        //data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
+        
+        data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
         
         $.ajax({
             type       : "GET",
