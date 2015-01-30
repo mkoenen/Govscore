@@ -381,8 +381,8 @@ var ag1answers = [], gag1Saved, ag1date, ag1,ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag1
 
 function ag1savelocal() {
 
-    var date = new Date();
-    var ag1date = formatDate(newdate);
+    var ag1date = new Date();
+    var ag1date = formatDate(ag1date);
     window.localStorage.setItem("ag1date", ag1date);
 
 
