@@ -268,7 +268,7 @@ function savelocal() {
     window.localStorage.setItem("organization", organization);
 
     for(i=1; 1<=25; i++) {
-      k = gs + i;
+      k = "gs" + i;
       k = getAnswers(k, "question" + i);
     }
     //use getAnswers function to execute: gs10 = $('input[name="question10"]:checked').val();
