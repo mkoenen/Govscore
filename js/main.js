@@ -299,7 +299,7 @@ function savelocal() {
 
 function saveServer() {
     //first check if data has been saved to server already
-    var data, gsdate, data;
+    var data, dataString, gsdate;
 
     var name = window.localStorage.getItem("name");
     var gsSaved = window.localStorage.getItem("gsSaved");
@@ -309,20 +309,20 @@ function saveServer() {
     
          //get the data from local storage
          gsdate = window.localStorage.getItem("date");
-         data = '{"date": gsdate,';
+         dataString = '{"date": gsdate,';
          name = window.localStorage.getItem("name");
-         data += '"name": name, ';
+         dataString += '"name": name, ';
          email = window.localStorage.getItem("email");
-         data += '"email": email, ';
+         dataString += '"email": email, ';
          organization = window.localStorage.getItem("organization");
-         data += '"organization": organization';
+         dataString += '"organization": organization';
 
          for(i=1; i<=25; i++){
           k = "g"+i;
           v = window.localStorage.getItem(k);
-          data += ', "' + k + '": ' + v ;
+          dataString += ', "' + k + '": ' + v ;
          }
-         data += '}';
+         dataString += '}';
          
         /* g1 = window.localStorage.getItem("gs1");
          g2 = window.localStorage.getItem("gs2");
@@ -352,8 +352,10 @@ function saveServer() {
 
         gsSaved = window.localStorage.setItem("saved", "true");
 
-        //alert(data);
-        data= JSON.parse(data);
+        alert(dataString);
+        
+        data = JSON.parse(dataString);
+
         alert(data);
         //data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
         
