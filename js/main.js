@@ -399,7 +399,7 @@ function ag1savelocal() {
     
     //loop through the array and put all answers into local storage
     for(j = 0; j < ag1answers.length; j++){
-      k = "gs"+(j+1);
+      k = "ag"+(j+1);
       v = ag1answers[j];
         window.localStorage.setItem(k,v);
         //alert(k + ", " + v);
