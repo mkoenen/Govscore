@@ -271,7 +271,7 @@ function savelocal() {
     for(i=1; i<=25; i++) {
       var k = "gs" + i;
       var q = "question" + i;
-      k = $('input[name = q ]:checked').val();
+      k = $('input[name = ' + q + ']:checked').val();
     }
 
 
