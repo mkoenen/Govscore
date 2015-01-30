@@ -323,7 +323,7 @@ function saveServer() {
           data += ', "' + k + '": ' + v ;
          }
          data += '}';
-         alert(data);
+         
         /* g1 = window.localStorage.getItem("gs1");
          g2 = window.localStorage.getItem("gs2");
          g3 = window.localStorage.getItem("gs3");
@@ -352,7 +352,9 @@ function saveServer() {
 
         gsSaved = window.localStorage.setItem("saved", "true");
 
-
+        alert(data);
+        data= JSON.stringify(data);
+        alert(data);
         //data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
         
         $.ajax({
