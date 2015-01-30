@@ -267,7 +267,7 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     window.localStorage.setItem("organization", organization);
 
-    for(i=1; 1=<9; i++) {
+    for(i=1; 1<=9; i++) {
       k = gs + i;
       k = getAnswers(k. "question" + i);
     }
