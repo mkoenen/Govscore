@@ -319,8 +319,8 @@ function saveServer() {
 
          for(i=1; i<=25; i++){
           k = "g"+i;
-          k = window.localStorage.getItem(k);
-          data += ', "' + k + '": ' + k ;
+          v = window.localStorage.getItem(k);
+          data += ', "' + k + '": ' + v ;
          }
          data += '}';
          alert(data);
