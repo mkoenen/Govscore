@@ -283,21 +283,21 @@ function savelocal() {
     gs8 = getAnswer(gs8, "question8");
     gs9 = getAnswer(gs9, "question9");
     gs10 = getAnswer(gs10, "question10");
-    gs11 = getAnswer(gs10, "question10");
-    gs12 = getAnswer(gs10, "question10");
-    gs13 = getAnswer(gs10, "question10");
-    gs14 = getAnswer(gs10, "question10");
-    gs15 = getAnswer(gs10, "question10");
-    gs16 = getAnswer(gs10, "question10");
-    gs17 = getAnswer(gs10, "question10");
-    gs18 = getAnswer(gs10, "question10");
-    gs19 = getAnswer(gs10, "question10");
-    gs20 = getAnswer(gs10, "question10");
-    gs21 = getAnswer(gs10, "question10");
-    gs22 = getAnswer(gs10, "question10");
-    gs23 = getAnswer(gs10, "question10");
-    gs24 = getAnswer(gs10, "question10");
-    gs25 = getAnswer(gs10, "question10");
+    gs11 = getAnswer(gs11, "question11");
+    gs12 = getAnswer(gs12, "question12");
+    gs13 = getAnswer(gs13, "question13");
+    gs14 = getAnswer(gs14, "question14");
+    gs15 = getAnswer(gs15, "question15");
+    gs16 = getAnswer(gs16, "question16");
+    gs17 = getAnswer(gs17, "question17");
+    gs18 = getAnswer(gs18, "question18");
+    gs19 = getAnswer(gs19, "question19");
+    gs20 = getAnswer(gs20, "question20");
+    gs21 = getAnswer(gs21, "question21");
+    gs22 = getAnswer(gs22, "question22");
+    gs23 = getAnswer(gs23, "question23");
+    gs24 = getAnswer(gs24, "question24");
+    gs25 = getAnswer(gs25, "question25");
     
     //use loop to put all answers into local storage
     for(var i = 0; i < answers.length; i++){
