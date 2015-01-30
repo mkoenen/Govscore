@@ -250,7 +250,7 @@ var gs1, gs2, answers = [] ;
     return answer;
 }*/
 
-var gsSaved, gsdate, name, email, organization, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25
+var gsSaved, gsdate, name, email, organization, gs1,  gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, g1s3, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25;
 
 function savelocal() {
  
@@ -270,7 +270,7 @@ function savelocal() {
     //run a loop for: var gs1 = $('input[name="question1"]:checked').val();
     //and put answers into an array
     for(i=1; i<=25; i++) {
-      var k = "g" + i;
+      var k = "gs" + i;
       var q = "question" + i;
       k = $('input[name = ' + q + ']:checked').val();
       answers.push(k);
@@ -278,7 +278,7 @@ function savelocal() {
 
     //loop through the array and put all answers into local storage
     for(var i = 0; i < answers.length; i++){
-      var k = "g"+(i+1);
+      var k = "gs"+(i+1);
       var v = answers[i];
         window.localStorage.setItem(k,v);
         //alert(k + ", " + v);
@@ -318,7 +318,7 @@ function saveServer() {
          dataString += '"organization": organization';
 
          for(i=1; i<=25; i++){
-          k = "g"+i;
+          k = "gs"+i;
           v = window.localStorage.getItem(k);
           dataString += ', "' + k + '": ' + v ;
          }
@@ -353,7 +353,7 @@ function saveServer() {
         gsSaved = window.localStorage.setItem("saved", "true");
 
         alert(dataString);
-        
+
         data = JSON.parse(dataString);
 
         alert(data);
