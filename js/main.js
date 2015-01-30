@@ -250,11 +250,11 @@ var gs1, gs2, answers = [] ;
     return answer;
 }*/
 
-function savelocal() {
+var gsSaved, gsdate, name, email, organization, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25
 
- var newdate, name, email, organization, gs1,  gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, gs13, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25   
-    
-    newdate = new Date();
+function savelocal() {
+ 
+    gsdate = new Date();
     gsdate = formatDate(newdate);
     window.localStorage.setItem("date", gsdate);
 
@@ -270,51 +270,18 @@ function savelocal() {
     //run a loop for: var gs1 = $('input[name="question1"]:checked').val();
     //and put answers into an array
     for(i=1; i<=25; i++) {
-      var k = "gs" + i;
+      var k = "g" + i;
       var q = "question" + i;
       k = $('input[name = ' + q + ']:checked').val();
       answers.push(k);
     }
 
-
-    /*for(i=1; i<=25; i++) {
-      k = "gs" + i;
-      k = getAnswer(k, "question" + i);
-    }*/
-    //use getAnswers function to execute: gs10 = $('input[name="question10"]:checked').val();
-    //and create array from answers.
-    /*gs1 = getAnswer(gs1,"question1");
-    gs2 = getAnswer(gs2, "question2");
-    gs3 = getAnswer(gs3, "question3");
-    gs4 = getAnswer(gs4, "question4");
-    gs5 = getAnswer(gs5, "question5");
-    gs6 = getAnswer(gs6, "question6");
-    gs7 = getAnswer(gs7, "question7");
-    gs8 = getAnswer(gs8, "question8");
-    gs9 = getAnswer(gs9, "question9");
-    gs10 = getAnswer(gs10, "question10");
-    gs11 = getAnswer(gs11, "question11");
-    gs12 = getAnswer(gs12, "question12");
-    gs13 = getAnswer(gs13, "question13");
-    gs14 = getAnswer(gs14, "question14");
-    gs15 = getAnswer(gs15, "question15");
-    gs16 = getAnswer(gs16, "question16");
-    gs17 = getAnswer(gs17, "question17");
-    gs18 = getAnswer(gs18, "question18");
-    gs19 = getAnswer(gs19, "question19");
-    gs20 = getAnswer(gs20, "question20");
-    gs21 = getAnswer(gs21, "question21");
-    gs22 = getAnswer(gs22, "question22");
-    gs23 = getAnswer(gs23, "question23");
-    gs24 = getAnswer(gs24, "question24");
-    gs25 = getAnswer(gs25, "question25");*/
-    
     //loop through the array and put all answers into local storage
     for(var i = 0; i < answers.length; i++){
-      var k = "gs"+(i+1);
+      var k = "g"+(i+1);
       var v = answers[i];
         window.localStorage.setItem(k,v);
-        alert(k + ", " + v);
+        //alert(k + ", " + v);
     }
     
 
@@ -332,20 +299,31 @@ function savelocal() {
 
 function saveServer() {
     //first check if data has been saved to server already
-    var saved, data, gsdate, name, email, organization, gs1, gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, gs13, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25 
-    var getSaved = window.localStorage.getItem("saved");
-    var savedName = window.localStorage.getItem("name");
-    //alert( "saved is " + getSaved + "and name is " + savedName); //temp
-    if (getSaved !== "true" && savedName !== null ) {
+    var data, gsdate, data;
+    var name = window.localStorage.getItem("name");
+    var gsSaved = window.localStorage.getItem("gsSaved");
+    if (gsSaved !== "true" && name !== null ) {
 
        
     
          //get the data from local storage
          gsdate = window.localStorage.getItem("date");
+         data = '{"date": gsdate,';
          name = window.localStorage.getItem("name");
+         data += '"name": name, ';
          email = window.localStorage.getItem("email");
+         data += '"email": email, ';
          organization = window.localStorage.getItem("organization");
-         g1 = window.localStorage.getItem("gs1");
+         data += '"organization": organization';
+
+         for(i=1; i<=25; i++){
+          k = "g"+i;
+          k = window.localStorage.getItem(k);
+          data += ', "' + k + '": ' + k ;
+         }
+         data += '}';
+         alert(data);
+        /* g1 = window.localStorage.getItem("gs1");
          g2 = window.localStorage.getItem("gs2");
          g3 = window.localStorage.getItem("gs3");
          g4 = window.localStorage.getItem("gs4");
@@ -369,9 +347,9 @@ function saveServer() {
          g22 = window.localStorage.getItem("gs22");
          g23 = window.localStorage.getItem("gs23");
          g24 = window.localStorage.getItem("gs24");
-         g25 = window.localStorage.getItem("gs25");
+         g25 = window.localStorage.getItem("gs25");*/
 
-        saved = window.localStorage.setItem("saved", "true");
+        gsSaved = window.localStorage.setItem("saved", "true");
 
 
         data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
