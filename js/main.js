@@ -244,7 +244,7 @@ function getAnswer(){
     }
     alert(gs2);
     return gs2;
-]
+}
 
 /*Save locally-----------------------------------------------*/
 
