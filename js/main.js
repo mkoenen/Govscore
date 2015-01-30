@@ -267,42 +267,39 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     window.localStorage.setItem("organization", organization);
 
-    for(i=1; 1<=9; i++) {
+    /*for(i=1; 1<=9; i++) {
       k = gs + i;
       k = getAnswers(k, "question" + i);
-    }
-
+    }*/
+    //use getAnswers function to execute: gs10 = $('input[name="question10"]:checked').val();
+    //and create array from answers.
     gs1 = getAnswer(gs1,"question1");
     gs2 = getAnswer(gs2, "question2");
-    gs3 = getAnswer(gs2, "question3");
-    gs4 = getAnswer(gs2, "question2");
-    gs5 = getAnswer(gs2, "question2");
-    gs6 = getAnswer(gs2, "question2");
-    gs7 = getAnswer(gs2, "question2");
-    gs8 = getAnswer(gs2, "question2");
-    gs9 = getAnswer(gs2, "question2");
-    gs10 = $('input[name="question10"]:checked').val();
-    gs11 = $('input[name="question11"]:checked').val();
-    gs12 = $('input[name="question12"]:checked').val();
-    gs13 = $('input[name="question13"]:checked').val();
-    gs14 = $('input[name="question14"]:checked').val();
-    gs15 = $('input[name="question15"]:checked').val();
-    gs16 = $('input[name="question16"]:checked').val();
-    gs17 = $('input[name="question17"]:checked').val();
-    gs18 = $('input[name="question18"]:checked').val();
-    gs19 = $('input[name="question19"]:checked').val();
-    gs20 = $('input[name="question20"]:checked').val();
-    gs21 = $('input[name="question21"]:checked').val();
-    gs22 = $('input[name="question22"]:checked').val();
-    gs23 = $('input[name="question23"]:checked').val();
-    gs24 = $('input[name="question24"]:checked').val();
-    gs25 = $('input[name="question25"]:checked').val();
+    gs3 = getAnswer(gs3, "question3");
+    gs4 = getAnswer(gs4, "question4");
+    gs5 = getAnswer(gs5, "question5");
+    gs6 = getAnswer(gs6, "question6");
+    gs7 = getAnswer(gs7, "question7");
+    gs8 = getAnswer(gs8, "question8");
+    gs9 = getAnswer(gs9, "question9");
+    gs10 = getAnswer(gs10, "question10");
+    gs11 = getAnswer(gs10, "question10");
+    gs12 = getAnswer(gs10, "question10");
+    gs13 = getAnswer(gs10, "question10");
+    gs14 = getAnswer(gs10, "question10");
+    gs15 = getAnswer(gs10, "question10");
+    gs16 = getAnswer(gs10, "question10");
+    gs17 = getAnswer(gs10, "question10");
+    gs18 = getAnswer(gs10, "question10");
+    gs19 = getAnswer(gs10, "question10");
+    gs20 = getAnswer(gs10, "question10");
+    gs21 = getAnswer(gs10, "question10");
+    gs22 = getAnswer(gs10, "question10");
+    gs23 = getAnswer(gs10, "question10");
+    gs24 = getAnswer(gs10, "question10");
+    gs25 = getAnswer(gs10, "question10");
     
-
-
-    window.localStorage.setItem("name", name);
-    window.localStorage.setItem("email", email);
-    window.localStorage.setItem("organization", organization);
+    //use loop to put all answers into local storage
     for(var i = 0; i < answers.length; i++){
       var k = "gs"+(i+1);
       var v = answers[i];
@@ -310,29 +307,6 @@ function savelocal() {
         alert(k + ", " + v);
     }
     
-    window.localStorage.setItem("gs3", gs3);
-    window.localStorage.setItem("gs4", gs4);
-    window.localStorage.setItem("gs5", gs5);
-    window.localStorage.setItem("gs6", gs6);
-    window.localStorage.setItem("gs7", gs7);
-    window.localStorage.setItem("gs8", gs8);
-    window.localStorage.setItem("gs9", gs9);
-    window.localStorage.setItem("gs10", gs10);
-    window.localStorage.setItem("gs11", gs11);
-    window.localStorage.setItem("gs12", gs12);
-    window.localStorage.setItem("gs13", gs13);
-    window.localStorage.setItem("gs14", gs14);
-    window.localStorage.setItem("gs15", gs15);
-    window.localStorage.setItem("gs16", gs16);
-    window.localStorage.setItem("gs17", gs17);
-    window.localStorage.setItem("gs18", gs18);
-    window.localStorage.setItem("gs19", gs19);
-    window.localStorage.setItem("gs20", gs20);
-    window.localStorage.setItem("gs21", gs21);
-    window.localStorage.setItem("gs22", gs22);
-    window.localStorage.setItem("gs23", gs23);
-    window.localStorage.setItem("gs24", gs24);
-    window.localStorage.setItem("gs25", gs25);
 
     hideSaveButton();
 
