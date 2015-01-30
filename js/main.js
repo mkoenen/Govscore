@@ -234,8 +234,8 @@ function saveAnswer(answer) {
     return answer;
 }
 
-function getAnswer(){
-    var a = document.getElementsByName(x);
+function getAnswer(letter){
+    var a = document.getElementsByName(letter);
     for(var i = 0; i < a.length; i++){
         if(a[i].checked){
             gs2 = a[i].value;
