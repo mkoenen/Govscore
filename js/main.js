@@ -245,7 +245,7 @@ function savelocal() {
     name = document.getElementById("name").value;
     email = document.getElementById("email").value;
     organization =  $( "#organization" ).val();
-    saveAnswer(gs1);
+    gs1 = saveAnswer(q1);
     alert(gs1);
     gs2 = $('input[name="question2"]:checked').val();
     gs3 = $('input[name="question3"]:checked').val();
