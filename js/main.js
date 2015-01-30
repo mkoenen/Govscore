@@ -235,8 +235,7 @@ function saveAnswer(answer) {
 }
 
 function getAnswer(){
-  var a = document.getElementsByName("question2");;
-    gs2 = a.options[a.selectedIndex].value;
+  var gs2 = document.getElementsByName("question2").value;;
     return gs2;
 }
 
