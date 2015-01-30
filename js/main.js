@@ -270,7 +270,7 @@ function savelocal() {
     //var gs1 = $('input[name="question1"]:checked').val();
     for(i=1; i<=25; i++) {
       var k = "gs" + i;
-      var q = "question" + 1;
+      var q = "question" + i;
       k = $('input[name = q ]:checked').val();
     }
 
