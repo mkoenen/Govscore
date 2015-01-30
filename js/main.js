@@ -256,20 +256,31 @@ function savelocal() {
     
     newdate = new Date();
     gsdate = formatDate(newdate);
+    window.localStorage.setItem("date", gsdate);
+
     name = document.getElementById("name").value;
+    window.localStorage.setItem("name", name);
+
     email = document.getElementById("email").value;
+    window.localStorage.setItem("email", email);
+
     organization =  $( "#organization" ).val();
+    window.localStorage.setItem("organization", organization);
+
+    for(i=1; 1=<9; i++) {
+      k = gs + i;
+      k = getAnswers(k. "question" + i);
+    }
+
     gs1 = getAnswer(gs1,"question1");
-    alert(gs1);
     gs2 = getAnswer(gs2, "question2");
-    alert(gs2);
-    gs3 = $('input[name="question3"]:checked').val();
-    gs4 = $('input[name="question4"]:checked').val();
-    gs5 = $('input[name="question5"]:checked').val();
-    gs6 = $('input[name="question6"]:checked').val();
-    gs7 = $('input[name="question7"]:checked').val();
-    gs8 = $('input[name="question8"]:checked').val();
-    gs9 = $('input[name="question9"]:checked').val();
+    gs3 = getAnswer(gs2, "question3");
+    gs4 = getAnswer(gs2, "question2");
+    gs5 = getAnswer(gs2, "question2");
+    gs6 = getAnswer(gs2, "question2");
+    gs7 = getAnswer(gs2, "question2");
+    gs8 = getAnswer(gs2, "question2");
+    gs9 = getAnswer(gs2, "question2");
     gs10 = $('input[name="question10"]:checked').val();
     gs11 = $('input[name="question11"]:checked').val();
     gs12 = $('input[name="question12"]:checked').val();
@@ -289,7 +300,6 @@ function savelocal() {
     
 
 
-    window.localStorage.setItem("date", gsdate);
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("email", email);
     window.localStorage.setItem("organization", organization);
