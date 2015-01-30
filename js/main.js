@@ -235,7 +235,8 @@ function saveAnswer(answer) {
 }
 
 function getAnswer(qnum){
-    gs2 = $('input[name=qnum]:checked').val();
+  var a = document.getElementsByName(qnum);;
+    gs2 = a.options[a.selectedIndex].value;
     return gs2;
 }
 
@@ -252,8 +253,7 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     gs1 = saveAnswer(gs1);
     alert(gs1);
-    var x = "question2";
-    gs2 = getAnswer(x);
+    gs2 = getAnswer("question2");
     alert(gs2);
     gs3 = $('input[name="question3"]:checked').val();
     gs4 = $('input[name="question4"]:checked').val();
