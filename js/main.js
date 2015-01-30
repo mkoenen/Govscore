@@ -239,7 +239,7 @@ function checkConnection(whichfunction) {
 
 var gs1, gs2, answers = [] ;
 
-function getAnswer(answer,question){
+/*function getAnswer(answer,question){
     var a = document.getElementsByName(question);
     for(var i = 0; i < a.length; i++){
         if(a[i].checked){
@@ -248,11 +248,11 @@ function getAnswer(answer,question){
     }
     answers.push(answer);
     return answer;
-}
+}*/
 
 function savelocal() {
 
- var newdate, name, email, organization,  gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, gs13, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25   
+ var newdate, name, email, organization, gs1,  gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, gs13, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25   
     
     newdate = new Date();
     gsdate = formatDate(newdate);
@@ -267,10 +267,18 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     window.localStorage.setItem("organization", organization);
 
+    //var gs1 = $('input[name="question1"]:checked').val();
     for(i=1; i<=25; i++) {
+      var k = "gs" + 1;
+      var q = "question" + 1;
+      k = $('input[name = q ]:checked').val();
+    }
+
+
+    /*for(i=1; i<=25; i++) {
       k = "gs" + i;
       k = getAnswer(k, "question" + i);
-    }
+    }*/
     //use getAnswers function to execute: gs10 = $('input[name="question10"]:checked').val();
     //and create array from answers.
     /*gs1 = getAnswer(gs1,"question1");
