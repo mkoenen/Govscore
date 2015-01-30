@@ -229,11 +229,11 @@ function checkConnection(whichfunction) {
 }
 var gs1, gs2, answers = [] ;
 
-function saveAnswer(answer) {
+/*function saveAnswer(answer) {
     answer = $('input[name = "question1"]:checked').val();
     alert(answer);
     return answer;
-}
+}*/
 
 function getAnswer(answer,question){
     var a = document.getElementsByName(question);
@@ -259,7 +259,7 @@ function savelocal() {
     name = document.getElementById("name").value;
     email = document.getElementById("email").value;
     organization =  $( "#organization" ).val();
-    gs1 = saveAnswer(gs1);
+    gs1 = getAnswer(gs1,"question1");
     alert(gs1);
     gs2 = getAnswer(gs2, "question2");
     alert(gs2);
@@ -293,8 +293,13 @@ function savelocal() {
     window.localStorage.setItem("name", name);
     window.localStorage.setItem("email", email);
     window.localStorage.setItem("organization", organization);
-    window.localStorage.setItem("gs1", gs1);
-    window.localStorage.setItem("gs2", gs2);
+    for(var i = 0; i < answers.length; i++){
+      var k = "gs"+(i+1);
+      var v = answers[i];
+        window.localStorage.setItem(k,v);
+        alert(k + ", " + v);
+    }
+    
     window.localStorage.setItem("gs3", gs3);
     window.localStorage.setItem("gs4", gs4);
     window.localStorage.setItem("gs5", gs5);
