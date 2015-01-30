@@ -252,7 +252,8 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     gs1 = saveAnswer(gs1);
     alert(gs1);
-    gs2 = getAnswer("question2");
+    var x = "question2";
+    gs2 = getAnswer(x);
     alert(gs2);
     gs3 = $('input[name="question3"]:checked').val();
     gs4 = $('input[name="question4"]:checked').val();
