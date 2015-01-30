@@ -235,9 +235,16 @@ function saveAnswer(answer) {
 }
 
 function getAnswer(){
-  var gs2 = document.getElementsByName("question2").value;;
+    var a = document.getElementsByName('question2');
+    var rate_value;
+    for(var i = 0; i < a.length; i++){
+        if(a[i].checked){
+            gs2 = a[i].value;
+        }
+    }
+    alert(gs2);
     return gs2;
-}
+]
 
 /*Save locally-----------------------------------------------*/
 
