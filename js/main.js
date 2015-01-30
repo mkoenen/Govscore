@@ -227,7 +227,7 @@ function checkConnection(whichfunction) {
         
     }
 }
-var gs1, gs2;
+var gs1, gs2, x;
 function saveAnswer(answer) {
     answer = $('input[name = "question1"]:checked').val();
     alert(answer);
@@ -235,8 +235,7 @@ function saveAnswer(answer) {
 }
 
 function getAnswer(){
-    var a = document.getElementsByName('question2');
-    var rate_value;
+    var a = document.getElementsByName(x);
     for(var i = 0; i < a.length; i++){
         if(a[i].checked){
             gs2 = a[i].value;
@@ -260,7 +259,7 @@ function savelocal() {
     gs1 = saveAnswer(gs1);
     alert(gs1);
     x = "question2";
-    gs2 = getAnswer();
+    gs2 = getAnswer(x);
     alert(gs2);
     gs3 = $('input[name="question3"]:checked').val();
     gs4 = $('input[name="question4"]:checked').val();
