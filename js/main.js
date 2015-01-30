@@ -269,7 +269,7 @@ function savelocal() {
 
     for(i=1; 1<=9; i++) {
       k = gs + i;
-      k = getAnswers(k. "question" + i);
+      k = getAnswers(k, "question" + i);
     }
 
     gs1 = getAnswer(gs1,"question1");
