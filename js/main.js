@@ -1,6 +1,6 @@
-
-
 /* Events -----------------------------------------*/
+
+var organization;
 
 window.onload = function(){
     //window.setTimeout(beonline, 6000);
@@ -23,18 +23,16 @@ function onOnline() {
 }
 
 
-var saved, ag1saved, ag2saved, ag3saved, ag4saved, ag5saved, orgcode, gsdate, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
-
  //listen for click events      
 function setbutton() {
+
     document.getElementById('btnStore').addEventListener('click', validate, false);
     document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
     document.getElementById('ag2Store').addEventListener('click', ag2savelocal, false);
     document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
     document.getElementById('ag4Store').addEventListener('click', ag4savelocal, false);
     document.getElementById('ag5Store').addEventListener('click', ag5savelocal, false);
-    //document.getElementById("retrieveData").addEventListener("click", result, false); //temp: checks if data has been saved
-
+    
 }
 
 /* Form Validation -------------------------------------*/
@@ -235,7 +233,9 @@ function checkConnection(whichfunction) {
 
 
 
-/*Save locally-----------------------------------------------*/
+/* Initial Govscore -----------------------------------------------*/
+
+/* Save locally */
 
 /*function getAnswer(answer,question){
     var a = document.getElementsByName(question);
@@ -248,7 +248,7 @@ function checkConnection(whichfunction) {
     return answer;
 }*/
 
-var answers = [], gsSaved, gsdate, name, email, organization, gs1,  gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, g1s3, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25;
+var answers = [], gsSaved, gsdate, name, email, gs1,  gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, g1s3, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25;
 
 function savelocal() {
  
@@ -286,7 +286,7 @@ function savelocal() {
 
     calcResults();
 
-    //now that everything is saved check the connection
+    //now that everything is saved, check the connection
     checkConnection( "cgovscore");
 
 }
@@ -295,9 +295,10 @@ function savelocal() {
 
 
 function saveServer() {
-    //first check if data has been saved to server already
+
     var data;
 
+    //first check if data has been saved to server already
     var name = window.localStorage.getItem("name");
     var gsSaved = window.localStorage.getItem("gsSaved");
     if (gsSaved !== "true" && name !== null ) {
@@ -350,17 +351,13 @@ function saveServer() {
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
-                afterSavedServer("Govscore", orgcode);
+                afterSavedServer("Govscore", organization);
               
                             },
             error      : function(response) {
                 alert(response);                  
-            }
-            
-        
-                
+            }  
         });
-
 
     }else{
         alreadySaved();
@@ -400,7 +397,6 @@ function ag1savelocal() {
       k = "ag"+(j+1);
       v = ag1answers[j];
         window.localStorage.setItem(k,v);
-        //alert(k + ", " + v);
     }
   
 
@@ -417,6 +413,9 @@ function ag1savelocal() {
 /* Save on Server */
 
 function ag1saveServer() {
+
+    var ag1data;
+
     //first check if data has been saved to server already
     ag1saved = window.localStorage.getItem("ag1saved");
     ag1 = window.localStorage.getItem("ag1");
@@ -465,18 +464,12 @@ function ag1saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Cultivating Accountability", orgcode);
+                afterSavedServer("Cultivating Accountability", organization);
             },
             error      : function(response) {
                 alert(response);                  
             }
         });
-
-        
-       
-        //afterSavedServer();
-
-
 
     }else{
 
@@ -530,15 +523,16 @@ function ag2savelocal() {
 /* Save on Server */
 
 function ag2saveServer() {
-    //first check if data has been saved to server already
 
+    var ag2data;
+
+    //first check if data has been saved to server already
     ag2saved = window.localStorage.getItem("ag2saved");
     ag25 = window.localStorage.getItem("ag25");
-    //alert( "saved is " + getag2Saved + "and data is " + savedag7b); //temp
 
     if (ag2saved !== "true" && ag25 !== null ) {
     
-         //get the data from local storage
+        //get the data from local storage
         ag2date = window.localStorage.getItem("ag2date");
         email = window.localStorage.getItem("email");
         ag25 = window.localStorage.getItem("ag25");
@@ -568,7 +562,7 @@ function ag2saveServer() {
 
         ag2saved = window.localStorage.setItem("ag2saved", "true");
 
-        var ag2data = { "ag2date" : ag2date, "email": email, "ag25": ag25, "ag26": ag26, "ag27": ag27, "ag28": ag28, "ag29": ag29, "ag30": ag30, "ag31": ag31, "ag32": ag32, "ag33": ag33, "ag34": ag34, "ag35": ag35, "ag36": ag36, "ag37": ag37, "ag38": ag38, "ag39": ag39, "ag40": ag40, "ag41": ag41, "ag42": ag42, "ag43": ag43, "ag44": ag44, "ag45": ag45, "ag46": ag46, "ag47": ag47, "ag48": ag48 };
+        ag2data = { "ag2date" : ag2date, "email": email, "ag25": ag25, "ag26": ag26, "ag27": ag27, "ag28": ag28, "ag29": ag29, "ag30": ag30, "ag31": ag31, "ag32": ag32, "ag33": ag33, "ag34": ag34, "ag35": ag35, "ag36": ag36, "ag37": ag37, "ag38": ag38, "ag39": ag39, "ag40": ag40, "ag41": ag41, "ag42": ag42, "ag43": ag43, "ag44": ag44, "ag45": ag45, "ag46": ag46, "ag47": ag47, "ag48": ag48 };
        
         $.ajax({
             type       : "GET",
@@ -579,18 +573,12 @@ function ag2saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Engaging Stakeholders", orgcode);
+                afterSavedServer("Engaging Stakeholders", organization);
             },
             error      : function(response) {
                 alert(response);                  
             }
         });
-
-        
-       
-        //afterSavedServer();
-
-
 
     }else{
 
@@ -603,6 +591,7 @@ function ag2saveServer() {
 /* AG 3 -------------------------------------------------------*/
 
 var ag3answers = [], ag3saved, ag3date, ag49, ag50, ag51, ag52, ag53, ag54, ag55, ag56, ag57, ag58, ag59, ag60;
+
 /* store locally */
 
 function ag3savelocal() {
@@ -626,8 +615,6 @@ function ag3savelocal() {
       k = "ag"+(j+49);
       v = ag3answers[j];
         window.localStorage.setItem(k,v);
-        //alert(k + ", " + v);
-    }
     
     //hide save button
     hideSaveButton();
@@ -642,6 +629,8 @@ function ag3savelocal() {
 /* Save on Server */
 
 function ag3saveServer() {
+
+    var ag3data;
 
     //first check if data has been saved to server already
     ag3saved = window.localStorage.getItem("ag3saved");
@@ -669,7 +658,7 @@ function ag3saveServer() {
 
         ag3saved = window.localStorage.setItem("ag3saved", "true");
 
-        var ag3data = { "ag3date" : ag3date, "email": email, "ag49": ag49, "ag50": ag50, "ag51": ag51, "ag52": ag52, "ag53": ag53, "ag54": ag54
+        ag3data = { "ag3date" : ag3date, "email": email, "ag49": ag49, "ag50": ag50, "ag51": ag51, "ag52": ag52, "ag53": ag53, "ag54": ag54
         , "ag55": ag55, "ag56": ag56, "ag57": ag57, "ag58": ag58, "ag59": ag59, "ag60": ag60 };
        
         $.ajax({
@@ -681,7 +670,7 @@ function ag3saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Setting Shared Strategic Directions", orgcode);
+                afterSavedServer("Setting Shared Strategic Directions", organization);
             },
             error      : function(response) {
                 alert(response);                  
@@ -702,7 +691,9 @@ function ag3saveServer() {
 }
 
 /* AG 4 -------------------------------------------------------*/
+
 var ag4answers = [], ag4saved, ag4date, ag61, ag62, ag63, ag64, ag65, ag66, ag67, ag68, ag69, ag70, ag71, ag72, g73, ag74, ag75, ag76, ag77, ag78, ag79, ag80, ag81, ag82, ag83, ag84;
+
 /* store locally */
 
 function ag4savelocal() {
@@ -726,7 +717,6 @@ function ag4savelocal() {
       k = "ag"+(j+61);
       v = ag4answers[j];
         window.localStorage.setItem(k,v);
-        //alert(k + ", " + v);
     }
     
    
@@ -744,6 +734,8 @@ function ag4savelocal() {
 /* Save on Server */
 
 function ag4saveServer() {
+
+    var ag4data;
 
     //first check if data has been saved to server already
     var ag4saved = window.localStorage.getItem("ag4saved");
@@ -783,7 +775,7 @@ function ag4saveServer() {
 
         ag4saved = window.localStorage.setItem("ag4saved", "true");
 
-        var ag4data = { "ag4date" : ag4date, "name": name, "email": email, "organization": organization, "ag61": ag61, "ag62": ag62, "ag63": ag63, "ag64": ag64, "ag65": ag65, "ag66": ag66, "ag67": ag67, "ag68": ag68, "ag69": ag69, "ag70": ag70, "ag71": ag71, "ag72": ag72, "ag73": ag73, "ag74": ag74, "ag75": ag75, "ag76": ag76, "ag77": ag77, "ag78": ag78, "ag79": ag79, "ag80": ag80, "ag81": ag81, "ag82": ag82, "ag83": ag83, "ag84": ag84 };
+        ag4data = { "ag4date" : ag4date, "name": name, "email": email, "organization": organization, "ag61": ag61, "ag62": ag62, "ag63": ag63, "ag64": ag64, "ag65": ag65, "ag66": ag66, "ag67": ag67, "ag68": ag68, "ag69": ag69, "ag70": ag70, "ag71": ag71, "ag72": ag72, "ag73": ag73, "ag74": ag74, "ag75": ag75, "ag76": ag76, "ag77": ag77, "ag78": ag78, "ag79": ag79, "ag80": ag80, "ag81": ag81, "ag82": ag82, "ag83": ag83, "ag84": ag84 };
        
         $.ajax({
             type       : "GET",
@@ -794,7 +786,7 @@ function ag4saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Stewarding Resources", orgcode);
+                afterSavedServer("Stewarding Resources", organization);
             },
             error      : function(response) {
                 alert(response);                  
@@ -839,7 +831,6 @@ function ag5savelocal() {
       k = "ag"+(j+85);
       v = ag5answers[j];
         window.localStorage.setItem(k,v);
-        //alert(k + ", " + v);
     }
 
 
@@ -856,8 +847,10 @@ function ag5savelocal() {
 /* Save on Server */
 
 function ag5saveServer() {
-    //first check if data has been saved to server already
 
+    var ag5data;
+
+    //first check if data has been saved to server already
     var ag5saved = window.localStorage.getItem("ag5saved");
     var ag85 = window.localStorage.getItem("ag85");
     //alert( "saved is " + getag5Saved + "and name is " + savedag22b); //temp
@@ -886,7 +879,7 @@ function ag5saveServer() {
         
         ag5saved = window.localStorage.setItem("ag5saved", "true");
 
-        var ag5data = { "ag5date" : ag5date, "email": email, "ag85": ag85, "ag86": ag86, "ag87": ag87, "ag88": ag89, "ag89": ag89, "ag90": ag90, "ag91": ag91, "ag92": ag92, "ag93": ag93, "ag94": ag94, "ag95": ag95, "ag96": ag96, "ag97": ag97, "ag98": ag98, "ag99": ag99, "ag100": ag100 };
+        ag5data = { "ag5date" : ag5date, "email": email, "ag85": ag85, "ag86": ag86, "ag87": ag87, "ag88": ag89, "ag89": ag89, "ag90": ag90, "ag91": ag91, "ag92": ag92, "ag93": ag93, "ag94": ag94, "ag95": ag95, "ag96": ag96, "ag97": ag97, "ag98": ag98, "ag99": ag99, "ag100": ag100 };
        
         $.ajax({
             type       : "GET",
@@ -897,17 +890,12 @@ function ag5saveServer() {
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Continuous Governance Enhancement", orgcode);
+                afterSavedServer("Continuous Governance Enhancement", organization);
             },
             error      : function(response) {
                 alert(response);                  
             }
         });
-
-       
-        //afterSavedServer();
-
-
 
     }else{
 
@@ -926,7 +914,6 @@ Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resour
 Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
 
 var accScore, stakeScore, dirScore, resScore, enhanceScore;
-orgcode = window.localStorage.getItem("organization");
 
 function checkResults(){
     var saved = window.localStorage.getItem("saved");
@@ -1077,7 +1064,7 @@ function calcResults() {
     }
 
    res += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
-   res += "<p>To find out how your organization was resuated by other members of your group, log into the website and use the organization code \"" + orgcode + "\".";
+   res += "<p>To find out how your organization was resuated by other members of your group, log into the website and use the organization code \"" + organization + "\".";
 
     
     document.getElementById('gs-results').innerHTML = res;
