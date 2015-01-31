@@ -375,22 +375,20 @@ function saveServer() {
 /* AG 1 -------------------------------------------------------*/
 
 
-var ag1answers = [], ag1sSaved, ag1date, ag1,ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12,ag13,ag14,ag15,ag16,ag17,ag18,ag19,ag20,ag21,ag22,ag23,ag24;
+var ag1answers = [], ag1saved, ag1date, ag1,ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12,ag13,ag14,ag15,ag16,ag17,ag18,ag19,ag20,ag21,ag22,ag23,ag24;
 
 /* store locally */
 
 function ag1savelocal() {
 
-    var ag1date = new Date();
-    var ag1date = formatDate(ag1date);
+    ag1date = new Date();
+    ag1date = formatDate(ag1date);
     window.localStorage.setItem("ag1date", ag1date);
 
 
     var i, j, k, v;
 
     //loop through the inputs and add to array
-    var ag1date = new Date();
-    var ag1date = formatDate(ag1date);
     for(i=1; i<=24; i++) {
       k = "ag" + i;
       k = $('input[name = ' + k + ']:checked').val();
@@ -490,67 +488,34 @@ function ag1saveServer() {
 
 /* AG 2 -------------------------------------------------------*/
 
+
+var ag2answers = [], ag2saved, ag2date, ag25, ag26, ag27, ag28, ag29, ag30, ag31, ag32, ag33, ag34, ag35, ag36, ag37, ag38, ag39, ag40,ag41,ag42,ag43, ag44, ag45, ag46, ag47, ag48;
+
 /* store locally */
 
 function ag2savelocal() {
 
-   
-    var newdate = new Date();
-    var ag2date = formatDate(newdate);
-    var ag7a = $('input[name="a7a"]:checked').val();
-    var ag7b = $('input[name="a7b"]:checked').val();
-    var ag7c = $('input[name="a7c"]:checked').val();
-    var ag7d = $('input[name="a7d"]:checked').val();
-    var ag8a = $('input[name="a8a"]:checked').val();
-    var ag8b = $('input[name="a8b"]:checked').val();
-    var ag8c = $('input[name="a8c"]:checked').val();
-    var ag8d = $('input[name="a8d"]:checked').val();
-    var ag9a = $('input[name="a9a"]:checked').val();
-    var ag9b = $('input[name="a9b"]:checked').val();
-    var ag9c = $('input[name="a9c"]:checked').val();
-    var ag9d = $('input[name="a9d"]:checked').val();
-    var ag10a = $('input[name="a10a"]:checked').val();
-    var ag10b = $('input[name="a10b"]:checked').val();
-    var ag10c = $('input[name="a10c"]:checked').val();
-    var ag10d = $('input[name="a10d"]:checked').val();
-    var ag11a = $('input[name="a11a"]:checked').val();
-    var ag11b = $('input[name="a11b"]:checked').val();
-    var ag11c = $('input[name="a11c"]:checked').val();
-    var ag11d = $('input[name="a11d"]:checked').val();
-    var ag12a = $('input[name="a12a"]:checked').val();
-    var ag12b = $('input[name="a12b"]:checked').val();
-    var ag12c = $('input[name="a12c"]:checked').val();
-    var ag12d = $('input[name="a12d"]:checked').val();
-    
-    
-
-
+    ag2date = new Date();
+    ag2date = formatDate(ag2date);
     window.localStorage.setItem("ag2date", ag2date);
-    window.localStorage.setItem("ag7a", ag7a);
-    window.localStorage.setItem("ag7b", ag7b);
-    window.localStorage.setItem("ag7c", ag7c);
-    window.localStorage.setItem("ag7d", ag7d);
-    window.localStorage.setItem("ag8a", ag8a);
-    window.localStorage.setItem("ag8b", ag8b);
-    window.localStorage.setItem("ag8c", ag8c);
-    window.localStorage.setItem("ag8d", ag8d);
-    window.localStorage.setItem("ag9a", ag9a);
-    window.localStorage.setItem("ag9b", ag9b);
-    window.localStorage.setItem("ag9c", ag9c);
-    window.localStorage.setItem("ag9d", ag9d);
-    window.localStorage.setItem("ag10a", ag10a);
-    window.localStorage.setItem("ag10b", ag10b);
-    window.localStorage.setItem("ag10c", ag10c);
-    window.localStorage.setItem("ag10d", ag10d);
-    window.localStorage.setItem("ag11a", ag11a);
-    window.localStorage.setItem("ag11b", ag11b);
-    window.localStorage.setItem("ag11c", ag11c);
-    window.localStorage.setItem("ag11d", ag11d);
-    window.localStorage.setItem("ag12a", ag12a);
-    window.localStorage.setItem("ag12b", ag12b);
-    window.localStorage.setItem("ag12c", ag12c);
-    window.localStorage.setItem("ag12d", ag12d);
 
+
+    var i, j, k, v;
+
+    //loop through the inputs and add to array
+    for(i=25; i<=48; i++) {
+      k = "ag" + i;
+      k = $('input[name = ' + k + ']:checked').val();
+      ag2answers.push(k);
+    }
+    
+    //loop through the array and put all answers into local storage
+    for(j = 0; j < ag2answers.length; j++){
+      k = "ag"+(j+25);
+      v = ag2answers[j];
+        window.localStorage.setItem(k,v);
+        //alert(k + ", " + v);
+    }
 
     //hide save button
     hideSaveButton();
@@ -567,43 +532,43 @@ function ag2savelocal() {
 function ag2saveServer() {
     //first check if data has been saved to server already
 
-    var getag2Saved = window.localStorage.getItem("ag2saved");
-    var savedag7b = window.localStorage.getItem("ag7b");
+    ag2saved = window.localStorage.getItem("ag2saved");
+    ag25 = window.localStorage.getItem("ag25");
     //alert( "saved is " + getag2Saved + "and data is " + savedag7b); //temp
 
-    if (getag2Saved !== "true" && savedag7b !== null ) {
+    if (ag2saved !== "true" && ag25 !== null ) {
     
          //get the data from local storage
         ag2date = window.localStorage.getItem("ag2date");
         email = window.localStorage.getItem("email");
-        ag7a = window.localStorage.getItem("ag7a");
-        ag7b = window.localStorage.getItem("ag7b");
-        ag7c = window.localStorage.getItem("ag7c");
-        var ag7d = window.localStorage.getItem("ag7d");
-        var ag8a = window.localStorage.getItem("ag8a");
-        var ag8b = window.localStorage.getItem("ag8b");
-        var ag8c = window.localStorage.getItem("ag8c");
-        var ag8d = window.localStorage.getItem("ag8d");
-        var ag9a = window.localStorage.getItem("ag9a");
-        var ag9b = window.localStorage.getItem("ag9d");
-        var ag9c = window.localStorage.getItem("ag9c");
-        var ag9d = window.localStorage.getItem("ag9d");
-        var ag10a = window.localStorage.getItem("ag10a");
-        var ag10b = window.localStorage.getItem("ag10b");
-        var ag10c = window.localStorage.getItem("ag10c");
-        var ag10d = window.localStorage.getItem("ag10d");
-        var ag11a = window.localStorage.getItem("ag11a");
-        var ag11b = window.localStorage.getItem("ag11b");
-        var ag11c = window.localStorage.getItem("ag11c");
-        var ag11d = window.localStorage.getItem("ag11d");
-        var ag12a = window.localStorage.getItem("ag12a");
-        var ag12b = window.localStorage.getItem("ag12b");
-        var ag12c = window.localStorage.getItem("ag12c");
-        var ag12d = window.localStorage.getItem("ag12d");
+        ag25 = window.localStorage.getItem("ag25");
+        ag26 = window.localStorage.getItem("ag26");
+        ag27 = window.localStorage.getItem("ag27");
+        ag28 = window.localStorage.getItem("ag28");
+        ag29 = window.localStorage.getItem("ag29");
+        ag30 = window.localStorage.getItem("ag30");
+        ag31 = window.localStorage.getItem("ag31");
+        ag32 = window.localStorage.getItem("ag32");
+        ag33 = window.localStorage.getItem("ag33");
+        ag34 = window.localStorage.getItem("ag34");
+        ag35 = window.localStorage.getItem("ag35");
+        ag36 = window.localStorage.getItem("ag36");
+        ag37 = window.localStorage.getItem("ag37");
+        ag38 = window.localStorage.getItem("ag38");
+        ag39 = window.localStorage.getItem("ag39");
+        ag40 = window.localStorage.getItem("ag40");
+        ag41 = window.localStorage.getItem("ag41");
+        ag42 = window.localStorage.getItem("ag42");
+        ag43 = window.localStorage.getItem("ag43");
+        ag44 = window.localStorage.getItem("ag44");
+        ag45 = window.localStorage.getItem("ag45");
+        ag46 = window.localStorage.getItem("ag46");
+        ag47 = window.localStorage.getItem("ag47");
+        ag48 = window.localStorage.getItem("ag48");
 
         ag2saved = window.localStorage.setItem("ag2saved", "true");
 
-        var ag2data = { "ag2date" : ag2date, "email": email, "ag7a": ag7a, "ag7b": ag7b, "ag7c": ag7c, "ag7d": ag7d, "ag8a": ag8a, "ag8b": ag8b, "ag8c": ag8c, "ag8d": ag8d, "ag9a": ag9a, "ag9b": ag9b, "ag9c": ag9c, "ag9d": ag9d, "ag10a": ag10a, "ag10b": ag10b, "ag10c": ag10c, "ag10d": ag10d, "ag11a": ag11a, "ag11b": ag11b, "ag11c": ag11c, "ag11d": ag11d, "ag12a": ag12a, "ag12b": ag12b, "ag12c": ag12c, "ag12d": ag12d };
+        var ag2data = { "ag2date" : ag2date, "email": email, "ag25": ag25, "ag26": ag26, "ag27": ag27, "ag28": ag28, "ag29": ag29, "ag30": ag30, "ag31": ag31, "ag32": ag32, "ag33": ag33, "ag34": ag34, "ag35": ag35, "ag36": ag36, "ag37": ag37, "ag38": ag38, "ag39": ag39, "ag40": ag40, "ag41": ag41, "ag42": ag42, "ag43": ag43, "ag44": ag44, "ag45": ag45, "ag46": ag46, "ag47": ag47, "ag48": ag48 };
        
         $.ajax({
             type       : "GET",
@@ -637,44 +602,33 @@ function ag2saveServer() {
 
 /* AG 3 -------------------------------------------------------*/
 
+var ag3answers = [], ag3saved, ag3date, ag49, ag50, ag51, ag52, ag53, ag54, ag55, ag56, ag57, ag58, ag59, ag60;
 /* store locally */
 
 function ag3savelocal() {
 
-    
-    var newdate = new Date();
-    var ag3date = formatDate(newdate);
-    var ag13a = $('input[name="a13a"]:checked').val();
-    var ag13b = $('input[name="a13b"]:checked').val();
-    var ag13c = $('input[name="a13c"]:checked').val();
-    var ag13d = $('input[name="a13d"]:checked').val();
-    var ag14a = $('input[name="a14a"]:checked').val();
-    var ag14b = $('input[name="a14b"]:checked').val();
-    var ag14c = $('input[name="a14c"]:checked').val();
-    var ag14d = $('input[name="a14d"]:checked').val();
-    var ag15a = $('input[name="a15a"]:checked').val();
-    var ag15b = $('input[name="a15b"]:checked').val();
-    var ag15c = $('input[name="a15c"]:checked').val();
-    var ag15d = $('input[name="a15d"]:checked').val();
-    
-    
-    
-
-
+    ag3date = new Date();
+    ag3date = formatDate(ag3date);
     window.localStorage.setItem("ag3date", ag3date);
-    window.localStorage.setItem("ag13a", ag13a);
-    window.localStorage.setItem("ag13b", ag13b);
-    window.localStorage.setItem("ag13c", ag13c);
-    window.localStorage.setItem("ag13d", ag13d);
-    window.localStorage.setItem("ag14a", ag14a);
-    window.localStorage.setItem("ag14b", ag14b);
-    window.localStorage.setItem("ag14c", ag14c);
-    window.localStorage.setItem("ag14d", ag14d);
-    window.localStorage.setItem("ag15a", ag15a);
-    window.localStorage.setItem("ag15b", ag15b);
-    window.localStorage.setItem("ag15c", ag15c);
-    window.localStorage.setItem("ag15d", ag15d);
 
+
+    var i, j, k, v;
+
+    //loop through the inputs and add to array
+    for(i=49; i<=60; i++) {
+      k = "ag" + i;
+      k = $('input[name = ' + k + ']:checked').val();
+      ag3answers.push(k);
+    }
+    
+    //loop through the array and put all answers into local storage
+    for(j = 0; j < ag3answers.length; j++){
+      k = "ag"+(j+49);
+      v = ag3answers[j];
+        window.localStorage.setItem(k,v);
+        //alert(k + ", " + v);
+    }
+    
     //hide save button
     hideSaveButton();
 
@@ -690,34 +644,33 @@ function ag3savelocal() {
 function ag3saveServer() {
 
     //first check if data has been saved to server already
-    var getag3Saved = window.localStorage.getItem("ag3saved");
-    var savedag13b = window.localStorage.getItem("ag13b");
+    ag3saved = window.localStorage.getItem("ag3saved");
+    ag49 = window.localStorage.getItem("ag49");
     //alert( "saved is " + getag3Saved + "and data is " + savedag13b); //temp
 
-    if (getag3Saved !== "true" && savedag13b !== null ) {
+    if (ag3saved !== "true" && ag49 !== null ) {
     
          //get the data from local storage
-        var ag3date = window.localStorage.getItem("ag3date");
-        var name = window.localStorage.getItem("name");
-        var email = window.localStorage.getItem("email");
-        var organization = window.localStorage.getItem("organization");
-        var ag13a = window.localStorage.getItem("ag13a");
-        var ag13b = window.localStorage.getItem("ag13b");
-        var ag13c = window.localStorage.getItem("ag13c");
-        var ag13d = window.localStorage.getItem("ag13d");
-        var ag14a = window.localStorage.getItem("ag14a");
-        var ag14b = window.localStorage.getItem("ag14b");
-        var ag14c = window.localStorage.getItem("ag14c");
-        var ag14d = window.localStorage.getItem("ag14d");
-        var ag15a = window.localStorage.getItem("ag15a");
-        var ag15b = window.localStorage.getItem("ag15d");
-        var ag15c = window.localStorage.getItem("ag15c");
-        var ag15d = window.localStorage.getItem("ag15d");
+        ag3date = window.localStorage.getItem("ag3date");
+        email = window.localStorage.getItem("email");
+        ag49 = window.localStorage.getItem("ag49");
+        ag50 = window.localStorage.getItem("ag50");
+        ag51 = window.localStorage.getItem("ag51");
+        ag52 = window.localStorage.getItem("ag52");
+        ag53 = window.localStorage.getItem("ag53");
+        ag54 = window.localStorage.getItem("ag54");
+        ag55 = window.localStorage.getItem("ag55");
+        ag56 = window.localStorage.getItem("ag56");
+        ag57 = window.localStorage.getItem("ag57");
+        ag58 = window.localStorage.getItem("ag58");
+        ag59 = window.localStorage.getItem("ag59");
+        ag60 = window.localStorage.getItem("ag60");
         
 
         ag3saved = window.localStorage.setItem("ag3saved", "true");
 
-        var ag3data = { "ag3date" : ag3date, "name": name, "email": email, "organization": organization, "ag13a": ag13a, "ag13b": ag13b, "ag13c": ag13c, "ag13d": ag13d, "ag14a": ag14a, "ag14b": ag14b, "ag14c": ag14c, "ag14d": ag14d, "ag15a": ag15a, "ag15b": ag15b, "ag15c": ag15c, "ag15d": ag15d };
+        var ag3data = { "ag3date" : ag3date, "email": email, "ag49": ag49, "ag50": ag50, "ag51": ag51, "ag52": ag52, "ag53": ag53, "ag54": ag54
+        , "ag55": ag55, "ag56": ag56, "ag57": ag57, "ag58": ag58, "ag59": ag59, "ag60": ag60 };
        
         $.ajax({
             type       : "GET",
@@ -749,65 +702,34 @@ function ag3saveServer() {
 }
 
 /* AG 4 -------------------------------------------------------*/
-
+var ag4answers = [], ag4saved, ag4date, ag61, ag62, ag63, ag64, ag65, ag66, ag67, ag68, ag69, ag70, ag71, ag72, g73, ag74, ag75, ag76, ag77, ag78, ag79, ag80, ag81, ag82, ag83, ag84;
 /* store locally */
 
 function ag4savelocal() {
 
-    
-    var newdate = new Date();
-    var ag4date = formatDate(newdate);
-    var ag16a = $('input[name="a16a"]:checked').val();
-    var ag16b = $('input[name="a16b"]:checked').val();
-    var ag16c = $('input[name="a16c"]:checked').val();
-    var ag16d = $('input[name="a16d"]:checked').val();
-    var ag17a = $('input[name="a17a"]:checked').val();
-    var ag17b = $('input[name="a17b"]:checked').val();
-    var ag17c = $('input[name="a17c"]:checked').val();
-    var ag17d = $('input[name="a17d"]:checked').val();
-    var ag18a = $('input[name="a18a"]:checked').val();
-    var ag18b = $('input[name="a18b"]:checked').val();
-    var ag18c = $('input[name="a18c"]:checked').val();
-    var ag18d = $('input[name="a18d"]:checked').val();
-    var ag19a = $('input[name="a19a"]:checked').val();
-    var ag19b = $('input[name="a19b"]:checked').val();
-    var ag19c = $('input[name="a19c"]:checked').val();
-    var ag19d = $('input[name="a19d"]:checked').val();
-    var ag20a = $('input[name="a20a"]:checked').val();
-    var ag20b = $('input[name="a20b"]:checked').val();
-    var ag20c = $('input[name="a20c"]:checked').val();
-    var ag20d = $('input[name="a20d"]:checked').val();
-    var ag21a = $('input[name="a21a"]:checked').val();
-    var ag21b = $('input[name="a21b"]:checked').val();
-    var ag21c = $('input[name="a21c"]:checked').val();
-    var ag21d = $('input[name="a21d"]:checked').val();
- 
-
+    ag4date = new Date();
+    ag4date = formatDate(ag4date);
     window.localStorage.setItem("ag4date", ag4date);
-    window.localStorage.setItem("ag16a", ag16a);
-    window.localStorage.setItem("ag16b", ag16b);
-    window.localStorage.setItem("ag16c", ag16c);
-    window.localStorage.setItem("ag16d", ag16d);
-    window.localStorage.setItem("ag17a", ag17a);
-    window.localStorage.setItem("ag17b", ag17b);
-    window.localStorage.setItem("ag17c", ag17c);
-    window.localStorage.setItem("ag17d", ag17d);
-    window.localStorage.setItem("ag18a", ag18a);
-    window.localStorage.setItem("ag18b", ag18b);
-    window.localStorage.setItem("ag18c", ag18c);
-    window.localStorage.setItem("ag18d", ag18d);
-    window.localStorage.setItem("ag19a", ag19a);
-    window.localStorage.setItem("ag19b", ag19b);
-    window.localStorage.setItem("ag19c", ag19c);
-    window.localStorage.setItem("ag19d", ag19d);
-    window.localStorage.setItem("ag20a", ag20a);
-    window.localStorage.setItem("ag20b", ag20b);
-    window.localStorage.setItem("ag20c", ag20c);
-    window.localStorage.setItem("ag20d", ag20d);
-    window.localStorage.setItem("ag21a", ag21a);
-    window.localStorage.setItem("ag21b", ag21b);
-    window.localStorage.setItem("ag21c", ag21c);
-    window.localStorage.setItem("ag21d", ag21d);
+
+
+    var i, j, k, v;
+
+    //loop through the inputs and add to array
+    for(i=61; i<=84; i++) {
+      k = "ag" + i;
+      k = $('input[name = ' + k + ']:checked').val();
+      ag4answers.push(k);
+    }
+    
+    //loop through the array and put all answers into local storage
+    for(j = 0; j < ag4answers.length; j++){
+      k = "ag"+(j+61);
+      v = ag4answers[j];
+        window.localStorage.setItem(k,v);
+        //alert(k + ", " + v);
+    }
+    
+   
 
     //hide save button
     hideSaveButton();
@@ -824,46 +746,44 @@ function ag4savelocal() {
 function ag4saveServer() {
 
     //first check if data has been saved to server already
-    var getag4Saved = window.localStorage.getItem("ag4saved");
-    var savedag16b = window.localStorage.getItem("ag16b");
+    var ag4saved = window.localStorage.getItem("ag4saved");
+    var ag61 = window.localStorage.getItem("ag61");
     //alert( "saved is " + getag4Saved + "and data is " + savedag16b); //temp
 
-    if (getag4Saved !== "true" && savedag16b !== null ) {
+    if (ag4saved !== "true" && ag61 !== null ) {
     
          //get the data from local storage
-        var ag4date = window.localStorage.getItem("ag4date");
-        var name = window.localStorage.getItem("name");
-        var email = window.localStorage.getItem("email");
-        var organization = window.localStorage.getItem("organization");
-        var ag16a = window.localStorage.getItem("ag16a");
-        var ag16b = window.localStorage.getItem("ag16b");
-        var ag16c = window.localStorage.getItem("ag16c");
-        var ag16d = window.localStorage.getItem("ag16d");
-        var ag17a = window.localStorage.getItem("ag17a");
-        var ag17b = window.localStorage.getItem("ag17b");
-        var ag17c = window.localStorage.getItem("ag17c");
-        var ag17d = window.localStorage.getItem("ag17d");
-        var ag18a = window.localStorage.getItem("ag18a");
-        var ag18b = window.localStorage.getItem("ag18d");
-        var ag18c = window.localStorage.getItem("ag18c");
-        var ag18d = window.localStorage.getItem("ag18d");
-        var ag19a = window.localStorage.getItem("ag19a");
-        var ag19b = window.localStorage.getItem("ag19b");
-        var ag19c = window.localStorage.getItem("ag19c");
-        var ag19d = window.localStorage.getItem("ag19d");
-        var ag20a = window.localStorage.getItem("ag20a");
-        var ag20b = window.localStorage.getItem("ag20b");
-        var ag20c = window.localStorage.getItem("ag20c");
-        var ag20d = window.localStorage.getItem("ag20d");
-        var ag21a = window.localStorage.getItem("ag21a");
-        var ag21b = window.localStorage.getItem("ag21d");
-        var ag21c = window.localStorage.getItem("ag21c");
-        var ag21d = window.localStorage.getItem("ag21d");
+        ag4date = window.localStorage.getItem("ag4date");
+        email = window.localStorage.getItem("email");
+        ag61 = window.localStorage.getItem("ag61");
+        ag62 = window.localStorage.getItem("ag62");
+        ag63 = window.localStorage.getItem("ag63");
+        ag64 = window.localStorage.getItem("ag64");
+        ag65 = window.localStorage.getItem("ag65");
+        ag66 = window.localStorage.getItem("ag66");
+        ag67 = window.localStorage.getItem("ag67");
+        ag68 = window.localStorage.getItem("ag68");
+        ag69 = window.localStorage.getItem("ag69");
+        ag70 = window.localStorage.getItem("ag70");
+        ag71 = window.localStorage.getItem("ag71");
+        ag72 = window.localStorage.getItem("ag72");
+        ag73 = window.localStorage.getItem("ag73");
+        ag74 = window.localStorage.getItem("ag74");
+        ag75 = window.localStorage.getItem("ag75");
+        ag76 = window.localStorage.getItem("ag76");
+        ag77 = window.localStorage.getItem("ag77");
+        ag78 = window.localStorage.getItem("ag78");
+        ag79 = window.localStorage.getItem("ag79");
+        ag80 = window.localStorage.getItem("ag80");
+        ag81 = window.localStorage.getItem("ag81");
+        ag82 = window.localStorage.getItem("ag82");
+        ag83 = window.localStorage.getItem("ag83");
+        ag84 = window.localStorage.getItem("ag84");
         
 
-        ag3saved = window.localStorage.setItem("ag4saved", "true");
+        ag4saved = window.localStorage.setItem("ag4saved", "true");
 
-        var ag4data = { "ag4date" : ag4date, "name": name, "email": email, "organization": organization, "ag16a": ag16a, "ag16b": ag16b, "ag16c": ag16c, "ag16d": ag16d, "ag17a": ag17a, "ag17b": ag17b, "ag17c": ag17c, "ag17d": ag17d, "ag18a": ag18a, "ag18b": ag18b, "ag18c": ag18c, "ag18d": ag18d, "ag19a": ag19a, "ag19b": ag19b, "ag19c": ag19c, "ag19d": ag19d, "ag20a": ag20a, "ag20b": ag20b, "ag20c": ag20c, "ag20d": ag20d, "ag21a": ag21a, "ag21b": ag21b, "ag21c": ag21c, "ag21d": ag21d };
+        var ag4data = { "ag4date" : ag4date, "name": name, "email": email, "organization": organization, "ag61": ag61, "ag62": ag62, "ag63": ag63, "ag64": ag64, "ag65": ag65, "ag66": ag66, "ag67": ag67, "ag68": ag68, "ag69": ag69, "ag70": ag70, "ag71": ag71, "ag72": ag72, "ag73": ag73, "ag74": ag74, "ag75": ag75, "ag76": ag76, "ag77": ag77, "ag78": ag78, "ag79": ag79, "ag80": ag80, "ag81": ag81, "ag82": ag82, "ag83": ag83, "ag84": ag84 };
        
         $.ajax({
             type       : "GET",
@@ -895,49 +815,33 @@ function ag4saveServer() {
 }
 
 /* AG 5 -------------------------------------------------------*/
-
+var ag5answers = [], ag5saved, ag5date, ag85, ag86, ag87, ag88, ag89, ag90, ag91, ag92, ag93, ag94, ag95, ag96, ag97, ag98, ag99, ag100;
 /* store locally */
 
 function ag5savelocal() {
 
+    ag5date = new Date();
+    ag5date = formatDate(ag5date);
+    window.localStorage.setItem("ag5ate", ag5date);
+
+
+    var i, j, k, v;
+
+    //loop through the inputs and add to array
+    for(i=85; i<=100; i++) {
+      k = "ag" + i;
+      k = $('input[name = ' + k + ']:checked').val();
+      ag5answers.push(k);
+    }
     
-    var newdate = new Date();
-    var ag5date = formatDate(newdate);
-    var ag22a = $('input[name="a22a"]:checked').val();
-    var ag22b = $('input[name="a22b"]:checked').val();
-    var ag22c = $('input[name="a22c"]:checked').val();
-    var ag22d = $('input[name="a22d"]:checked').val();
-    var ag23a = $('input[name="a23a"]:checked').val();
-    var ag23b = $('input[name="a23b"]:checked').val();
-    var ag23c = $('input[name="a23c"]:checked').val();
-    var ag23d = $('input[name="a23d"]:checked').val();
-    var ag24a = $('input[name="a24a"]:checked').val();
-    var ag24b = $('input[name="a24b"]:checked').val();
-    var ag24c = $('input[name="a24c"]:checked').val();
-    var ag24d = $('input[name="a24d"]:checked').val();
-    var ag25a = $('input[name="a25a"]:checked').val();
-    var ag25b = $('input[name="a25b"]:checked').val();
-    var ag25c = $('input[name="a25c"]:checked').val();
-    var ag25d = $('input[name="a25d"]:checked').val();
+    //loop through the array and put all answers into local storage
+    for(j = 0; j < ag5answers.length; j++){
+      k = "ag"+(j+85);
+      v = ag5answers[j];
+        window.localStorage.setItem(k,v);
+        //alert(k + ", " + v);
+    }
 
-
-    window.localStorage.setItem("ag5date", ag5date);
-    window.localStorage.setItem("ag22a", ag22a);
-    window.localStorage.setItem("ag22b", ag22b);
-    window.localStorage.setItem("ag22c", ag22c);
-    window.localStorage.setItem("ag22d", ag22d);
-    window.localStorage.setItem("ag23a", ag23a);
-    window.localStorage.setItem("ag23b", ag23b);
-    window.localStorage.setItem("ag23c", ag23c);
-    window.localStorage.setItem("ag23d", ag23d);
-    window.localStorage.setItem("ag24a", ag24a);
-    window.localStorage.setItem("ag24b", ag24b);
-    window.localStorage.setItem("ag24c", ag24c);
-    window.localStorage.setItem("ag24d", ag24d);
-    window.localStorage.setItem("ag25a", ag25a);
-    window.localStorage.setItem("ag25b", ag25b);
-    window.localStorage.setItem("ag25c", ag25c);
-    window.localStorage.setItem("ag25d", ag25d);
 
     //hide save button
     hideSaveButton();
@@ -954,37 +858,35 @@ function ag5savelocal() {
 function ag5saveServer() {
     //first check if data has been saved to server already
 
-    var getag5Saved = window.localStorage.getItem("ag5saved");
-    var savedag22b = window.localStorage.getItem("ag22b");
+    var ag5saved = window.localStorage.getItem("ag5saved");
+    var ag85 = window.localStorage.getItem("ag85");
     //alert( "saved is " + getag5Saved + "and name is " + savedag22b); //temp
 
-    if (getag5Saved !== "true" &&  savedag22b !== null ) {
+    if (ag5saved !== "true" &&  ag85 !== null ) {
     
          //get the data from local storage
-        var ag5date = window.localStorage.getItem("ag5date");
-        var name = window.localStorage.getItem("name");
-        var email = window.localStorage.getItem("email");
-        var organization = window.localStorage.getItem("organization");
-        var ag22a = window.localStorage.getItem("ag22a");
-        var ag22b = window.localStorage.getItem("ag22b");
-        var ag22c = window.localStorage.getItem("ag22c");
-        var ag22d = window.localStorage.getItem("ag22d");
-        var ag23a = window.localStorage.getItem("ag23a");
-        var ag23b = window.localStorage.getItem("ag23b");
-        var ag23c = window.localStorage.getItem("ag23c");
-        var ag23d = window.localStorage.getItem("ag23d");
-        var ag24a = window.localStorage.getItem("ag24a");
-        var ag24b = window.localStorage.getItem("ag24d");
-        var ag24c = window.localStorage.getItem("ag24c");
-        var ag24d = window.localStorage.getItem("ag24d");
-        var ag25a = window.localStorage.getItem("ag25a");
-        var ag25b = window.localStorage.getItem("ag25b");
-        var ag25c = window.localStorage.getItem("ag25c");
-        var ag25d = window.localStorage.getItem("ag25d");
+        ag5date = window.localStorage.getItem("ag5date");
+        email = window.localStorage.getItem("email");
+        ag85 = window.localStorage.getItem("ag85");
+        ag86 = window.localStorage.getItem("ag86");
+        ag87 = window.localStorage.getItem("ag87");
+        ag88 = window.localStorage.getItem("ag88");
+        ag89 = window.localStorage.getItem("ag89");
+        ag90 = window.localStorage.getItem("ag90");
+        ag91 = window.localStorage.getItem("ag91");
+        ag92 = window.localStorage.getItem("ag92");
+        ag93 = window.localStorage.getItem("ag93");
+        ag94 = window.localStorage.getItem("ag94");
+        ag95 = window.localStorage.getItem("ag95");
+        ag96 = window.localStorage.getItem("ag96");
+        ag97 = window.localStorage.getItem("ag97");
+        ag98 = window.localStorage.getItem("ag98");
+        ag99 = window.localStorage.getItem("ag99");
+        ag100 = window.localStorage.getItem("ag100");
         
         ag5saved = window.localStorage.setItem("ag5saved", "true");
 
-        var ag5data = { "ag5date" : ag5date, "name": name, "email": email, "organization": organization, "ag22a": ag22a, "ag22b": ag22b, "ag22c": ag22c, "ag22d": ag22d, "ag23a": ag23a, "ag23b": ag23b, "ag23c": ag23c, "ag23d": ag23d, "ag24a": ag24a, "ag24b": ag24b, "ag24c": ag24c, "ag24d": ag24d, "ag25a": ag25a, "ag25b": ag25b, "ag25c": ag25c, "ag25d": ag25d };
+        var ag5data = { "ag5date" : ag5date, "email": email, "ag85": ag85, "ag86": ag86, "ag87": ag87, "ag88": ag89, "ag89": ag89, "ag90": ag90, "ag91": ag91, "ag92": ag92, "ag93": ag93, "ag94": ag94, "ag95": ag95, "ag96": ag96, "ag97": ag97, "ag98": ag98, "ag99": ag99, "ag100": ag100 };
        
         $.ajax({
             type       : "GET",
