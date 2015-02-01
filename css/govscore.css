@@ -57,17 +57,22 @@ button.hide {
 /* pannel ----------------------------------------*/
 
 
-.ui-panel .ui-panel-inner {
-padding: 1em;
-background: #CBE8C5;
+.ui-page .ui-panel {
+	background: rgba(203, 232, 197, 0.93);
+	width: 10em;
 }
 .ui-panel span {
-	padding: 12px 10px 0;
+	padding: 4px 10px 0;
 	display: inline-block;
-	margin-bottom: 10px;
 }
 .ui-panel img {
-	width: 15%;
+	width: 20%;
 	float: left;
 	clear: both;
+}
+.ui-page-theme-c .ui-panel-inner .ui-btn {
+background-color: rgba(0, 0, 0, 0)/*{c-bup-background-color}*/;
+border-color: rgba(0, 0, 0, 0) /*{c-bup-border}*/;
+color: #333 /*{c-bup-color}*/;
+margin: -8px -10px 0 0;
 }
