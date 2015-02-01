@@ -997,11 +997,11 @@ function calcResults() {
 
     //get only the weakest percentages in an array
     var sortedPercent = percentArray.sort(compareNumbers);
-    if(sortedPercent[0]!=sortedPercent[1] && sortedPercent[1] != sortedPercent[2]){
+    if(sortedPercent[0] !== sortedPercent[1] && sortedPercent[1] !== sortedPercent[2]){
         weakest = sortedPercent.slice(0,3);
-    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
+    }else if(sortedPercent[0] === sortedPercent[1] || sortedPercent[1] === sortedPercent[2]){
         weakest = sortedPercent.slice(0,4);
-    }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2] && sortedPercent[2] == sortedPercent[3]){
+    }else if(sortedPercent[0] === sortedPercent[1] || sortedPercent[1] === sortedPercent[2] && sortedPercent[2] === sortedPercent[3]){
         weakest = sortedPercent.slice(0,5);
     }else {
         weakest = sortedPercent;
