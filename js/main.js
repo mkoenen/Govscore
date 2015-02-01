@@ -139,8 +139,6 @@ function formatDate(date) {
 
 function hideSaveButton() {
 
-    
-    var gs1 = window.localStorage.getItem("gs1");
     if( gs1 !== null){
         var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";
@@ -148,36 +146,30 @@ function hideSaveButton() {
         resultButton2.className = resultButton2.className + " see";
     }
     
-    var ag1a = window.localStorage.getItem("ag1a");
-    if(ag1a !== null){
-       // var ag1SaveButton = document.getElementById('ag1Store');
-       // ag1SaveButton.className = ag1SaveButton.className + " hide";
+    if(ag1 !== null){
+       var ag1SaveButton = document.getElementById('ag1Store');
+       ag1SaveButton.className = ag1SaveButton.className + " hide";
     }
    
-    var ag7a = window.localStorage.getItem("ag7a");
-    if(ag7a !== null) {
+    if(ag25 !== null) {
         var ag2SaveButton = document.getElementById('ag2Store');
         ag2SaveButton.className = ag2SaveButton.className + " hide";
     }
     
-    var ag13a = window.localStorage.getItem("ag13a");
-    if(ag13a !== null){
+    if(ag49 !== null){
         var ag3SaveButton = document.getElementById('ag3Store');
         ag3SaveButton.className = ag3SaveButton.className + " hide";
     }
-    
-    var ag16a = window.localStorage.getItem("ag16a");
-    if( ag16a !== null) {
+     
+    if( ag61 !== null) {
         var ag4SaveButton = document.getElementById('ag4Store');
         ag4SaveButton.className = ag4SaveButton.className + " hide";
     }
    
-    var ag22a = window.localStorage.getItem("ag22a");
-    if( ag22a !== null){
+    if( ag85 !== null){
         var ag5SaveButton = document.getElementById('ag5Store');
         ag5SaveButton.className = ag5SaveButton.className + " hide";
     }
-
 }
 
 /*------------check the connection --------------*/
