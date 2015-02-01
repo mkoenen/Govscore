@@ -981,15 +981,15 @@ function calcResults() {
     //list each area with the score
     var res = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
     res += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
-    res += "<h4>Cultivating Accountability</h4><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
-    res += "<h4>Engaging Stakeholders</h4><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
-    res += "<h4>Shared Strategic Direction</h4><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
-    res += "<h4>Stewarding Resources</h4><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
-    res += "<h4>Continuous Governance Enhancement</h4><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
-    res += "<h3>Recommendation</h3><p>The areas that your organization should focus on are:</p>";
+    res += "<h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
+    res += "<h3>Engaging Stakeholders</h3><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
+    res += "<h3>Shared Strategic Direction</h3><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
+    res += "<h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
+    res += "<h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
+     /*res += "<h3>Recommendation</h3><p>The areas that your organization should focus on are:</p>";
     
     //sort numbers lowest to highest
-    function compareNumbers(a, b) {
+   function compareNumbers(a, b) {
         return a - b;
     }
 
@@ -1042,7 +1042,7 @@ function calcResults() {
     }
 
    res += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
-   res += "<p>To find out how your organization was resuated by other members of your group, log into the website and use the organization code \"" + organization + "\".";
+   res += "<p>To find out how your organization was resuated by other members of your group, log into the website and use the organization code \"" + organization + "\".";*/
 
     
     document.getElementById('gs-results').innerHTML = res;
