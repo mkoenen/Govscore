@@ -615,6 +615,7 @@ function ag3savelocal() {
       k = "ag"+(j+49);
       v = ag3answers[j];
         window.localStorage.setItem(k,v);
+    }
     
     //hide save button
     hideSaveButton();

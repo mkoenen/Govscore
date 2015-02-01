@@ -46,13 +46,25 @@
 <!-- Govscore page -->
     <div data-role="page" id="govscore" data-title="Govscore" data-theme="c">
 
+        <div data-role="panel" id="legend" data-position="left" data-display="overlay"> 
+            <h2>Legend:</h2>
+            <p><img src="img/empty.png" /><span>Not at all</span></p>
+            <p><img src="img/one-quarter.png" /><span>Minimally</span></p>
+            <p><img src="img/half.png" /><span>Partly</span></p>
+            <p><img src="img/three-quarter.png" /><span>Mostly</span></p>
+            <p><img src="img/full.png" /><span>Completely</span></p>   
+        </div>
+
         <div data-role="header">
             <h1>Govscore</h1>
         </div><!-- header -->
 
         <div data-role="content">
             <article>
+                <a href="#legend" class="ui-btn ui-btn-inline">Legend</a>
+                
                 <a href="#govscore-results" id="govscore-results2" class="ui-btn">See Your Results</a>
+                
                 <form name="gsForm"> 
                     <label for="name" class="ui-hidden-accessible">Name</label>
                         <input type="text" id="name" name="name" placeholder="First name followed by surname" required />
@@ -744,20 +756,13 @@
 
 
 <!-- Engaging Stakeholders -->
-    <div data-role="page" id="engaging-stakeholders" data-title="Engaging Stakeholders" data-theme="d">
-        <div data-role="panel" id="legend" data-position="left"> 
-            <h2>Panel Header..</h2>
-            <p>Some text in the panel..</p>
-            <a href="#engaging-stakeholders" data-rel="close" class="ui-btn ui-btn-inline ui-shadow ui-corner-all ui-btn-a ui-icon-delete ui-btn-icon-left">Close panel</a>
-        </div> 
+    <div data-role="page" id="engaging-stakeholders" data-title="Engaging Stakeholders" data-theme="d"> 
 
         <div data-role="header">
             <h1>Engaging Stakeholders</h1>
         </div><!-- header -->
 
         <div data-role="content">
-            <p>Click on the button below to open the Panel.</p>
-            <a href="#legend" class="ui-btn ui-btn-inline">Open Panel</a>
           
             <article>
                 <h3>1. Achieving sincere stakeholder engagement</h3>
@@ -1575,7 +1580,7 @@
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
                         <legend>c. They continuously improve their own performance by working on their weak areas noticed in the assessment.</legend>
-                            <input type="radio" name="a9" id="ag99yes" value="1" checked="checked">
+                            <input type="radio" name="a99" id="ag99yes" value="1" checked="checked">
                             <label for="ag99yes">Yes</label>
                             <input type="radio" name="ag99" id="ag99no" value="0">
                             <label for="ag99no">NO</label>

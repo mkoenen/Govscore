@@ -51,3 +51,18 @@ label.ui-btn img {
 button.hide {
 	display:none;
 }
+/* pannel ----------------------------------------*/
+
+.ui-page .ui-header .ui-title {
+	margin: 0 20%;
+}
+.ui-panel span {
+	padding: 12px 10px 0;
+	display: inline-block;
+	margin-bottom: 10px;
+}
+.ui-panel img {
+	width: 15%;
+	float: left;
+	clear: both;
+}
