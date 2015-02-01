@@ -908,7 +908,7 @@ function checkResults(){
 //add up the numbers
 function calcResults() {
 
-        var g1 = window.localStorage.getItem("gs1");
+        /*var g1 = window.localStorage.getItem("gs1");
         var g2 = window.localStorage.getItem("gs2");
         var g3 = window.localStorage.getItem("gs3");
         var g4 = window.localStorage.getItem("gs4");
@@ -932,7 +932,7 @@ function calcResults() {
         var g22 = window.localStorage.getItem("gs22");
         var g23 = window.localStorage.getItem("gs23");
         var g24 = window.localStorage.getItem("gs24");
-        var g25 = window.localStorage.getItem("gs25");
+        var g25 = window.localStorage.getItem("gs25");*/
 
     var percentArray = [];
 
