@@ -10,7 +10,7 @@ window.onload = function(){
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", hideSaveButton, false);
     document.addEventListener("deviceready", checkResults, false);
-}
+};
 
 //check if online according to the above interval
 function onOnline() {
@@ -122,9 +122,6 @@ function alreadySaved() {
     );
 }
 
-function goPlace() {
-    window.location.hash = "#govscore";
-}
 
 /* Get Date --------------------------------------------------*/
 
@@ -265,7 +262,7 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     window.localStorage.setItem("organization", organization);
 
-    var i, j, k, v;
+    var i, j, k, v, q;
 
     //run a loop for: var gs1 = $('input[name="question1"]:checked').val();and put answers into an array
     for(i=1; i<=25; i++) {
@@ -276,9 +273,9 @@ function savelocal() {
     }
 
     //loop through the array and put all answers into local storage
-    for(var i = 0; i < answers.length; i++){
-        k = "g"+(i+1);
-        v = answers[i];
+    for(j = 0; j < answers.length; j++){
+        k = "g"+(j+1);
+        v = answers[j];
         window.localStorage.setItem(k,v);
     }
     
@@ -300,8 +297,8 @@ function saveServer() {
     var data;
 
     //first check if data has been saved to server already
-    var name = window.localStorage.getItem("name");
-    var gsSaved = window.localStorage.getItem("gsSaved");
+    name = window.localStorage.getItem("name");
+    gsSaved = window.localStorage.getItem("gsSaved");
     if (gsSaved !== "true" && name !== null ) {
 
        
@@ -361,6 +358,7 @@ function saveServer() {
         });
 
     }else{
+
         alreadySaved();
     } 
 }
@@ -470,7 +468,8 @@ function ag1saveServer() {
             }
         });
     }else{
-        //alreadySaved();
+
+        alreadySaved();
     }
 }
 
@@ -575,7 +574,8 @@ function ag2saveServer() {
             }
         });
     }else{
-      //  alreadySaved();
+
+       alreadySaved();
     }
 }
 
@@ -667,17 +667,16 @@ function ag3saveServer() {
                 alert(response);                  
             }
         });
-       
-        //afterSavedServer();
 
     }else{
-       // alreadySaved();
+
+        alreadySaved();
     }
 }
 
 /* AG 4 -------------------------------------------------------*/
 
-var ag4answers = [], ag4saved, ag4date, ag61, ag62, ag63, ag64, ag65, ag66, ag67, ag68, ag69, ag70, ag71, ag72, g73, ag74, ag75, ag76, ag77, ag78, ag79, ag80, ag81, ag82, ag83, ag84;
+var ag4answers = [], ag4saved, ag4date, ag61, ag62, ag63, ag64, ag65, ag66, ag67, ag68, ag69, ag70, ag71, ag72, ag73, ag74, ag75, ag76, ag77, ag78, ag79, ag80, ag81, ag82, ag83, ag84;
 
 /* store locally */
 
@@ -723,8 +722,8 @@ function ag4saveServer() {
     var ag4data;
 
     //first check if data has been saved to server already
-    var ag4saved = window.localStorage.getItem("ag4saved");
-    var ag61 = window.localStorage.getItem("ag61");
+    ag4saved = window.localStorage.getItem("ag4saved");
+    ag61 = window.localStorage.getItem("ag61");
     //alert( "saved is " + getag4Saved + "and data is " + savedag16b); //temp
 
     if (ag4saved !== "true" && ag61 !== null ) {
@@ -777,13 +776,12 @@ function ag4saveServer() {
                 alert(response);                  
             }
         });
-
        
         //afterSavedServer();
 
     }else{
 
-        //alreadySaved();
+        alreadySaved();
     }
 }
 
@@ -832,8 +830,8 @@ function ag5saveServer() {
     var ag5data;
 
     //first check if data has been saved to server already
-    var ag5saved = window.localStorage.getItem("ag5saved");
-    var ag85 = window.localStorage.getItem("ag85");
+    ag5saved = window.localStorage.getItem("ag5saved");
+    ag85 = window.localStorage.getItem("ag85");
     //alert( "saved is " + getag5Saved + "and name is " + savedag22b); //temp
 
     if (ag5saved !== "true" &&  ag85 !== null ) {
@@ -893,7 +891,7 @@ Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic 
 Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
 Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
 
-var accScore, stakeScore, dirScore, resScore, enhanceScore, weakest;
+var accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel, weakest;
 
 function checkResults(){
     var saved = window.localStorage.getItem("saved");
@@ -963,8 +961,8 @@ function calcResults() {
     var enhPercent = Math.round(enhScore/enhPossible*100);
     percentArray.push(enhPercent);
 
-    var totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
-    var mlevel;
+    totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
+    
 
     switch(true) {
         case( totalScore < 25 ):
@@ -1030,7 +1028,7 @@ function calcResults() {
     function array_unique(array) {
     
         for (var i = 0; i < array.length; i++) {
-            if (resultAreas.indexOf(array[i]) == -1) {
+            if (resultAreas.indexOf(array[i]) === -1) {
                 resultAreas.push(array[i]);
              } 
         }
