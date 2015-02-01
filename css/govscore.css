@@ -3,6 +3,9 @@
 	background-color: #34cfc6;
 	height:100%;
 }
+.ui-page .ui-header .ui-title {
+	margin: 0 20%;
+}
 
 /* navigation -------------------------------------*/
 
@@ -53,8 +56,10 @@ button.hide {
 }
 /* pannel ----------------------------------------*/
 
-.ui-page .ui-header .ui-title {
-	margin: 0 20%;
+
+.ui-panel .ui-panel-inner {
+padding: 1em;
+background: #CBE8C5;
 }
 .ui-panel span {
 	padding: 12px 10px 0;
