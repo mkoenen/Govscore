@@ -751,7 +751,7 @@ function ag4saveServer() {
 
         ag4saved = window.localStorage.setItem("ag4saved", "true");
 
-        ag4data = { "ag4date" : ag4date, "name": name, "email": email, "organization": organization, "ag61": ag61, "ag62": ag62, "ag63": ag63, "ag64": ag64, "ag65": ag65, "ag66": ag66, "ag67": ag67, "ag68": ag68, "ag69": ag69, "ag70": ag70, "ag71": ag71, "ag72": ag72, "ag73": ag73, "ag74": ag74, "ag75": ag75, "ag76": ag76, "ag77": ag77, "ag78": ag78, "ag79": ag79, "ag80": ag80, "ag81": ag81, "ag82": ag82, "ag83": ag83, "ag84": ag84 };
+        ag4data = { "ag4date" : ag4date, "email": email, "ag61": ag61, "ag62": ag62, "ag63": ag63, "ag64": ag64, "ag65": ag65, "ag66": ag66, "ag67": ag67, "ag68": ag68, "ag69": ag69, "ag70": ag70, "ag71": ag71, "ag72": ag72, "ag73": ag73, "ag74": ag74, "ag75": ag75, "ag76": ag76, "ag77": ag77, "ag78": ag78, "ag79": ag79, "ag80": ag80, "ag81": ag81, "ag82": ag82, "ag83": ag83, "ag84": ag84 };
        
         $.ajax({
             type       : "GET",
@@ -883,7 +883,7 @@ Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic 
 Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
 Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
 
-var accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel, weakest;
+var accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel,;
 
 function checkResults(){
     var saved = window.localStorage.getItem("saved");
