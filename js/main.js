@@ -78,8 +78,8 @@ function validate() {
 function validateEmail() {
 
    var emailID = document.gsForm.email.value;
-   atpos = emailID.indexOf("@");
-   dotpos = emailID.lastIndexOf(".");
+   var atpos = emailID.indexOf("@");
+   var dotpos = emailID.lastIndexOf(".");
    if (atpos < 1 || ( dotpos - atpos < 2 )) {
 
        navigator.notification.alert("Please enter a correct email address");
@@ -248,7 +248,7 @@ function checkConnection(whichfunction) {
     return answer;
 }*/
 
-var answers = [], gsSaved, gsdate, name, email, gs1,  gs2, gs3, gs4, gs5, gs6, gs7, gs8, gs9, gs10, gs11, gs12, g1s3, gs14, gs15, gs16, gs17, gs18, gs19, gs20, gs21, gs22, gs23, gs24, gs25;
+var answers = [], gsSaved, gsdate, name, email, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
 
 function savelocal() {
  
@@ -265,20 +265,21 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     window.localStorage.setItem("organization", organization);
 
+    var i, j, k, v;
+
     //run a loop for: var gs1 = $('input[name="question1"]:checked').val();and put answers into an array
     for(i=1; i<=25; i++) {
-      var k = "gs" + i;
-      var q = "question" + i;
-      k = $('input[name = ' + q + ']:checked').val();
-      answers.push(k);
+        k = "g" + i;
+        q = "question" + i;
+        k = $('input[name = ' + q + ']:checked').val();
+        answers.push(k);
     }
 
     //loop through the array and put all answers into local storage
     for(var i = 0; i < answers.length; i++){
-      var k = "gs"+(i+1);
-      var v = answers[i];
+        k = "g"+(i+1);
+        v = answers[i];
         window.localStorage.setItem(k,v);
-        //alert(k + ", " + v);
     }
     
 
@@ -310,31 +311,31 @@ function saveServer() {
         name = window.localStorage.getItem("name");
         email = window.localStorage.getItem("email");
         organization = window.localStorage.getItem("organization");
-        g1 = window.localStorage.getItem("gs1");
-        g2 = window.localStorage.getItem("gs2");
-        g3 = window.localStorage.getItem("gs3");
-        g4 = window.localStorage.getItem("gs4");
-        g5 = window.localStorage.getItem("gs5");
-        g6 = window.localStorage.getItem("gs6");
-        g7 = window.localStorage.getItem("gs7");
-        g8 = window.localStorage.getItem("gs8");
-        g9 = window.localStorage.getItem("gs9");
-        g10 = window.localStorage.getItem("gs10");
-        g11 = window.localStorage.getItem("gs11");
-        g12 = window.localStorage.getItem("gs12");
-        g13 = window.localStorage.getItem("gs13");
-        g14 = window.localStorage.getItem("gs14");
-        g15 = window.localStorage.getItem("gs15");
-        g16 = window.localStorage.getItem("gs16");
-        g17 = window.localStorage.getItem("gs17");
-        g18 = window.localStorage.getItem("gs18");
-        g19 = window.localStorage.getItem("gs19");
-        g20 = window.localStorage.getItem("gs20");
-        g21 = window.localStorage.getItem("gs21");
-        g22 = window.localStorage.getItem("gs22");
-        g23 = window.localStorage.getItem("gs23");
-        g24 = window.localStorage.getItem("gs24");
-        g25 = window.localStorage.getItem("gs25");
+        g1 = window.localStorage.getItem("g1");
+        g2 = window.localStorage.getItem("g2");
+        g3 = window.localStorage.getItem("g3");
+        g4 = window.localStorage.getItem("g4");
+        g5 = window.localStorage.getItem("g5");
+        g6 = window.localStorage.getItem("g6");
+        g7 = window.localStorage.getItem("g7");
+        g8 = window.localStorage.getItem("g8");
+        g9 = window.localStorage.getItem("g9");
+        g10 = window.localStorage.getItem("g10");
+        g11 = window.localStorage.getItem("g11");
+        g12 = window.localStorage.getItem("g12");
+        g13 = window.localStorage.getItem("g13");
+        g14 = window.localStorage.getItem("g14");
+        g15 = window.localStorage.getItem("g15");
+        g16 = window.localStorage.getItem("g16");
+        g17 = window.localStorage.getItem("g17");
+        g18 = window.localStorage.getItem("g18");
+        g19 = window.localStorage.getItem("g19");
+        g20 = window.localStorage.getItem("g20");
+        g21 = window.localStorage.getItem("g21");
+        g22 = window.localStorage.getItem("g22");
+        g23 = window.localStorage.getItem("g23");
+        g24 = window.localStorage.getItem("g24");
+        g25 = window.localStorage.getItem("g25");
 
         gsSaved = window.localStorage.setItem("saved", "true");
 
@@ -361,9 +362,7 @@ function saveServer() {
 
     }else{
         alreadySaved();
-    }
-
-    
+    } 
 }
 
 
@@ -453,7 +452,7 @@ function ag1saveServer() {
         ag1saved = window.localStorage.setItem("ag1saved", "true");
 
 
-        var ag1data = { "ag1date" : ag1date, "email": email, "ag1": ag1, "ag2": ag2, "ag3": ag3, "ag4": ag4, "ag5": ag5, "ag6": ag6, "ag7": ag7, "ag8": ag8, "ag9": ag9, "ag10": ag10, "ag11": ag11, "ag12": ag12, "ag13": ag13, "ag14": ag14, "ag15": ag15, "ag16": ag16, "ag17": ag17, "ag18": ag18, "ag19": ag19, "ag20": ag20, "ag21": ag21, "ag22": ag22, "ag23": ag23, "ag24": ag24 };
+        ag1data = { "ag1date" : ag1date, "email": email, "ag1": ag1, "ag2": ag2, "ag3": ag3, "ag4": ag4, "ag5": ag5, "ag6": ag6, "ag7": ag7, "ag8": ag8, "ag9": ag9, "ag10": ag10, "ag11": ag11, "ag12": ag12, "ag13": ag13, "ag14": ag14, "ag15": ag15, "ag16": ag16, "ag17": ag17, "ag18": ag18, "ag19": ag19, "ag20": ag20, "ag21": ag21, "ag22": ag22, "ag23": ag23, "ag24": ag24 };
        
         $.ajax({
             type       : "GET",
@@ -470,13 +469,9 @@ function ag1saveServer() {
                 alert(response);                  
             }
         });
-
     }else{
-
         //alreadySaved();
-
     }
-
 }
 
 /* AG 2 -------------------------------------------------------*/
@@ -579,13 +574,9 @@ function ag2saveServer() {
                 alert(response);                  
             }
         });
-
     }else{
-
       //  alreadySaved();
-
     }
-
 }
 
 /* AG 3 -------------------------------------------------------*/
@@ -659,8 +650,7 @@ function ag3saveServer() {
 
         ag3saved = window.localStorage.setItem("ag3saved", "true");
 
-        ag3data = { "ag3date" : ag3date, "email": email, "ag49": ag49, "ag50": ag50, "ag51": ag51, "ag52": ag52, "ag53": ag53, "ag54": ag54
-        , "ag55": ag55, "ag56": ag56, "ag57": ag57, "ag58": ag58, "ag59": ag59, "ag60": ag60 };
+        ag3data = { "ag3date" : ag3date, "email": email, "ag49": ag49, "ag50": ag50, "ag51": ag51, "ag52": ag52, "ag53": ag53, "ag54": ag54, "ag55": ag55, "ag56": ag56, "ag57": ag57, "ag58": ag58, "ag59": ag59, "ag60": ag60 };
        
         $.ajax({
             type       : "GET",
@@ -677,18 +667,12 @@ function ag3saveServer() {
                 alert(response);                  
             }
         });
-
        
         //afterSavedServer();
 
-
-
     }else{
-
        // alreadySaved();
-
     }
-
 }
 
 /* AG 4 -------------------------------------------------------*/
@@ -797,14 +781,10 @@ function ag4saveServer() {
        
         //afterSavedServer();
 
-
-
     }else{
 
         //alreadySaved();
-
     }
-
 }
 
 /* AG 5 -------------------------------------------------------*/
@@ -903,7 +883,6 @@ function ag5saveServer() {
       //  alreadySaved();
 
     }
-
 } 
 
 /* Results -----------------*/
@@ -914,7 +893,7 @@ Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic 
 Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
 Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
 
-var accScore, stakeScore, dirScore, resScore, enhanceScore;
+var accScore, stakeScore, dirScore, resScore, enhanceScore, weakest;
 
 function checkResults(){
     var saved = window.localStorage.getItem("saved");
@@ -1019,13 +998,13 @@ function calcResults() {
     //get only the weakest percentages in an array
     var sortedPercent = percentArray.sort(compareNumbers);
     if(sortedPercent[0]!=sortedPercent[1] && sortedPercent[1] != sortedPercent[2]){
-        var weakest = sortedPercent.slice(0,3);
+        weakest = sortedPercent.slice(0,3);
     }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2]){
-        var weakest = sortedPercent.slice(0,4);
+        weakest = sortedPercent.slice(0,4);
     }else if(sortedPercent[0]==sortedPercent[1] || sortedPercent[1] == sortedPercent[2] && sortedPercent[2] == sortedPercent[3]){
-        var weakest = sortedPercent.slice(0,5);
+        weakest = sortedPercent.slice(0,5);
     }else {
-        var weakest = sortedPercent;
+        weakest = sortedPercent;
     }
 
     //find the areas the percentages belong in
