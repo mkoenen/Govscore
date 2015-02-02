@@ -541,7 +541,7 @@ var ag3answers = [], ag3saved, ag3date, ag49, ag50, ag51, ag52, ag53, ag54, ag55
 function getinputs(num1,num2,prefix,thisarr){
     var i,k;
     for(i=num1; i<=num2; i++) {
-        k = "prefix" + i;
+        k = prefix + i;
         k = $('input[name = ' + k + ']:checked').val();
         thisarr.push(k);
     }
