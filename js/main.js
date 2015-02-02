@@ -220,24 +220,9 @@ function savelocal() {
     window.localStorage.setItem("organization", organization);
 
     
-
-    //run a loop for: var gs1 = $('input[name="question1"]:checked').val();and put answers into an array
-    /*for(i=1; i<=25; i++) {
-        k = "g" + i;
-        k = $('input[name = ' + k + ']:checked').val();
-        answers.push(k);
-    }*/
     getinputs(1,25,"g",answers);
 
-    //loop through the array and put all answers into local storage
-    /*for(j = 0; j < answers.length; j++){
-        k = "g"+(j+1);
-        v = answers[j];
-        window.localStorage.setItem(k,v);
-    }*/
     storelocal(answers,"g",1);
-
-    
 
     hideSaveButton();
 
@@ -338,23 +323,8 @@ function ag1savelocal() {
     ag1date = formatDate(ag1date);
     window.localStorage.setItem("ag1date", ag1date);
 
-
-  
-
-    //loop through the inputs and add to array
-    /*for(i=1; i<=24; i++) {
-      k = "ag" + i;
-      k = $('input[name = ' + k + ']:checked').val();
-      ag1answers.push(k);
-    }*/
     getinputs(1,24,"ag",ag1answers);
     
-    //loop through the array and put all answers into local storage
-    /*for(j = 0; j < ag1answers.length; j++){
-      k = "ag"+(j+1);
-      v = ag1answers[j];
-        window.localStorage.setItem(k,v);
-    }*/
     storelocal(ag1answers,"ag",1);
 
     //hide save button
@@ -446,25 +416,10 @@ function ag2savelocal() {
     ag2date = formatDate(ag2date);
     window.localStorage.setItem("ag2date", ag2date);
 
-
-    
-
-    //loop through the inputs and add to array
-    /*for(i=25; i<=48; i++) {
-      k = "ag" + i;
-      k = $('input[name = ' + k + ']:checked').val();
-      ag2answers.push(k);
-    }*/
     getinputs(25,48,"ag",ag2answers);
     
-    //loop through the array and put all answers into local storage
-    /*for(j = 0; j < ag2answers.length; j++){
-      k = "ag"+(j+25);
-      v = ag2answers[j];
-        window.localStorage.setItem(k,v);
-        //alert(k + ", " + v);
-    }*/
     storelocal(ag2answers,"ag",25);
+
     //hide save button
     hideSaveButton();
 
@@ -554,24 +509,10 @@ function ag3savelocal() {
     ag3date = formatDate(ag3date);
     window.localStorage.setItem("ag3date", ag3date);
 
-
-    
-
-    //loop through the inputs and add to array
-   /* for(i=49; i<=60; i++) {
-      k = "ag" + i;
-      k = $('input[name = ' + k + ']:checked').val();
-      ag3answers.push(k);
-    }*/
     getinputs(49,60,"ag",ag3answers);
     
-    //loop through the array and put all answers into local storage
-    /*for(j = 0; j < ag3answers.length; j++){
-      k = "ag"+(j+49);
-      v = ag3answers[j];
-        window.localStorage.setItem(k,v);
-    }*/
     storelocal(ag3answers,"ag",49);
+
     //hide save button
     hideSaveButton();
 
@@ -650,26 +591,10 @@ function ag4savelocal() {
     ag4date = formatDate(ag4date);
     window.localStorage.setItem("ag4date", ag4date);
 
-
-
-    //loop through the inputs and add to array
-    /*for(i=61; i<=84; i++) {
-      k = "ag" + i;
-      k = $('input[name = ' + k + ']:checked').val();
-      ag4answers.push(k);
-    }*/
     getinputs(61,84,"ag",ag4answers);
     
-    //loop through the array and put all answers into local storage
-    /*for(j = 0; j < ag4answers.length; j++){
-      k = "ag"+(j+61);
-      v = ag4answers[j];
-        window.localStorage.setItem(k,v);
-    }*/
     storelocal(ag4answers,"ag",61);
     
-   
-
     //hide save button
     hideSaveButton();
 
@@ -760,23 +685,8 @@ function ag5savelocal() {
     ag5date = formatDate(ag5date);
     window.localStorage.setItem("ag5ate", ag5date);
 
-
-  
-
-    //loop through the inputs and add to array
-    /*for(i=85; i<=100; i++) {
-      k = "ag" + i;
-      k = $('input[name = ' + k + ']:checked').val();
-      ag5answers.push(k);
-    }*/
-     getinputs(85,100,"ag",ag5answers);
+    getinputs(85,100,"ag",ag5answers);
     
-    //loop through the array and put all answers into local storage
-    /*for(j = 0; j < ag5answers.length; j++){
-      k = "ag"+(j+85);
-      v = ag5answers[j];
-        window.localStorage.setItem(k,v);
-    }*/
     storelocal(ag5answers,"ag",85);
 
     //hide save button
@@ -910,6 +820,12 @@ function checkResults(){
 
 //add up the numbers
 function calcResults() {
+
+    for(i=1, i<=25, i++ ){
+        var v;
+        v = ("g" + i);
+        v = window.localStorage.getItem("v");
+    }
 
         /*var g1 = window.localStorage.getItem("gs1");
         var g2 = window.localStorage.getItem("gs2");
