@@ -538,6 +538,15 @@ var ag3answers = [], ag3saved, ag3date, ag49, ag50, ag51, ag52, ag53, ag54, ag55
 
 /* store locally */
 
+function getinputs(num1,num2,prefix,thisarr){
+    var i,k;
+    for(i=num1; i<=num2; i++) {
+        k = "prefix" + i;
+        k = $('input[name = ' + k + ']:checked').val();
+        thisarr.push(k);
+    }
+}
+
 function ag3savelocal() {
 
     ag3date = new Date();
@@ -548,11 +557,12 @@ function ag3savelocal() {
     var i, j, k, v;
 
     //loop through the inputs and add to array
-    for(i=49; i<=60; i++) {
+   /* for(i=49; i<=60; i++) {
       k = "ag" + i;
       k = $('input[name = ' + k + ']:checked').val();
       ag3answers.push(k);
-    }
+    }*/
+    getinputs(49,60,"ag",ag3answers);
     
     //loop through the array and put all answers into local storage
     for(j = 0; j < ag3answers.length; j++){
