@@ -879,7 +879,7 @@ function calcResults() {
     var resPercent = Math.round(resScore/resPossible*100);
     percentArray.push(resPercent);
 
-    enhScore = panswers[8]+answers[14]+answers[17]+answers[18]+answers[19]+answers[23];
+    enhScore = answers[8]+answers[14]+answers[17]+answers[18]+answers[19]+answers[23];
     var enhPossible = 24;
     var enhPercent = Math.round(enhScore/enhPossible*100);
     percentArray.push(enhPercent);
