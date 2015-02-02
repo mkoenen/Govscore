@@ -242,8 +242,8 @@ function saveServer() {
     var data;
 
     //first check if data has been saved to server already
-    name = window.localStorage.getItem("name");
-    gsSaved = window.localStorage.getItem("gsSaved");
+    //name = window.localStorage.getItem("name");
+    //gsSaved = window.localStorage.getItem("saved");
     if (gsSaved !== "true" && name !== null ) {
 
        
@@ -302,10 +302,7 @@ function saveServer() {
             }  
         });
 
-    }else{
-
-        alreadySaved();
-    } 
+    }
 }
 
 
@@ -345,8 +342,8 @@ function ag1saveServer() {
     var ag1data;
 
     //first check if data has been saved to server already
-    ag1saved = window.localStorage.getItem("ag1saved");
-    ag1 = window.localStorage.getItem("ag1");
+    //ag1saved = window.localStorage.getItem("ag1saved");
+    //ag1 = window.localStorage.getItem("ag1");
 
     if (ag1saved !== "true" && ag1 !== null ) {
     
@@ -398,9 +395,6 @@ function ag1saveServer() {
                 alert(response);                  
             }
         });
-    }else{
-
-        alreadySaved();
     }
 }
 
@@ -438,8 +432,8 @@ function ag2saveServer() {
     var ag2data;
 
     //first check if data has been saved to server already
-    ag2saved = window.localStorage.getItem("ag2saved");
-    ag25 = window.localStorage.getItem("ag25");
+    //ag2saved = window.localStorage.getItem("ag2saved");
+    //ag25 = window.localStorage.getItem("ag25");
 
     if (ag2saved !== "true" && ag25 !== null ) {
     
@@ -490,9 +484,6 @@ function ag2saveServer() {
                 alert(response);                  
             }
         });
-    }else{
-
-       alreadySaved();
     }
 }
 
@@ -531,8 +522,8 @@ function ag3saveServer() {
     var ag3data;
 
     //first check if data has been saved to server already
-    ag3saved = window.localStorage.getItem("ag3saved");
-    ag49 = window.localStorage.getItem("ag49");
+    //ag3saved = window.localStorage.getItem("ag3saved");
+    //ag49 = window.localStorage.getItem("ag49");
     //alert( "saved is " + getag3Saved + "and data is " + savedag13b); //temp
 
     if (ag3saved !== "true" && ag49 !== null ) {
@@ -574,9 +565,6 @@ function ag3saveServer() {
             }
         });
 
-    }else{
-
-        alreadySaved();
     }
 }
 
@@ -613,8 +601,8 @@ function ag4saveServer() {
     var ag4data;
 
     //first check if data has been saved to server already
-    ag4saved = window.localStorage.getItem("ag4saved");
-    ag61 = window.localStorage.getItem("ag61");
+    //ag4saved = window.localStorage.getItem("ag4saved");
+    //ag61 = window.localStorage.getItem("ag61");
     //alert( "saved is " + getag4Saved + "and data is " + savedag16b); //temp
 
     if (ag4saved !== "true" && ag61 !== null ) {
@@ -670,9 +658,6 @@ function ag4saveServer() {
        
         //afterSavedServer();
 
-    }else{
-
-        alreadySaved();
     }
 }
 
@@ -707,8 +692,8 @@ function ag5saveServer() {
     var ag5data;
 
     //first check if data has been saved to server already
-    ag5saved = window.localStorage.getItem("ag5saved");
-    ag85 = window.localStorage.getItem("ag85");
+    //ag5saved = window.localStorage.getItem("ag5saved");
+    //ag85 = window.localStorage.getItem("ag85");
     //alert( "saved is " + getag5Saved + "and name is " + savedag22b); //temp
 
     if (ag5saved !== "true" &&  ag85 !== null ) {
@@ -752,10 +737,6 @@ function ag5saveServer() {
                 alert(response);                  
             }
         });
-
-    }else{
-
-      //  alreadySaved();
 
     }
 } 
@@ -821,46 +802,9 @@ function checkResults(){
 
 //add up the numbers
 function calcResults() {
-    
-    alert(answers);
-
-    /*for(i=1; i<=25; i++ ){
-        var v;
-        v = ("g" + i);
-        v = window.localStorage.getItem("v");
-
-    }*/
-
-        /*var g1 = window.localStorage.getItem("gs1");
-        var g2 = window.localStorage.getItem("gs2");
-        var g3 = window.localStorage.getItem("gs3");
-        var g4 = window.localStorage.getItem("gs4");
-        var g5 = window.localStorage.getItem("gs5");
-        var g6 = window.localStorage.getItem("gs6");
-        var g7 = window.localStorage.getItem("gs7");
-        var g8 = window.localStorage.getItem("gs8");
-        var g9 = window.localStorage.getItem("gs9");
-        var g10 = window.localStorage.getItem("gs10");
-        var g11 = window.localStorage.getItem("gs11");
-        var g12 = window.localStorage.getItem("gs12");
-        var g13 = window.localStorage.getItem("gs13");
-        var g14 = window.localStorage.getItem("gs14");
-        var g15 = window.localStorage.getItem("gs15");
-        var g16 = window.localStorage.getItem("gs16");
-        var g17 = window.localStorage.getItem("gs17");
-        var g18 = window.localStorage.getItem("gs18");
-        var g19 = window.localStorage.getItem("gs19");
-        var g20 = window.localStorage.getItem("gs20");
-        var g21 = window.localStorage.getItem("gs21");
-        var g22 = window.localStorage.getItem("gs22");
-        var g23 = window.localStorage.getItem("gs23");
-        var g24 = window.localStorage.getItem("gs24");
-        var g25 = window.localStorage.getItem("gs25");*/
 
     var percentArray = [];
-    alert(answers);
-    alert(answers[0]);
-    alert(answers[0] + answers[1]);
+    
 
     accScore = parseInt.answers[0] + parseInt.answers[1] + parseInt.answers[4] + parseInt.answers[7] + parseInt.answers[9] + parseInt.answers[12];
     var accPossible = 24;
