@@ -862,27 +862,27 @@ function calcResults() {
     alert(answers[0]);
     alert(answers[0] + answers[1]);
 
-    accScore = (answers[0]) + (answers[1]) + (answers[4]) + (answers[7]) + (answers[9]) + (answers[12]);
+    accScore = parseInt.answers[0] + parseInt.answers[1] + parseInt.answers[4] + parseInt.answers[7] + parseInt.answers[9] + parseInt.answers[12];
     var accPossible = 24;
     var accPercent = Math.round(accScore/accPossible*100);
     percentArray.push(accPercent);
 
-    stakeScore = answers[10]+answers[13]+answers[21];
+    stakeScore = parseInt.answers[10]+parseInt.answers[13]+parseInt.answers[21];
     var stakePossible = 12;
     var stakePercent = Math.round(stakeScore/stakePossible*100);
     percentArray.push(stakePercent);
 
-    dirScore = answers[5]+answers[6]+answers[11]+answers[15];
+    dirScore = parseInt.answers[5]+parseInt.answers[6]+parseInt.answers[11]+parseInt.answers[15];
     var dirPossible = 16;
     var dirPercent = Math.round(dirScore/dirPossible*100);
     percentArray.push(dirPercent);
 
-    resScore = answers[2]+answers[3]+answers[16]+answers[20]+answers[22]+answers[24];
+    resScore = parseInt.answers[2]+parseInt.answers[3]+parseInt.answers[16]+parseInt.answers[20]+parseInt.answers[22]+parseInt.answers[24];
     var resPossible = 24;
     var resPercent = Math.round(resScore/resPossible*100);
     percentArray.push(resPercent);
 
-    enhScore = answers[8]+answers[14]+answers[17]+answers[18]+answers[19]+answers[23];
+    enhScore = parseInt.answers[8]+parseInt.answers[14]+parseInt.answers[17]+parseInt.answers[18]+parseInt.answers[19]+parseInt.answers[23];
     var enhPossible = 24;
     var enhPercent = Math.round(enhScore/enhPossible*100);
     percentArray.push(enhPercent);
