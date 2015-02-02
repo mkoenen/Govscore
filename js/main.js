@@ -1,7 +1,4 @@
 /* Events -----------------------------------------*/
-
-var organization;
-
 window.onload = function(){
     //window.setTimeout(beonline, 6000);
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
@@ -93,7 +90,7 @@ function validateEmail() {
 }
 
 /* Notifications ----------------------------------*/
-
+var organization;
 
 function messageAfterSaveLocal() {
     navigator.notification.alert(
