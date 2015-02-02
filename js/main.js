@@ -859,7 +859,7 @@ function calcResults() {
 
     var percentArray = [];
 
-    accScore = answers[0]+answers[1]+answers[4]+answers[7]+answers[9]+answers[12];
+    accScore = (answers[0]) + (answers[1]) + (answers[4]) + (answers[7]) + (answers[9]) + (answers[12]);
     var accPossible = 24;
     var accPercent = Math.round(accScore/accPossible*100);
     percentArray.push(accPercent);
