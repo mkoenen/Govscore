@@ -227,7 +227,7 @@ function savelocal() {
         k = $('input[name = ' + k + ']:checked').val();
         answers.push(k);
     }*/
-    getinputs(1,25,g,answers);
+    getinputs(1,25,"g",answers);
 
     //loop through the array and put all answers into local storage
     /*for(j = 0; j < answers.length; j++){
@@ -235,7 +235,7 @@ function savelocal() {
         v = answers[j];
         window.localStorage.setItem(k,v);
     }*/
-    storelocal(answers,g,1);
+    storelocal(answers,"g",1);
 
     
 
@@ -347,7 +347,7 @@ function ag1savelocal() {
       k = $('input[name = ' + k + ']:checked').val();
       ag1answers.push(k);
     }*/
-    getinputs(1,24,ag,ag1answers);
+    getinputs(1,24,"ag",ag1answers);
     
     //loop through the array and put all answers into local storage
     /*for(j = 0; j < ag1answers.length; j++){
@@ -355,7 +355,7 @@ function ag1savelocal() {
       v = ag1answers[j];
         window.localStorage.setItem(k,v);
     }*/
-    storelocal(ag1answers,ag,1);
+    storelocal(ag1answers,"ag",1);
 
     //hide save button
     hideSaveButton();
@@ -455,7 +455,7 @@ function ag2savelocal() {
       k = $('input[name = ' + k + ']:checked').val();
       ag2answers.push(k);
     }*/
-    getinputs(25,48,ag,ag2answers);
+    getinputs(25,48,"ag",ag2answers);
     
     //loop through the array and put all answers into local storage
     /*for(j = 0; j < ag2answers.length; j++){
@@ -464,7 +464,7 @@ function ag2savelocal() {
         window.localStorage.setItem(k,v);
         //alert(k + ", " + v);
     }*/
-    storelocal(ag2answers,ag,25);
+    storelocal(ag2answers,"ag",25);
     //hide save button
     hideSaveButton();
 
@@ -571,7 +571,7 @@ function ag3savelocal() {
       v = ag3answers[j];
         window.localStorage.setItem(k,v);
     }*/
-    storelocal(ag3answers,ag,49);
+    storelocal(ag3answers,"ag",49);
     //hide save button
     hideSaveButton();
 
@@ -666,7 +666,7 @@ function ag4savelocal() {
       v = ag4answers[j];
         window.localStorage.setItem(k,v);
     }*/
-    storelocal(ag4answers,ag,61);
+    storelocal(ag4answers,"ag",61);
     
    
 
@@ -777,7 +777,7 @@ function ag5savelocal() {
       v = ag5answers[j];
         window.localStorage.setItem(k,v);
     }*/
-    storelocal(ag5answers,ag,85);
+    storelocal(ag5answers,"ag",85);
 
     //hide save button
     hideSaveButton();
