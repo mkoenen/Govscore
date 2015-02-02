@@ -192,6 +192,7 @@ function getinputs(num1,num2,prefix,thisarr){
 
 //loop through array and put into local storage
 function storelocal(thisarr,prefix,num1){
+    var j,k,v;
     for(j = 0; j < thisarr.length; j++){
         k = prefix + (j+num1);
         v = thisarr[j];
@@ -218,7 +219,7 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     window.localStorage.setItem("organization", organization);
 
-    var i, j, k, v, ;
+    
 
     //run a loop for: var gs1 = $('input[name="question1"]:checked').val();and put answers into an array
     /*for(i=1; i<=25; i++) {
@@ -338,7 +339,7 @@ function ag1savelocal() {
     window.localStorage.setItem("ag1date", ag1date);
 
 
-    var i, j, k, v;
+  
 
     //loop through the inputs and add to array
     /*for(i=1; i<=24; i++) {
@@ -446,7 +447,7 @@ function ag2savelocal() {
     window.localStorage.setItem("ag2date", ag2date);
 
 
-    var i, j, k, v;
+    
 
     //loop through the inputs and add to array
     /*for(i=25; i<=48; i++) {
@@ -554,7 +555,7 @@ function ag3savelocal() {
     window.localStorage.setItem("ag3date", ag3date);
 
 
-    var i, j, k, v;
+    
 
     //loop through the inputs and add to array
    /* for(i=49; i<=60; i++) {
@@ -650,7 +651,6 @@ function ag4savelocal() {
     window.localStorage.setItem("ag4date", ag4date);
 
 
-    var i, j, k, v;
 
     //loop through the inputs and add to array
     /*for(i=61; i<=84; i++) {
@@ -761,7 +761,7 @@ function ag5savelocal() {
     window.localStorage.setItem("ag5ate", ag5date);
 
 
-    var i, j, k, v;
+  
 
     //loop through the inputs and add to array
     /*for(i=85; i<=100; i++) {
@@ -772,11 +772,11 @@ function ag5savelocal() {
      getinputs(85,100,"ag",ag5answers);
     
     //loop through the array and put all answers into local storage
-    for(j = 0; j < ag5answers.length; j++){
+    /*for(j = 0; j < ag5answers.length; j++){
       k = "ag"+(j+85);
       v = ag5answers[j];
         window.localStorage.setItem(k,v);
-    }
+    }*/
     storelocal(ag5answers,ag,85);
 
     //hide save button
