@@ -821,7 +821,7 @@ function checkResults(){
 //add up the numbers
 function calcResults() {
 
-    for(i=1, i<=25, i++ ){
+    for(i=1; i<=25; i++ ){
         var v;
         v = ("g" + i);
         v = window.localStorage.getItem("v");
