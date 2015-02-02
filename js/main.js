@@ -822,7 +822,7 @@ function checkResults(){
 //add up the numbers
 function calcResults() {
     
-    alert(thisarr);
+    alert(answers);
 
     /*for(i=1; i<=25; i++ ){
         var v;
