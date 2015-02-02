@@ -242,8 +242,7 @@ function saveServer() {
     var data;
 
     //first check if data has been saved to server already
-    //name = window.localStorage.getItem("name");
-    //gsSaved = window.localStorage.getItem("saved");
+    gsSaved = window.localStorage.getItem("saved");
     if (gsSaved !== "true" && name !== null ) {
 
        
@@ -279,7 +278,7 @@ function saveServer() {
         g24 = window.localStorage.getItem("g24");
         g25 = window.localStorage.getItem("g25");
 
-        gsSaved = window.localStorage.setItem("saved", "true");
+        window.localStorage.setItem("saved", "true");
 
         
         data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
@@ -342,8 +341,7 @@ function ag1saveServer() {
     var ag1data;
 
     //first check if data has been saved to server already
-    //ag1saved = window.localStorage.getItem("ag1saved");
-    //ag1 = window.localStorage.getItem("ag1");
+    ag1saved = window.localStorage.getItem("ag1saved");
 
     if (ag1saved !== "true" && ag1 !== null ) {
     
@@ -375,7 +373,7 @@ function ag1saveServer() {
         ag23 = window.localStorage.getItem("ag23");
         ag24 = window.localStorage.getItem("ag24");
 
-        ag1saved = window.localStorage.setItem("ag1saved", "true");
+        window.localStorage.setItem("ag1saved", "true");
 
 
         ag1data = { "ag1date" : ag1date, "email": email, "ag1": ag1, "ag2": ag2, "ag3": ag3, "ag4": ag4, "ag5": ag5, "ag6": ag6, "ag7": ag7, "ag8": ag8, "ag9": ag9, "ag10": ag10, "ag11": ag11, "ag12": ag12, "ag13": ag13, "ag14": ag14, "ag15": ag15, "ag16": ag16, "ag17": ag17, "ag18": ag18, "ag19": ag19, "ag20": ag20, "ag21": ag21, "ag22": ag22, "ag23": ag23, "ag24": ag24 };
@@ -432,8 +430,7 @@ function ag2saveServer() {
     var ag2data;
 
     //first check if data has been saved to server already
-    //ag2saved = window.localStorage.getItem("ag2saved");
-    //ag25 = window.localStorage.getItem("ag25");
+    ag2saved = window.localStorage.getItem("ag2saved");
 
     if (ag2saved !== "true" && ag25 !== null ) {
     
@@ -465,7 +462,7 @@ function ag2saveServer() {
         ag47 = window.localStorage.getItem("ag47");
         ag48 = window.localStorage.getItem("ag48");
 
-        ag2saved = window.localStorage.setItem("ag2saved", "true");
+        window.localStorage.setItem("ag2saved", "true");
 
         ag2data = { "ag2date" : ag2date, "email": email, "ag25": ag25, "ag26": ag26, "ag27": ag27, "ag28": ag28, "ag29": ag29, "ag30": ag30, "ag31": ag31, "ag32": ag32, "ag33": ag33, "ag34": ag34, "ag35": ag35, "ag36": ag36, "ag37": ag37, "ag38": ag38, "ag39": ag39, "ag40": ag40, "ag41": ag41, "ag42": ag42, "ag43": ag43, "ag44": ag44, "ag45": ag45, "ag46": ag46, "ag47": ag47, "ag48": ag48 };
        
@@ -522,9 +519,7 @@ function ag3saveServer() {
     var ag3data;
 
     //first check if data has been saved to server already
-    //ag3saved = window.localStorage.getItem("ag3saved");
-    //ag49 = window.localStorage.getItem("ag49");
-    //alert( "saved is " + getag3Saved + "and data is " + savedag13b); //temp
+    ag3saved = window.localStorage.getItem("ag3saved");
 
     if (ag3saved !== "true" && ag49 !== null ) {
     
@@ -545,7 +540,7 @@ function ag3saveServer() {
         ag60 = window.localStorage.getItem("ag60");
         
 
-        ag3saved = window.localStorage.setItem("ag3saved", "true");
+        window.localStorage.setItem("ag3saved", "true");
 
         ag3data = { "ag3date" : ag3date, "email": email, "ag49": ag49, "ag50": ag50, "ag51": ag51, "ag52": ag52, "ag53": ag53, "ag54": ag54, "ag55": ag55, "ag56": ag56, "ag57": ag57, "ag58": ag58, "ag59": ag59, "ag60": ag60 };
        
@@ -601,9 +596,7 @@ function ag4saveServer() {
     var ag4data;
 
     //first check if data has been saved to server already
-    //ag4saved = window.localStorage.getItem("ag4saved");
-    //ag61 = window.localStorage.getItem("ag61");
-    //alert( "saved is " + getag4Saved + "and data is " + savedag16b); //temp
+    ag4saved = window.localStorage.getItem("ag4saved");
 
     if (ag4saved !== "true" && ag61 !== null ) {
     
@@ -636,7 +629,7 @@ function ag4saveServer() {
         ag84 = window.localStorage.getItem("ag84");
         
 
-        ag4saved = window.localStorage.setItem("ag4saved", "true");
+        window.localStorage.setItem("ag4saved", "true");
 
         ag4data = { "ag4date" : ag4date, "email": email, "ag61": ag61, "ag62": ag62, "ag63": ag63, "ag64": ag64, "ag65": ag65, "ag66": ag66, "ag67": ag67, "ag68": ag68, "ag69": ag69, "ag70": ag70, "ag71": ag71, "ag72": ag72, "ag73": ag73, "ag74": ag74, "ag75": ag75, "ag76": ag76, "ag77": ag77, "ag78": ag78, "ag79": ag79, "ag80": ag80, "ag81": ag81, "ag82": ag82, "ag83": ag83, "ag84": ag84 };
        
@@ -692,9 +685,7 @@ function ag5saveServer() {
     var ag5data;
 
     //first check if data has been saved to server already
-    //ag5saved = window.localStorage.getItem("ag5saved");
-    //ag85 = window.localStorage.getItem("ag85");
-    //alert( "saved is " + getag5Saved + "and name is " + savedag22b); //temp
+    ag5saved = window.localStorage.getItem("ag5saved");
 
     if (ag5saved !== "true" &&  ag85 !== null ) {
     
@@ -718,7 +709,7 @@ function ag5saveServer() {
         ag99 = window.localStorage.getItem("ag99");
         ag100 = window.localStorage.getItem("ag100");
         
-        ag5saved = window.localStorage.setItem("ag5saved", "true");
+        window.localStorage.setItem("ag5saved", "true");
 
         ag5data = { "ag5date" : ag5date, "email": email, "ag85": ag85, "ag86": ag86, "ag87": ag87, "ag88": ag88, "ag89": ag89, "ag90": ag90, "ag91": ag91, "ag92": ag92, "ag93": ag93, "ag94": ag94, "ag95": ag95, "ag96": ag96, "ag97": ag97, "ag98": ag98, "ag99": ag99, "ag100": ag100 };
        
