@@ -3,7 +3,6 @@ window.onload = function(){
     //window.setTimeout(beonline, 6000);
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
-    //document.addEventListener("deviceready", resultsButton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", hideSaveButton, false);
     document.addEventListener("deviceready", checkResults, false);
@@ -880,7 +879,7 @@ Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic 
 Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
 Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
 
-var accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel,;
+var accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel;
 
 function checkResults(){
     var saved = window.localStorage.getItem("saved");
