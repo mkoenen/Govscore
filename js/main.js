@@ -177,27 +177,30 @@ function checkConnection(whichfunction) {
 }
 
 
+/* Functions for processing data -----------------------------------------------*/
 
 
+//loop through the inputs and add to array
+function getinputs(num1,num2,prefix,thisarr){
+    var i,k;
+    for(i=num1; i<=num2; i++) {
+        k = prefix + i;
+        k = $('input[name = ' + k + ']:checked').val();
+        thisarr.push(k);
+    }
+}
 
-
+//loop through array and put into local storage
+function storelocal(thisarr,prefix,num1){
+    for(j = 0; j < thisarr.length; j++){
+        k = prefix + (j+num1);
+        v = thisarr[j];
+        window.localStorage.setItem(k,v);
+    }  
+}
 
 
 /* Initial Govscore -----------------------------------------------*/
-
-/* Save locally */
-
-/*function getAnswer(answer,question){
-    var a = document.getElementsByName(question);
-    for(var i = 0; i < a.length; i++){
-        if(a[i].checked){
-            answer = a[i].value;
-        }
-    }
-    answers.push(answer);
-    return answer;
-}*/
-
 var answers = [], gsSaved, gsdate, name, email, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
 
 function savelocal() {
@@ -215,22 +218,24 @@ function savelocal() {
     organization =  $( "#organization" ).val();
     window.localStorage.setItem("organization", organization);
 
-    var i, j, k, v, q;
+    var i, j, k, v, ;
 
     //run a loop for: var gs1 = $('input[name="question1"]:checked').val();and put answers into an array
-    for(i=1; i<=25; i++) {
+    /*for(i=1; i<=25; i++) {
         k = "g" + i;
-        q = "question" + i;
-        k = $('input[name = ' + q + ']:checked').val();
+        k = $('input[name = ' + k + ']:checked').val();
         answers.push(k);
-    }
+    }*/
+    getinputs(1,25,g,answers);
 
     //loop through the array and put all answers into local storage
-    for(j = 0; j < answers.length; j++){
+    /*for(j = 0; j < answers.length; j++){
         k = "g"+(j+1);
         v = answers[j];
         window.localStorage.setItem(k,v);
-    }
+    }*/
+    storelocal(answers,g,1);
+
     
 
     hideSaveButton();
@@ -336,19 +341,20 @@ function ag1savelocal() {
     var i, j, k, v;
 
     //loop through the inputs and add to array
-    for(i=1; i<=24; i++) {
+    /*for(i=1; i<=24; i++) {
       k = "ag" + i;
       k = $('input[name = ' + k + ']:checked').val();
       ag1answers.push(k);
-    }
+    }*/
+    getinputs(1,24,ag,ag1answers);
     
     //loop through the array and put all answers into local storage
-    for(j = 0; j < ag1answers.length; j++){
+    /*for(j = 0; j < ag1answers.length; j++){
       k = "ag"+(j+1);
       v = ag1answers[j];
         window.localStorage.setItem(k,v);
-    }
-  
+    }*/
+    storelocal(ag1answers,ag,1);
 
     //hide save button
     hideSaveButton();
@@ -443,20 +449,21 @@ function ag2savelocal() {
     var i, j, k, v;
 
     //loop through the inputs and add to array
-    for(i=25; i<=48; i++) {
+    /*for(i=25; i<=48; i++) {
       k = "ag" + i;
       k = $('input[name = ' + k + ']:checked').val();
       ag2answers.push(k);
-    }
+    }*/
+    getinputs(25,48,ag,ag2answers);
     
     //loop through the array and put all answers into local storage
-    for(j = 0; j < ag2answers.length; j++){
+    /*for(j = 0; j < ag2answers.length; j++){
       k = "ag"+(j+25);
       v = ag2answers[j];
         window.localStorage.setItem(k,v);
         //alert(k + ", " + v);
-    }
-
+    }*/
+    storelocal(ag2answers,ag,25);
     //hide save button
     hideSaveButton();
 
@@ -538,14 +545,7 @@ var ag3answers = [], ag3saved, ag3date, ag49, ag50, ag51, ag52, ag53, ag54, ag55
 
 /* store locally */
 
-function getinputs(num1,num2,prefix,thisarr){
-    var i,k;
-    for(i=num1; i<=num2; i++) {
-        k = prefix + i;
-        k = $('input[name = ' + k + ']:checked').val();
-        thisarr.push(k);
-    }
-}
+
 
 function ag3savelocal() {
 
@@ -565,12 +565,12 @@ function ag3savelocal() {
     getinputs(49,60,"ag",ag3answers);
     
     //loop through the array and put all answers into local storage
-    for(j = 0; j < ag3answers.length; j++){
+    /*for(j = 0; j < ag3answers.length; j++){
       k = "ag"+(j+49);
       v = ag3answers[j];
         window.localStorage.setItem(k,v);
-    }
-    
+    }*/
+    storelocal(ag3answers,ag,49);
     //hide save button
     hideSaveButton();
 
@@ -653,18 +653,20 @@ function ag4savelocal() {
     var i, j, k, v;
 
     //loop through the inputs and add to array
-    for(i=61; i<=84; i++) {
+    /*for(i=61; i<=84; i++) {
       k = "ag" + i;
       k = $('input[name = ' + k + ']:checked').val();
       ag4answers.push(k);
-    }
+    }*/
+    getinputs(61,84,"ag",ag4answers);
     
     //loop through the array and put all answers into local storage
-    for(j = 0; j < ag4answers.length; j++){
+    /*for(j = 0; j < ag4answers.length; j++){
       k = "ag"+(j+61);
       v = ag4answers[j];
         window.localStorage.setItem(k,v);
-    }
+    }*/
+    storelocal(ag4answers,ag,61);
     
    
 
@@ -762,11 +764,12 @@ function ag5savelocal() {
     var i, j, k, v;
 
     //loop through the inputs and add to array
-    for(i=85; i<=100; i++) {
+    /*for(i=85; i<=100; i++) {
       k = "ag" + i;
       k = $('input[name = ' + k + ']:checked').val();
       ag5answers.push(k);
-    }
+    }*/
+     getinputs(85,100,"ag",ag5answers);
     
     //loop through the array and put all answers into local storage
     for(j = 0; j < ag5answers.length; j++){
@@ -774,7 +777,7 @@ function ag5savelocal() {
       v = ag5answers[j];
         window.localStorage.setItem(k,v);
     }
-
+    storelocal(ag5answers,ag,85);
 
     //hide save button
     hideSaveButton();
