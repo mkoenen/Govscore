@@ -858,6 +858,9 @@ function calcResults() {
         var g25 = window.localStorage.getItem("gs25");*/
 
     var percentArray = [];
+    alert(answers);
+    alert(answers[0]);
+    alert(answers[0] + answers[1]);
 
     accScore = (answers[0]) + (answers[1]) + (answers[4]) + (answers[7]) + (answers[9]) + (answers[12]);
     var accPossible = 24;
