@@ -188,6 +188,7 @@ function getinputs(num1,num2,prefix,thisarr){
         k = $('input[name = ' + k + ']:checked').val();
         thisarr.push(k);
     }
+    return thisarr;
 }
 
 //loop through array and put into local storage
@@ -820,12 +821,15 @@ function checkResults(){
 
 //add up the numbers
 function calcResults() {
+    
+    alert(thisarr);
 
-    for(i=1; i<=25; i++ ){
+    /*for(i=1; i<=25; i++ ){
         var v;
         v = ("g" + i);
         v = window.localStorage.getItem("v");
-    }
+
+    }*/
 
         /*var g1 = window.localStorage.getItem("gs1");
         var g2 = window.localStorage.getItem("gs2");
