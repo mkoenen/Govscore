@@ -243,7 +243,7 @@ function saveServer() {
 
     //first check if data has been saved to server already
     gsSaved = window.localStorage.getItem("saved");
-    if (gsSaved !== "true" && name !== null ) {
+    if (gsSaved !== "true" && name != null ) {
 
        
     
@@ -343,7 +343,7 @@ function ag1saveServer() {
     //first check if data has been saved to server already
     ag1saved = window.localStorage.getItem("ag1saved");
 
-    if (ag1saved !== "true" && ag1 !== null ) {
+    if (ag1saved !== "true" && ag1 != null ) {
     
         //get the data from local storage
         ag1date = window.localStorage.getItem("ag1date");
@@ -432,7 +432,7 @@ function ag2saveServer() {
     //first check if data has been saved to server already
     ag2saved = window.localStorage.getItem("ag2saved");
 
-    if (ag2saved !== "true" && ag25 !== null ) {
+    if (ag2saved !== "true" && ag25 != null ) {
     
         //get the data from local storage
         ag2date = window.localStorage.getItem("ag2date");
@@ -521,7 +521,7 @@ function ag3saveServer() {
     //first check if data has been saved to server already
     ag3saved = window.localStorage.getItem("ag3saved");
 
-    if (ag3saved !== "true" && ag49 !== null ) {
+    if (ag3saved !== "true" && ag49 != null ) {
     
          //get the data from local storage
         ag3date = window.localStorage.getItem("ag3date");
@@ -598,7 +598,7 @@ function ag4saveServer() {
     //first check if data has been saved to server already
     ag4saved = window.localStorage.getItem("ag4saved");
 
-    if (ag4saved !== "true" && ag61 !== null ) {
+    if (ag4saved !== "true" && ag61 != null ) {
     
          //get the data from local storage
         ag4date = window.localStorage.getItem("ag4date");
@@ -687,7 +687,7 @@ function ag5saveServer() {
     //first check if data has been saved to server already
     ag5saved = window.localStorage.getItem("ag5saved");
 
-    if (ag5saved !== "true" &&  ag85 !== null ) {
+    if (ag5saved !== "true" &&  ag85 != null ) {
     
          //get the data from local storage
         ag5date = window.localStorage.getItem("ag5date");
