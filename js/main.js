@@ -203,7 +203,7 @@ function storelocal(thisarr,prefix,num1){
 
 
 /* Initial Govscore -----------------------------------------------*/
-var answers = [], gsSaved, gsdate, name, email, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
+var answers = [], gsdate, name, email, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
 
 function savelocal() {
  
@@ -239,7 +239,7 @@ function savelocal() {
 
 function saveServer() {
 
-    var data;
+    var data, gsSaved;
 
     //first check if data has been saved to server already
     gsSaved = window.localStorage.getItem("saved");
@@ -310,7 +310,7 @@ function saveServer() {
 /* AG 1 -------------------------------------------------------*/
 
 
-var ag1answers = [], ag1saved, ag1date, ag1,ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12,ag13,ag14,ag15,ag16,ag17,ag18,ag19,ag20,ag21,ag22,ag23,ag24;
+var ag1answers = [], ag1date, ag1,ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12,ag13,ag14,ag15,ag16,ag17,ag18,ag19,ag20,ag21,ag22,ag23,ag24;
 
 /* store locally */
 
@@ -338,7 +338,7 @@ function ag1savelocal() {
 
 function ag1saveServer() {
 
-    var ag1data;
+    var ag1data, ag1saved;
 
     //first check if data has been saved to server already
     ag1saved = window.localStorage.getItem("ag1saved");
@@ -399,7 +399,7 @@ function ag1saveServer() {
 /* AG 2 -------------------------------------------------------*/
 
 
-var ag2answers = [], ag2saved, ag2date, ag25, ag26, ag27, ag28, ag29, ag30, ag31, ag32, ag33, ag34, ag35, ag36, ag37, ag38, ag39, ag40,ag41,ag42,ag43, ag44, ag45, ag46, ag47, ag48;
+var ag2answers = [], ag2date, ag25, ag26, ag27, ag28, ag29, ag30, ag31, ag32, ag33, ag34, ag35, ag36, ag37, ag38, ag39, ag40,ag41,ag42,ag43, ag44, ag45, ag46, ag47, ag48;
 
 /* store locally */
 
@@ -427,7 +427,7 @@ function ag2savelocal() {
 
 function ag2saveServer() {
 
-    var ag2data;
+    var ag2data, ag2saved;
 
     //first check if data has been saved to server already
     ag2saved = window.localStorage.getItem("ag2saved");
@@ -486,7 +486,7 @@ function ag2saveServer() {
 
 /* AG 3 -------------------------------------------------------*/
 
-var ag3answers = [], ag3saved, ag3date, ag49, ag50, ag51, ag52, ag53, ag54, ag55, ag56, ag57, ag58, ag59, ag60;
+var ag3answers = [], ag3date, ag49, ag50, ag51, ag52, ag53, ag54, ag55, ag56, ag57, ag58, ag59, ag60;
 
 /* store locally */
 
@@ -516,7 +516,7 @@ function ag3savelocal() {
 
 function ag3saveServer() {
 
-    var ag3data;
+    var ag3data, ag3saved;
 
     //first check if data has been saved to server already
     ag3saved = window.localStorage.getItem("ag3saved");
@@ -565,7 +565,7 @@ function ag3saveServer() {
 
 /* AG 4 -------------------------------------------------------*/
 
-var ag4answers = [], ag4saved, ag4date, ag61, ag62, ag63, ag64, ag65, ag66, ag67, ag68, ag69, ag70, ag71, ag72, ag73, ag74, ag75, ag76, ag77, ag78, ag79, ag80, ag81, ag82, ag83, ag84;
+var ag4answers = [], ag4date, ag61, ag62, ag63, ag64, ag65, ag66, ag67, ag68, ag69, ag70, ag71, ag72, ag73, ag74, ag75, ag76, ag77, ag78, ag79, ag80, ag81, ag82, ag83, ag84;
 
 /* store locally */
 
@@ -593,7 +593,7 @@ function ag4savelocal() {
 
 function ag4saveServer() {
 
-    var ag4data;
+    var ag4data, ag4saved;
 
     //first check if data has been saved to server already
     ag4saved = window.localStorage.getItem("ag4saved");
@@ -655,7 +655,7 @@ function ag4saveServer() {
 }
 
 /* AG 5 -------------------------------------------------------*/
-var ag5answers = [], ag5saved, ag5date, ag85, ag86, ag87, ag88, ag89, ag90, ag91, ag92, ag93, ag94, ag95, ag96, ag97, ag98, ag99, ag100;
+var ag5answers = [], ag5date, ag85, ag86, ag87, ag88, ag89, ag90, ag91, ag92, ag93, ag94, ag95, ag96, ag97, ag98, ag99, ag100;
 /* store locally */
 
 function ag5savelocal() {
@@ -682,7 +682,7 @@ function ag5savelocal() {
 
 function ag5saveServer() {
 
-    var ag5data;
+    var ag5data, ag5saved;
 
     //first check if data has been saved to server already
     ag5saved = window.localStorage.getItem("ag5saved");
