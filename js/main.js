@@ -811,7 +811,7 @@ function ag5saveServer() {
         
         ag5saved = window.localStorage.setItem("ag5saved", "true");
 
-        ag5data = { "ag5date" : ag5date, "email": email, "ag85": ag85, "ag86": ag86, "ag87": ag87, "ag88": ag89, "ag89": ag89, "ag90": ag90, "ag91": ag91, "ag92": ag92, "ag93": ag93, "ag94": ag94, "ag95": ag95, "ag96": ag96, "ag97": ag97, "ag98": ag98, "ag99": ag99, "ag100": ag100 };
+        ag5data = { "ag5date" : ag5date, "email": email, "ag85": ag85, "ag86": ag86, "ag87": ag87, "ag88": ag88, "ag89": ag89, "ag90": ag90, "ag91": ag91, "ag92": ag92, "ag93": ag93, "ag94": ag94, "ag95": ag95, "ag96": ag96, "ag97": ag97, "ag98": ag98, "ag99": ag99, "ag100": ag100 };
        
         $.ajax({
             type       : "GET",
