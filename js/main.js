@@ -840,7 +840,7 @@ function ag5saveServer() {
 
 function hideSaveButton() {
 
-    if( gs1 !== null){
+    if( g1 !== null){
         var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";
         var resultButton2 = document.getElementById('govscore-results2');
