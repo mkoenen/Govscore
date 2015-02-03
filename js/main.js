@@ -12,6 +12,7 @@ window.onload = function(){
 function onOnline() {
     var g1, ag1, ag25, ag49, ag61, ag85;
     g1 = window.localStorage.getItem("g1");
+    alert(g1);
     ag1 = window.localStorage.getItem("ag1");
     ag25 = window.localStorage.getItem("ag25");
     ag49 = window.localStorage.getItem("ag49");
@@ -276,6 +277,7 @@ function savelocal() {
 function saveServer() {
     var gsSaved = window.localStorage.getItem("gsSaved");
     alert(gsSaved);
+    alert(name);
 
     var data;
 
