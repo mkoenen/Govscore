@@ -51,10 +51,10 @@ function setbutton() {
 /* Form Validation -------------------------------------*/
 
 function validate() {
-    if( document.gsForm.name.value === "" ) {
+    if( document.gsForm.username.value === "" ) {
 
          navigator.notification.alert( "Please enter your full name!" );
-         document.gsForm.name.focus() ;
+         document.gsForm.username.focus() ;
          return false;
     }
 
@@ -241,15 +241,15 @@ function saveToServer(address,datatype,selSaved){
 
 
 /* Initial Govscore -----------------------------------------------*/
-var answers = [], gsdate, name, email, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
+var answers = [], gsdate, username, email, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
 
 function savelocal() {
  
     gsdate = formatDate(new Date());
     window.localStorage.setItem("date", gsdate);
 
-    name = document.getElementById("name").value;
-    window.localStorage.setItem("name", name);
+    username = document.getElementById("username").value;
+    window.localStorage.setItem("username", username);
 
     email = document.getElementById("email").value;
     window.localStorage.setItem("email", email);
@@ -277,19 +277,19 @@ function savelocal() {
 function saveServer() {
     var gsSaved = window.localStorage.getItem("gsSaved");
     alert(gsSaved);
-    alert(name);
+    alert(username);
 
     var data;
 
     //first check if data has been saved to server already
     //var gsSaved = window.localStorage.getItem("gsSaved");
-    if (gsSaved != "true" && name != null ) {
+    if (gsSaved != "true" && username != null ) {
 
        
     
         //get the data from local storage
         gsdate = window.localStorage.getItem("date");
-        name = window.localStorage.getItem("name");
+        username = window.localStorage.getItem("username");
         email = window.localStorage.getItem("email");
         organization = window.localStorage.getItem("organization");
         g1 = window.localStorage.getItem("g1");
@@ -321,7 +321,7 @@ function saveServer() {
         
 
         
-        data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
+        data = { "date" : gsdate, "username": username, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
         
         
         saveToServer("http://sensi.wpengine.com/store.php", data, "gsSaved");
