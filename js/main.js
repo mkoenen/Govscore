@@ -201,6 +201,27 @@ function storelocal(thisarr,prefix,num1){
     }  
 }
 
+//save the json data array to the server via ajax call
+function saveToServer(address,datatype,selSaved){
+            $.ajax({
+            type       : "GET",
+            url        : address,
+            crossDomain: true,
+            data       : JSON.stringify(datatype),
+            contentType: 'application/json; charset=utf-8',
+            ////dataType   : 'json',
+            success    : function(responseData, textStatus, jqXHR) {
+                    //alert(responseData + ", " + textStatus + ", " + jqXHR);
+                
+                         afterSavedServer("Govscore", organization);
+                         window.localStorage.setItem(selSaved, "true");
+                        },
+            error      : function(response) {
+                        alert(response);                  
+                         }  
+            });
+        }
+
 
 /* Initial Govscore -----------------------------------------------*/
 var answers = [], gsdate, name, email, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25;
@@ -283,45 +304,8 @@ function saveServer() {
         
         data = { "date" : gsdate, "name": name, "email": email, "organization": organization, "g1": g1, "g2": g2, "g3": g3, "g4": g4, "g5": g5, "g6": g6, "g7": g7, "g8": g8, "g9": g9, "g10": g10, "g11": g11, "g12": g12, "g13": g13, "g14": g14, "g15": g15, "g16": g16, "g17": g17, "g18": g18, "g19": g19, "g20": g20, "g21": g21, "g22": g22, "g23": g23, "g24": g24, "g25": g25  };
         
-        function saveToServer(address,datatype,selSaved){
-            $.ajax({
-            type       : "GET",
-            url        : address,
-            crossDomain: true,
-            data       : JSON.stringify(datatype),
-            contentType: 'application/json; charset=utf-8',
-            ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                    //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                
-                         afterSavedServer("Govscore", organization);
-                         //window.localStorage.setItem(selSaved, "true");
-                        },
-            error      : function(response) {
-                        alert(response);                  
-                         }  
-            });
-        }
+        
         saveToServer("http://sensi.wpengine.com/store.php", data, "gsSaved");
-
-        /*$.ajax({
-            type       : "GET",
-            url        : "http://sensi.wpengine.com/store.php",
-            crossDomain: true,
-            data       : JSON.stringify(data),
-            contentType: 'application/json; charset=utf-8',
-            ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                
-                afterSavedServer("Govscore", organization);
-                window.localStorage.setItem("saved", "true");
-              
-                            },
-            error      : function(response) {
-                alert(response);                  
-            }  
-        });*/
 
     }
 }
@@ -395,26 +379,11 @@ function ag1saveServer() {
         ag23 = window.localStorage.getItem("ag23");
         ag24 = window.localStorage.getItem("ag24");
 
-        window.localStorage.setItem("ag1saved", "true");
-
 
         ag1data = { "ag1date" : ag1date, "email": email, "ag1": ag1, "ag2": ag2, "ag3": ag3, "ag4": ag4, "ag5": ag5, "ag6": ag6, "ag7": ag7, "ag8": ag8, "ag9": ag9, "ag10": ag10, "ag11": ag11, "ag12": ag12, "ag13": ag13, "ag14": ag14, "ag15": ag15, "ag16": ag16, "ag17": ag17, "ag18": ag18, "ag19": ag19, "ag20": ag20, "ag21": ag21, "ag22": ag22, "ag23": ag23, "ag24": ag24 };
        
-        $.ajax({
-            type       : "GET",
-            url        : "http://sensi.wpengine.com/store-ag1.php",
-            crossDomain: true,
-            data       : JSON.stringify(ag1data),
-            contentType: 'application/json; charset=utf-8',
-            ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Cultivating Accountability", organization);
-            },
-            error      : function(response) {
-                alert(response);                  
-            }
-        });
+        saveToServer("http://sensi.wpengine.com/store-ag1.php", ag1data, "ag1saved");
+        
     }
 }
 
@@ -484,25 +453,10 @@ function ag2saveServer() {
         ag47 = window.localStorage.getItem("ag47");
         ag48 = window.localStorage.getItem("ag48");
 
-        window.localStorage.setItem("ag2saved", "true");
-
         ag2data = { "ag2date" : ag2date, "email": email, "ag25": ag25, "ag26": ag26, "ag27": ag27, "ag28": ag28, "ag29": ag29, "ag30": ag30, "ag31": ag31, "ag32": ag32, "ag33": ag33, "ag34": ag34, "ag35": ag35, "ag36": ag36, "ag37": ag37, "ag38": ag38, "ag39": ag39, "ag40": ag40, "ag41": ag41, "ag42": ag42, "ag43": ag43, "ag44": ag44, "ag45": ag45, "ag46": ag46, "ag47": ag47, "ag48": ag48 };
        
-        $.ajax({
-            type       : "GET",
-            url        : "http://sensi.wpengine.com/store-ag2.php",
-            crossDomain: true,
-            data       : JSON.stringify(ag2data),
-            contentType: 'application/json; charset=utf-8',
-            ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Engaging Stakeholders", organization);
-            },
-            error      : function(response) {
-                alert(response);                  
-            }
-        });
+        saveToServer("http://sensi.wpengine.com/store-ag2.php", ag2data, "ag2saved");
+        
     }
 }
 
@@ -560,27 +514,10 @@ function ag3saveServer() {
         ag58 = window.localStorage.getItem("ag58");
         ag59 = window.localStorage.getItem("ag59");
         ag60 = window.localStorage.getItem("ag60");
-        
-
-        window.localStorage.setItem("ag3saved", "true");
 
         ag3data = { "ag3date" : ag3date, "email": email, "ag49": ag49, "ag50": ag50, "ag51": ag51, "ag52": ag52, "ag53": ag53, "ag54": ag54, "ag55": ag55, "ag56": ag56, "ag57": ag57, "ag58": ag58, "ag59": ag59, "ag60": ag60 };
        
-        $.ajax({
-            type       : "GET",
-            url        : "http://sensi.wpengine.com/store-ag3.php",
-            crossDomain: true,
-            data       : JSON.stringify(ag3data),
-            contentType: 'application/json; charset=utf-8',
-            ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Setting Shared Strategic Directions", organization);
-            },
-            error      : function(response) {
-                alert(response);                  
-            }
-        });
+        saveToServer("http://sensi.wpengine.com/store-ag3.php", ag3data, "ag3saved");
 
     }
 }
@@ -649,29 +586,10 @@ function ag4saveServer() {
         ag82 = window.localStorage.getItem("ag82");
         ag83 = window.localStorage.getItem("ag83");
         ag84 = window.localStorage.getItem("ag84");
-        
-
-        window.localStorage.setItem("ag4saved", "true");
 
         ag4data = { "ag4date" : ag4date, "email": email, "ag61": ag61, "ag62": ag62, "ag63": ag63, "ag64": ag64, "ag65": ag65, "ag66": ag66, "ag67": ag67, "ag68": ag68, "ag69": ag69, "ag70": ag70, "ag71": ag71, "ag72": ag72, "ag73": ag73, "ag74": ag74, "ag75": ag75, "ag76": ag76, "ag77": ag77, "ag78": ag78, "ag79": ag79, "ag80": ag80, "ag81": ag81, "ag82": ag82, "ag83": ag83, "ag84": ag84 };
        
-        $.ajax({
-            type       : "GET",
-            url        : "http://sensi.wpengine.com/store-ag4.php",
-            crossDomain: true,
-            data       : JSON.stringify(ag4data),
-            contentType: 'application/json; charset=utf-8',
-            ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Stewarding Resources", organization);
-            },
-            error      : function(response) {
-                alert(response);                  
-            }
-        });
-       
-        //afterSavedServer();
+        saveToServer("http://sensi.wpengine.com/store-ag4.php", ag4data, "ag4saved");
 
     }
 }
@@ -730,26 +648,10 @@ function ag5saveServer() {
         ag98 = window.localStorage.getItem("ag98");
         ag99 = window.localStorage.getItem("ag99");
         ag100 = window.localStorage.getItem("ag100");
-        
-        window.localStorage.setItem("ag5saved", "true");
 
         ag5data = { "ag5date" : ag5date, "email": email, "ag85": ag85, "ag86": ag86, "ag87": ag87, "ag88": ag88, "ag89": ag89, "ag90": ag90, "ag91": ag91, "ag92": ag92, "ag93": ag93, "ag94": ag94, "ag95": ag95, "ag96": ag96, "ag97": ag97, "ag98": ag98, "ag99": ag99, "ag100": ag100 };
        
-        $.ajax({
-            type       : "GET",
-            url        : "http://sensi.wpengine.com/store-ag5.php",
-            crossDomain: true,
-            data       : JSON.stringify(ag5data),
-            contentType: 'application/json; charset=utf-8',
-            ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                //alert(responseData + ", " + textStatus + ", " + jqXHR);
-                afterSavedServer("Continuous Governance Enhancement", organization);
-            },
-            error      : function(response) {
-                alert(response);                  
-            }
-        });
+        saveToServer("http://sensi.wpengine.com/store-ag5.php", ag5data, "ag5saved");
 
     }
 } 
