@@ -1,11 +1,11 @@
 /* Events -----------------------------------------*/
 window.onload = function(){
     //window.setTimeout(beonline, 6000);
-    //document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
+    document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", hideSaveButton, false);
-    document.addEventListener("deviceready", checkResults, false);
+    document.addEventListener("deviceready", calcResults, false);
 };
 
 //check if online according to the above interval
@@ -228,8 +228,7 @@ var answers = [], gsdate, name, email, g1,  g2, g3, g4, g5, g6, g7, g8, g9, g10,
 
 function savelocal() {
  
-    gsdate = new Date();
-    gsdate = formatDate(gsdate);
+    gsdate = formatDate(new Date());
     window.localStorage.setItem("date", gsdate);
 
     name = document.getElementById("name").value;
@@ -322,8 +321,7 @@ var ag1answers = [], ag1date, ag1,ag2,ag3,ag4,ag5,ag6,ag7,ag8,ag9,ag10,ag11,ag12
 
 function ag1savelocal() {
 
-    ag1date = new Date();
-    ag1date = formatDate(ag1date);
+    ag1date = formatDate(new Date());
     window.localStorage.setItem("ag1date", ag1date);
 
     getinputs(1,24,"ag",ag1answers);
@@ -396,8 +394,7 @@ var ag2answers = [], ag2date, ag25, ag26, ag27, ag28, ag29, ag30, ag31, ag32, ag
 
 function ag2savelocal() {
 
-    ag2date = new Date();
-    ag2date = formatDate(ag2date);
+    ag2date = formatDate(new Date());
     window.localStorage.setItem("ag2date", ag2date);
 
     getinputs(25,48,"ag",ag2answers);
@@ -470,8 +467,7 @@ var ag3answers = [], ag3date, ag49, ag50, ag51, ag52, ag53, ag54, ag55, ag56, ag
 
 function ag3savelocal() {
 
-    ag3date = new Date();
-    ag3date = formatDate(ag3date);
+    ag3date = formatDate(new Date());
     window.localStorage.setItem("ag3date", ag3date);
 
     getinputs(49,60,"ag",ag3answers);
@@ -530,8 +526,7 @@ var ag4answers = [], ag4date, ag61, ag62, ag63, ag64, ag65, ag66, ag67, ag68, ag
 
 function ag4savelocal() {
 
-    ag4date = new Date();
-    ag4date = formatDate(ag4date);
+    ag4date = formatDate(new Date());
     window.localStorage.setItem("ag4date", ag4date);
 
     getinputs(61,84,"ag",ag4answers);
@@ -600,8 +595,7 @@ var ag5answers = [], ag5date, ag85, ag86, ag87, ag88, ag89, ag90, ag91, ag92, ag
 
 function ag5savelocal() {
 
-    ag5date = new Date();
-    ag5date = formatDate(ag5date);
+    ag5date = formatDate(new Date());
     window.localStorage.setItem("ag5ate", ag5date);
 
     getinputs(85,100,"ag",ag5answers);
@@ -701,136 +695,66 @@ Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic 
 Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
 Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
 
-var accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel;
-
-function checkResults(){
-    var saved = window.localStorage.getItem("saved");
-
-    if( saved === "true" ){
-        calcResults();
-    }else{
-        document.getElementById("gs-results").innerHTML = "<p>You need to complete the Govscore assessment in order to see results.</p>";
-    }
-
-}
-
-
 //add up the numbers
 function calcResults() {
 
-    var percentArray = [];
-    
+    if(answers[1]){
 
-    accScore = parseInt(answers[0]) + parseInt(answers[1]) + parseInt(answers[4]) + parseInt(answers[7]) + parseInt(answers[9]) + parseInt(answers[12]);
-    var accPossible = 24;
-    var accPercent = Math.round(accScore/accPossible*100);
-    percentArray.push(accPercent);
+        var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel, res;;
+        
 
-    stakeScore = parseInt(answers[10]) +parseInt(answers[13]) +parseInt(answers[21]);
-    var stakePossible = 12;
-    var stakePercent = Math.round(stakeScore/stakePossible*100);
-    percentArray.push(stakePercent);
+        accScore = parseInt(answers[0]) + parseInt(answers[1]) + parseInt(answers[4]) + parseInt(answers[7]) + parseInt(answers[9]) + parseInt(answers[12]);
+        var accPossible = 24;
+        var accPercent = Math.round(accScore/accPossible*100);
+        percentArray.push(accPercent);
 
-    dirScore = parseInt(answers[5]) +parseInt(answers[6]) +parseInt(answers[11]) +parseInt(answers[15]);
-    var dirPossible = 16;
-    var dirPercent = Math.round(dirScore/dirPossible*100);
-    percentArray.push(dirPercent);
+        stakeScore = parseInt(answers[10]) +parseInt(answers[13]) +parseInt(answers[21]);
+        var stakePossible = 12;
+        var stakePercent = Math.round(stakeScore/stakePossible*100);
+        percentArray.push(stakePercent);
 
-    resScore = parseInt(answers[2]) +parseInt(answers[3]) +parseInt(answers[16]) +parseInt(answers[20]) +parseInt(answers[22]) +parseInt(answers[24]);
-    var resPossible = 24;
-    var resPercent = Math.round(resScore/resPossible*100);
-    percentArray.push(resPercent);
+        dirScore = parseInt(answers[5]) +parseInt(answers[6]) +parseInt(answers[11]) +parseInt(answers[15]);
+        var dirPossible = 16;
+        var dirPercent = Math.round(dirScore/dirPossible*100);
+        percentArray.push(dirPercent);
 
-    enhScore = parseInt(answers[8]) +parseInt(answers[14]) +parseInt(answers[17]) +parseInt(answers[18]) +parseInt(answers[19]) +parseInt(answers[23]);
-    var enhPossible = 24;
-    var enhPercent = Math.round(enhScore/enhPossible*100);
-    percentArray.push(enhPercent);
+        resScore = parseInt(answers[2]) +parseInt(answers[3]) +parseInt(answers[16]) +parseInt(answers[20]) +parseInt(answers[22]) +parseInt(answers[24]);
+        var resPossible = 24;
+        var resPercent = Math.round(resScore/resPossible*100);
+        percentArray.push(resPercent);
 
-    totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
-    
+        enhScore = parseInt(answers[8]) +parseInt(answers[14]) +parseInt(answers[17]) +parseInt(answers[18]) +parseInt(answers[19]) +parseInt(answers[23]);
+        var enhPossible = 24;
+        var enhPercent = Math.round(enhScore/enhPossible*100);
+        percentArray.push(enhPercent);
 
-    switch(true) {
-        case( totalScore < 25 ):
-            mlevel = "Clear need of governance development (first level/4)";
-            break;
-        case( totalScore >= 25 && totalScore < 50 ):
-            mlevel = "Basic level of governance (second level/4)";
-            break;
-        case( totalScore >= 50 && totalScore < 75 ):
-            mlevel = "Goal-Driven and dynamic governance (third level/4)";
-            break;
-        case( totalScore >= 75 ): 
-            mlevel = "Transformational governance (highest level/4)";
-    }
+        totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
+        
 
-    //list each area with the score
-    var res = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
-    res += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
-    res += "<h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
-    res += "<h3>Engaging Stakeholders</h3><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
-    res += "<h3>Shared Strategic Direction</h3><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
-    res += "<h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
-    res += "<h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
-     /*res += "<h3>Recommendation</h3><p>The areas that your organization should focus on are:</p>";
-    
-    //sort numbers lowest to highest
-   function compareNumbers(a, b) {
-        return a - b;
-    }
-
-    //get only the weakest percentages in an array
-    var sortedPercent = percentArray.sort(compareNumbers);
-    if(sortedPercent[0] !== sortedPercent[1] && sortedPercent[1] !== sortedPercent[2]){
-        weakest = sortedPercent.slice(0,3);
-    }else if(sortedPercent[0] === sortedPercent[1] || sortedPercent[1] === sortedPercent[2]){
-        weakest = sortedPercent.slice(0,4);
-    }else if(sortedPercent[0] === sortedPercent[1] || sortedPercent[1] === sortedPercent[2] && sortedPercent[2] === sortedPercent[3]){
-        weakest = sortedPercent.slice(0,5);
-    }else {
-        weakest = sortedPercent;
-    }
-
-    //find the areas the percentages belong in
-    //no break so that fo each pass we get all the possible answers and put them into a new array
-    var weakAreas = [];
-    for (var i = 0; i < weakest.length; i++){
-        switch(weakest[i]){
-            case accPercent:
-                weakAreas.push("Cultivating Accountability");
-            case stakePercent:
-                weakAreas.push("Engaging Stakeholders");
-            case dirPercent:
-                weakAreas.push("Shared Strategic Direction");
-            case resPercent:
-                weakAreas.push('Stewarding Resources');
-            case enhPercent:
-                weakAreas.push('Continuous Governance Enhancement');
+        switch(true) {
+            case( totalScore < 25 ):
+                mlevel = "Clear need of governance development (first level/4)";
+                break;
+            case( totalScore >= 25 && totalScore < 50 ):
+                mlevel = "Basic level of governance (second level/4)";
+                break;
+            case( totalScore >= 50 && totalScore < 75 ):
+                mlevel = "Goal-Driven and dynamic governance (third level/4)";
+                break;
+            case( totalScore >= 75 ): 
+                mlevel = "Transformational governance (highest level/4)";
         }
+
+        //list each area with the score
+        res = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
+        res += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
+        res += "<h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
+        res += "<h3>Engaging Stakeholders</h3><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
+        res += "<h3>Shared Strategic Direction</h3><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
+        res += "<h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
+        res += "<h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
+
+        document.getElementById('gs-results').innerHTML = res;
     }
-
-   //eliminate duplicates from the resulting array
-    var resultAreas = [];
-    function array_unique(array) {
-    
-        for (var i = 0; i < array.length; i++) {
-            if (resultAreas.indexOf(array[i]) === -1) {
-                resultAreas.push(array[i]);
-             } 
-        }
-    }
-
-    array_unique(weakAreas);
-
-    //loop through the resultAreas array and print each element
-    for (var j = 0; j < resultAreas.length; j++){
-        res += (j+1) + ". " + resultAreas[j] + "<br />";
-    }
-
-   res += "<p>To learn more about these particular practice areas as they relate to your organization, take the Advanced Govscore Assessments for these areas.</p>";
-   res += "<p>To find out how your organization was resuated by other members of your group, log into the website and use the organization code \"" + organization + "\".";*/
-
-    
-    document.getElementById('gs-results').innerHTML = res;
-
 }
 
