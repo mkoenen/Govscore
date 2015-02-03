@@ -10,13 +10,22 @@ window.onload = function(){
 
 //check if online according to the above interval
 function onOnline() {
-   saveServer(); 
-   ag1saveServer(); 
-   ag2saveServer(); 
-   ag3saveServer(); 
-   ag4saveServer(); 
-   ag5saveServer(); 
+   if(answers[0] !== null){
+        saveServer();
+    }else if(ag1answers[0] !== null){
+        ag1saveServer(); 
+    }else if(ag2answers[0] !== null){
+        ag2saveServer();
+    }else if(ag3answers[0] !==null){
+        ag3saveServer(); 
+    }else if(ag4answers[0] !== null){
+        ag4saveServer();
+    }else if(ag5answers[0] !== null){ 
+        ag5saveServer();
+   }  
 }
+
+
 
 
  //listen for click events      
