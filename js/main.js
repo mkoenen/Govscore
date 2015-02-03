@@ -242,7 +242,7 @@ function saveServer() {
     var data;
 
     //first check if data has been saved to server already
-    var gsSaved = window.localStorage.getItem("saved");
+    var gsSaved = window.localStorage.getItem("gsSaved");
     if (gsSaved !== "true" && name != null ) {
 
        
@@ -302,7 +302,7 @@ function saveServer() {
                          }  
             });
         }
-        saveToServer("http://sensi.wpengine.com/store.php", data, "saved");
+        saveToServer("http://sensi.wpengine.com/store.php", data, "gsSaved");
 
         /*$.ajax({
             type       : "GET",
