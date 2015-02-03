@@ -659,35 +659,35 @@ function ag5saveServer() {
 /* Interface changes -----------------------------------------*/ 
 
 function hideSaveButton() {
-
-    if( g1 != null){
+    
+    if( answers[1] != null){
         var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";
         var resultButton2 = document.getElementById('govscore-results2');
         resultButton2.className = resultButton2.className + " see";
     }
     
-    if(ag1 != null){
+    if(ag1answers[1] != null){
        var ag1SaveButton = document.getElementById('ag1Store');
        ag1SaveButton.className = ag1SaveButton.className + " hide";
     }
    
-    if(ag25 != null) {
+    if(ag2answers[1] != null) {
         var ag2SaveButton = document.getElementById('ag2Store');
         ag2SaveButton.className = ag2SaveButton.className + " hide";
     }
     
-    if(ag49 != null){
+    if(ag3answers[1] != null){
         var ag3SaveButton = document.getElementById('ag3Store');
         ag3SaveButton.className = ag3SaveButton.className + " hide";
     }
      
-    if( ag61 != null) {
+    if( ag4answers[1] != null) {
         var ag4SaveButton = document.getElementById('ag4Store');
         ag4SaveButton.className = ag4SaveButton.className + " hide";
     }
    
-    if( ag85 != null){
+    if( ag5answers[1] != null){
         var ag5SaveButton = document.getElementById('ag5Store');
         ag5SaveButton.className = ag5SaveButton.className + " hide";
     }
