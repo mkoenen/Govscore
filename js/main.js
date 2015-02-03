@@ -239,10 +239,10 @@ function savelocal() {
 
 function saveServer() {
 
-    var data, saved, gsSaved;
+    var data;
 
     //first check if data has been saved to server already
-    gsSaved = window.localStorage.getItem("saved");
+    var gsSaved = window.localStorage.getItem("saved");
     if (gsSaved !== "true" && name != null ) {
 
        
@@ -294,7 +294,7 @@ function saveServer() {
                 //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
                 afterSavedServer("Govscore", organization);
-                saved = window.localStorage.setItem("saved", "true");
+                var saved = window.localStorage.setItem("saved", "true");
               
                             },
             error      : function(response) {
