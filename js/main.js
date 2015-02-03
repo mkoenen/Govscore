@@ -263,7 +263,7 @@ function saveServer() {
 
     //first check if data has been saved to server already
     var gsSaved = window.localStorage.getItem("gsSaved");
-    if (gsSaved !== "true" && name != null ) {
+    if (gsSaved != "true" && name != null ) {
 
        
     
