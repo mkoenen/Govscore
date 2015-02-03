@@ -295,7 +295,7 @@ function saveServer() {
                     //alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
                          afterSavedServer("Govscore", organization);
-                         window.localStorage.setItem(selSaved, "true");
+                         //window.localStorage.setItem(selSaved, "true");
                         },
             error      : function(response) {
                         alert(response);                  
