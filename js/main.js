@@ -10,6 +10,13 @@ window.onload = function(){
 
 //check if online according to the above interval
 function onOnline() {
+    var g1, ag1, ag25, ag49, ag61, ag85;
+    g1 = window.localStorage.getItem("g1");
+    ag1 = window.localStorage.getItem("ag1");
+    ag25 = window.localStorage.getItem("ag25");
+    ag49 = window.localStorage.getItem("ag49");
+    ag61 = window.localStorage.getItem("ag61");
+    ag85 = window.localStorage.getItem("ag85");
    if(answers[0] !== null){
         saveServer();
     }else if(ag1answers[0] !== null){
