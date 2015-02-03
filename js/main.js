@@ -18,17 +18,17 @@ function onOnline() {
     ag49 = window.localStorage.getItem("ag49");
     ag61 = window.localStorage.getItem("ag61");
     ag85 = window.localStorage.getItem("ag85");
-   if(answers[0] != null){
+   if(g1 != null){
         saveServer();
-    }else if(ag1answers[0] != null){
+    }else if(ag1 != null){
         ag1saveServer(); 
-    }else if(ag2answers[0] != null){
+    }else if(ag25 != null){
         ag2saveServer();
-    }else if(ag3answers[0] != null){
+    }else if(ag49 != null){
         ag3saveServer(); 
-    }else if(ag4answers[0] != null){
+    }else if(ag61 != null){
         ag4saveServer();
-    }else if(ag5answers[0] != null){ 
+    }else if(ag85 != null){ 
         ag5saveServer();
    }  
 }
