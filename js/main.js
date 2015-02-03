@@ -277,8 +277,8 @@ function savelocal() {
 function saveServer() {
     var gsSaved = window.localStorage.getItem("gsSaved");
     alert(gsSaved);
+    username = window.localStorage.getItem("username");
     alert(username);
-
     var data;
 
     //first check if data has been saved to server already
