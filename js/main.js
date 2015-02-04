@@ -219,12 +219,12 @@ function storelocal(thisarr,prefix,num1){
 }
 
 //save the json data array to the server via ajax call
-function saveToServer(address,datatype,selSaved){
+function saveToServer(address,resultorigin,selSaved){
             $.ajax({
             type       : "GET",
             url        : address,
             crossDomain: true,
-            data       : JSON.stringify(datatype),
+            data       : JSON.stringify(resultorigin),
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
@@ -283,7 +283,7 @@ function saveServer() {
 
     //first check if data has been saved to server already
     //var gsSaved = window.localStorage.getItem("gsSaved");
-    if (gsSaved != "true" && username != null ) {
+    //if (gsSaved != "true" && username != null ) {
 
        
     
