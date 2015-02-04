@@ -228,7 +228,7 @@ function saveToServer(address,resultorigin,selSaved){
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
-                    //alert(responseData + ", " + textStatus + ", " + jqXHR);
+                    alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
                          afterSavedServer("Govscore", organization);
                          window.localStorage.setItem(selSaved, "true");
