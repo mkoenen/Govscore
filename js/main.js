@@ -262,7 +262,7 @@ function savelocal() {
 
     storelocal(answers,"g",1);
 
-    hideSaveButton();
+    //hideSaveButton();
 
     calcResults();
 
