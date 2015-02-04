@@ -237,6 +237,7 @@ function saveToServer(address,resultorigin,selSaved){
                         alert(response);                  
                          }  
             });
+            window.location.hash = "govscore-results";
         }
 
 
