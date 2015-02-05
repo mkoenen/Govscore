@@ -1,7 +1,7 @@
 /* Events -----------------------------------------*/
 window.onload = function(){
     //window.setTimeout(beonline, 6000);
-    document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
+    //document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", hideSaveButton, false);
@@ -242,7 +242,7 @@ function savelocal() {
 
     //construct the json array for user data and add to local storage
     gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'gs':[-1]};
-    gsdata += getinputs(gsdata,1,25,"g");
+    gsdata = getinputs(gsdata,1,25,"g");
     localStorage.setObject('gsdata', gsdata);
  
     //calcResults();
@@ -277,7 +277,7 @@ function ag1savelocal() {
     ag1date = formatDate(new Date());
 
     ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'ag1': [-1]};
-    ag1data += getinputs(ag1data,1,24,"ag");
+    ag1data = getinputs(ag1data,1,24,"ag");
 
     localStorage.setObject('ag1data', ag1data);
 
@@ -310,7 +310,7 @@ function ag2savelocal() {
     ag2date = formatDate(new Date());
 
     ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'ag2': [-1]};
-    ag2data += getinputs(ag2data,25,48,"ag");
+    ag2data = getinputs(ag2data,25,48,"ag");
 
     localStorage.setObject('ag2data', ag2data);
 
@@ -341,7 +341,7 @@ function ag3savelocal() {
     ag3date = formatDate(new Date());
 
     ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'ag3': [-1]};
-    ag3data += getinputs(ag3data,49,60,"ag");
+    ag3data = getinputs(ag3data,49,60,"ag");
 
     localStorage.setObject('ag3data', ag3data);
 
@@ -372,7 +372,7 @@ function ag4savelocal() {
     ag4date = formatDate(new Date());
 
     ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'ag4': [-1]};
-    ag4data += getinputs(ag4data,61,84,"ag");
+    ag4data = getinputs(ag4data,61,84,"ag");
 
     localStorage.setObject('ag4data', ag4data);
 
@@ -403,7 +403,7 @@ function ag5savelocal() {
     ag5date = formatDate(new Date());
 
     ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'ag5': [-1]};
-    ag5data += getinputs(ag5data,85,100,"ag");
+    ag5data = getinputs(ag5data,85,100,"ag");
     
     localStorage.setObject('ag5data', ag5data);
 
