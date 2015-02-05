@@ -272,7 +272,7 @@ function ag1savelocal() {
 
     var ag1data, ag1date;
 
-    //gsdata = localStorage.getObject('gsdata');
+    gsdata = localStorage.getObject('gsdata');
 
     ag1date = formatDate(new Date());
 
