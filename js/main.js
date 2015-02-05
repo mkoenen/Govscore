@@ -5,7 +5,7 @@ window.onload = function(){
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     //document.addEventListener("deviceready", hideSaveButton, false);
-    document.addEventListener("deviceready", calcResults, false);
+    //document.addEventListener("deviceready", calcResults, false);
 };
 
 //check if online according to the above interval
@@ -253,7 +253,7 @@ function savelocal() {
     getinputs(gsdata,1,25,"g");
     localStorage.setObject("gsdata");
  
-    calcResults();
+    //calcResults();
 
     //now that everything is saved, check the connection
     checkConnection( "cgovscore");
