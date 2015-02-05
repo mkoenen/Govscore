@@ -268,7 +268,7 @@ function saveServer() {
     var gsdata;
 
     //get the data from local storage
-    gsdata = localStorage.getObject("gsdata");
+    gsdata = localStorage.getObject('gsdata');
 
     saveToServer("http://sensi.wpengine.com/store.php", gsdata, "gsSaved");
 
@@ -286,7 +286,7 @@ function ag1savelocal() {
 
     var ag1data, ag1date;
 
-    gsdata = localStorage.getObject("gsdata");
+    gsdata = localStorage.getObject('gsdata');
 
     ag1date = formatDate(new Date());
 
