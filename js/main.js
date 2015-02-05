@@ -4,7 +4,7 @@ window.onload = function(){
     document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", hideSaveButton, false);
+    //document.addEventListener("deviceready", hideSaveButton, false);
     document.addEventListener("deviceready", calcResults, false);
 };
 
