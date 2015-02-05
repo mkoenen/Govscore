@@ -250,7 +250,7 @@ function savelocal() {
     
 
     //construct the json array for gsdata and add array to local storage
-    getinputs(gsdata,1,25,"g");
+    gsdata = getinputs(gsdata,1,25,"g");
     localStorage.setObject("gsdata");
  
     //calcResults();
