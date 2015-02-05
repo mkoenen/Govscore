@@ -182,26 +182,26 @@ function checkConnection(whichfunction) {
 
 /* Functions for processing data -----------------------------------------------*/
 
-/*Storage.prototype.setObject = function(key, value) {
+Storage.prototype.setObject = function(key, value) {
     this.setItem(key, JSON.stringify(value));
 }
 
 Storage.prototype.getObject = function(key) {
     var value = this.getItem(key);
     return value && JSON.parse(value);
-}*/
+}
 
 //get answers from form and build json array
 function getinputs(answerset,entrydate,useremail,num1,num2,prefix){
         var i, key, value;
-        answerset = "{ '" + entrydate + "': " + entrydate + ", '" + useremail + "': " + useremail;
+        //answerset += { 'gs':[-1]};
         //loop through the entries, grab value and store in array
         for(i=num1; i<=num2; i++) {
             key = "'" + prefix + i +"'";
             value = $('input[name = ' + key + ']:checked').val();
-            answerset += ", " + key + ":" + value;
+            answerset.gs[i] = value;
         }
-        answerset += "}";
+        
         return answerset;
     }
 
@@ -240,18 +240,18 @@ function savelocal() {
     username = document.getElementById("username").value;
     email = document.getElementById("email").value;
     organization = document.getElementById("organization").value;
+    gsdate  = formatDate(new Date());
 
     //construct the json array for user data and add to local storage
-    userdata = "{'username':" + username + ", 'email':" + email + ", 'organization':" + organization + "}";
-    localStorage["userdata"] = JSON.stringify(userdata);
+    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'gs':[-1]};
 
    
 
-    gsdate  = formatDate(new Date());
+    
 
     //construct the json array for gsdata and add array to local storage
-    getinputs(gsdata,gsdate,email,1,25,"g");
-    localStorage["gsdata"] = JSON.stringify(gsdata);
+    getinputs(gsdata,1,25,"g");
+    localStorage.setObject("gsdata");
  
     calcResults();
 
@@ -265,14 +265,11 @@ function savelocal() {
 
 function saveServer() {
 
-    var userdata, gsdata;
+    var gsdata;
 
     //get the data from local storage
-    userdata = JSON.parse(localStorage["userdata"]);
-    gsdata = JSON.parse(localStorage["gsdata"]);
+    gsdata = localStorage.getObject("gsdata");
 
-    
-    saveToServer("http://sensi.wpengine.com/store.php", userdata, "gsSaved");
     saveToServer("http://sensi.wpengine.com/store.php", gsdata, "gsSaved");
 
 }
@@ -289,10 +286,15 @@ function ag1savelocal() {
 
     var ag1data, ag1date;
 
+    gsdata = localStorage.getObject("gsdata");
+
     ag1date = formatDate(new Date());
 
-    getinputs(ag1data,ag1date,email,1,24,"ag");
-    localStorage["ag1data"] = JSON.stringify(ag1data);
+    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'ag1': [-1]};
+
+    getinputs(ag1data,1,24,"ag");
+
+    localStorage.setObject("ag1data");
 
     //now that everything is saved check the connection
     checkConnection("cag1");
