@@ -212,7 +212,7 @@ function saveToServer(address,dataset){
             type       : "GET",
             url        : address,
             crossDomain: true,
-            data       : JSON.stringify(dataset),
+            data       : dataset,
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
