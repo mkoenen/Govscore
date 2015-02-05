@@ -251,7 +251,7 @@ function savelocal() {
 
     //construct the json array for gsdata and add array to local storage
     gsdata = getinputs(gsdata,1,25,"g");
-    localStorage.setObject(gsdata);
+    localStorage.setObject('gsdata', gsdata);
  
     //calcResults();
 
@@ -268,7 +268,7 @@ function saveServer() {
     var gsdata;
 
     //get the data from local storage
-    gsdata = localStorage.getObject('gsdata');
+    gsdata = localStorage.getObject(gsdata);
 
     saveToServer("http://sensi.wpengine.com/store.php", gsdata, "gsSaved");
 
@@ -294,7 +294,7 @@ function ag1savelocal() {
 
     getinputs(ag1data,1,24,"ag");
 
-    localStorage.setObject("ag1data");
+    localStorage.setObject('ag1data', ag1data);
 
     //now that everything is saved check the connection
     checkConnection("cag1");
