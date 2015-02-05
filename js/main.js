@@ -207,7 +207,7 @@ function getinputs(answerset,num1,num2,prefix){
 
 
 //save the json data array to the server via ajax call
-function saveToServer(address,dataset,setSaved){
+function saveToServer(address,dataset){
             $.ajax({
             type       : "GET",
             url        : address,
@@ -219,7 +219,6 @@ function saveToServer(address,dataset,setSaved){
                     alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
                          afterSavedServer("Govscore", organization);
-                         window.localStorage.setItem(setSaved, "true");
                         },
             error      : function(response) {
                         alert(response);                  
@@ -270,7 +269,7 @@ function saveServer() {
     //get the data from local storage
     gsdata = localStorage.getObject('gsdata');
 
-    saveToServer("http://sensi.wpengine.com/store.php", gsdata, "gsSaved");
+    saveToServer("http://sensi.wpengine.com/store.php", gsdata);
 
 }
 
