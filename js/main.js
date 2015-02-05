@@ -229,12 +229,11 @@ function saveToServer(address,dataset){
 
 
 /* Initial Govscore -----------------------------------------------*/
-
-var email;
+var gsdata = localStorage.getObject('gsdata');
 
 function savelocal() {
 
-    var userdata, gsdata, gsdate, username, organization;
+    var userdata, email, gsdata, gsdate, username, organization;
 
     username = document.getElementById("username").value;
     email = document.getElementById("email").value;
@@ -243,39 +242,27 @@ function savelocal() {
 
     //construct the json array for user data and add to local storage
     gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'gs':[-1]};
-
-   
-
-    
-
-    //construct the json array for gsdata and add array to local storage
-    gsdata = getinputs(gsdata,1,25,"g");
+    gsdata += getinputs(gsdata,1,25,"g");
     localStorage.setObject('gsdata', gsdata);
  
     //calcResults();
 
     //now that everything is saved, check the connection
     checkConnection( "cgovscore");
-
 }
 
 /*save to server -------------------------------------------------------------*/
-
 
 function saveServer() {
 
     var gsdata;
 
     //get the data from local storage
-    gsdata = localStorage.getObject('gsdata');
+    //gsdata = localStorage.getObject('gsdata');
 
     saveToServer("http://sensi.wpengine.com/store.php", gsdata);
 
 }
-
-
-
-
 
 /* AG 1 -------------------------------------------------------*/
 
@@ -283,15 +270,14 @@ function saveServer() {
 
 function ag1savelocal() {
 
-    var ag1data, ag1date;
+    var ag1data, ag1date, gsdata;
 
     gsdata = localStorage.getObject('gsdata');
 
     ag1date = formatDate(new Date());
 
     ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'ag1': [-1]};
-
-    getinputs(ag1data,1,24,"ag");
+    ag1data += getinputs(ag1data,1,24,"ag");
 
     localStorage.setObject('ag1data', ag1data);
 
@@ -300,39 +286,38 @@ function ag1savelocal() {
 
 }
 
-
-
 /* Save on Server */
 
 function ag1saveServer() {
+
+    var ag1data;
           
-    ag1data = JSON.parse(localStorage["ag1data"]);
-    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag1data, "ag1saved");
+    ag1data = localStorage.getObject('ag1data');
+    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag1data);
         
 }
 
 /* AG 2 -------------------------------------------------------*/
 
-
-var ag2answers = [], ag2date, ag25, ag26, ag27, ag28, ag29, ag30, ag31, ag32, ag33, ag34, ag35, ag36, ag37, ag38, ag39, ag40,ag41,ag42,ag43, ag44, ag45, ag46, ag47, ag48;
-
 /* store locally */
 
 function ag2savelocal() {
 
-    var ag2data, ag2date;
+    var ag2data, ag2date, gsdata;
+
+    gsdata = localStorage.getObject('gsdata');
 
     ag2date = formatDate(new Date());
 
-    getinputs(ag2data,ag2date,email,25,48,"ag");
-    localStorage["ag2data"] = JSON.stringify(ag2data);
+    ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'ag2': [-1]};
+    ag2data += getinputs(ag2data,25,48,"ag");
+
+    localStorage.setObject('ag2data', ag2data);
 
     //now that everything is saved check the connection
     checkConnection("cag2");
 
 }
-
-
 
 /* Save on Server */
 
@@ -340,34 +325,32 @@ function ag2saveServer() {
 
     var ag2data;
  
-    ag2data = JSON.parse(localStorage["ag2data"]);
-    saveToServer("http://sensi.wpengine.com/store-ag2.php", ag2data, "ag2saved");
+    ag2data = localStorage.getObject('ag2data');
+    saveToServer("http://sensi.wpengine.com/store-ag2.php", ag2data);
         
 }
 
 /* AG 3 -------------------------------------------------------*/
 
-var ag3answers = [], ag3date, ag49, ag50, ag51, ag52, ag53, ag54, ag55, ag56, ag57, ag58, ag59, ag60;
-
 /* store locally */
-
-
 
 function ag3savelocal() {
 
-    var ag3data, ag3date;
+    var ag3data, ag3date, gsdata;
+
+    gsdata = localStorage.getObject('gsdata');
 
     ag3date = formatDate(new Date());
 
-    getinputs(ag3data,ag3date,email,49,60,"ag");
-    localStorage["ag3data"] = JSON.stringify(ag3data);
+    ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'ag3': [-1]};
+    ag3data += getinputs(ag3data,49,60,"ag");
+
+    localStorage.setObject('ag3data', ag3data);
 
     //now that everything is saved check the connection
     checkConnection("cag3");
 
 }
-
-
 
 /* Save on Server */
 
@@ -375,14 +358,12 @@ function ag3saveServer() {
 
     var ag3data;
 
-    ag3data = JSON.parse(localStorage["ag3data"]);
-    saveToServer("http://sensi.wpengine.com/store-ag3.php", ag3data, "ag3saved");
+    ag3data = localStorage.getObject('ag3data');
+    saveToServer("http://sensi.wpengine.com/store-ag3.php", ag3data);
 
 }
 
 /* AG 4 -------------------------------------------------------*/
-
-var ag4answers = [], ag4date, ag61, ag62, ag63, ag64, ag65, ag66, ag67, ag68, ag69, ag70, ag71, ag72, ag73, ag74, ag75, ag76, ag77, ag78, ag79, ag80, ag81, ag82, ag83, ag84;
 
 /* store locally */
 
