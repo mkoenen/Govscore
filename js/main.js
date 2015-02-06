@@ -194,12 +194,12 @@ Storage.prototype.getObject = function(key) {
 //get answers from form and build json array
 function getinputs(answerset,num1,num2,prefix,subset){
         var i, key, value;
-        answerset += { 'subset':[-1]};
+        //answerset += { 'gs':[-1]};
         //loop through the entries, grab value and store in array
         for(i=num1; i<=num2; i++) {
             key = "'" + prefix + i +"'";
             value = $('input[name = ' + key + ']:checked').val();
-            answerset.subset[i] = value;
+            subset = value;
         }
         
         return answerset;
@@ -241,8 +241,8 @@ function savelocal() {
     gsdate  = formatDate(new Date());
 
     //construct the json array for user data and add to local storage
-    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, };
-    gsdata = getinputs(gsdata,1,25,"g","gs");
+    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'gs':[-1]};
+    gsdata = getinputs(gsdata,1,25,"g",answerset.gs[i]);
     localStorage.setObject('gsdata', gsdata);
  
     //calcResults();
@@ -276,7 +276,7 @@ function ag1savelocal() {
 
     ag1date = formatDate(new Date());
 
-    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, };
+    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'ag1': [-1]};
     ag1data = getinputs(ag1data,1,24,"ag","ag1");
 
     localStorage.setObject('ag1data', ag1data);
