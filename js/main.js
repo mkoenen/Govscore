@@ -277,7 +277,7 @@ function ag1savelocal() {
     ag1date = formatDate(new Date());
 
     ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'ag1': [-1]};
-    ag1data = getinputs(ag1data,1,24,"ag",ag1);
+    ag1data = getinputs(ag1data,1,24,"ag",'ag1');
 
     localStorage.setObject('ag1data', ag1data);
 
