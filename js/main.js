@@ -194,14 +194,12 @@ Storage.prototype.getObject = function(key) {
 //get answers from form and build json array
 function getinputs(answerset,num1,num2,prefix,subset){
         var i, key, value;
-        subset1 = subset.replace(/\"/g, "");
-            alert(subset1 + " ' " + subset);
-        //answerset += { 'gs':[-1]};
+        answerset += { 'subset':[-1]};
         //loop through the entries, grab value and store in array
         for(i=num1; i<=num2; i++) {
             key = "'" + prefix + i +"'";
             value = $('input[name = ' + key + ']:checked').val();
-            answerset.subset1[i] = value;
+            answerset.subset[i] = value;
         }
         
         return answerset;
@@ -278,8 +276,8 @@ function ag1savelocal() {
 
     ag1date = formatDate(new Date());
 
-    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'ag1': [-1]};
-    ag1data = getinputs(ag1data,1,24,"ag","ag1");
+    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, };
+    ag1data = getinputs(ag1data,1,24,"ag",ag1);
 
     localStorage.setObject('ag1data', ag1data);
 
