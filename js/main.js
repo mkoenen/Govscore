@@ -479,14 +479,15 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 function calcResults() {
 
     var gsdata = localStorage.getObject('gsdata');
-    alert(gsdata[name] + ", " + gsdata[answers][1]);
+    //alert(gsdata[name] + ", " + gsdata[answers][1]);
     var array = $.map(gsdata, function(value, index) {
     return [value];
     });
     alert(array);
+    var arr = $.map(gsdata, function(el) { return el; });
 
-    var gsdata = JSON.parse(localStorage["gsdata"]);
-    alert( gsdata );
+    //var gsdata = JSON.parse(localStorage["gsdata"]);
+    alert( arr );
 
    /* if(gsdata[0]){
 
