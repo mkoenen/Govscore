@@ -305,11 +305,11 @@ function ag2savelocal() {
 
     var ag2data, ag2date;
 
-    //gsdata = localStorage.getObject('gsdata');
+    gsdata = localStorage.getObject('gsdata');
 
     ag2date = formatDate(new Date());
 
-    ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'ag2': [-1]};
+    ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
     ag2data = getinputs(ag2data,25,48,"ag");
 
     localStorage.setObject('ag2data', ag2data);
@@ -338,9 +338,11 @@ function ag3savelocal() {
 
     var ag3data, ag3date;
 
+    gsdata = localStorage.getObject('gsdata');
+
     ag3date = formatDate(new Date());
 
-    ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'ag3': [-1]};
+    ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'answers': [-1]};
     ag3data = getinputs(ag3data,49,60,"ag");
 
     localStorage.setObject('ag3data', ag3data);
@@ -369,9 +371,11 @@ function ag4savelocal() {
 
     var ag4data, ag4date;
 
+    gsdata = localStorage.getObject('gsdata');
+
     ag4date = formatDate(new Date());
 
-    ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'ag4': [-1]};
+    ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
     ag4data = getinputs(ag4data,61,84,"ag");
 
     localStorage.setObject('ag4data', ag4data);
@@ -400,9 +404,11 @@ function ag5savelocal() {
 
     var ag5data, ag5date;
 
+    gsdata = localStorage.getObject('gsdata');
+
     ag5date = formatDate(new Date());
 
-    ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'ag5': [-1]};
+    ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'answers': [-1]};
     ag5data = getinputs(ag5data,85,100,"ag");
     
     localStorage.setObject('ag5data', ag5data);
