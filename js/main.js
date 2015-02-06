@@ -326,7 +326,7 @@ function ag2saveServer() {
     var ag2data;
  
     ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://sensi.wpengine.com/store-ag2.php", ag2data);
+    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag2data);
         
 }
 
@@ -359,7 +359,7 @@ function ag3saveServer() {
     var ag3data;
 
     ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://sensi.wpengine.com/store-ag3.php", ag3data);
+    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag3data);
 
 }
 
@@ -392,7 +392,7 @@ function ag4saveServer() {
     var ag4data;
     
     ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://sensi.wpengine.com/store-ag4.php", ag4data);
+    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag4data);
 
 }
 
@@ -425,7 +425,7 @@ function ag5saveServer() {
     var ag5data;
 
     ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://sensi.wpengine.com/store-ag5.php", ag5data);
+    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag5data);
 
     
 } 
