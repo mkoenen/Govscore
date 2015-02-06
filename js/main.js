@@ -194,7 +194,8 @@ Storage.prototype.getObject = function(key) {
 //get answers from form and build json array
 function getinputs(answerset,num1,num2,prefix,subset){
         var i, key, value;
-        subset1 = subset.replace(/"/g, "");
+        subset1 = subset.replace((/\"/g, "");
+            alert(subset1 + " ' " + subset);
         //answerset += { 'gs':[-1]};
         //loop through the entries, grab value and store in array
         for(i=num1; i<=num2; i++) {
