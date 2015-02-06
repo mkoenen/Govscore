@@ -245,7 +245,7 @@ function savelocal() {
     gsdata = getinputs(gsdata,1,25,"g");
     localStorage.setObject('gsdata', gsdata);
  
-    //calcResults();
+    calcResults();
 
     //now that everything is saved, check the connection
     checkConnection( "cgovscore");
@@ -260,7 +260,7 @@ function saveServer() {
     //get the data from local storage
     gsdata = localStorage.getObject('gsdata');
 
-    saveToServer("http://sensi.wpengine.com/store.php", gsdata);
+    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata);
 
 }
 
@@ -293,7 +293,7 @@ function ag1saveServer() {
     var ag1data;
           
     ag1data = localStorage.getObject('ag1data');
-    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag1data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data);
         
 }
 
@@ -326,7 +326,7 @@ function ag2saveServer() {
     var ag2data;
  
     ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag2data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data);
         
 }
 
@@ -359,7 +359,7 @@ function ag3saveServer() {
     var ag3data;
 
     ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag3data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data);
 
 }
 
@@ -392,7 +392,7 @@ function ag4saveServer() {
     var ag4data;
     
     ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag4data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data);
 
 }
 
@@ -425,7 +425,7 @@ function ag5saveServer() {
     var ag5data;
 
     ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://sensi.wpengine.com/store-ag1.php", ag5data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data);
 
     
 } 
@@ -479,8 +479,9 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 function calcResults() {
 
     var gsdata = JSON.parse(localStorage["gsdata"]);
+    alert( gsdata );
 
-    if(gsdata[0]){
+   /* if(gsdata[0]){
 
         var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel, res;;
         
@@ -536,7 +537,7 @@ function calcResults() {
         res += "<h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
         res += "<h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
 
-        document.getElementById('gs-results').innerHTML = res;
+        document.getElementById('gs-results').innerHTML = res;*/
     }
 }
 
