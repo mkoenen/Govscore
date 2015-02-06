@@ -199,7 +199,7 @@ function getinputs(answerset,num1,num2,prefix){
         for(i=num1; i<=num2; i++) {
             key = "'" + prefix + i +"'";
             value = $('input[name = ' + key + ']:checked').val();
-            answerset.gs[i] = value;
+            answerset.prefix[i] = value;
         }
         
         return answerset;
