@@ -479,6 +479,7 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 function calcResults() {
 
     var gsdata = localStorage.getObject('gsdata');
+    alert(gsdata[name] + ", " + gsdata[array][1]);
     var array = $.map(gsdata, function(value, index) {
     return [value];
     });
