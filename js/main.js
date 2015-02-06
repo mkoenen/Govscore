@@ -199,7 +199,7 @@ function getinputs(answerset,num1,num2,prefix){
         for(i=num1; i<=num2; i++) {
             key = "'" + prefix + i +"'";
             value = $('input[name = ' + key + ']:checked').val();
-            answerset.gs[i] = value;
+            answerset.answers[i] = value;
         }
         
         return answerset;
@@ -241,7 +241,7 @@ function savelocal() {
     gsdate  = formatDate(new Date());
 
     //construct the json array for user data and add to local storage
-    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'gs':[-1]};
+    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
     gsdata = getinputs(gsdata,1,25,"g");
     localStorage.setObject('gsdata', gsdata);
  
@@ -276,7 +276,7 @@ function ag1savelocal() {
 
     ag1date = formatDate(new Date());
 
-    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'ag1': [-1]};
+    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'answers': [-1]};
     ag1data = getinputs(ag1data,1,24,"ag");
 
     localStorage.setObject('ag1data', ag1data);
