@@ -537,7 +537,7 @@ function calcResults() {
         res += "<h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
         res += "<h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
 
-        document.getElementById('gs-results').innerHTML = res;*/
-    }
+        document.getElementById('gs-results').innerHTML = res;
+    }*/
 }
 
