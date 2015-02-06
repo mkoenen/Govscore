@@ -233,7 +233,7 @@ var gsdata = localStorage.getObject('gsdata');
 
 function savelocal() {
 
-    var userdata, email, gsdata, gsdate, username, organization, answerset.gs[i];
+    var userdata, email, gsdata, gsdate, username, organization;
 
     username = document.getElementById("username").value;
     email = document.getElementById("email").value;
@@ -242,7 +242,7 @@ function savelocal() {
 
     //construct the json array for user data and add to local storage
     gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'gs':[-1]};
-    gsdata = getinputs(gsdata,1,25,"g",answerset.gs[i]);
+    gsdata = getinputs(gsdata,1,25,"g","answerset.gs[i]");
     localStorage.setObject('gsdata', gsdata);
  
     //calcResults();
