@@ -241,8 +241,8 @@ function savelocal() {
     gsdate  = formatDate(new Date());
 
     //construct the json array for user data and add to local storage
-    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'gs':[-1]};
-    gsdata = getinputs(gsdata,1,25,"g",gs);
+    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, };
+    gsdata = getinputs(gsdata,1,25,"g","gs");
     localStorage.setObject('gsdata', gsdata);
  
     //calcResults();
