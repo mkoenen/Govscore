@@ -233,7 +233,7 @@ var gsdata = localStorage.getObject('gsdata');
 
 function savelocal() {
 
-    var userdata, email, gsdata, gsdate, username, organization;
+    var userdata, email, gsdata, gsdate, username, organization, answerset.gs[i];
 
     username = document.getElementById("username").value;
     email = document.getElementById("email").value;
