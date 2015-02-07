@@ -483,47 +483,35 @@ function calcResults() {
     
     alert(gsdata);
     alert(gsdata.email);
-    //alert(gsdata[name]);
-    var str =JSON.stringify(gsdata); 
-    alert(str);
-    obj = JSON.parse(str);
-    alert(obj.email);
-    //var array = []
-    //array = $.map(gsdata, function(value, index) {
-   // return [value];
-    //});
-    //alert(array);
-    var arr = $.map(gsdata, function(el) { return el; });
 
-    //var gsdata = JSON.parse(localStorage["gsdata"]);
-    //alert( arr[1] + ", " arr[6]);
 
-   /* if(gsdata[0]){
+
+   if(gsdata.answers[1]){
 
         var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel, res;;
         
 
-        accScore = parseInt(gsdata[0]) + parseInt(gsdata[1]) + parseInt(gsdata[4]) + parseInt(gsdata[7]) + parseInt(gsdata[9]) + parseInt(gsdata[12]);
+        accScore = parseInt(gsdata.answers[1]) + parseInt(gsdata.answers[2]) + parseInt(gsdata.answers[5]) + parseInt(gsdata.answers[8]) + parseInt(gsdata.answers[10]) + parseInt(gsdata.answers[13]);
         var accPossible = 24;
         var accPercent = Math.round(accScore/accPossible*100);
         percentArray.push(accPercent);
 
-        stakeScore = parseInt(gsdata[10]) +parseInt(gsdata[13]) +parseInt(gsdata[21]);
+        stakeScore = parseInt(gsdata.answers[11]) +parseInt(gsdata.answers[14]) +parseInt(gsdata.answers[22]);
         var stakePossible = 12;
         var stakePercent = Math.round(stakeScore/stakePossible*100);
         percentArray.push(stakePercent);
 
-        dirScore = parseInt(gsdata[5]) +parseInt(gsdata[6]) +parseInt(gsdata[11]) +parseInt(gsdata[15]);
+        dirScore = parseInt(gsdata.answers[6]) +parseInt(gsdata.answers[7]) +parseInt(gsdata.answers[12]) +parseInt(gsdata.answers[16]);
         var dirPossible = 16;
         var dirPercent = Math.round(dirScore/dirPossible*100);
         percentArray.push(dirPercent);
 
-        resScore = parseInt(gsdata[2]) +parseInt(gsdata[3]) +parseInt(gsdata[16]) +parseInt(gsdata[20]) +parseInt(gsdata[22]) +parseInt(gsdata[24]);
+        resScore = parseInt(gsdata.answers[3]) +parseInt(gsdata.answers[4]) +parseInt(gsdata.answers[17]) +parseInt(gsdata.answers[21]) +parseInt(gsdata.answers[23]) +parseInt(gsdata[24]);
         var resPossible = 24;
         var resPercent = Math.round(resScore/resPossible*100);
         percentArray.push(resPercent);
 
-        enhScore = parseInt(gsdata[8]) +parseInt(gsdata[14]) +parseInt(gsdata[17]) +parseInt(gsdata[18]) +parseInt(gsdata[19]) +parseInt(gsdata[23]);
+        enhScore = parseInt(gsdata[8]) +parseInt(gsdata.answers[15]) +parseInt(gsdata.answers[18]) +parseInt(gsdata.answers[19]) +parseInt(gsdata.answers[20]) +parseInt(gsdata.answers[24]);
         var enhPossible = 24;
         var enhPercent = Math.round(enhScore/enhPossible*100);
         percentArray.push(enhPercent);
@@ -555,6 +543,6 @@ function calcResults() {
         res += "<h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
 
         document.getElementById('gs-results').innerHTML = res;
-    }*/
+    }
 }
 
