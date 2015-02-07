@@ -490,7 +490,7 @@ function calcResults() {
     var arr = $.map(gsdata, function(el) { return el; });
 
     //var gsdata = JSON.parse(localStorage["gsdata"]);
-    alert( arr[1] + ", " arr[6]);
+    //alert( arr[1] + ", " arr[6]);
 
    /* if(gsdata[0]){
 
