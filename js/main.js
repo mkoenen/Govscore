@@ -482,12 +482,12 @@ function calcResults() {
 
     
     alert(gsdata);
-    alert(gsdata.name);
+    alert(gsdata.email);
     //alert(gsdata[name]);
     var str =JSON.stringify(gsdata); 
     alert(str);
     obj = JSON.parse(str);
-    alert(obj.name);
+    alert(obj.email);
     //var array = []
     //array = $.map(gsdata, function(value, index) {
    // return [value];
