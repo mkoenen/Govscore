@@ -480,8 +480,9 @@ function calcResults() {
 
     var gsdata = localStorage.getObject('gsdata');
 
-    gsdata =JSON.parse(gsdata);
+    
     alert(gsdata);
+    alert(gsdata[name]);
     var array = []
     array = $.map(gsdata, function(value, index) {
     return [value];
