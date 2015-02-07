@@ -482,12 +482,14 @@ function calcResults() {
 
     
     alert(gsdata);
-    alert(gsdata[name]);
-    var array = []
-    array = $.map(gsdata, function(value, index) {
-    return [value];
-    });
-    alert(array);
+    //alert(gsdata[name]);
+    var str =JSON.stringify(gsdata); 
+    alert(str);
+    //var array = []
+    //array = $.map(gsdata, function(value, index) {
+   // return [value];
+    //});
+    //alert(array);
     var arr = $.map(gsdata, function(el) { return el; });
 
     //var gsdata = JSON.parse(localStorage["gsdata"]);
