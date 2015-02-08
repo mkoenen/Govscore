@@ -519,20 +519,6 @@ function calcResults() {
         totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
         
 
-        switch(true) {
-            case( totalScore < 25 ):
-                document.getElementsByClassName('one').style.backgroundColor = "green";
-                break;
-            case( totalScore >= 25 && totalScore < 50 ):
-                document.getElementsByClassName('two').style.backgroundColor = "green";
-                break;
-            case( totalScore >= 50 && totalScore < 75 ):
-                document.getElementsByClassName('three').style.backgroundColor = "green";
-                break;
-            case( totalScore >= 75 ): 
-                document.getElementsByClassName('four').style.backgroundColor = "green";
-        }
-
         //list each area with the score
         res = "<h2>Govscore Assessment</h2><p>You assessed your organization as follows: </p>";
         res += "<h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
@@ -546,6 +532,20 @@ function calcResults() {
 
        
         document.getElementById('gs-results').innerHTML = res;
+
+        switch(true) {
+            case( totalScore < 25 ):
+                document.getElementsByClassName('one').style.backgroundColor = "green";
+                break;
+            case( totalScore >= 25 && totalScore < 50 ):
+                document.getElementsByClassName('two').style.backgroundColor = "green";
+                break;
+            case( totalScore >= 50 && totalScore < 75 ):
+                document.getElementsByClassName('three').style.backgroundColor = "green";
+                break;
+            case( totalScore >= 75 ): 
+                document.getElementsByClassName('four').style.backgroundColor = "green";
+        }
     }
 }
 
