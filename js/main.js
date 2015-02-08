@@ -519,6 +519,20 @@ function calcResults() {
         totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
         
 
+        switch(true) {
+            case( totalScore < 25 ):
+                document.getElementsByClassName('one').style.backgroundColor = "green";
+                break;
+            case( totalScore >= 25 && totalScore < 50 ):
+                document.getElementsByClassName('two').style.backgroundColor = "green";
+                break;
+            case( totalScore >= 50 && totalScore < 75 ):
+                document.getElementsByClassName('three').style.backgroundColor = "green";
+                break;
+            case( totalScore >= 75 ): 
+                document.getElementsByClassName('four').style.backgroundColor = "green";
+        }
+
         //list each area with the score
         res = "<h2>Govscore Assessment</h2><p>You assessed your organization as follows: </p>";
         res += "<h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
@@ -527,21 +541,9 @@ function calcResults() {
         res += "<h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
         res += "<h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
         res += "<h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p>"
-        res += "<ul><li id=\"one\">Clear need of governance development</li><li id=\"two\"Basic level of governance</li><li id=\"three\">Goal-driven and dynamic governance</li><li id=\"four\">Transformational governance</li></ul>"
+        res += "<ul><li class='one'>Clear need of governance development</li><li class='two'>Basic level of governance</li><li class='three'>Goal-driven and dynamic governance</li><li class='four'>Transformational governance</li></ul>"
 
-        switch(true) {
-            case( totalScore < 25 ):
-                document.getElementById("one").style.backgroundColor = "green";
-                break;
-            case( totalScore >= 25 && totalScore < 50 ):
-                document.getElementById("two").style.backgroundColor = "green";
-                break;
-            case( totalScore >= 50 && totalScore < 75 ):
-                document.getElementById("three").style.backgroundColor = "green";
-                break;
-            case( totalScore >= 75 ): 
-                document.getElementById("four").style.backgroundColor = "green";
-        }
+
        
         document.getElementById('gs-results').innerHTML = res;
     }
