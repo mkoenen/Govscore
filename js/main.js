@@ -564,7 +564,7 @@ function calcResults() {
         
     }
 
-    if(ag1data.answers[1] || ag2data.answers[1] || ag3data.answers[1] || ag4data.answers[1] || ag5data.answers[1] ){
+    if(ag1data.answers[1] !== null || ag2data.answers[1] !== null  || ag3data.answers[1]!== null || ag4data.answers[1] !== null || ag5data.answers[1] !== null ){
         res += "<h2>Advanced Govscore</h2>";
     }
 
