@@ -477,7 +477,7 @@ function showResultsButtons() {
         var ag5resultButton = document.getElementById('ag5-results');
         ag5resultButton.className = ag5resultButton.className + " see";
     }
-}*/
+}
 
 /* Results -----------------*/
 
