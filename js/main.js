@@ -500,7 +500,7 @@ function calcResults() {
 
    if(gsdata.answers[1]){
 
-        var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel, res;;
+        var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel;
         
 
         accScore = parseInt(gsdata.answers[1]) + parseInt(gsdata.answers[2]) + parseInt(gsdata.answers[5]) + parseInt(gsdata.answers[8]) + parseInt(gsdata.answers[10]) + parseInt(gsdata.answers[13]);
@@ -558,15 +558,17 @@ function calcResults() {
         //document.getElementById('gs-results').innerHTML = res;
         
     }
+
     if(ag1data.answers[1] || ag2data.answers[1] || ag3data.answers[1] || ag4data.answers[1] || ag5data.answers[1] ){
         res += "<h2>Advanced Govscore</h2>";
     }
 
     function getAgResults(dataset,resSet,ansnums) {
         if(dataset.answers[1]){
-        var resSet = 0;
-        for(i=1; i<=dataset.answers.length; i++){
-            resSet += dataset.answers[ansnums];
+            var resSet = 0;
+            for(i=1; i<=dataset.answers.length; i++){
+                resSet += dataset.answers[ansnums];
+            }
         }
     }
 
