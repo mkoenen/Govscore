@@ -540,7 +540,7 @@ function calcResults() {
                 document.getElementById("three").style.backgroundColor = "green";
                 break;
             case( totalScore >= 75 ): 
-                document.getElementById("four").style.backgroundColor = "green;
+                document.getElementById("four").style.backgroundColor = "green";
         }
        
         document.getElementById('gs-results').innerHTML = res;
