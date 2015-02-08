@@ -79,6 +79,14 @@ margin: -8px -10px 0 0;
 
 /* results ----------------------------------------*/
 
-#one, #two, #three, #four {
-	background-color: white;
+#gs-results p {
+margin: .5em 0;
+}
+#gs-results h3 {
+margin: .5em 0;
+}
+#gs-results div {
+border: 1px solid #DDD;
+padding: 0 3%;
+margin: 1em 0;
 }
