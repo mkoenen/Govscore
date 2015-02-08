@@ -232,6 +232,11 @@ function saveToServer(address,dataset){
 
 /* Initial Govscore -----------------------------------------------*/
 var gsdata = localStorage.getObject('gsdata');
+var ag1data =  localStorage.getObject('ag1data');
+var ag2data =  localStorage.getObject('ag2data');
+var ag3data =  localStorage.getObject('ag3data');
+var ag4data =  localStorage.getObject('ag4data');
+var ag5data =  localStorage.getObject('ag5data');
 
 function savelocal() {
 
