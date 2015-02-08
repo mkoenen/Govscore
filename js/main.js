@@ -521,16 +521,16 @@ function calcResults() {
 
         switch(true) {
             case( totalScore < 25 ):
-                mlevel = "Clear need of governance development (first level/4)";
+                document.getElementById('one').style.backgroundColor = 'green';
                 break;
             case( totalScore >= 25 && totalScore < 50 ):
-                mlevel = "Basic level of governance (second level/4)";
+                document.getElementById('two').style.backgroundColor = 'green';
                 break;
             case( totalScore >= 50 && totalScore < 75 ):
-                mlevel = "Goal-Driven and dynamic governance (third level/4)";
+                document.getElementById('three').style.backgroundColor = 'green';
                 break;
             case( totalScore >= 75 ): 
-                mlevel = "Transformational governance (highest level/4)";
+                document.getElementById('four').style.backgroundColor = 'green';
         }
 
         //list each area with the score
@@ -541,10 +541,10 @@ function calcResults() {
         res += "<h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
         res += "<h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
         res += "<h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p>"
-        res += "<ul><li class='one'>Clear need of governance development</li><li class='two'>Basic level of governance</li><li class='three'>Goal-driven and dynamic governance</li><li class='four'>Transformational governance</li></ul>"
+        res += "<ul><li id='one'>Clear need of governance development</li><li id='two'>Basic level of governance</li><li id='three'>Goal-driven and dynamic governance</li><li id='four'>Transformational governance</li></ul>"
 
 
-        <p>\"" + mlevel + "\".</p>";
+       
         document.getElementById('gs-results').innerHTML = res;
     }
 }
