@@ -496,7 +496,7 @@ function calcResults() {
         var accPercent = Math.round(accScore/accPossible*100);
         percentArray.push(accPercent);
 
-        stakeScore = parseInt(gsdata.answers[11]) +parseInt(gsdata.answers[14]) +parseInt(gsdata.answers[22]);
+        stakeScore = parseInt(gsdata.answers[11]) + parseInt(gsdata.answers[14]) + parseInt(gsdata.answers[22]);
         var stakePossible = 12;
         var stakePercent = Math.round(stakeScore/stakePossible*100);
         percentArray.push(stakePercent);
@@ -506,12 +506,12 @@ function calcResults() {
         var dirPercent = Math.round(dirScore/dirPossible*100);
         percentArray.push(dirPercent);
 
-        resScore = parseInt(gsdata.answers[3]) +parseInt(gsdata.answers[4]) +parseInt(gsdata.answers[17]) +parseInt(gsdata.answers[21]) +parseInt(gsdata.answers[23]) +parseInt(gsdata[24]);
+        resScore = parseInt(gsdata.answers[3]) +parseInt(gsdata.answers[4]) +parseInt(gsdata.answers[17]) +parseInt(gsdata.answers[21]) +parseInt(gsdata.answers[23]) +parseInt(gsdata.answers[25]);
         var resPossible = 24;
         var resPercent = Math.round(resScore/resPossible*100);
         percentArray.push(resPercent);
 
-        enhScore = parseInt(gsdata[8]) +parseInt(gsdata.answers[15]) +parseInt(gsdata.answers[18]) +parseInt(gsdata.answers[19]) +parseInt(gsdata.answers[20]) +parseInt(gsdata.answers[24]);
+        enhScore = parseInt(gsdata.answers[9]) +parseInt(gsdata.answers[15]) +parseInt(gsdata.answers[18]) +parseInt(gsdata.answers[19]) +parseInt(gsdata.answers[20]) +parseInt(gsdata.answers[24]);
         var enhPossible = 24;
         var enhPercent = Math.round(enhScore/enhPossible*100);
         percentArray.push(enhPercent);
@@ -534,14 +534,17 @@ function calcResults() {
         }
 
         //list each area with the score
-        res = "<h2>Govscore Assessment</h2><p>Overall your Organization scores as follows: </p>";
-        res += "<p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p>\"" + mlevel + "\".</p><h3>Result by Practice Area</h3>";
+        res = "<h2>Govscore Assessment</h2><p>You assessed your organization as follows: </p>";
         res += "<h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p>";
         res += "<h3>Engaging Stakeholders</h3><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p>";
         res += "<h3>Shared Strategic Direction</h3><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p>";
         res += "<h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p>";
         res += "<h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p>";
+        res += "<h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p>"
+        res += "<ul><li class='one'>Clear need of governance development</li><li class='two'>Basic level of governance</li><li class='three'>Goal-driven and dynamic governance</li><li class='four'>Transformational governance</li></ul>"
 
+
+        <p>\"" + mlevel + "\".</p>";
         document.getElementById('gs-results').innerHTML = res;
     }
 }
