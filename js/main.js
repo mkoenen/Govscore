@@ -4,8 +4,8 @@ window.onload = function(){
     //document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
-    //document.addEventListener("deviceready", hideSaveButton, false);
-    //document.addEventListener("deviceready", calcResults, false);
+    document.addEventListener("deviceready", showResultsButtons, false);
+    document.addEventListener("deviceready", calcResults, false);
 };
 
 //check if online according to the above interval
@@ -219,12 +219,14 @@ function saveToServer(address,dataset){
                     alert(responseData + ", " + textStatus + ", " + jqXHR);
                 
                          afterSavedServer("Govscore", organization);
+                         window.location.hash = "govscore-results";
+                         showResultsButton();
                         },
             error      : function(response) {
                         alert(response);                  
                          }  
             });
-            window.location.hash = "govscore-results";
+            
         }
 
 
@@ -432,38 +434,48 @@ function ag5saveServer() {
 
 /* Interface changes -----------------------------------------*/ 
 
-/*function hideSaveButton() {
+function showResultsButtons() {
     
-    if( answers[1] != null){
-        var gsSaveButton = document.getElementById('btnStore');
-        gsSaveButton.className = gsSaveButton.className + " hide";
+    if( gsdata.answers[1] != null){
+        /*var gsSaveButton = document.getElementById('btnStore');
+        gsSaveButton.className = gsSaveButton.className + " hide";*/
         var resultButton2 = document.getElementById('govscore-results2');
         resultButton2.className = resultButton2.className + " see";
     }
     
-    if(ag1answers[1] != null){
-       var ag1SaveButton = document.getElementById('ag1Store');
-       ag1SaveButton.className = ag1SaveButton.className + " hide";
+    if(ag1data.answers[1] != null){
+      /* var ag1SaveButton = document.getElementById('ag1Store');
+       ag1SaveButton.className = ag1SaveButton.className + " hide";*/
+       var ag1resultButton = document.getElementById('ag1-results');
+        ag1resultButton.className = ag1resultButton.className + " see";
     }
    
-    if(ag2answers[1] != null) {
-        var ag2SaveButton = document.getElementById('ag2Store');
-        ag2SaveButton.className = ag2SaveButton.className + " hide";
+    if(ag2data.answers[1] != null) {
+        /*var ag2SaveButton = document.getElementById('ag2Store');
+        ag2SaveButton.className = ag2SaveButton.className + " hide";*/
+        var ag2resultButton = document.getElementById('ag2-results');
+        ag2resultButton.className = ag2resultButton.className + " see";
     }
     
-    if(ag3answers[1] != null){
-        var ag3SaveButton = document.getElementById('ag3Store');
-        ag3SaveButton.className = ag3SaveButton.className + " hide";
+    if(ag3data.answers[1] != null){
+        /*var ag3SaveButton = document.getElementById('ag3Store');
+        ag3SaveButton.className = ag3SaveButton.className + " hide";*/
+        var ag3resultButton = document.getElementById('ag3-results');
+        ag3resultButton.className = ag3resultButton.className + " see";
     }
      
-    if( ag4answers[1] != null) {
-        var ag4SaveButton = document.getElementById('ag4Store');
-        ag4SaveButton.className = ag4SaveButton.className + " hide";
+    if( ag4data.answers[1] != null) {
+        /*var ag4SaveButton = document.getElementById('ag4Store');
+        ag4SaveButton.className = ag4SaveButton.className + " hide";*/
+        var ag4resultButton = document.getElementById('ag4-results');
+        ag4resultButton.className = ag4resultButton.className + " see";
     }
    
-    if( ag5answers[1] != null){
-        var ag5SaveButton = document.getElementById('ag5Store');
-        ag5SaveButton.className = ag5SaveButton.className + " hide";
+    if( ag5data.answers[1] != null){
+        /*var ag5SaveButton = document.getElementById('ag5Store');
+        ag5SaveButton.className = ag5SaveButton.className + " hide";*/
+        var ag5resultButton = document.getElementById('ag5-results');
+        ag5resultButton.className = ag5resultButton.className + " see";
     }
 }*/
 
@@ -478,7 +490,13 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 //add up the numbers
 function calcResults() {
 
-    var gsdata = localStorage.getObject('gsdata');
+    var gsdata = localStorage.getObject('gsdata'),
+        ag1data = localStorage.getObject('ag1data'),
+        ag2data = localStorage.getObject('ag2data'),
+        ag3data = localStorage.getObject('ag3data'),
+        ag4data = localStorage.getObject('ag4data'),
+        ag5data = localStorage.getObject('ag5data'),
+        ag1results,ag2results,ag3results,ag4results,ag5results,res, resag;
 
    if(gsdata.answers[1]){
 
@@ -527,6 +545,7 @@ function calcResults() {
                 mlevel = "Transformational governance (highest level/4)";
         }
 
+
         //list each area with the score
         res = "<h2>Govscore Assessment</h2><p>You assessed your organization as follows: </p>";
         res += "<div id=\"accountability\"><h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p></div>";
@@ -535,8 +554,45 @@ function calcResults() {
         res += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p></div>";
         res += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p></div>";
         res += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the " + gsdata.organization + "to learn more about how your organization was evaluated by others.</p></div>";
-        document.getElementById('gs-results').innerHTML = res;
+        res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
+        //document.getElementById('gs-results').innerHTML = res;
+        
     }
+    if(ag1data.answers[1] || ag2data.answers[1] || ag3data.answers[1] || ag4data.answers[1] || ag5data.answers[1] ){
+        res += "<h2>Advanced Govscore</h2>";
+    }
+
+    function getAgResults(dataset,resSet,ansnums) {
+        if(dataset.answers[1]){
+        var resSet = 0;
+        for(i=1; i<=dataset.answers.length; i++){
+            resSet += dataset.answers[ansnums];
+        }
+    }
+
+    getAgResults(ag1data,ag1results,1);
+    getAgResults(ag2data,ag2results,25);
+    getAgResults(ag3data,ag3results,49);
+    getAgResults(ag4data,ag4results,61);
+    getAgResults(ag5data,ag5results,85);
+
+    
+    if(ag1results){
+        res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24</p></div>";
+    }
+    if(ag2results){
+        res += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " out of 24</p></div>";
+    }
+    if(ag3results){
+        res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 24</p></div>";
+    }
+    if(ag4results){
+        res += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " out of 24</p></div>";
+    }
+    if(ag5results){
+        res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 24</p></div>";
+    }
+
+    document.getElementById('gs-results').innerHTML = res; 
 }
 

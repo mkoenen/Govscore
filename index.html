@@ -46,23 +46,12 @@
 <!-- Govscore page -->
     <div data-role="page" id="govscore" data-title="Govscore" data-theme="c">
 
-        <div data-role="panel" id="legend" data-position="left" data-display="overlay"> 
-            <a href="#pageone" data-rel="close" class="ui-btn ui-icon-delete ui-btn-icon-right"></a>
-            <h2>Legend:</h2>
-            <p><img src="img/empty.png" /><span>Not at all</span></p>
-            <p><img src="img/one-quarter.png" /><span>Minimally</span></p>
-            <p><img src="img/half.png" /><span>Partly</span></p>
-            <p><img src="img/three-quarter.png" /><span>Mostly</span></p>
-            <p><img src="img/full.png" /><span>Completely</span></p>   
-        </div>
-
         <div data-role="header">
             <h1>Govscore</h1>
         </div><!-- header -->
 
         <div data-role="content">
             <article>
-                <a href="#legend" class="ui-btn ui-btn-inline">Legend</a>
                 
                 <a href="#govscore-results" id="govscore-results2" class="ui-btn">See Your Results</a>
                 
@@ -85,7 +74,8 @@
                     <br />
                     
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
-                        <legend>1. The governing body has a clear understanding of its purpose and role.</legend>
+                        <legend><span>1. The governing body has a clear understanding of its purpose and role.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
+
                             <input type="radio" name="g1" id="1none" value="0" checked="checked">
                             <label for="1none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g1" id="1minimally" value="1">
@@ -99,7 +89,7 @@
                     </fieldset>
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>2. Members of the governing body have a clear understanding of their precise governance responsibilities.</legend>
+                        <legend><span>2. Members of the governing body have a clear understanding of their precise governance responsibilities.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g2" id="2none" value="0" checked="checked">
                             <label for="2none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g2" id="2minimally" value="1">
@@ -113,7 +103,7 @@
                     </fieldset>
                     <br /> 
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>3. The governing body monitors the organization’s financial performance compared to financial goals set by the governing body.</legend>
+                        <legend><span>3. The governing body monitors the organization’s financial performance compared to financial goals set by the governing body.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g3" id="3none" value="0" checked="checked">
                             <label for="3none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g3" id="3minimally" value="1">
@@ -127,7 +117,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>4. Governing body members are required to complete a conflict-of-interest / confidentiality disclosure statement annually.</legend>
+                        <legend><span>4. Governing body members are required to complete a conflict-of-interest / confidentiality disclosure statement annually.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g4" id="4none" value="0" checked="checked">
                             <label for="4none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g4" id="4minimally" value="1">
@@ -141,7 +131,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>5. As a whole, our governing body communicates effectively with the Managing Director / Chief Executive.</legend>
+                        <legend><span>5. As a whole, our governing body communicates effectively with the Managing Director / Chief Executive.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g5" id="5none" value="0" checked="checked">
                             <label for="5none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g5" id="5minimally" value="1">
@@ -155,7 +145,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>6. The governing body is actively involved in establishing the organization’s strategic direction (e.g., creating a longer-range vision, setting priorities, and developing / approving the strategic plan).</legend>
+                        <legend><span>6. The governing body is actively involved in establishing the organization’s strategic direction (e.g., creating a longer-range vision, setting priorities, and developing / approving the strategic plan).</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g6" id="6none" value="0" checked="checked">
                             <label for="6none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g6" id="6minimally" value="1">
@@ -169,7 +159,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>7. Governing body members strive to represent the healthcare needs of the organization’s target population groups.</legend>
+                        <legend><span>7. Governing body members strive to represent the healthcare needs of the organization’s target population groups.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g7" id="7none" value="0" checked="checked">
                             <label for="7none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g7" id="7minimally" value="1">
@@ -183,7 +173,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>8. Governing body members make attendance at governing body meetings a high priority and attend most meetings fully prepared to discuss and decide the items on the agenda.</legend>
+                        <legend><span>8. Governing body members make attendance at governing body meetings a high priority and attend most meetings fully prepared to discuss and decide the items on the agenda.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g8" id="8none" value="0" checked="checked">
                             <label for="8none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g8" id="8minimally" value="1">
@@ -197,7 +187,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>9. The governing body makes good use of time available during governing body meetings to perform its duties.</legend>
+                        <legend><span>9. The governing body makes good use of time available during governing body meetings to perform its duties.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g9" id="9none" value="0" checked="checked">
                             <label for="9none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g9" id="9minimally" value="1">
@@ -211,7 +201,7 @@
                     </fieldset> 
                    <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>10. The governing body regularly reviews the organization’s quality and patient safety scores / results.</legend>
+                        <legend><span>10. The governing body regularly reviews the organization’s quality and patient safety scores / results.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g10" id="10none" value="0" checked="checked">
                             <label for="10none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g10" id="10minimally" value="1">
@@ -225,7 +215,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>11. Governing body members recognize the differences between the governing body's role and management's role.</legend>
+                        <legend><span>11. Governing body members recognize the differences between the governing body's role and management's role.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g11" id="11none" value="0" checked="checked">
                             <label for="11none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g11" id="11minimally" value="1">
@@ -239,7 +229,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>12. The governing body requires that all plans in the organization (e.g., financial, capital, operational, quality improvement) be aligned with the organization’s overall strategic plan / direction.</legend>
+                        <legend><span>12. The governing body requires that all plans in the organization (e.g., financial, capital, operational, quality improvement) be aligned with the organization’s overall strategic plan / direction.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g12" id="12none" value="0" checked="checked">
                             <label for="12none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g12" id="12minimally" value="1">
@@ -253,7 +243,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>13. The governing body requires management to keep the governing body informed on potential or current legal issues important to the organization.</legend>
+                        <legend><span>13. The governing body requires management to keep the governing body informed on potential or current legal issues important to the organization.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g13" id="13none" value="0" checked="checked">
                             <label for="13none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g13" id="13minimally" value="1">
@@ -267,7 +257,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>14. Governing body communicates effectively with key external stakeholders.</legend>
+                        <legend><span>14. Governing body communicates effectively with key external stakeholders.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g14" id="14none" value="0" checked="checked">
                             <label for="14none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g14" id="14minimally" value="1">
@@ -281,7 +271,7 @@
                     </fieldset>
                     <br /> 
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>15. New governing body members participate in a governance orientation program.</legend>
+                        <legend><span>15. New governing body members participate in a governance orientation program.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g15" id="15none" value="0" checked="checked">
                             <label for="15none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g15" id="15minimally" value="1">
@@ -295,7 +285,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>16. The governing body examines how the organization’s strategic plan addresses community health status / needs before approving the plan.</legend>
+                        <legend><span>16. The governing body examines how the organization’s strategic plan addresses community health status / needs before approving the plan.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g16" id="16none" value="0" checked="checked">
                             <label for="16none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g16" id="16minimally" value="1">
@@ -309,7 +299,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>17. The governing body requires an assessment at least every two years of the perceptions of those who work in the organization to identify their level of satisfaction with the organization</legend>
+                        <legend><span>17. The governing body requires an assessment at least every two years of the perceptions of those who work in the organization to identify their level of satisfaction with the organization.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g17" id="17none" value="0" checked="checked">
                             <label for="17none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g17" id="17minimally" value="1">
@@ -323,7 +313,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>18. Governing body members regularly participate in continuing governance education and governance development activities.</legend>
+                        <legend><span>18. Governing body members regularly participate in continuing governance education and governance development activities.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g18" id="18none" value="0" checked="checked">
                             <label for="18none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g18" id="18minimally" value="1">
@@ -337,7 +327,7 @@
                     </fieldset>
                     <br /> 
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>19. The expectation that governing body members advocate on behalf of the organization is clearly established during governing body member orientation.</legend>
+                        <legend><span>19. The expectation that governing body members advocate on behalf of the organization is clearly established during governing body member orientation.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g19" id="19none" value="0" checked="checked">
                             <label for="19none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g19" id="19minimally" value="1">
@@ -351,7 +341,7 @@
                     </fieldset>
                     <br /> 
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>20. Governing body self-assessment is treated as a top priority by the governing body and formal self-assessment is done at least once a year.</legend>
+                        <legend><span>20. Governing body self-assessment is treated as a top priority by the governing body and formal self-assessment is done at least once a year.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g20" id="20none" value="0" checked="checked">
                             <label for="20none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g20" id="20minimally" value="1">
@@ -365,7 +355,7 @@
                     </fieldset>
                     <br /> 
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>21. The governing body has a written policy or procedure describing ethical practices for financial and service quality reporting.</legend>
+                        <legend><span>21. The governing body has a written policy or procedure describing ethical practices for financial and service quality reporting.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g21" id="21none" value="0" checked="checked">
                             <label for="21none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g21" id="21minimally" value="1">
@@ -379,7 +369,7 @@
                     </fieldset>
                     <br /> 
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>22. Governing body members take steps to build trust with key internal and external stakeholders.</legend>
+                        <legend><span>22. Governing body members take steps to build trust with key internal and external stakeholders.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g22" id="22none" value="0" checked="checked">
                             <label for="22none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g22" id="22minimally" value="1">
@@ -393,7 +383,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>23. Governing body members actively support the organization’s resource mobilization or fundraising activities.</legend>
+                        <legend><span>23. Governing body members actively support the organization’s resource mobilization or fundraising activities.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g23" id="23none" value="0" checked="checked">
                             <label for="23none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g23" id="23minimally" value="1">
@@ -407,7 +397,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>24. The governing body uses the ability to advocate on behalf of the organization as a criterion in the selection process of new governing body members.</legend>
+                        <legend><span>24. The governing body uses the ability to advocate on behalf of the organization as a criterion in the selection process of new governing body members.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g24" id="24none" value="0" checked="checked">
                             <label for="24none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g24" id="24minimally" value="1">
@@ -421,7 +411,7 @@
                     </fieldset> 
                     <br />
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true">
-                        <legend>25. The governing body encourages an organizational culture that earns high health worker and staff morale. </legend>
+                        <legend><span>25. The governing body encourages an organizational culture that earns high health worker and staff morale.</span><a href="#popupBasic" data-transition="fade" data-rel="popup" class="legend">?</a></legend>
                             <input type="radio" name="g25" id="25none" value="0" checked="checked">
                             <label for="25none"><img src="img/empty.png" /></label>
                             <input type="radio" name="g25" id="25minimally" value="1">
@@ -444,6 +434,16 @@
         </div><!-- content -->
 
         <div data-role="footer" data-position="fixed">
+            <div data-role="popup" id="popupBasic" data-icon="delete" data-overlay-theme="b">
+                <div id="legend">
+                    <h2>Legend:</h2>
+                        <p><img src="img/empty.png" /><span>Not at all</span></p>
+                        <p><img src="img/one-quarter.png" /><span>Minimally</span></p>
+                        <p><img src="img/half.png" /><span>Partly</span></p>
+                        <p><img src="img/three-quarter.png" /><span>Mostly</span></p>
+                        <p><img src="img/full.png" /><span>Completely</span></p> 
+                    </div>
+                </div>
              <div data-role="navbar">
                 <ul>
                     <li><a href="#how-to">How To<br />&nbsp;</a></li>
@@ -501,6 +501,7 @@
 
         <div data-role="content">
             <article>
+                <a href="#govscore-results" id="ag1-results" class="ui-btn">See Your Results</a>
                 <h3>1. Culture of personal accountability</h3>
 
                 <div class="questions">
@@ -765,6 +766,8 @@
         <div data-role="content">
           
             <article>
+                <a href="#govscore-results" id="ag2-results" class="ui-btn">See Your Results</a>
+
                 <h3>1. Achieving sincere stakeholder engagement</h3>
 
                 
@@ -1029,6 +1032,8 @@
 
         <div data-role="content">
             <article>
+                <a href="#govscore-results" id="ag3-results" class="ui-btn">See Your Results</a> 
+
                 <h3>1. Defining the strategic direction of the organization</h3>
 
                 <div class="questions" >
@@ -1174,6 +1179,8 @@
 
         <div data-role="content">
             <article>
+                <a href="#govscore-results" id="ag4-results" class="ui-btn">See Your Results</a>
+
                 <h3>1. Mobilizing resources</h3>
 
                 <div class="questions">
@@ -1436,6 +1443,7 @@
 
         <div data-role="content">
             <article>
+                <a href="#govscore-results" id="ag5-results" class="ui-btn">See Your Results</a>
 
                 <h3>1. Cultivating governance competencies</h3>
       

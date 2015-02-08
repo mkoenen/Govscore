@@ -25,7 +25,7 @@ width: 20%;
 label.ui-btn.ui-corner-all.ui-btn-inherit {
 	font-weight: normal;
 	font-size: 12px;
-	height: 32px;
+	height: auto;
 	text-align: center;
 }
 /* questionnaire ---------------------------------*/
@@ -44,37 +44,57 @@ label.ui-btn img {
 	display: none;
 }*/
 #govscore-results1,
-#govscore-results2 {
+#govscore-results2,
+#ag1-results,
+#ag2-results, 
+#ag3-results, 
+#ag4-results, 
+#ag5-results {
 	display: none;
 }
 #govscore-results1.see,
-#govscore-results2.see {
+#govscore-results2.see,
+#ag1-results.see,
+#ag2-results.see, 
+#ag3-results.see, 
+#ag4-results.see, 
+#ag5-results.see  {
 	display: block;
 }
 button.hide {
 	display:none;
 }
-/* pannel ----------------------------------------*/
-
-
-.ui-page .ui-panel {
-	background: rgba(203, 232, 197, 0.93);
-	width: 10em;
+.legend {
+	width: 5%;
+	float: right;
+	text-align: right;
+	padding: 0 0 0 2%;
+	text-decoration: none;	
+	background-color: #fff;
 }
-.ui-panel span {
+/* pop-up ----------------------------------------*/
+
+.ui-popup-container {
+	position: fixed !important;
+	top: 60px !important;
+	left: 25% !important;
+	}
+
+div#popupBasic {
+	background: #CBE8C5;
+}
+#legend span {
 	padding: 4px 10px 0;
 	display: inline-block;
 }
-.ui-panel img {
+#legend img {
 	width: 20%;
 	float: left;
 	clear: both;
 }
-.ui-page-theme-c .ui-panel-inner .ui-btn {
-background-color: rgba(0, 0, 0, 0)/*{c-bup-background-color}*/;
-border-color: rgba(0, 0, 0, 0) /*{c-bup-border}*/;
-color: #333 /*{c-bup-color}*/;
-margin: -8px -10px 0 0;
+#legend{
+	background-color: rgba(0, 0, 0, 0)/*{c-bup-background-color}*/;
+	padding: 0 0 10% 10%;
 }
 
 /* results ----------------------------------------*/
