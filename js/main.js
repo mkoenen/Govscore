@@ -556,7 +556,7 @@ function calcResults() {
         function getAgResults(dataset,resSet,ansnums) {
             var resSet = 0;
             for(i=1; i<=dataset.answers.length; i++){
-                resSet += parseInt(dataset.answers[ansnums]);
+                resSet += parseInt(dataset.answers[(ansnums + i)]);
             }
             return resSet;
         }
