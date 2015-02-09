@@ -552,15 +552,13 @@ function calcResults() {
 
     if(ag1data || ag2data || ag3data || ag4data || ag5data ){
         res += "<h2>Advanced Govscore</h2>";
-    
 
         function getAgResults(dataset,resSet,ansnums) {
-            if(dataset.answers[1]){
-                var resSet = 0;
-                for(i=1; i<=dataset.answers.length; i++){
-                    resSet += dataset.answers[ansnums];
-                }
+            var resSet = 0;
+            for(i=1; i<=dataset.answers.length; i++){
+                resSet += parseInt(dataset.answers[ansnums]);
             }
+            return resSet;
         }
 
         getAgResults(ag1data,ag1results,1);
@@ -568,7 +566,6 @@ function calcResults() {
         getAgResults(ag3data,ag3results,49);
         getAgResults(ag4data,ag4results,61);
         getAgResults(ag5data,ag5results,85);
-
         
         if(ag1results){
             res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24</p></div>";
