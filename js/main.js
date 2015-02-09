@@ -35,7 +35,9 @@ function setbutton() {
 
 function validate() {
     if(gsdata){
-        alert("You have already submitted your answers");
+
+        alreadySaved();
+        
     }else{
         if( document.gsForm.username.value === "" ) {
 
@@ -116,7 +118,7 @@ function afterSavedServer(form, orgcode) {
 
 function alreadySaved() {
     navigator.notification.alert (
-        'Your data has already been saved',
+        'You previously finished this assessment. Please check your results.',
         'Info title',
         'Update'
     );
@@ -280,7 +282,7 @@ function ag1savelocal() {
 
     if(ag1data){
 
-        alert("You have already finished this assessment");
+        alreadySaved();
 
     }else{
 
@@ -317,7 +319,7 @@ function ag1saveServer() {
 function ag2savelocal() {
     if(ag2data){
 
-        alert("You have already finished this assessment");
+        alreadySaved();
 
     }else{
 
@@ -355,7 +357,7 @@ function ag3savelocal() {
 
     if(ag3data){
 
-        alert("You have already finished this assessment");
+        alreadySaved();
 
     }else{
 
@@ -394,7 +396,7 @@ function ag4savelocal() {
 
     if(ag2data){
 
-        alert("You have already finished this assessment");
+        alreadySaved();
 
     }else{
 
