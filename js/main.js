@@ -196,16 +196,16 @@ Storage.prototype.getObject = function(key) {
 
 //get answers from form and build json array
 function getinputs(answerset,num1,num2,prefix){
-        var i, key, value;
-        //loop through the entries, grab value and store in array
-        for(i=num1; i<=num2; i++) {
-            key = "'" + prefix + i +"'";
-            value = $('input[name = ' + key + ']:checked').val();
-            answerset.answers[i] = value;
-        }
-        
-        return answerset;
+    var i, key, value;
+    //loop through the entries, grab value and store in array
+    for(i=num1; i<=num2; i++) {
+        key = "'" + prefix + i +"'";
+        value = $('input[name = ' + key + ']:checked').val();
+        answerset.answers[i] = value;
     }
+    
+    return answerset;
+}
 
 
 //save the json data array to the server via ajax call
@@ -253,7 +253,7 @@ function savelocal() {
     gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
     gsdata = getinputs(gsdata,1,25,"g");
     localStorage.setObject('gsdata', gsdata);
-    alert(gsdata);
+    
     calcResults();
 
     //now that everything is saved, check the connection
@@ -393,7 +393,7 @@ function ag3saveServer() {
 
 function ag4savelocal() {
 
-    if(ag2data){
+    if(ag4data){
 
         alreadySaved();
 
@@ -432,7 +432,7 @@ function ag4saveServer() {
 
 function ag5savelocal() {
 
-    if(ag2data){
+    if(ag5data){
 
         alert("You have already finished this assessment");
 
