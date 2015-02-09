@@ -566,38 +566,39 @@ function calcResults() {
 
     if(ag1data || ag2data || ag3data || ag4data || ag5data ){
         res += "<h2>Advanced Govscore</h2>";
-    }
+    
 
-    function getAgResults(dataset,resSet,ansnums) {
-        if(dataset.answers[1]){
-            var resSet = 0;
-            for(i=1; i<=dataset.answers.length; i++){
-                resSet += dataset.answers[ansnums];
+        function getAgResults(dataset,resSet,ansnums) {
+            if(dataset.answers[1]){
+                var resSet = 0;
+                for(i=1; i<=dataset.answers.length; i++){
+                    resSet += dataset.answers[ansnums];
+                }
             }
         }
-    }
 
-    getAgResults(ag1data,ag1results,1);
-    getAgResults(ag2data,ag2results,25);
-    getAgResults(ag3data,ag3results,49);
-    getAgResults(ag4data,ag4results,61);
-    getAgResults(ag5data,ag5results,85);
+        getAgResults(ag1data,ag1results,1);
+        getAgResults(ag2data,ag2results,25);
+        getAgResults(ag3data,ag3results,49);
+        getAgResults(ag4data,ag4results,61);
+        getAgResults(ag5data,ag5results,85);
 
-    
-    if(ag1results){
-        res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24</p></div>";
-    }
-    if(ag2results){
-        res += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " out of 24</p></div>";
-    }
-    if(ag3results){
-        res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 24</p></div>";
-    }
-    if(ag4results){
-        res += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " out of 24</p></div>";
-    }
-    if(ag5results){
-        res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 24</p></div>";
+        
+        if(ag1results){
+            res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24</p></div>";
+        }
+        if(ag2results){
+            res += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " out of 24</p></div>";
+        }
+        if(ag3results){
+            res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 24</p></div>";
+        }
+        if(ag4results){
+            res += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " out of 24</p></div>";
+        }
+        if(ag5results){
+            res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 24</p></div>";
+        }
     }
 
     document.getElementById('gs-results').innerHTML = res; 
