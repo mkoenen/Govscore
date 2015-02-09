@@ -220,7 +220,7 @@ function saveToServer(address,dataset){
                 
                          afterSavedServer("Govscore", organization);
                          window.location.hash = "govscore-results";
-                         showResultsButton();
+                         showResultsButtons();
                         },
             error      : function(response) {
                         alert(response);                  
