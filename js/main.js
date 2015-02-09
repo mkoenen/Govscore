@@ -231,7 +231,12 @@ function saveToServer(address,dataset){
 
 
 /* Initial Govscore -----------------------------------------------*/
-var gsdata, ag1data, ag2data, ag3data, ag4data, ag5data;
+var gsdata = localStorage.getObject(gsdata); 
+var ag1data = localStorage.getObject(ag1data);
+var ag2data = localStorage.getObject(ag2data);
+var ag3data = localStorage.getObject(ag3data);
+var ag4data = localStorage.getObject(ag4data);
+var ag5data = localStorage.getObject(ag5data);
 
 function savelocal() {
 
@@ -575,13 +580,13 @@ function calcResults() {
             res += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " out of 24</p></div>";
         }
         if(ag3results){
-            res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 24</p></div>";
+            res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 12</p></div>";
         }
         if(ag4results){
             res += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " out of 24</p></div>";
         }
         if(ag5results){
-            res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 24</p></div>";
+            res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 16</p></div>";
         }
     }
 
