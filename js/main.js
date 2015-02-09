@@ -283,6 +283,7 @@ function ag1savelocal() {
 
     localStorage.setObject('ag1data', ag1data);
 
+    calcResults()
     //now that everything is saved check the connection
     checkConnection("cag1");
 
@@ -314,6 +315,7 @@ function ag2savelocal() {
 
     localStorage.setObject('ag2data', ag2data);
 
+    calcResults()
     //now that everything is saved check the connection
     checkConnection("cag2");
 
@@ -344,6 +346,8 @@ function ag3savelocal() {
     ag3data = getinputs(ag3data,49,60,"ag");
 
     localStorage.setObject('ag3data', ag3data);
+
+    calcResults()
 
     //now that everything is saved check the connection
     checkConnection("cag3");
@@ -376,6 +380,8 @@ function ag4savelocal() {
 
     localStorage.setObject('ag4data', ag4data);
 
+    calcResults()
+
     //now that everything is saved check the connection
     checkConnection("cag4");
 
@@ -407,6 +413,7 @@ function ag5savelocal() {
     
     localStorage.setObject('ag5data', ag5data);
 
+    calcResults()
     //now that everything is saved check the connection
     checkConnection("cag5");
 
