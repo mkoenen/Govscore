@@ -555,14 +555,14 @@ function calcResults() {
 
         function getAgResults(dataset,resSet,ansnums) {
             var resSet = 0;
-            for(i=0; i<(dataset.answers.length - ansnums); i++){
+            for(i=1; i<(dataset.answers.length - ansnums); i++){
                 var ans = ansnums + i;
                 resSet += parseInt(dataset.answers[ans]);
             }
             return resSet;
         }
 
-        if(ag1data){getAgResults(ag1data,ag1results,1);}
+        if(ag1data){getAgResults(ag1data,ag1results,0);}
         if(ag2data){getAgResults(ag2data,ag2results,24);}
         if(ag3data){getAgResults(ag3data,ag3results,48);}
         if(ag4data){getAgResults(ag4data,ag4results,60);}
