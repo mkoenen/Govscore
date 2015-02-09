@@ -441,42 +441,42 @@ function ag5saveServer() {
 
 function showResultsButtons() {
     
-    if( gsdata.answers[1]){
+    if( gsdata){
         /*var gsSaveButton = document.getElementById('btnStore');
         gsSaveButton.className = gsSaveButton.className + " hide";*/
         var resultButton2 = document.getElementById('govscore-results2');
         resultButton2.className = resultButton2.className + " see";
     }
     
-    if(ag1data.answers[1]){
+    if(ag1data){
       /* var ag1SaveButton = document.getElementById('ag1Store');
        ag1SaveButton.className = ag1SaveButton.className + " hide";*/
        var ag1resultButton = document.getElementById('ag1-results');
         ag1resultButton.className = ag1resultButton.className + " see";
     }
    
-    if(ag2data.answers[1]) {
+    if(ag2data) {
         /*var ag2SaveButton = document.getElementById('ag2Store');
         ag2SaveButton.className = ag2SaveButton.className + " hide";*/
         var ag2resultButton = document.getElementById('ag2-results');
         ag2resultButton.className = ag2resultButton.className + " see";
     }
     
-    if(ag3data.answers[1]){
+    if(ag3data){
         /*var ag3SaveButton = document.getElementById('ag3Store');
         ag3SaveButton.className = ag3SaveButton.className + " hide";*/
         var ag3resultButton = document.getElementById('ag3-results');
         ag3resultButton.className = ag3resultButton.className + " see";
     }
      
-    if( ag4data.answers[1]) {
+    if( ag4data) {
         /*var ag4SaveButton = document.getElementById('ag4Store');
         ag4SaveButton.className = ag4SaveButton.className + " hide";*/
         var ag4resultButton = document.getElementById('ag4-results');
         ag4resultButton.className = ag4resultButton.className + " see";
     }
    
-    if( ag5data.answers[1]){
+    if( ag5data){
         /*var ag5SaveButton = document.getElementById('ag5Store');
         ag5SaveButton.className = ag5SaveButton.className + " hide";*/
         var ag5resultButton = document.getElementById('ag5-results');
@@ -503,7 +503,7 @@ function calcResults() {
         ag5data = localStorage.getObject('ag5data'),
         ag1results,ag2results,ag3results,ag4results,ag5results,res, resag;
 
-   if(gsdata.answers[1]){
+   if(gsdata){
 
         var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel;
         
@@ -564,7 +564,7 @@ function calcResults() {
         
     }
 
-    if(ag1data.answers[1] !== null || ag2data.answers[1] !== null  || ag3data.answers[1]!== null || ag4data.answers[1] !== null || ag5data.answers[1] !== null ){
+    if(ag1data || ag2data || ag3data || ag4data || ag5data ){
         res += "<h2>Advanced Govscore</h2>";
     }
 
