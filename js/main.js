@@ -231,16 +231,11 @@ function saveToServer(address,dataset){
 
 
 /* Initial Govscore -----------------------------------------------*/
-var gsdata = localStorage.getObject('gsdata');
-var ag1data =  localStorage.getObject('ag1data');
-var ag2data =  localStorage.getObject('ag2data');
-var ag3data =  localStorage.getObject('ag3data');
-var ag4data =  localStorage.getObject('ag4data');
-var ag5data =  localStorage.getObject('ag5data');
+var gsdata, ag1data, ag2data, ag3data, ag4data, ag5data;
 
 function savelocal() {
 
-    var userdata, email, gsdata, gsdate, username, organization;
+    var userdata, email, gsdate, username, organization;
 
     username = document.getElementById("username").value;
     email = document.getElementById("email").value;
@@ -277,7 +272,7 @@ function saveServer() {
 
 function ag1savelocal() {
 
-    var ag1data, ag1date;
+    var ag1date;
 
     gsdata = localStorage.getObject('gsdata');
 
@@ -296,8 +291,6 @@ function ag1savelocal() {
 /* Save on Server */
 
 function ag1saveServer() {
-
-    var ag1data;
           
     ag1data = localStorage.getObject('ag1data');
     saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data);
@@ -310,7 +303,7 @@ function ag1saveServer() {
 
 function ag2savelocal() {
 
-    var ag2data, ag2date;
+    var ag2date;
 
     gsdata = localStorage.getObject('gsdata');
 
@@ -329,8 +322,6 @@ function ag2savelocal() {
 /* Save on Server */
 
 function ag2saveServer() {
-
-    var ag2data;
  
     ag2data = localStorage.getObject('ag2data');
     saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data);
@@ -343,7 +334,7 @@ function ag2saveServer() {
 
 function ag3savelocal() {
 
-    var ag3data, ag3date;
+    var ag3date;
 
     gsdata = localStorage.getObject('gsdata');
 
@@ -363,8 +354,6 @@ function ag3savelocal() {
 
 function ag3saveServer() {
 
-    var ag3data;
-
     ag3data = localStorage.getObject('ag3data');
     saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data);
 
@@ -376,7 +365,7 @@ function ag3saveServer() {
 
 function ag4savelocal() {
 
-    var ag4data, ag4date;
+    var ag4date;
 
     gsdata = localStorage.getObject('gsdata');
 
@@ -395,8 +384,6 @@ function ag4savelocal() {
 /* Save on Server */
 
 function ag4saveServer() {
-
-    var ag4data;
     
     ag4data = localStorage.getObject('ag4data');
     saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data);
@@ -409,7 +396,7 @@ function ag4saveServer() {
 
 function ag5savelocal() {
 
-    var ag5data, ag5date;
+    var ag5date;
 
     gsdata = localStorage.getObject('gsdata');
 
@@ -428,8 +415,6 @@ function ag5savelocal() {
 /* Save on Server */
 
 function ag5saveServer() {
-
-    var ag5data;
 
     ag5data = localStorage.getObject('ag5data');
     saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data);
@@ -495,13 +480,7 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 //add up the numbers
 function calcResults() {
 
-    var gsdata = localStorage.getObject('gsdata'),
-        ag1data = localStorage.getObject('ag1data'),
-        ag2data = localStorage.getObject('ag2data'),
-        ag3data = localStorage.getObject('ag3data'),
-        ag4data = localStorage.getObject('ag4data'),
-        ag5data = localStorage.getObject('ag5data'),
-        ag1results,ag2results,ag3results,ag4results,ag5results,res, resag;
+    var ag1results,ag2results,ag3results,ag4results,ag5results,res, resag;
 
    if(gsdata){
 
