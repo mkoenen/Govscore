@@ -561,11 +561,11 @@ function calcResults() {
             return resSet;
         }
 
-        getAgResults(ag1data,ag1results,1);
-        getAgResults(ag2data,ag2results,24);
-        getAgResults(ag3data,ag3results,48);
-        getAgResults(ag4data,ag4results,60);
-        getAgResults(ag5data,ag5results,84);
+        if(ag1data){getAgResults(ag1data,ag1results,1);}
+        if(ag2data){getAgResults(ag2data,ag2results,24);}
+        if(ag3data){getAgResults(ag3data,ag3results,48);}
+        if(ag4data){getAgResults(ag4data,ag4results,60);}
+        if(ag5data){getAgResults(ag5data,ag5results,84);}
         
         if(ag1results){
             res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24</p></div>";
