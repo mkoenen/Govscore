@@ -555,18 +555,18 @@ function calcResults() {
 
         function getAgResults(dataset,resSet,ansnums) {
             var resSet = 0;
-            for(i=1; i<(dataset.answers.length - ansnums); i++){
+            for(i=0; i<(dataset.answers.length - ansnums); i++){
                 var ans = ansnums + i;
                 resSet += parseInt(dataset.answers[ans]);
             }
             return resSet;
         }
 
-        if(ag1data){getAgResults(ag1data,ag1results,0);}
-        if(ag2data){getAgResults(ag2data,ag2results,24);}
-        if(ag3data){getAgResults(ag3data,ag3results,48);}
-        if(ag4data){getAgResults(ag4data,ag4results,60);}
-        if(ag5data){getAgResults(ag5data,ag5results,84);}
+        if(ag1data){ag1results = getAgResults(ag1data,ag1results,0);}
+        if(ag2data){ag2results = getAgResults(ag2data,ag2results,25);}
+        if(ag3data){ag3results = getAgResults(ag3data,ag3results,49);}
+        if(ag4data){ag4results = getAgResults(ag4data,ag4results,61);}
+        if(ag5data){ag5results = getAgResults(ag5data,ag5results,85);}
         
         if(ag1results){
             res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24</p></div>";
