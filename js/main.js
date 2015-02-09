@@ -34,40 +34,44 @@ function setbutton() {
 /* Form Validation -------------------------------------*/
 
 function validate() {
-    if( document.gsForm.username.value === "" ) {
-
-         navigator.notification.alert( "Please enter your full name!" );
-         document.gsForm.username.focus() ;
-         return false;
-    }
-
-    if( document.gsForm.email.value === "" ) {
-
-         navigator.notification.alert( "Please enter your email address!" );
-         document.gsForm.email.focus() ;
-         return false;
-
+    if(gsdata){
+        alert("You have already submitted your answers");
     }else{
+        if( document.gsForm.username.value === "" ) {
 
-        // Put extra check for data format
-        var ret = validateEmail();
-        if( ret === false ) {
+             navigator.notification.alert( "Please enter your full name!" );
+             document.gsForm.username.focus() ;
+             return false;
+        }
 
-              return false;
+        if( document.gsForm.email.value === "" ) {
 
-         }
-   }
+             navigator.notification.alert( "Please enter your email address!" );
+             document.gsForm.email.focus() ;
+             return false;
 
-   if( document.gsForm.organization.value === "-1" ) {
+        }else{
 
-     navigator.notification.alert( "Please enter your organization!" );
-     document.gsForm.organization.focus() ;
-     return false;
+            // Put extra check for data format
+            var ret = validateEmail();
+            if( ret === false ) {
 
-   }
+                  return false;
 
-   savelocal();
+             }
+        }
 
+
+       if( document.gsForm.organization.value === "-1" ) {
+
+         navigator.notification.alert( "Please enter your organization!" );
+         document.gsForm.organization.focus() ;
+         return false;
+
+       }
+
+        savelocal();
+    }
 }
 
 
@@ -274,21 +278,27 @@ function saveServer() {
 
 function ag1savelocal() {
 
-    var ag1date;
+    if(ag1data){
 
-    gsdata = localStorage.getObject('gsdata');
+        alert("You have already finished this assessment");
 
-    ag1date = formatDate(new Date());
+    }else{
 
-    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'answers': [-1]};
-    ag1data = getinputs(ag1data,1,24,"ag");
+        var ag1date;
 
-    localStorage.setObject('ag1data', ag1data);
+        gsdata = localStorage.getObject('gsdata');
 
-    calcResults()
-    //now that everything is saved check the connection
-    checkConnection("cag1");
+        ag1date = formatDate(new Date());
 
+        ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'answers': [-1]};
+        ag1data = getinputs(ag1data,1,24,"ag");
+
+        localStorage.setObject('ag1data', ag1data);
+
+        calcResults()
+        //now that everything is saved check the connection
+        checkConnection("cag1");
+    }
 }
 
 /* Save on Server */
@@ -305,22 +315,27 @@ function ag1saveServer() {
 /* store locally */
 
 function ag2savelocal() {
+    if(ag2data){
 
-    var ag2date;
+        alert("You have already finished this assessment");
 
-    gsdata = localStorage.getObject('gsdata');
+    }else{
 
-    ag2date = formatDate(new Date());
+        var ag2date;
 
-    ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
-    ag2data = getinputs(ag2data,25,48,"ag");
+        gsdata = localStorage.getObject('gsdata');
 
-    localStorage.setObject('ag2data', ag2data);
+        ag2date = formatDate(new Date());
 
-    calcResults()
-    //now that everything is saved check the connection
-    checkConnection("cag2");
+        ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
+        ag2data = getinputs(ag2data,25,48,"ag");
 
+        localStorage.setObject('ag2data', ag2data);
+
+        calcResults()
+        //now that everything is saved check the connection
+        checkConnection("cag2");
+    }
 }
 
 /* Save on Server */
@@ -338,22 +353,28 @@ function ag2saveServer() {
 
 function ag3savelocal() {
 
-    var ag3date;
+    if(ag3data){
 
-    gsdata = localStorage.getObject('gsdata');
+        alert("You have already finished this assessment");
 
-    ag3date = formatDate(new Date());
+    }else{
 
-    ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'answers': [-1]};
-    ag3data = getinputs(ag3data,49,60,"ag");
+        var ag3date;
 
-    localStorage.setObject('ag3data', ag3data);
+        gsdata = localStorage.getObject('gsdata');
 
-    calcResults()
+        ag3date = formatDate(new Date());
 
-    //now that everything is saved check the connection
-    checkConnection("cag3");
+        ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'answers': [-1]};
+        ag3data = getinputs(ag3data,49,60,"ag");
 
+        localStorage.setObject('ag3data', ag3data);
+
+        calcResults()
+
+        //now that everything is saved check the connection
+        checkConnection("cag3");
+    }
 }
 
 /* Save on Server */
@@ -371,22 +392,28 @@ function ag3saveServer() {
 
 function ag4savelocal() {
 
-    var ag4date;
+    if(ag2data){
 
-    gsdata = localStorage.getObject('gsdata');
+        alert("You have already finished this assessment");
 
-    ag4date = formatDate(new Date());
+    }else{
 
-    ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
-    ag4data = getinputs(ag4data,61,84,"ag");
+        var ag4date;
 
-    localStorage.setObject('ag4data', ag4data);
+        gsdata = localStorage.getObject('gsdata');
 
-    calcResults()
+        ag4date = formatDate(new Date());
 
-    //now that everything is saved check the connection
-    checkConnection("cag4");
+        ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
+        ag4data = getinputs(ag4data,61,84,"ag");
 
+        localStorage.setObject('ag4data', ag4data);
+
+        calcResults()
+
+        //now that everything is saved check the connection
+        checkConnection("cag4");
+    }
 }
 
 /* Save on Server */
@@ -404,21 +431,27 @@ function ag4saveServer() {
 
 function ag5savelocal() {
 
-    var ag5date;
+    if(ag2data){
 
-    gsdata = localStorage.getObject('gsdata');
+        alert("You have already finished this assessment");
 
-    ag5date = formatDate(new Date());
+    }else{
 
-    ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'answers': [-1]};
-    ag5data = getinputs(ag5data,85,100,"ag");
-    
-    localStorage.setObject('ag5data', ag5data);
+        var ag5date;
 
-    calcResults()
-    //now that everything is saved check the connection
-    checkConnection("cag5");
+        gsdata = localStorage.getObject('gsdata');
 
+        ag5date = formatDate(new Date());
+
+        ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'answers': [-1]};
+        ag5data = getinputs(ag5data,85,100,"ag");
+        
+        localStorage.setObject('ag5data', ag5data);
+
+        calcResults()
+        //now that everything is saved check the connection
+        checkConnection("cag5");
+    }
 }
 
 /* Save on Server */
