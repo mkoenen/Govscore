@@ -4,8 +4,7 @@ window.onload = function(){
     //document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", showResultsButtons, false);
-    document.addEventListener("deviceready", calcResults, false);
+    document.addEventListener("deviceready", checkLocalData, false);
 };
 
 //check if online according to the above interval
@@ -19,9 +18,6 @@ function onOnline() {
     ag5saveServer(); 
 }
 
-
-
-
  //listen for click events      
 function setbutton() {
 
@@ -32,6 +28,20 @@ function setbutton() {
     document.getElementById('ag4Store').addEventListener('click', ag4savelocal, false);
     document.getElementById('ag5Store').addEventListener('click', ag5savelocal, false);
     
+}
+
+function checkLocalData(){
+    var gsdata = localStorage.getObject(gsdata); 
+    var ag1data = localStorage.getObject(ag1data);
+    var ag2data = localStorage.getObject(ag2data);
+    var ag3data = localStorage.getObject(ag3data);
+    var ag4data = localStorage.getObject(ag4data);
+    var ag5data = localStorage.getObject(ag5data);
+    if(gsdata || ag1data || ag2data || ag3data || ag4data || ag5data) {
+
+        showResultsButtons();
+        calcResults();
+    } 
 }
 
 /* Form Validation -------------------------------------*/
