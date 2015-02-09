@@ -37,7 +37,7 @@ function validate() {
     if(gsdata){
 
         alreadySaved();
-        
+
     }else{
         if( document.gsForm.username.value === "" ) {
 
@@ -197,7 +197,6 @@ Storage.prototype.getObject = function(key) {
 //get answers from form and build json array
 function getinputs(answerset,num1,num2,prefix){
         var i, key, value;
-        //answerset += { 'gs':[-1]};
         //loop through the entries, grab value and store in array
         for(i=num1; i<=num2; i++) {
             key = "'" + prefix + i +"'";
@@ -254,7 +253,7 @@ function savelocal() {
     gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
     gsdata = getinputs(gsdata,1,25,"g");
     localStorage.setObject('gsdata', gsdata);
- 
+    alert(gsdata);
     calcResults();
 
     //now that everything is saved, check the connection
