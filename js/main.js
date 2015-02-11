@@ -52,17 +52,6 @@ function validate() {
              document.gsForm.email.focus() ;
              return false;
 
-        }
-
-        var email1 = document.gsForm.email.value;
-        var eamil2 = document.gsForm.email2.value;
-        var bool = email1 === email2;
-        alert(email1 + ", " + email2);
-        if( email1 !== email2 ) {
-            navigator.notification.alert("Email addresses don\'t match. Please try again.");
-            document.gsForm.email.focus() ;
-            return false;
-       
         }else{
 
             // Put extra check for data format
