@@ -223,7 +223,6 @@ function saveToServer(address,dataset){
                          afterSavedServer("Govscore", organization);
                          window.location.hash = "govscore-results";
                          showResultsButtons();
-                         
                         },
             error      : function(response) {
                         alert(response);                  
@@ -515,11 +514,11 @@ function showResultsButtons() {
 
 /* Results -----------------*/
 
-/*Questions 1, 3, 11, 15, 16, and 22 are based on the practice of cultivating accountability.
-Questions 6, 12 and 17 are based on the practice of engaging stakeholders.
-Questions 2, 5, 9 and 21 are based on the practice of setting shared strategic direction.
-Questions 7, 8, 14, 20, 23 and 25 are based on the practice of stewarding resources.
-Questions 4, 10, 13, 18, 19 and 24 are based on the practice of continuous governance enhancement.*/
+/*Questions 1, 2, 5, 8, 10 and 13 are based on the practice of cultivating accountability.
+Questions 11, 14 and 22 are based on the practice of engaging stakeholders.
+Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic direction.
+Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
+Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
 
 //add up the numbers
 function calcResults() {
@@ -531,27 +530,27 @@ function calcResults() {
         var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel;
         
 
-        accScore = parseInt(gsdata.answers[1]) + parseInt(gsdata.answers[3]) + parseInt(gsdata.answers[11]) + parseInt(gsdata.answers[15]) + parseInt(gsdata.answers[16]) + parseInt(gsdata.answers[22]);
+        accScore = parseInt(gsdata.answers[1]) + parseInt(gsdata.answers[2]) + parseInt(gsdata.answers[5]) + parseInt(gsdata.answers[8]) + parseInt(gsdata.answers[10]) + parseInt(gsdata.answers[13]);
         var accPossible = 24;
         var accPercent = Math.round(accScore/accPossible*100);
         percentArray.push(accPercent);
 
-        stakeScore = parseInt(gsdata.answers[6]) + parseInt(gsdata.answers[12]) + parseInt(gsdata.answers[17]);
+        stakeScore = parseInt(gsdata.answers[11]) + parseInt(gsdata.answers[14]) + parseInt(gsdata.answers[22]);
         var stakePossible = 12;
         var stakePercent = Math.round(stakeScore/stakePossible*100);
         percentArray.push(stakePercent);
 
-        dirScore = parseInt(gsdata.answers[2]) +parseInt(gsdata.answers[5]) +parseInt(gsdata.answers[9]) +parseInt(gsdata.answers[21]);
+        dirScore = parseInt(gsdata.answers[6]) +parseInt(gsdata.answers[7]) +parseInt(gsdata.answers[12]) +parseInt(gsdata.answers[16]);
         var dirPossible = 16;
         var dirPercent = Math.round(dirScore/dirPossible*100);
         percentArray.push(dirPercent);
 
-        resScore = parseInt(gsdata.answers[7]) +parseInt(gsdata.answers[8]) +parseInt(gsdata.answers[14]) +parseInt(gsdata.answers[20]) +parseInt(gsdata.answers[23]) +parseInt(gsdata.answers[25]);
+        resScore = parseInt(gsdata.answers[3]) +parseInt(gsdata.answers[4]) +parseInt(gsdata.answers[17]) +parseInt(gsdata.answers[21]) +parseInt(gsdata.answers[23]) +parseInt(gsdata.answers[25]);
         var resPossible = 24;
         var resPercent = Math.round(resScore/resPossible*100);
         percentArray.push(resPercent);
 
-        enhScore = parseInt(gsdata.answers[4]) +parseInt(gsdata.answers[10]) +parseInt(gsdata.answers[13]) +parseInt(gsdata.answers[18]) +parseInt(gsdata.answers[19]) +parseInt(gsdata.answers[24]);
+        enhScore = parseInt(gsdata.answers[9]) +parseInt(gsdata.answers[15]) +parseInt(gsdata.answers[18]) +parseInt(gsdata.answers[19]) +parseInt(gsdata.answers[20]) +parseInt(gsdata.answers[24]);
         var enhPossible = 24;
         var enhPercent = Math.round(enhScore/enhPossible*100);
         percentArray.push(enhPercent);
