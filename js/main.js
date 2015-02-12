@@ -469,7 +469,7 @@ function ag5saveServer() {
 //check if online according to the above interval
 function onOnline() {
     //there must be locally saved data and the saved flag must be false
-    if( dsdata && gsSaved == false){
+    if( gsdata && gsSaved == false){
         saveServer();
     }
     if( ag1data && ag1Saved == false){
