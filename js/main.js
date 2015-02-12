@@ -40,7 +40,6 @@ function validate() {
              document.gsForm.email.focus() ;
              return false;
         }
-
         if( document.gsForm.email.value === "" ) {
 
              navigator.notification.alert( "Please enter your email address!" );
@@ -222,9 +221,8 @@ function saveToServer(address,dataset,datasaved){
                         },
             error      : function(response) {
                         alert(response);                  
-                         }  
-            });
-            
+                        }  
+            });  
         }
 
 
@@ -329,7 +327,7 @@ function ag2savelocal() {
         ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
         ag2data = getinputs(ag2data,25,48,"ag");
 
-        localStorage.setObject('ag2data', ag2data, ag2Saved);
+        localStorage.setObject('ag2data', ag2data);
 
         calcResults()
         //now that everything is saved check the connection
@@ -342,7 +340,7 @@ function ag2savelocal() {
 function ag2saveServer() {
  
     ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data, ag2saved);
         
 }
 
@@ -406,7 +404,7 @@ function ag4savelocal() {
         ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
         ag4data = getinputs(ag4data,61,84,"ag");
 
-        localStorage.setObject('ag4data', ag4data, ag4Saved);
+        localStorage.setObject('ag4data', ag4data);
 
         calcResults()
 
@@ -420,7 +418,7 @@ function ag4savelocal() {
 function ag4saveServer() {
     
     ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data, ag4Saved);
 
 }
 
