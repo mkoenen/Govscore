@@ -1,7 +1,7 @@
 /* Events -----------------------------------------*/
 window.onload = function(){
     //window.setTimeout(beonline, 6000);
-    //document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
+    document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
@@ -10,13 +10,24 @@ window.onload = function(){
 
 //check if online according to the above interval
 function onOnline() {
-
-    saveServer();
-    ag1saveServer(); 
-    ag2saveServer();
-    ag3saveServer(); 
-    ag4saveServer();
-    ag5saveServer(); 
+    if(gsSaved == false){
+        saveServer();
+    }
+    if(ag1Saved == false){
+        ag1saveServer();
+    } 
+    if(ag2Saved == false){
+        ag2saveServer();
+    }
+    if(ag3Saved == false){
+        ag3saveServer(); 
+    }
+    if(ag4Saved == false) {
+        ag4saveServer();
+    }
+    if(ag5Saved == false){
+        ag5saveServer();
+    } 
 }
 
  //listen for click events      
@@ -213,9 +224,10 @@ function getinputs(answerset,num1,num2,prefix){
     return answerset;
 }
 
+var gsSaved = false, ag1Saved = false, ag2Saved = false, ag3Saved = false, ag4Saved = false, ag5Saved = false;
 
 //save the json data array to the server via ajax call
-function saveToServer(address,dataset){
+function saveToServer(address,dataset,datasaved){
             $.ajax({
             type       : "GET",
             url        : address,
@@ -225,10 +237,10 @@ function saveToServer(address,dataset){
             ////dataType   : 'json',
             success    : function(responseData, textStatus, jqXHR) {
                     alert(responseData + ", " + textStatus + ", " + jqXHR);
-                
-                         afterSavedServer("Govscore", organization);
-                         window.location.hash = "govscore-results";
-                         showResultsButtons();
+                        window.location.hash = "govscore-results";
+                        afterSavedServer("Govscore", organization);
+                        datasaved = true;
+                        showResultsButtons();
                         },
             error      : function(response) {
                         alert(response);                  
@@ -275,7 +287,7 @@ function saveServer() {
     //get the data from local storage
     gsdata = localStorage.getObject('gsdata');
 
-    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata);
+    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, gsSaved);
 
 }
 
@@ -313,7 +325,7 @@ function ag1savelocal() {
 function ag1saveServer() {
           
     ag1data = localStorage.getObject('ag1data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, ag1Saved);
         
 }
 
@@ -337,7 +349,7 @@ function ag2savelocal() {
         ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
         ag2data = getinputs(ag2data,25,48,"ag");
 
-        localStorage.setObject('ag2data', ag2data);
+        localStorage.setObject('ag2data', ag2data, ag2Saved);
 
         calcResults()
         //now that everything is saved check the connection
@@ -389,7 +401,7 @@ function ag3savelocal() {
 function ag3saveServer() {
 
     ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, ag3Saved);
 
 }
 
@@ -414,7 +426,7 @@ function ag4savelocal() {
         ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
         ag4data = getinputs(ag4data,61,84,"ag");
 
-        localStorage.setObject('ag4data', ag4data);
+        localStorage.setObject('ag4data', ag4data, ag4Saved);
 
         calcResults()
 
@@ -466,7 +478,7 @@ function ag5savelocal() {
 function ag5saveServer() {
 
     ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, ag5Saved);
 
     
 } 
