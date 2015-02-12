@@ -8,29 +8,7 @@ window.onload = function(){
     document.addEventListener("deviceready", calcResults, false);
 };
 
-//check if online according to the above interval
-function onOnline() {
-    if(gsSaved == false){
-        saveServer();
-    }
-    if(ag1Saved == false){
-        ag1saveServer();
-    } 
-    if(ag2Saved == false){
-        ag2saveServer();
-    }
-    if(ag3Saved == false){
-        ag3saveServer(); 
-    }
-    if(ag4Saved == false) {
-        ag4saveServer();
-    }
-    if(ag5Saved == false){
-        ag5saveServer();
-    } 
-}
-
- //listen for click events      
+//listen for click events      
 function setbutton() {
 
     document.getElementById('btnStore').addEventListener('click', validate, false);
@@ -251,13 +229,15 @@ function saveToServer(address,dataset,datasaved){
 
 
 /* Initial Govscore -----------------------------------------------*/
+
 var gsdata = localStorage.getObject('gsdata'); 
 var ag1data = localStorage.getObject('ag1data');
 var ag2data = localStorage.getObject('ag2data');
 var ag3data = localStorage.getObject('ag3data');
 var ag4data = localStorage.getObject('ag4data');
 var ag5data = localStorage.getObject('ag5data');
-
+ 
+/* store locally */
 function savelocal() {
 
     var userdata, email, gsdate, username, organization;
@@ -278,7 +258,7 @@ function savelocal() {
     checkConnection( "cgovscore");
 }
 
-/*save to server -------------------------------------------------------------*/
+/* save to server */
 
 function saveServer() {
 
@@ -482,6 +462,32 @@ function ag5saveServer() {
 
     
 } 
+
+
+/* App Comes Online ------------------------------------------*/
+
+//check if online according to the above interval
+function onOnline() {
+    //there must be locally saved data and the saved flag must be false
+    if( dsdata && gsSaved == false){
+        saveServer();
+    }
+    if( ag1data && ag1Saved == false){
+        ag1saveServer();
+    } 
+    if( ag2data && ag2Saved == false){
+        ag2saveServer();
+    }
+    if( ag3data && ag3Saved == false){
+        ag3saveServer(); 
+    }
+    if( ag4data && ag4Saved == false) {
+        ag4saveServer();
+    }
+    if( ag5data && ag5Saved == false){
+        ag5saveServer();
+    } 
+}
 
 /* Interface changes -----------------------------------------*/ 
 
