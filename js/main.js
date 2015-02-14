@@ -251,9 +251,9 @@ function ag1savelocal() {
 
         alreadySaved();
 
-    }else if(!gsdata){
+    /*}else if(!gsdata){
 
-        gsFirst();
+        gsFirst();*/
 
     }else{
 
