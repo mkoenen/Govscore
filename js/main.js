@@ -1,12 +1,11 @@
 /* Events -----------------------------------------*/
 window.onload = function(){
     //window.setTimeout(beonline, 6000);
-    document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
+    //document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
     document.addEventListener("deviceready", setbutton, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
-    document.addEventListener("deviceready", showResultsButtons, false);
-    document.addEventListener("deviceready", calcResults, false);
-    document.addEventListener("deviceready", validate, false);
+    // document.addEventListener("deviceready", showResultsButtons, false);
+    // document.addEventListener("deviceready", calcResults, false);
 };
 
 //listen for click events      
@@ -24,659 +23,648 @@ function setbutton() {
 /* Form Validation -------------------------------------*/
 
 function validate() {
-    if(gsdata){
+    alert("hello");
+    // if(gsdata){
 
-        alreadySaved();
+    //     alreadySaved();
 
-    }else{
+    // }else{
+    //     if( document.getElementById("username").value === "" ) {
 
-        $( "#gsForm" ).validate();
+    //          navigator.notification.alert( "Please enter your full name!" );
+    //          document.getElementById("username").focus() ;
+    //          return false;
+    //     }
+    //     if( document.getElementById("email").value !== document.getElementById("email2").value ) {
 
-//         if( document.gsForm.username.value === "" ) {
+    //          navigator.notification.alert( "Email entries don't match. Please try again" );
+    //          document.getElementById("email").focus() ;
+    //          return false;
+    //     }
+    //     if( document.gsForm.email.value === "" ) {
 
-//              navigator.notification.alert( "Please enter your full name!" );
-//              document.gsForm.username.focus() ;
-//              return false;
-//         }
-//         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
+    //          navigator.notification.alert( "Please enter your email address!" );
+    //          document.gsForm.email.focus() ;
+    //          return false;
 
-//              navigator.notification.alert( "Email entries don't match. Please try again" );
-//              document.gsForm.email.focus() ;
-//              return false;
-//         }
-//         if( document.gsForm.email.value === "" ) {
+    //     }else{
 
-//              navigator.notification.alert( "Please enter your email address!" );
-//              document.gsForm.email.focus() ;
-//              return false;
+    //         // Put extra check for data format
+    //         var ret = validateEmail();
+    //         if( ret === false ) {
 
-//         }else{
+    //               return false;
 
-//             // Put extra check for data format
-//             var ret = validateEmail();
-//             if( ret === false ) {
-
-//                   return false;
-
-//              }
-//         }
+    //          }
+    //     }
 
 
-//        if( document.gsForm.organization.value === "-1" ) {
+    //    if( document.gsForm.organization.value === "-1" ) {
 
-//          navigator.notification.alert( "Please enter your organization!" );
-//          document.gsForm.organization.focus() ;
-//          return false;
+    //      navigator.notification.alert( "Please enter your organization!" );
+    //      document.gsForm.organization.focus() ;
+    //      return false;
 
-//        }
+    //    }
 
-//         savelocal();
-//     }
-// }
+    //     savelocal();
+    // }
+}
 
 
-// function validateEmail() {
+function validateEmail() {
 
-//    var emailID = document.gsForm.email.value;
-//    var atpos = emailID.indexOf("@");
-//    var dotpos = emailID.lastIndexOf(".");
-//    if (atpos < 1 || ( dotpos - atpos < 2 )) {
+   // var emailID = document.gsForm.email.value;
+   // var atpos = emailID.indexOf("@");
+   // var dotpos = emailID.lastIndexOf(".");
+   // if (atpos < 1 || ( dotpos - atpos < 2 )) {
 
-//        navigator.notification.alert("Please enter a correct email address");
-//        document.gsForm.email.focus() ;
-//        return false;
+   //     navigator.notification.alert("Please enter a correct email address");
+   //     document.gsForm.email.focus() ;
+   //     return false;
 
-    }
+   // }
 }
 
 /* Notifications ----------------------------------*/
 
-var organization;
+// var organization;
 
-function doNothing(){
-    //nothing
-}
+// function doNothing(){
+//     //nothing
+// }
 
-function messageAfterSaveLocal() {
-    navigator.notification.alert(
-        'Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.',
-        'Info title',
-        'Update'
-    );
-}
+// function messageAfterSaveLocal() {
+//     navigator.notification.alert(
+//         'Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.',
+//         'Info title',
+//         'Update'
+//     );
+// }
 
-function gsFirst() {
-    navigator.notification.alert(
-        'Please complete the initial Govscore assessment before moving on to the Advanced Govscore questionnaires.',
-        'Info title',
-        'Update'
-    );
-}
+// function gsFirst() {
+//     navigator.notification.alert(
+//         'Please complete the initial Govscore assessment before moving on to the Advanced Govscore questionnaires.',
+//         'Info title',
+//         'Update'
+//     );
+// }
 
 
-function afterSavedServer(form, orgcode) {
+// function afterSavedServer(form, orgcode) {
 
-    navigator.notification.alert(
+//     navigator.notification.alert(
 
-        'Your answers to the ' + form + ' questionnaire have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
-        'Info title',
-        'Update'
-    );
-}
+//         'Your answers to the ' + form + ' questionnaire have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
+//         'Info title',
+//         'Update'
+//     );
+// }
 
-function alreadySaved() {
-    navigator.notification.alert (
-        'You previously finished this assessment. Please check your results.',
-        'Info title',
-        'Update'
-    );
-}
+// function alreadySaved() {
+//     navigator.notification.alert (
+//         'You previously finished this assessment. Please check your results.',
+//         'Info title',
+//         'Update'
+//     );
+// }
 
 
 /* Get Date --------------------------------------------------*/
 
-function formatDate(date) {
-    date = date.getUTCFullYear() + '-' +
-            ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
-            ('00' + date.getUTCDate()).slice(-2) + ' ' +
-            ('00' + date.getUTCHours()).slice(-2) + ':' +
-            ('00' + date.getUTCMinutes()).slice(-2) + ':' +
-            ('00' + date.getUTCSeconds()).slice(-2); 
-    return date;   
-}
+// function formatDate(date) {
+//     date = date.getUTCFullYear() + '-' +
+//             ('00' + (date.getUTCMonth() + 1)).slice(-2) + '-' +
+//             ('00' + date.getUTCDate()).slice(-2) + ' ' +
+//             ('00' + date.getUTCHours()).slice(-2) + ':' +
+//             ('00' + date.getUTCMinutes()).slice(-2) + ':' +
+//             ('00' + date.getUTCSeconds()).slice(-2); 
+//     return date;   
+// }
 
 
 
 /*------------check the connection --------------*/
 
-function checkConnection(whichfunction) {
-    var networkState = navigator.connection.type;
+// function checkConnection(whichfunction) {
+//     var networkState = navigator.connection.type;
 
-    var states = {};
-    states[Connection.UNKNOWN]  = 'Unknown connection';
-    states[Connection.ETHERNET] = 'Ethernet connection';
-    states[Connection.WIFI]     = 'WiFi connection';
-    states[Connection.CELL_2G]  = 'Cell 2G connection';
-    states[Connection.CELL_3G]  = 'Cell 3G connection';
-    states[Connection.CELL_4G]  = 'Cell 4G connection';
-    states[Connection.NONE]     = 'No network connection';
+//     var states = {};
+//     states[Connection.UNKNOWN]  = 'Unknown connection';
+//     states[Connection.ETHERNET] = 'Ethernet connection';
+//     states[Connection.WIFI]     = 'WiFi connection';
+//     states[Connection.CELL_2G]  = 'Cell 2G connection';
+//     states[Connection.CELL_3G]  = 'Cell 3G connection';
+//     states[Connection.CELL_4G]  = 'Cell 4G connection';
+//     states[Connection.NONE]     = 'No network connection';
 
-    if( states[networkState] !== 'No network connection'){
-        switch(whichfunction) {
-            case "cgovscore":
-                saveServer();
-                break;
-            case "cag1":
-                ag1saveServer();
-                break;
-            case "cag2":
-                ag2saveServer();
-                break;
-            case "cag3":
-                ag3saveServer();
-                break;
-            case "cag4":
-                ag4saveServer();
-                break;
-            case "cag5":
-                ag5saveServer();
-                break;
-        }
+//     if( states[networkState] !== 'No network connection'){
+//         switch(whichfunction) {
+//             case "cgovscore":
+//                 saveServer();
+//                 break;
+//             case "cag1":
+//                 ag1saveServer();
+//                 break;
+//             case "cag2":
+//                 ag2saveServer();
+//                 break;
+//             case "cag3":
+//                 ag3saveServer();
+//                 break;
+//             case "cag4":
+//                 ag4saveServer();
+//                 break;
+//             case "cag5":
+//                 ag5saveServer();
+//                 break;
+//         }
 
-    }else{
+//     }else{
 
-        messageAfterSaveLocal();  
+//         messageAfterSaveLocal();  
         
-    }
-}
+//     }
+// }
 
 
 /* Functions for processing data -----------------------------------------------*/
 
-Storage.prototype.setObject = function(key, value) {
-    this.setItem(key, JSON.stringify(value));
-}
+// Storage.prototype.setObject = function(key, value) {
+//     this.setItem(key, JSON.stringify(value));
+// }
 
-Storage.prototype.getObject = function(key) {
-    var value = this.getItem(key);
-    return value && JSON.parse(value);
-}
+// Storage.prototype.getObject = function(key) {
+//     var value = this.getItem(key);
+//     return value && JSON.parse(value);
+// }
 
-//get answers from form and build json array
-function getinputs(answerset,num1,num2,prefix){
-    var i, key, value;
-    //loop through the entries, grab value and store in array
-    for(i=num1; i<=num2; i++) {
-        key = "'" + prefix + i +"'";
-        value = $('input[name = ' + key + ']:checked').val();
-        answerset.answers[i] = value;
-    }
+// //get answers from form and build json array
+// function getinputs(answerset,num1,num2,prefix){
+//     var i, key, value;
+//     //loop through the entries, grab value and store in array
+//     for(i=num1; i<=num2; i++) {
+//         key = "'" + prefix + i +"'";
+//         value = $('input[name = ' + key + ']:checked').val();
+//         answerset.answers[i] = value;
+//     }
     
-    return answerset;
-}
+//     return answerset;
+// }
 
-var gsSaved = false, ag1Saved = false, ag2Saved = false, ag3Saved = false, ag4Saved = false, ag5Saved = false;
+// var gsSaved = false, ag1Saved = false, ag2Saved = false, ag3Saved = false, ag4Saved = false, ag5Saved = false;
 
-//save the json data array to the server via ajax call
-function saveToServer(address,dataset,datasaved){
-            $.ajax({
-            type       : "GET",
-            url        : address,
-            crossDomain: true,
-            data       : dataset,
-            contentType: 'application/json; charset=utf-8',
-            ////dataType   : 'json',
-            success    : function(responseData) {
-                    alert(responseData);
-                        window.location.hash = "govscore-results";
-                        afterSavedServer("Govscore", gsdata.organization);
-                        datasaved = true;
-                        showResultsButtons();
-                        },
-            error      : function(response) {
-                        alert(response);                  
-                        }  
-            });  
-        }
+// //save the json data array to the server via ajax call
+// function saveToServer(address,dataset,datasaved){
+//             $.ajax({
+//             type       : "GET",
+//             url        : address,
+//             crossDomain: true,
+//             data       : dataset,
+//             contentType: 'application/json; charset=utf-8',
+//             ////dataType   : 'json',
+//             success    : function(responseData, textStatus, jqXHR) {
+//                     alert(responseData + ", " + textStatus + ", " + jqXHR);
+//                         window.location.hash = "govscore-results";
+//                         afterSavedServer("Govscore", gsdata.organization);
+//                         datasaved = true;
+//                         showResultsButtons();
+//                         },
+//             error      : function(response) {
+//                         alert(response);                  
+//                         }  
+//             });  
+//         }
 
 
 /* Initial Govscore -----------------------------------------------*/
 
-var gsdata = localStorage.getObject('gsdata'); 
-var ag1data = localStorage.getObject('ag1data');
-var ag2data = localStorage.getObject('ag2data');
-var ag3data = localStorage.getObject('ag3data');
-var ag4data = localStorage.getObject('ag4data');
-var ag5data = localStorage.getObject('ag5data');
+// var gsdata = localStorage.getObject('gsdata'); 
+// var ag1data = localStorage.getObject('ag1data');
+// var ag2data = localStorage.getObject('ag2data');
+// var ag3data = localStorage.getObject('ag3data');
+// var ag4data = localStorage.getObject('ag4data');
+// var ag5data = localStorage.getObject('ag5data');
  
-/* store locally */
-function savelocal() {
+// /* store locally */
+// function savelocal() {
 
-    var userdata, email, gsdate, username;
+//     if(gsdata){
 
-    username = document.getElementById("username").value;
-    email = document.getElementById("email").value;
-    organization = document.getElementById("organization").value;
-    gsdate  = formatDate(new Date());
+//         alreadySaved();
 
-    //construct the json array for user data and add to local storage
-    gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
-    gsdata = getinputs(gsdata,1,25,"g");
-    localStorage.setObject('gsdata', gsdata);
-    
-    calcResults();
+//     }else{
 
-    //now that everything is saved, check the connection
-    checkConnection( "cgovscore");
-    
-}
+//         var userdata, email, gsdate, username;
 
-/* save to server */
+//         username = document.getElementById("username").value;
+//         email = document.getElementById("email").value;
+//         organization = document.getElementById("organization").value;
+//         gsdate  = formatDate(new Date());
 
-function saveServer() {
+//         //construct the json array for user data and add to local storage
+//         gsdata = {'username': username, 'email': email, 'organization': organization, 'gsdate': gsdate, 'answers':[-1]};
+//         gsdata = getinputs(gsdata,1,25,"g");
+//         localStorage.setObject('gsdata', gsdata);
+        
+//         calcResults();
 
-    var gsdata;
+//         //now that everything is saved, check the connection
+//         checkConnection( "cgovscore");
+//     }
+// }
 
-    //get the data from local storage
-    gsdata = localStorage.getObject('gsdata');
+// /* save to server */
 
-    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, gsSaved);
+// function saveServer() {
 
-}
+//     var gsdata;
 
-/* AG 1 -------------------------------------------------------*/
+//     //get the data from local storage
+//     gsdata = localStorage.getObject('gsdata');
 
-/* store locally */
+//     saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, gsSaved);
 
-function ag1savelocal() {
+// }
 
-    if(ag1data){
+// /* AG 1 -------------------------------------------------------*/
 
-        alreadySaved();
+// /* store locally */
 
-    }else if(gsdata == null){
+// function ag1savelocal() {
 
-        gsFirst();
+//     if(ag1data){
 
-    }else{
+//         alreadySaved();
 
-        var ag1date;
+//     }else if(gsdata = null){
 
-        gsdata = localStorage.getObject('gsdata');
+//         gsFirst();
 
-        ag1date = formatDate(new Date());
+//     }else{
 
-        ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'answers': [-1]};
-        ag1data = getinputs(ag1data,1,24,"ag");
+//         var ag1date;
 
-        localStorage.setObject('ag1data', ag1data);
+//         gsdata = localStorage.getObject('gsdata');
 
-        calcResults()
-        //now that everything is saved check the connection
-        checkConnection("cag1");
-    }
-}
+//         ag1date = formatDate(new Date());
 
-/* Save on Server */
+//         ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'answers': [-1]};
+//         ag1data = getinputs(ag1data,1,24,"ag");
 
-function ag1saveServer() {
+//         localStorage.setObject('ag1data', ag1data);
+
+//         calcResults()
+//         //now that everything is saved check the connection
+//         checkConnection("cag1");
+//     }
+// }
+
+// /* Save on Server */
+
+// function ag1saveServer() {
           
-    ag1data = localStorage.getObject('ag1data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, ag1Saved);
+//     ag1data = localStorage.getObject('ag1data');
+//     saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, ag1Saved);
         
-}
+// }
 
-/* AG 2 -------------------------------------------------------*/
+// /* AG 2 -------------------------------------------------------*/
 
-/* store locally */
+// /* store locally */
 
-function ag2savelocal() {
-    if(ag2data){
+// function ag2savelocal() {
+//     if(ag2data){
 
-        alreadySaved();
+//         alreadySaved();
 
-    }else if(gsdata == null){
+//     }else{
 
-        gsFirst();
+//         var ag2date;
 
-    }else{
+//         gsdata = localStorage.getObject('gsdata');
 
-        var ag2date;
+//         ag2date = formatDate(new Date());
 
-        gsdata = localStorage.getObject('gsdata');
+//         ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
+//         ag2data = getinputs(ag2data,25,48,"ag");
 
-        ag2date = formatDate(new Date());
+//         localStorage.setObject('ag2data', ag2data);
 
-        ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
-        ag2data = getinputs(ag2data,25,48,"ag");
+//         calcResults()
+//         //now that everything is saved check the connection
+//         checkConnection("cag2");
+//     }
+// }
 
-        localStorage.setObject('ag2data', ag2data);
+// /* Save on Server */
 
-        calcResults()
-        //now that everything is saved check the connection
-        checkConnection("cag2");
-    }
-}
-
-/* Save on Server */
-
-function ag2saveServer() {
+// function ag2saveServer() {
  
-    ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data, ag2saved);
+//     ag2data = localStorage.getObject('ag2data');
+//     saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data, ag2saved);
         
-}
+// }
 
-/* AG 3 -------------------------------------------------------*/
+// /* AG 3 -------------------------------------------------------*/
 
-/* store locally */
+// /* store locally */
 
-function ag3savelocal() {
+// function ag3savelocal() {
 
-    if(ag3data){
+//     if(ag3data){
 
-        alreadySaved();
+//         alreadySaved();
 
-    }else if(gsdata == null){
+//     }else{
 
-        gsFirst();
+//         var ag3date;
 
-    }else{
+//         gsdata = localStorage.getObject('gsdata');
 
-        var ag3date;
+//         ag3date = formatDate(new Date());
 
-        gsdata = localStorage.getObject('gsdata');
+//         ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'answers': [-1]};
+//         ag3data = getinputs(ag3data,49,60,"ag");
 
-        ag3date = formatDate(new Date());
+//         localStorage.setObject('ag3data', ag3data);
 
-        ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'answers': [-1]};
-        ag3data = getinputs(ag3data,49,60,"ag");
+//         calcResults()
 
-        localStorage.setObject('ag3data', ag3data);
+//         //now that everything is saved check the connection
+//         checkConnection("cag3");
+//     }
+// }
 
-        calcResults()
+// /* Save on Server */
 
-        //now that everything is saved check the connection
-        checkConnection("cag3");
-    }
-}
+// function ag3saveServer() {
 
-/* Save on Server */
+//     ag3data = localStorage.getObject('ag3data');
+//     saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, ag3Saved);
 
-function ag3saveServer() {
+// }
 
-    ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, ag3Saved);
+// /* AG 4 -------------------------------------------------------*/
 
-}
+// /* store locally */
 
-/* AG 4 -------------------------------------------------------*/
+// function ag4savelocal() {
 
-/* store locally */
+//     if(ag4data){
 
-function ag4savelocal() {
+//         alreadySaved();
 
-    if(ag4data){
+//     }else{
 
-        alreadySaved();
+//         var ag4date;
 
-    }else if(gsdata == null){
+//         gsdata = localStorage.getObject('gsdata');
 
-        gsFirst();
+//         ag4date = formatDate(new Date());
 
-    }else{
+//         ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
+//         ag4data = getinputs(ag4data,61,84,"ag");
 
-        var ag4date;
+//         localStorage.setObject('ag4data', ag4data);
 
-        gsdata = localStorage.getObject('gsdata');
+//         calcResults()
 
-        ag4date = formatDate(new Date());
+//         //now that everything is saved check the connection
+//         checkConnection("cag4");
+//     }
+// }
 
-        ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
-        ag4data = getinputs(ag4data,61,84,"ag");
+// /* Save on Server */
 
-        localStorage.setObject('ag4data', ag4data);
-
-        calcResults()
-
-        //now that everything is saved check the connection
-        checkConnection("cag4");
-    }
-}
-
-/* Save on Server */
-
-function ag4saveServer() {
+// function ag4saveServer() {
     
-    ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data, ag4Saved);
+//     ag4data = localStorage.getObject('ag4data');
+//     saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data, ag4Saved);
 
-}
+// }
 
-/* AG 5 -------------------------------------------------------*/
+// /* AG 5 -------------------------------------------------------*/
 
-/* store locally */
+// /* store locally */
 
-function ag5savelocal() {
+// function ag5savelocal() {
 
-    if(ag5data){
+//     if(ag5data){
 
-        alert("You have already finished this assessment");
+//         alert("You have already finished this assessment");
 
-    }else if(gsdata == null){
+//     }else{
 
-        gsFirst();
+//         var ag5date;
 
-    }else{
+//         gsdata = localStorage.getObject('gsdata');
 
-        var ag5date;
+//         ag5date = formatDate(new Date());
 
-        gsdata = localStorage.getObject('gsdata');
-
-        ag5date = formatDate(new Date());
-
-        ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'answers': [-1]};
-        ag5data = getinputs(ag5data,85,100,"ag");
+//         ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'answers': [-1]};
+//         ag5data = getinputs(ag5data,85,100,"ag");
         
-        localStorage.setObject('ag5data', ag5data);
+//         localStorage.setObject('ag5data', ag5data);
 
-        calcResults()
-        //now that everything is saved check the connection
-        checkConnection("cag5");
-    }
-}
+//         calcResults()
+//         //now that everything is saved check the connection
+//         checkConnection("cag5");
+//     }
+// }
 
-/* Save on Server */
+// /* Save on Server */
 
-function ag5saveServer() {
+// function ag5saveServer() {
 
-    ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, ag5Saved);
+//     ag5data = localStorage.getObject('ag5data');
+//     saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, ag5Saved);
 
     
-} 
+// } 
 
 
-/* App Comes Online ------------------------------------------*/
+// /* App Comes Online ------------------------------------------*/
 
-//check if online according to the above interval
-function onOnline() {
-    //there must be locally saved data and the saved flag must be false
-    if( gsdata && gsSaved == false){
-        saveServer();
-    }
-    if( ag1data && ag1Saved == false){
-        ag1saveServer();
-    } 
-    if( ag2data && ag2Saved == false){
-        ag2saveServer();
-    }
-    if( ag3data && ag3Saved == false){
-        ag3saveServer(); 
-    }
-    if( ag4data && ag4Saved == false) {
-        ag4saveServer();
-    }
-    if( ag5data && ag5Saved == false){
-        ag5saveServer();
-    } 
-}
+// //check if online according to the above interval
+// function onOnline() {
+//     //there must be locally saved data and the saved flag must be false
+//     if( gsdata && gsSaved == false){
+//         saveServer();
+//     }
+//     if( ag1data && ag1Saved == false){
+//         ag1saveServer();
+//     } 
+//     if( ag2data && ag2Saved == false){
+//         ag2saveServer();
+//     }
+//     if( ag3data && ag3Saved == false){
+//         ag3saveServer(); 
+//     }
+//     if( ag4data && ag4Saved == false) {
+//         ag4saveServer();
+//     }
+//     if( ag5data && ag5Saved == false){
+//         ag5saveServer();
+//     } 
+// }
 
-/* Interface changes -----------------------------------------*/ 
+// /* Interface changes -----------------------------------------*/ 
 
-function showResultsButtons() {
+// function showResultsButtons() {
     
-    if( gsdata){
-        /*var gsSaveButton = document.getElementById('btnStore');
-        gsSaveButton.className = gsSaveButton.className + " hide";*/
-        var resultButton2 = document.getElementById('govscore-results2');
-        resultButton2.className = resultButton2.className + " see";
-    }
+//     if( gsdata){
+//         /*var gsSaveButton = document.getElementById('btnStore');
+//         gsSaveButton.className = gsSaveButton.className + " hide";*/
+//         var resultButton2 = document.getElementById('govscore-results2');
+//         resultButton2.className = resultButton2.className + " see";
+//     }
     
-    if(ag1data){
-      /* var ag1SaveButton = document.getElementById('ag1Store');
-       ag1SaveButton.className = ag1SaveButton.className + " hide";*/
-       var ag1resultButton = document.getElementById('ag1-results');
-        ag1resultButton.className = ag1resultButton.className + " see";
-    }
+//     if(ag1data){
+//       /* var ag1SaveButton = document.getElementById('ag1Store');
+//        ag1SaveButton.className = ag1SaveButton.className + " hide";*/
+//        var ag1resultButton = document.getElementById('ag1-results');
+//         ag1resultButton.className = ag1resultButton.className + " see";
+//     }
    
-    if(ag2data) {
-        /*var ag2SaveButton = document.getElementById('ag2Store');
-        ag2SaveButton.className = ag2SaveButton.className + " hide";*/
-        var ag2resultButton = document.getElementById('ag2-results');
-        ag2resultButton.className = ag2resultButton.className + " see";
-    }
+//     if(ag2data) {
+//         /*var ag2SaveButton = document.getElementById('ag2Store');
+//         ag2SaveButton.className = ag2SaveButton.className + " hide";*/
+//         var ag2resultButton = document.getElementById('ag2-results');
+//         ag2resultButton.className = ag2resultButton.className + " see";
+//     }
     
-    if(ag3data){
-        /*var ag3SaveButton = document.getElementById('ag3Store');
-        ag3SaveButton.className = ag3SaveButton.className + " hide";*/
-        var ag3resultButton = document.getElementById('ag3-results');
-        ag3resultButton.className = ag3resultButton.className + " see";
-    }
+//     if(ag3data){
+//         /*var ag3SaveButton = document.getElementById('ag3Store');
+//         ag3SaveButton.className = ag3SaveButton.className + " hide";*/
+//         var ag3resultButton = document.getElementById('ag3-results');
+//         ag3resultButton.className = ag3resultButton.className + " see";
+//     }
      
-    if( ag4data) {
-        /*var ag4SaveButton = document.getElementById('ag4Store');
-        ag4SaveButton.className = ag4SaveButton.className + " hide";*/
-        var ag4resultButton = document.getElementById('ag4-results');
-        ag4resultButton.className = ag4resultButton.className + " see";
-    }
+//     if( ag4data) {
+//         /*var ag4SaveButton = document.getElementById('ag4Store');
+//         ag4SaveButton.className = ag4SaveButton.className + " hide";*/
+//         var ag4resultButton = document.getElementById('ag4-results');
+//         ag4resultButton.className = ag4resultButton.className + " see";
+//     }
    
-    if( ag5data){
-        /*var ag5SaveButton = document.getElementById('ag5Store');
-        ag5SaveButton.className = ag5SaveButton.className + " hide";*/
-        var ag5resultButton = document.getElementById('ag5-results');
-        ag5resultButton.className = ag5resultButton.className + " see";
-    }
-}
+//     if( ag5data){
+//         /*var ag5SaveButton = document.getElementById('ag5Store');
+//         ag5SaveButton.className = ag5SaveButton.className + " hide";*/
+//         var ag5resultButton = document.getElementById('ag5-results');
+//         ag5resultButton.className = ag5resultButton.className + " see";
+//     }
+// }
 
-/* Results -----------------*/
+// /* Results -----------------*/
 
-/*Questions 1, 2, 5, 8, 10 and 13 are based on the practice of cultivating accountability.
-Questions 11, 14 and 22 are based on the practice of engaging stakeholders.
-Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic direction.
-Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
-Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
+// /*Questions 1, 2, 5, 8, 10 and 13 are based on the practice of cultivating accountability.
+// Questions 11, 14 and 22 are based on the practice of engaging stakeholders.
+// Questions 6, 7, 12 and 16 are based on the practice of setting shared strategic direction.
+// Questions 3, 4, 17, 21, 23 and 25 are based on the practice of stewarding resources.
+// Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous governance enhancement.*/
 
-//add up the numbers
-function calcResults() {
+// //add up the numbers
+// function calcResults() {
 
-    var ag1results,ag2results,ag3results,ag4results,ag5results,res, resag;
+//     var ag1results,ag2results,ag3results,ag4results,ag5results,res, resag;
 
-   if(gsdata){
+//    if(gsdata){
 
-        var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel;
+//         var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel;
         
 
-        accScore = parseInt(gsdata.answers[1]) + parseInt(gsdata.answers[2]) + parseInt(gsdata.answers[5]) + parseInt(gsdata.answers[8]) + parseInt(gsdata.answers[10]) + parseInt(gsdata.answers[13]);
-        var accPossible = 24;
-        var accPercent = Math.round(accScore/accPossible*100);
-        percentArray.push(accPercent);
+//         accScore = parseInt(gsdata.answers[1]) + parseInt(gsdata.answers[2]) + parseInt(gsdata.answers[5]) + parseInt(gsdata.answers[8]) + parseInt(gsdata.answers[10]) + parseInt(gsdata.answers[13]);
+//         var accPossible = 24;
+//         var accPercent = Math.round(accScore/accPossible*100);
+//         percentArray.push(accPercent);
 
-        stakeScore = parseInt(gsdata.answers[11]) + parseInt(gsdata.answers[14]) + parseInt(gsdata.answers[22]);
-        var stakePossible = 12;
-        var stakePercent = Math.round(stakeScore/stakePossible*100);
-        percentArray.push(stakePercent);
+//         stakeScore = parseInt(gsdata.answers[11]) + parseInt(gsdata.answers[14]) + parseInt(gsdata.answers[22]);
+//         var stakePossible = 12;
+//         var stakePercent = Math.round(stakeScore/stakePossible*100);
+//         percentArray.push(stakePercent);
 
-        dirScore = parseInt(gsdata.answers[6]) +parseInt(gsdata.answers[7]) +parseInt(gsdata.answers[12]) +parseInt(gsdata.answers[16]);
-        var dirPossible = 16;
-        var dirPercent = Math.round(dirScore/dirPossible*100);
-        percentArray.push(dirPercent);
+//         dirScore = parseInt(gsdata.answers[6]) +parseInt(gsdata.answers[7]) +parseInt(gsdata.answers[12]) +parseInt(gsdata.answers[16]);
+//         var dirPossible = 16;
+//         var dirPercent = Math.round(dirScore/dirPossible*100);
+//         percentArray.push(dirPercent);
 
-        resScore = parseInt(gsdata.answers[3]) +parseInt(gsdata.answers[4]) +parseInt(gsdata.answers[17]) +parseInt(gsdata.answers[21]) +parseInt(gsdata.answers[23]) +parseInt(gsdata.answers[25]);
-        var resPossible = 24;
-        var resPercent = Math.round(resScore/resPossible*100);
-        percentArray.push(resPercent);
+//         resScore = parseInt(gsdata.answers[3]) +parseInt(gsdata.answers[4]) +parseInt(gsdata.answers[17]) +parseInt(gsdata.answers[21]) +parseInt(gsdata.answers[23]) +parseInt(gsdata.answers[25]);
+//         var resPossible = 24;
+//         var resPercent = Math.round(resScore/resPossible*100);
+//         percentArray.push(resPercent);
 
-        enhScore = parseInt(gsdata.answers[9]) +parseInt(gsdata.answers[15]) +parseInt(gsdata.answers[18]) +parseInt(gsdata.answers[19]) +parseInt(gsdata.answers[20]) +parseInt(gsdata.answers[24]);
-        var enhPossible = 24;
-        var enhPercent = Math.round(enhScore/enhPossible*100);
-        percentArray.push(enhPercent);
+//         enhScore = parseInt(gsdata.answers[9]) +parseInt(gsdata.answers[15]) +parseInt(gsdata.answers[18]) +parseInt(gsdata.answers[19]) +parseInt(gsdata.answers[20]) +parseInt(gsdata.answers[24]);
+//         var enhPossible = 24;
+//         var enhPercent = Math.round(enhScore/enhPossible*100);
+//         percentArray.push(enhPercent);
 
-        totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
+//         totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
         
 
-        switch(true) {
-            case( totalScore < 25 ):
-                mlevel = "Clear need of governance development (first level/4)";
-                break;
-            case( totalScore >= 25 && totalScore < 50 ):
-                mlevel = "Basic level of governance (second level/4)";
-                break;
-            case( totalScore >= 50 && totalScore < 75 ):
-                mlevel = "Goal-Driven and dynamic governance (third level/4)";
-                break;
-            case( totalScore >= 75 ): 
-                mlevel = "Transformational governance (highest level/4)";
-        }
+//         switch(true) {
+//             case( totalScore < 25 ):
+//                 mlevel = "Clear need of governance development (first level/4)";
+//                 break;
+//             case( totalScore >= 25 && totalScore < 50 ):
+//                 mlevel = "Basic level of governance (second level/4)";
+//                 break;
+//             case( totalScore >= 50 && totalScore < 75 ):
+//                 mlevel = "Goal-Driven and dynamic governance (third level/4)";
+//                 break;
+//             case( totalScore >= 75 ): 
+//                 mlevel = "Transformational governance (highest level/4)";
+//         }
 
 
-        //list each area with the score
-        res = "<h2>Govscore Assessment</h2><p>You assessed your organization as follows: </p>";
-        res += "<div id=\"accountability\"><h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p></div>";
-        res += "<div id=\"stakeholders\"><h3>Engaging Stakeholders</h3><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p></div>";
-        res += "<div id=\"direction\"><h3>Shared Strategic Direction</h3><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p></div>";
-        res += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p></div>";
-        res += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p></div>";
-        res += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
-        //document.getElementById('gs-results').innerHTML = res;
+//         //list each area with the score
+//         res = "<h2>Govscore Assessment</h2><p>You assessed your organization as follows: </p>";
+//         res += "<div id=\"accountability\"><h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p></div>";
+//         res += "<div id=\"stakeholders\"><h3>Engaging Stakeholders</h3><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p></div>";
+//         res += "<div id=\"direction\"><h3>Shared Strategic Direction</h3><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p></div>";
+//         res += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p></div>";
+//         res += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p></div>";
+//         res += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
+//         res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
+//         //document.getElementById('gs-results').innerHTML = res;
         
-    }
+//     }
 
-    if(ag1data || ag2data || ag3data || ag4data || ag5data ){
-        res += "<h2>Advanced Govscore</h2>";
+//     if(ag1data || ag2data || ag3data || ag4data || ag5data ){
+//         res += "<h2>Advanced Govscore</h2>";
 
-        function getAgResults(dataset,resSet,ansnums) {
-            var resSet = 0;
-            for(i=0; i<(dataset.answers.length - ansnums); i++){
-                var ans = ansnums + i;
-                resSet += parseInt(dataset.answers[ans]);
-            }
-            return resSet;
-        }
+//         function getAgResults(dataset,resSet,ansnums) {
+//             var resSet = 0;
+//             for(i=0; i<(dataset.answers.length - ansnums); i++){
+//                 var ans = ansnums + i;
+//                 resSet += parseInt(dataset.answers[ans]);
+//             }
+//             return resSet;
+//         }
 
-        if(ag1data){ag1results = getAgResults(ag1data,ag1results,0);}
-        if(ag2data){ag2results = getAgResults(ag2data,ag2results,25);}
-        if(ag3data){ag3results = getAgResults(ag3data,ag3results,49);}
-        if(ag4data){ag4results = getAgResults(ag4data,ag4results,61);}
-        if(ag5data){ag5results = getAgResults(ag5data,ag5results,85);}
+//         if(ag1data){ag1results = getAgResults(ag1data,ag1results,0);}
+//         if(ag2data){ag2results = getAgResults(ag2data,ag2results,25);}
+//         if(ag3data){ag3results = getAgResults(ag3data,ag3results,49);}
+//         if(ag4data){ag4results = getAgResults(ag4data,ag4results,61);}
+//         if(ag5data){ag5results = getAgResults(ag5data,ag5results,85);}
         
-        if(ag1results){
-            res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24</p></div>";
-        }
-        if(ag2results){
-            res += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " out of 24</p></div>";
-        }
-        if(ag3results){
-            res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 12</p></div>";
-        }
-        if(ag4results){
-            res += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " out of 24</p></div>";
-        }
-        if(ag5results){
-            res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 16</p></div>";
-        }
-    }
+//         if(ag1results){
+//             res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24</p></div>";
+//         }
+//         if(ag2results){
+//             res += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " out of 24</p></div>";
+//         }
+//         if(ag3results){
+//             res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 12</p></div>";
+//         }
+//         if(ag4results){
+//             res += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " out of 24</p></div>";
+//         }
+//         if(ag5results){
+//             res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 16</p></div>";
+//         }
+//     }
 
-    document.getElementById('gs-results').innerHTML = res; 
-}
+//     document.getElementById('gs-results').innerHTML = res; 
+// }
+
