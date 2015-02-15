@@ -41,8 +41,8 @@ $(document).on("pageshow", "#govscore", function() {
 
 
 /* Notifications ----------------------------------*/
-gsdata = localStorage.getObject('gsdata');
-var organization = gsdata.organization;
+
+var organization;
 
 function doNothing(){
     //nothing
@@ -181,7 +181,7 @@ function saveToServer(address,dataset,datasaved){
             success    : function(responseData, textStatus, jqXHR) {
                     alert(responseData + ", " + textStatus + ", " + jqXHR);
                         window.location.hash = "govscore-results";
-                        afterSavedServer("Govscore", organization);
+                        afterSavedServer("Govscore", gsdata.organization);
                         datasaved = true;
                         showResultsButtons();
                         },
