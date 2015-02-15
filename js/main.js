@@ -30,7 +30,7 @@ function validate() {
 
     }else{
 
-        $( "gsForm" ).validate();
+        $( "#gsForm" ).validate();
 
 //         if( document.gsForm.username.value === "" ) {
 
