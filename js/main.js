@@ -30,14 +30,15 @@ function validate() {
     }else{
         if( document.gsForm.username.value === "" ) {
 
+             
+             document.getElementById("username").focus();
              navigator.notification.alert( "Please enter your full name!" );
-             document.gsForm.username.focus() ;
              return false;
         }
         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
-
+            
+             document.getElementById("email").focus();
              navigator.notification.alert( "Email entries don't match. Please try again" );
-             document.gsForm.email.focus() ;
              return false;
         }
 
