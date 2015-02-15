@@ -78,7 +78,6 @@ function afterSavedServer(form, orgcode) {
 function alreadySaved() {
     navigator.notification.alert (
         'You previously finished this assessment. Please check your results.',
-        doNothing,
         'Info title',
         'Update'
     );
