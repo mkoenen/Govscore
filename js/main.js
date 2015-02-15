@@ -6,6 +6,7 @@ window.onload = function(){
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", calcResults, false);
+    document.addEventListener("deviceready", validate, false);
 };
 
 //listen for click events      
@@ -22,7 +23,7 @@ function setbutton() {
 
 /* Form Validation -------------------------------------*/
 
-$(document).on("pagecontainershow", "#govscore", function() {
+function validate() {
  
  
     $.validator.addMethod("emailmatch", function(value) {
@@ -292,6 +293,10 @@ function ag2savelocal() {
 
         alreadySaved();
 
+    }else if(gsdata == null){
+
+        gsFirst();
+
     }else{
 
         var ag2date;
@@ -329,6 +334,10 @@ function ag3savelocal() {
     if(ag3data){
 
         alreadySaved();
+
+    }else if(gsdata == null){
+
+        gsFirst();
 
     }else{
 
@@ -369,6 +378,10 @@ function ag4savelocal() {
 
         alreadySaved();
 
+    }else if(gsdata == null){
+
+        gsFirst();
+
     }else{
 
         var ag4date;
@@ -407,6 +420,10 @@ function ag5savelocal() {
     if(ag5data){
 
         alert("You have already finished this assessment");
+
+    }else if(gsdata == null){
+
+        gsFirst();
 
     }else{
 
