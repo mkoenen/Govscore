@@ -60,7 +60,7 @@ function validate() {
         }
 
 
-       if( document.gsForm.organization.value === "" ) {
+       if( document.gsForm.organization.value === "-1" ) {
 
          navigator.notification.alert( "Please enter your organization!" );
          document.gsForm.organization.focus() ;
@@ -224,8 +224,8 @@ function saveToServer(address,dataset,datasaved){
             data       : dataset,
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                    alert(responseData + ", " + textStatus + ", " + jqXHR);
+            success    : function(responseData) {
+                    alert(responseData);
                         window.location.hash = "govscore-results";
                         afterSavedServer("Govscore", gsdata.organization);
                         datasaved = true;
