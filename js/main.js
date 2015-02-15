@@ -23,6 +23,9 @@ function setbutton() {
 /* Form Validation -------------------------------------*/
 
 function validate() {
+
+    var return = true;
+
     if(gsdata){
 
         alreadySaved();
@@ -33,20 +36,20 @@ function validate() {
              
              document.getElementById("username").focus();
              navigator.notification.alert( "Please enter your full name!" );
-             return false;
+             return = false;
         }
         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
              document.getElementById("email").focus();
              navigator.notification.alert( "Email entries don't match. Please try again" );
-             return false;
+             return = false;
         }
 
         if( document.gsForm.email.value === "" ) {
 
             document.getElementById("email").focus();
              navigator.notification.alert( "Please enter your email address!" );
-             return false;
+             return = false;
 
         }else{
 
@@ -54,7 +57,7 @@ function validate() {
             var ret = validateEmail();
             if( ret === false ) {
 
-                  return false;
+                  return = false;
 
              }
         }
@@ -64,12 +67,15 @@ function validate() {
 
         document.getElementById("organization").focus();
          navigator.notification.alert( "Please enter your organization!" );
-         return false;
+         return  = false;
 
        }
 
+       if(return != false){
+
         savelocal();
     }
+    
 }
 
 
@@ -82,7 +88,7 @@ function validateEmail() {
 
         document.getElementById("email").focus();
        navigator.notification.alert("Please enter a correct email address");
-       return false;
+       return  = false;
 
    }
 
