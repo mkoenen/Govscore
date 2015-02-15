@@ -29,6 +29,7 @@ function validate() {
         alreadySaved();
 
     }else{
+
         if( document.gsForm.username.value === "" ) {
 
              navigator.notification.alert( "Please enter your full name!" );
@@ -84,7 +85,7 @@ function validateEmail() {
        return false;
 
    }
-
+}
 
 /* Notifications ----------------------------------*/
 
@@ -677,4 +678,3 @@ function calcResults() {
 
     document.getElementById('gs-results').innerHTML = res; 
 }
-
