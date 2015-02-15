@@ -41,7 +41,12 @@ $(document).on("pageshow", "#govscore", function() {
 
 
 /* Notifications ----------------------------------*/
+gsdata = localStorage.getObject('gsdata');
 var organization = gsdata.organization;
+
+function doNothing(){
+    //nothing
+}
 
 function messageAfterSaveLocal() {
     navigator.notification.alert(
@@ -73,6 +78,7 @@ function afterSavedServer(form, orgcode) {
 function alreadySaved() {
     navigator.notification.alert (
         'You previously finished this assessment. Please check your results.',
+        doNothing,
         'Info title',
         'Update'
     );
