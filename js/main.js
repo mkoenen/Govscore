@@ -22,7 +22,7 @@ function setbutton() {
 
 /* Form Validation -------------------------------------*/
 
-$(document).on("pageshow", "#govscore", function() {
+$(document).on("pagecontainershow", "#govscore", function() {
  
  
     $.validator.addMethod("emailmatch", function(value) {
@@ -69,7 +69,7 @@ function afterSavedServer(form, orgcode) {
 
     navigator.notification.alert(
 
-        'Your answers to the questionnaire ' + form + ' have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
+        'Your answers to the ' + form + ' questionnaire have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
         'Info title',
         'Update'
     );
@@ -251,7 +251,7 @@ function ag1savelocal() {
 
         alreadySaved();
 
-    }else if(gsdata != null){
+    }else if(gsdata == null){
 
         gsFirst();
 
