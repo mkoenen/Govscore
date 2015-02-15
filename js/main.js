@@ -41,13 +41,18 @@ $(document).on("pageshow", "#govscore", function() {
 
 
 /* Notifications ----------------------------------*/
-var organization;
+var organization = gsdata.answers[organization];
+
+function doNothing(){
+    //nothing to be done here
+}
 
 function messageAfterSaveLocal() {
     navigator.notification.alert(
-        'Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.',
-        'Info title',
-        'Update'
+        'Your answers have been stored on your device. Please return to the app when you are connected to the internet so we can send your data to GovScoreApp.net.',
+        doNothing,         // callback
+        'Info',            // title
+        'OK'                //button
     );
 }
 
@@ -57,6 +62,7 @@ function afterSavedServer(form, orgcode) {
     navigator.notification.alert(
 
         'Your answers to the questionnaire ' + form + ' have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
+        doNothing,
         'Info title',
         'Update'
     );
@@ -65,6 +71,7 @@ function afterSavedServer(form, orgcode) {
 function alreadySaved() {
     navigator.notification.alert (
         'You previously finished this assessment. Please check your results.',
+        doNothing,
         'Info title',
         'Update'
     );
