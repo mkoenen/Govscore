@@ -60,7 +60,7 @@ function validate() {
         }
 
 
-       if( document.gsForm.organization.value === "-1" ) {
+       if( document.gsForm.organization.value === "" ) {
 
          navigator.notification.alert( "Please enter your organization!" );
          document.gsForm.organization.focus() ;
