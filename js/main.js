@@ -30,61 +30,63 @@ function validate() {
 
     }else{
 
-        if( document.gsForm.username.value === "" ) {
+        $( "gsForm" ).validate();
 
-             navigator.notification.alert( "Please enter your full name!" );
-             document.gsForm.username.focus() ;
-             return false;
-        }
-        if( document.gsForm.email.value !== document.gsForm.email2.value ) {
+//         if( document.gsForm.username.value === "" ) {
 
-             navigator.notification.alert( "Email entries don't match. Please try again" );
-             document.gsForm.email.focus() ;
-             return false;
-        }
-        if( document.gsForm.email.value === "" ) {
+//              navigator.notification.alert( "Please enter your full name!" );
+//              document.gsForm.username.focus() ;
+//              return false;
+//         }
+//         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
-             navigator.notification.alert( "Please enter your email address!" );
-             document.gsForm.email.focus() ;
-             return false;
+//              navigator.notification.alert( "Email entries don't match. Please try again" );
+//              document.gsForm.email.focus() ;
+//              return false;
+//         }
+//         if( document.gsForm.email.value === "" ) {
 
-        }else{
+//              navigator.notification.alert( "Please enter your email address!" );
+//              document.gsForm.email.focus() ;
+//              return false;
 
-            // Put extra check for data format
-            var ret = validateEmail();
-            if( ret === false ) {
+//         }else{
 
-                  return false;
+//             // Put extra check for data format
+//             var ret = validateEmail();
+//             if( ret === false ) {
 
-             }
-        }
+//                   return false;
+
+//              }
+//         }
 
 
-       if( document.gsForm.organization.value === "-1" ) {
+//        if( document.gsForm.organization.value === "-1" ) {
 
-         navigator.notification.alert( "Please enter your organization!" );
-         document.gsForm.organization.focus() ;
-         return false;
+//          navigator.notification.alert( "Please enter your organization!" );
+//          document.gsForm.organization.focus() ;
+//          return false;
 
-       }
+//        }
 
-        savelocal();
+//         savelocal();
+//     }
+// }
+
+
+// function validateEmail() {
+
+//    var emailID = document.gsForm.email.value;
+//    var atpos = emailID.indexOf("@");
+//    var dotpos = emailID.lastIndexOf(".");
+//    if (atpos < 1 || ( dotpos - atpos < 2 )) {
+
+//        navigator.notification.alert("Please enter a correct email address");
+//        document.gsForm.email.focus() ;
+//        return false;
+
     }
-}
-
-
-function validateEmail() {
-
-   var emailID = document.gsForm.email.value;
-   var atpos = emailID.indexOf("@");
-   var dotpos = emailID.lastIndexOf(".");
-   if (atpos < 1 || ( dotpos - atpos < 2 )) {
-
-       navigator.notification.alert("Please enter a correct email address");
-       document.gsForm.email.focus() ;
-       return false;
-
-   }
 }
 
 /* Notifications ----------------------------------*/
