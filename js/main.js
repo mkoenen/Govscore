@@ -6,6 +6,7 @@ window.onload = function(){
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", calcResults, false);
+    $.mobile.phonegapNavigationEnabled = true;
 };
 
 //listen for click events      
@@ -23,9 +24,6 @@ function setbutton() {
 /* Form Validation -------------------------------------*/
 
 function validate() {
-
-    var return = true;
-
     if(gsdata){
 
         alreadySaved();
@@ -33,23 +31,22 @@ function validate() {
     }else{
         if( document.gsForm.username.value === "" ) {
 
-             
-             document.getElementById("username").focus();
              navigator.notification.alert( "Please enter your full name!" );
-             return = false;
+             document.gsForm.username.focus() ;
+             return false;
         }
         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
-             document.getElementById("email").focus();
              navigator.notification.alert( "Email entries don't match. Please try again" );
-             return = false;
+             document.gsForm.email.focus() ;
+             return false;
         }
 
         if( document.gsForm.email.value === "" ) {
 
-            document.getElementById("email").focus();
              navigator.notification.alert( "Please enter your email address!" );
-             return = false;
+             document.gsForm.email.focus() ;
+             return false;
 
         }else{
 
@@ -57,7 +54,7 @@ function validate() {
             var ret = validateEmail();
             if( ret === false ) {
 
-                  return = false;
+                  return false;
 
              }
         }
@@ -65,17 +62,14 @@ function validate() {
 
        if( document.gsForm.organization.value === "-1" ) {
 
-        document.getElementById("organization").focus();
          navigator.notification.alert( "Please enter your organization!" );
-         return  = false;
+         document.gsForm.organization.focus() ;
+         return false;
 
        }
 
-       if(return != false){
-
         savelocal();
     }
-    
 }
 
 
@@ -86,9 +80,9 @@ function validateEmail() {
    var dotpos = emailID.lastIndexOf(".");
    if (atpos < 1 || ( dotpos - atpos < 2 )) {
 
-        document.getElementById("email").focus();
        navigator.notification.alert("Please enter a correct email address");
-       return  = false;
+       document.gsForm.email.focus() ;
+       return false;
 
    }
 
