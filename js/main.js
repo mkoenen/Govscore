@@ -38,7 +38,7 @@ function validate() {
  
     $("#gsForm").validate();
  
-});
+}
 
 
 /* Notifications ----------------------------------*/
