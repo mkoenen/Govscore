@@ -105,12 +105,20 @@ function messageAfterSaveLocal() {
     );
 }
 
+function gsFirst() {
+    navigator.notification.alert(
+        'Please complete the initial Govscore assessment before moving on to the Advanced Govscore questionnaires.',
+        'Info title',
+        'Update'
+    );
+}
+
 
 function afterSavedServer(form, orgcode) {
 
     navigator.notification.alert(
 
-        'Your answers to the questionnaire ' + form + ' have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
+        'Your answers to the ' + form + ' questionnaire have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
         'Info title',
         'Update'
     );
@@ -123,6 +131,7 @@ function alreadySaved() {
         'Update'
     );
 }
+
 
 
 /* Get Date --------------------------------------------------*/
@@ -218,8 +227,8 @@ function saveToServer(address,dataset,datasaved){
             data       : dataset,
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                    alert(responseData + ", " + textStatus + ", " + jqXHR);
+            success    : function(responseData) {
+                        navigator.notification.alert(responseData);
                         window.location.hash = "govscore-results";
                         afterSavedServer("Govscore", organization);
                         datasaved = true;
@@ -245,7 +254,7 @@ var ag5data = localStorage.getObject('ag5data');
 /* store locally */
 function savelocal() {
 
-    var userdata, email, gsdate, username, organization;
+    var userdata, email, gsdate, username;
 
     username = document.getElementById("username").value;
     email = document.getElementById("email").value;
@@ -286,6 +295,10 @@ function ag1savelocal() {
 
         alreadySaved();
 
+    }else if(gsdata = null){
+
+        gsFirst();
+
     }else{
 
         var ag1date;
@@ -322,6 +335,10 @@ function ag2savelocal() {
     if(ag2data){
 
         alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
 
     }else{
 
@@ -360,6 +377,10 @@ function ag3savelocal() {
     if(ag3data){
 
         alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
 
     }else{
 
@@ -400,6 +421,10 @@ function ag4savelocal() {
 
         alreadySaved();
 
+    }else if(gsdata = null){
+
+        gsFirst();
+
     }else{
 
         var ag4date;
@@ -438,6 +463,10 @@ function ag5savelocal() {
     if(ag5data){
 
         alert("You have already finished this assessment");
+
+    }else if(gsdata = null){
+
+        gsFirst();
 
     }else{
 
