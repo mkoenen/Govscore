@@ -6,7 +6,6 @@ window.onload = function(){
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", calcResults, false);
-    $.mobile.phonegapNavigationEnabled = true;
 };
 
 //listen for click events      
@@ -23,7 +22,7 @@ function setbutton() {
 
 /* Form Validation -------------------------------------*/
 
-function validate() {
+function validate(event) {
     if(gsdata){
 
         alreadySaved();
@@ -33,20 +32,23 @@ function validate() {
 
              navigator.notification.alert( "Please enter your full name!" );
              document.gsForm.username.focus() ;
-             return false;
+             //return false;
+             event.preventDefault();
         }
         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
              navigator.notification.alert( "Email entries don't match. Please try again" );
              document.gsForm.email.focus() ;
-             return false;
+            // return false;
+            event.preventDefault();
         }
 
         if( document.gsForm.email.value === "" ) {
 
              navigator.notification.alert( "Please enter your email address!" );
              document.gsForm.email.focus() ;
-             return false;
+             //return false;
+             event.preventDefault();
 
         }else{
 
@@ -54,7 +56,8 @@ function validate() {
             var ret = validateEmail();
             if( ret === false ) {
 
-                  return false;
+                  //return false;
+                  event.preventDefault();
 
              }
         }
@@ -64,8 +67,8 @@ function validate() {
 
          navigator.notification.alert( "Please enter your organization!" );
          document.gsForm.organization.focus() ;
-         return false;
-
+         //return false;
+         event.preventDefault();
        }
 
         savelocal();
@@ -82,8 +85,8 @@ function validateEmail() {
 
        navigator.notification.alert("Please enter a correct email address");
        document.gsForm.email.focus() ;
-       return false;
-
+       //return false;
+       event.preventDefault();
    }
 
    return( true );
