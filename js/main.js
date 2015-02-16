@@ -237,9 +237,8 @@ function saveToServer(address,dataset,datasaved){
                         //afterSavedServer("Govscore", organization);
                         datasaved = true;
                         showResultsButtons();
-                        if(datasaved === false){
-                            navigator.notification.alert(responseData, goTo(), "Info", "Update");
-                            }
+                        navigator.notification.alert(responseData, goTo(), "Info", "Update");
+                        
                         },
             error      : function(response) {
                         navigator.notification.alert(responseData);                
