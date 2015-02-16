@@ -228,11 +228,12 @@ function saveToServer(address,dataset,datasaved){
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData) {
-                        navigator.notification.alert(responseData);
-                        window.location.hash = "govscore-results";
+                        
+                        //window.location.hash = "govscore-results";
                         //afterSavedServer("Govscore", organization);
                         datasaved = true;
                         showResultsButtons();
+                        navigator.notification.alert(responseData, function goTo(){window.location.hash = "govscore-results";}, "Info", "Update");
                         },
             error      : function(response) {
                         navigator.notification.alert(responseData);                 
