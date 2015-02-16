@@ -243,8 +243,9 @@ function saveToServer(address,dataset,datasaved){
             error      : function(response) {
                         navigator.notification.alert(responseData);                
                          } 
-                         return datasaved 
+                         
             });
+            return datasaved;
            alert(datasaved);
            alertdata(); 
         }
