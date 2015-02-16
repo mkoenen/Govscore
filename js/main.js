@@ -99,7 +99,7 @@ var organization;
 
 function messageAfterSaveLocal() {
     navigator.notification.alert(
-        'Your answers have been stored on your device. They will be saved to the server when you are connected to the internet.',
+        'Sorry, you are offline. Your answers have been stored on your device. Please open the app when you return online and your data will be sent to our server.',
         'Info title',
         'Update'
     );
@@ -114,7 +114,7 @@ function gsFirst() {
 }
 
 
-function afterSavedServer(form, orgcode) {
+/*function afterSavedServer(form, orgcode) {
 
     navigator.notification.alert(
 
@@ -122,7 +122,7 @@ function afterSavedServer(form, orgcode) {
         'Info title',
         'Update'
     );
-}
+}*/
 
 function alreadySaved() {
     navigator.notification.alert (
@@ -230,12 +230,12 @@ function saveToServer(address,dataset,datasaved){
             success    : function(responseData) {
                         navigator.notification.alert(responseData);
                         window.location.hash = "govscore-results";
-                        afterSavedServer("Govscore", organization);
+                        //afterSavedServer("Govscore", organization);
                         datasaved = true;
                         showResultsButtons();
                         },
             error      : function(response) {
-                        alert(response);                  
+                        navigator.notification.alert(responseData);                 
                          }  
             });
             
