@@ -31,33 +31,34 @@ function validate(event) {
         if( document.gsForm.username.value === "" ) {
 
              navigator.notification.alert( "Please enter your full name!" );
-             document.gsForm.username.focus() ;
-             //return false;
+             document.gsForm.username.focus();
              event.preventDefault();
+             return false;
+             
         }
         if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
-             navigator.notification.alert( "Email entries don't match. Please try again" );
-             document.gsForm.email.focus() ;
-            // return false;
+            navigator.notification.alert( "Email entries don't match. Please try again" );
+            document.gsForm.email.focus();
             event.preventDefault();
+            return false;
+            
         }
 
         if( document.gsForm.email.value === "" ) {
 
-             navigator.notification.alert( "Please enter your email address!" );
-             document.gsForm.email.focus() ;
-             //return false;
-             event.preventDefault();
+            navigator.notification.alert( "Please enter your email address!" );
+            document.gsForm.email.focus();
+            event.preventDefault();
+            return false;
 
         }else{
 
             // Put extra check for data format
             var ret = validateEmail();
             if( ret === false ) {
-
-                  //return false;
-                  event.preventDefault();
+                event.preventDefault();
+                return false;
 
              }
         }
@@ -66,9 +67,9 @@ function validate(event) {
        if( document.gsForm.organization.value === "-1" ) {
 
          navigator.notification.alert( "Please enter your organization!" );
-         document.gsForm.organization.focus() ;
-         //return false;
+         document.gsForm.organization.focus();
          event.preventDefault();
+         return false;
        }
 
         savelocal();
@@ -84,9 +85,9 @@ function validateEmail() {
    if (atpos < 1 || ( dotpos - atpos < 2 )) {
 
        navigator.notification.alert("Please enter a correct email address");
-       document.gsForm.email.focus() ;
-       //return false;
+       document.gsForm.email.focus();
        event.preventDefault();
+       return false;
    }
 
    return( true );
