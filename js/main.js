@@ -250,7 +250,7 @@ function saveToServer(address,dataset,datasaved){
            alertdata(); 
         }
 function alertdata(){
-    alert gsSaved;
+    alert(gsSaved);
 }
 /* Initial Govscore -----------------------------------------------*/
 
