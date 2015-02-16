@@ -249,7 +249,7 @@ function saveToServer(address,dataset,datasaved){
            alert(datasaved);
            alertdata(); 
         }
-alertdata(){
+function alertdata(){
     alert gsSaved;
 }
 /* Initial Govscore -----------------------------------------------*/
