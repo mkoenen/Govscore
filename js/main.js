@@ -237,17 +237,20 @@ function saveToServer(address,dataset,datasaved){
                         //afterSavedServer("Govscore", organization);
                         datasaved = true;
                         showResultsButtons();
-                        navigator.notification.alert(responseData, goTo(), "Info", "Update");
+                        navigator.notification.alert(responseData, goTo(), "Update", "OK");
                         
                         },
             error      : function(response) {
                         navigator.notification.alert(responseData);                
-                         }  
+                         } 
+                         return datasaved 
             });
-            
+           alert(datasaved);
+           alertdata(); 
         }
-
-
+alertdata(){
+    alert gsSaved;
+}
 /* Initial Govscore -----------------------------------------------*/
 
 var gsdata = localStorage.getObject('gsdata'); 
