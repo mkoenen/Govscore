@@ -77,12 +77,12 @@ button.hide {
 .ui-popup-container {
 	position: fixed !important;
 	top: 60px !important;
-	left: 10% !important;
+	left: 25% !important;
 	}
 .ui-popup.ui-body-inherit {
-border-width: 1px;
-border-style: solid;
-border-color: #CBE8C5;
+	border-width: 1px;
+	border-style: solid;
+	border-color:#CBE8C5;
 }
 
 div#popupBasic {
@@ -99,7 +99,7 @@ div#popupBasic {
 }
 #legend{
 	background-color: rgba(0, 0, 0, 0)/*{c-bup-background-color}*/;
-	padding: 6% 16% 10%;
+	padding: 0 0 10% 10%;
 }
 
 /* results ----------------------------------------*/

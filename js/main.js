@@ -132,6 +132,10 @@ function alreadySaved() {
     );
 }
 
+function goTo(){
+    window.location.hash = "govscore-results";
+}
+
 
 
 /* Get Date --------------------------------------------------*/
@@ -233,10 +237,12 @@ function saveToServer(address,dataset,datasaved){
                         //afterSavedServer("Govscore", organization);
                         datasaved = true;
                         showResultsButtons();
-                        navigator.notification.alert(responseData, function goTo(){window.location.hash = "govscore-results";}, "Info", "Update");
+                        if(datasaved === false){
+                            navigator.notification.alert(responseData, goTo(), "Info", "Update");
+                            }
                         },
             error      : function(response) {
-                        navigator.notification.alert(responseData);                 
+                        navigator.notification.alert(responseData);                
                          }  
             });
             
@@ -502,26 +508,28 @@ function ag5saveServer() {
 /* App Comes Online ------------------------------------------*/
 
 //check if online according to the above interval
-function onOnline() {
+function onOnline(event) {
     //there must be locally saved data and the saved flag must be false
-    if( gsdata && gsSaved == false){
+    if( gsdata && gsSaved === false){
         saveServer();
     }
-    if( ag1data && ag1Saved == false){
+    if( ag1data && ag1Saved === false){
         ag1saveServer();
     } 
-    if( ag2data && ag2Saved == false){
+    if( ag2data && ag2Saved === false){
         ag2saveServer();
     }
-    if( ag3data && ag3Saved == false){
+    if( ag3data && ag3Saved === false){
         ag3saveServer(); 
     }
-    if( ag4data && ag4Saved == false) {
+    if( ag4data && ag4Saved === false) {
         ag4saveServer();
     }
-    if( ag5data && ag5Saved == false){
+    if( ag5data && ag5Saved === false){
         ag5saveServer();
-    } 
+    }else{
+        return false;
+    }
 }
 
 /* Interface changes -----------------------------------------*/ 
