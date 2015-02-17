@@ -220,7 +220,7 @@ function getinputs(answerset,num1,num2,prefix){
     return answerset;
 }
 
-var gsSaved = false, ag1Saved = false, ag2Saved = false, ag3Saved = false, ag4Saved = false, ag5Saved = false;
+var gsSaved = "false", ag1Saved = "false", ag2Saved = "false", ag3Saved = "false", ag4Saved = "false", ag5Saved = "false";
 
 //save the json data array to the server via ajax call
 function saveToServer(address,dataset,datasaved){
