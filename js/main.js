@@ -235,7 +235,7 @@ function saveToServer(address,dataset,datasaved){
                         
                         //window.location.hash = "govscore-results";
                         //afterSavedServer("Govscore", organization);
-                        datasaved = true;
+                        localStorage.setItem(datasaved, "true");
                         showResultsButtons();
                         navigator.notification.alert(responseData, goTo(), "Update", "OK");
                         
@@ -245,13 +245,9 @@ function saveToServer(address,dataset,datasaved){
                          } 
                          
             });
-            return datasaved;
-           alert(datasaved);
-           alertdata(); 
+            
         }
-function alertdata(){
-    alert(gsSaved);
-}
+
 /* Initial Govscore -----------------------------------------------*/
 
 var gsdata = localStorage.getObject('gsdata'); 
@@ -291,7 +287,7 @@ function saveServer() {
     //get the data from local storage
     gsdata = localStorage.getObject('gsdata');
 
-    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, gsSaved);
+    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, "gsSaved");
 
 }
 
@@ -333,7 +329,7 @@ function ag1savelocal() {
 function ag1saveServer() {
           
     ag1data = localStorage.getObject('ag1data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, ag1Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, "ag1Saved");
         
 }
 
@@ -361,7 +357,7 @@ function ag2savelocal() {
         ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
         ag2data = getinputs(ag2data,25,48,"ag");
 
-        localStorage.setObject('ag2data', ag2data, ag2Saved);
+        localStorage.setObject('ag2data', ag2data);
 
         calcResults()
         //now that everything is saved check the connection
@@ -374,7 +370,7 @@ function ag2savelocal() {
 function ag2saveServer() {
  
     ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data, "ag2Saved");
         
 }
 
@@ -417,7 +413,7 @@ function ag3savelocal() {
 function ag3saveServer() {
 
     ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, ag3Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, "ag3Saved");
 
 }
 
@@ -446,7 +442,7 @@ function ag4savelocal() {
         ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
         ag4data = getinputs(ag4data,61,84,"ag");
 
-        localStorage.setObject('ag4data', ag4data, ag4Saved);
+        localStorage.setObject('ag4data', ag4data);
 
         calcResults()
 
@@ -460,7 +456,7 @@ function ag4savelocal() {
 function ag4saveServer() {
     
     ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data, "ag4Saved");
 
 }
 
@@ -502,7 +498,7 @@ function ag5savelocal() {
 function ag5saveServer() {
 
     ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, ag5Saved);
+    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, "ag5Saved");
 
     
 } 
@@ -513,6 +509,13 @@ function ag5saveServer() {
 //check if online according to the above interval
 function onOnline(event) {
     //there must be locally saved data and the saved flag must be false
+    gsSaved = localStorage.getItem("gsSaved");
+    ag1Saved = localStorage.getItem("ag1Saved");
+    ag2Saved = localStorage.getItem("ag2Saved");
+    ag3Saved = localStorage.getItem("ag3Saved");
+    ag4Saved = localStorage.getItem("ag4Saved");
+    ag5Saved = localStorage.getItem("ag5Saved");
+
     if( gsdata && gsSaved === false){
         saveServer();
     }
