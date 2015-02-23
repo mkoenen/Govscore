@@ -1,11 +1,12 @@
 /* Events -----------------------------------------*/
 window.onload = function(){
-    //window.setTimeout(beonline, 6000);
-    document.addEventListener("online", onOnline, true);                               //limit how fast the online event can fire
-    document.addEventListener("deviceready", setbutton, false);
+    document.addEventListener("online", onOnline, true);
+    document.addEventListener("deviceready", onOnline, true); 
+    document.addEventListener("deviceready", showResults, false);
+    document.addEventListener("deviceready", setbuttons, false);
     //document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
-    document.addEventListener("deviceready", calcResults, false);
+    document.addEventListener("deviceready", onOnline, true);
 };
 
 //listen for click events      
@@ -95,48 +96,30 @@ function validateEmail() {
 }
 
 /* Notifications ----------------------------------*/
-var organization;
+//var organization = gsdata.answers[organization];
 
 function messageAfterSaveLocal() {
-    navigator.notification.alert(
-        'Sorry, you are offline. Your answers have been stored on your device. Please open the app when you return online and your data will be sent to our server.',
-        'Info title',
-        'Update'
-    );
+    var saveLocal = 'Your answers have been stored on your device. They will be saved to our server when you get reconnected to the internet.';
+    navigator.notification.alert(saveLocal, goTo(), "Update", "OK");
+}
+
+function alreadySaved() {
+    var alSaved = 'You previously finished this assessment. Please check your results.';
+    navigator.notification.alert(alSaved, goTo(), "Update", "OK");
 }
 
 function gsFirst() {
-    navigator.notification.alert(
-        'Please complete the initial Govscore assessment before moving on to the Advanced Govscore questionnaires.',
-        'Info title',
-        'Update'
-    );
-}
-
-
-/*function afterSavedServer(form, orgcode) {
-
-    navigator.notification.alert(
-
-        'Your answers to the ' + form + ' questionnaire have been saved. To see the results for your organization go to our website and enter the organization code  ' + orgcode + '.',
-        'Info title',
-        'Update'
-    );
-}*/
-
-function alreadySaved() {
-    navigator.notification.alert (
-        'You previously finished this assessment. Please check your results.',
-        'Info title',
-        'Update'
-    );
+    var doFirst = 'Please complete the initial Govscore assessment before moving on to the Advanced Govscore questionnaires.';
+    navigator.notification.alert(doFirst, goToGs(), "Alert", "OK");
 }
 
 function goTo(){
     window.location.hash = "govscore-results";
 }
 
-
+function goToGs() {
+    window.location.hash = "govscore";
+}
 
 /* Get Date --------------------------------------------------*/
 
@@ -232,13 +215,9 @@ function saveToServer(address,dataset,datasaved){
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
             success    : function(responseData) {
-                        
-                        //window.location.hash = "govscore-results";
-                        //afterSavedServer("Govscore", organization);
+                        navigator.notification.alert(responseData, goTo(), "Update", "OK");
                         localStorage.setItem(datasaved, "true");
                         showResultsButtons();
-                        navigator.notification.alert(responseData, goTo(), "Update", "OK");
-                        
                         },
             error      : function(response) {
                         navigator.notification.alert(responseData);                
@@ -516,22 +495,22 @@ function onOnline(event) {
     ag4Saved = localStorage.getItem("ag4Saved");
     ag5Saved = localStorage.getItem("ag5Saved");
 
-    if( gsdata && gsSaved === false){
+    if( gsdata && gsSaved === null){
         saveServer();
     }
-    if( ag1data && ag1Saved === false){
+    if( ag1data && ag1Saved === null){
         ag1saveServer();
     } 
-    if( ag2data && ag2Saved === false){
+    if( ag2data && ag2Saved === null){
         ag2saveServer();
     }
-    if( ag3data && ag3Saved === false){
+    if( ag3data && ag3Saved === null){
         ag3saveServer(); 
     }
-    if( ag4data && ag4Saved === false) {
+    if( ag4data && ag4Saved === null) {
         ag4saveServer();
     }
-    if( ag5data && ag5Saved === false){
+    if( ag5data && ag5Saved === null){
         ag5saveServer();
     }else{
         return false;
@@ -541,51 +520,50 @@ function onOnline(event) {
 /* Interface changes -----------------------------------------*/ 
 
 function showResultsButtons() {
-    
+    gsdata = localStorage.getObject('gsdata');
     if( gsdata){
-        /*var gsSaveButton = document.getElementById('btnStore');
-        gsSaveButton.className = gsSaveButton.className + " hide";*/
         var resultButton2 = document.getElementById('govscore-results2');
         resultButton2.className = resultButton2.className + " see";
     }
-    
+    ag1data = localStorage.getObject('ag1data');
     if(ag1data){
-      /* var ag1SaveButton = document.getElementById('ag1Store');
-       ag1SaveButton.className = ag1SaveButton.className + " hide";*/
-       var ag1resultButton = document.getElementById('ag1-results');
+        var ag1resultButton = document.getElementById('ag1-results');
         ag1resultButton.className = ag1resultButton.className + " see";
     }
-   
+    ag2data = localStorage.getObject('ag2data');
     if(ag2data) {
-        /*var ag2SaveButton = document.getElementById('ag2Store');
-        ag2SaveButton.className = ag2SaveButton.className + " hide";*/
         var ag2resultButton = document.getElementById('ag2-results');
         ag2resultButton.className = ag2resultButton.className + " see";
     }
-    
+    ag3data = localStorage.getObject('ag3data');
     if(ag3data){
-        /*var ag3SaveButton = document.getElementById('ag3Store');
-        ag3SaveButton.className = ag3SaveButton.className + " hide";*/
         var ag3resultButton = document.getElementById('ag3-results');
         ag3resultButton.className = ag3resultButton.className + " see";
     }
-     
+    ag4data = localStorage.getObject('ag4data'); 
     if( ag4data) {
-        /*var ag4SaveButton = document.getElementById('ag4Store');
-        ag4SaveButton.className = ag4SaveButton.className + " hide";*/
         var ag4resultButton = document.getElementById('ag4-results');
         ag4resultButton.className = ag4resultButton.className + " see";
     }
-   
+    ag5data = localStorage.getObject('ag5data');
     if( ag5data){
-        /*var ag5SaveButton = document.getElementById('ag5Store');
-        ag5SaveButton.className = ag5SaveButton.className + " hide";*/
         var ag5resultButton = document.getElementById('ag5-results');
         ag5resultButton.className = ag5resultButton.className + " see";
     }
 }
 
 /* Results -----------------*/
+//display previous results saved in local storage
+function showResults(){
+
+    var storedResult = localStorage.getItem("result");
+
+    if(storedResult){
+        document.getElementById('gs-results').innerHTML = storedResult;
+    }else{
+        document.getElementById('gs-results').innerHTML = "No results available at this time.";
+    }
+} 
 
 /*Questions 1, 2, 5, 8, 10 and 13 are based on the practice of cultivating accountability.
 Questions 11, 14 and 22 are based on the practice of engaging stakeholders.
@@ -654,7 +632,7 @@ function calcResults() {
         res += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p></div>";
         res += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p></div>";
         res += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
+        res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the organization code " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
         //document.getElementById('gs-results').innerHTML = res;
         
     }
@@ -693,7 +671,7 @@ function calcResults() {
             res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 16</p></div>";
         }
     }
-
+    localStorage.setItem("result", res);
     document.getElementById('gs-results').innerHTML = res; 
 }
 
