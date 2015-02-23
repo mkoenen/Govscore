@@ -10,7 +10,7 @@ window.onload = function(){
 };
 
 //listen for click events      
-function setbutton() {
+function setbuttons() {
 
     document.getElementById('btnStore').addEventListener('click', validate, false);
     document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
