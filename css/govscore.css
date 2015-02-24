@@ -72,6 +72,16 @@ button.hide {
 	text-decoration: none;	
 	background-color: #fff;
 }
+/* adv gs links page -----------------------------*/
+
+#acc-btn.gray,
+#enh-btn.gray,
+#stake-btn.gray,
+#dir-btn.gray,
+#res-btn.gray {
+	color: #dddddd;
+}
+
 /* pop-up ----------------------------------------*/
 
 .ui-popup-container {
