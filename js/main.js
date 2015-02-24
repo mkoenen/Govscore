@@ -519,6 +519,7 @@ function onOnline(event) {
 
 /* Interface changes -----------------------------------------*/ 
 
+//show results btns AND gray out links to quizzes already taken
 function showResultsButtons() {
     gsdata = localStorage.getObject('gsdata');
     if( gsdata){
@@ -529,26 +530,36 @@ function showResultsButtons() {
     if(ag1data){
         var ag1resultButton = document.getElementById('ag1-results');
         ag1resultButton.className = ag1resultButton.className + " see";
+        var accBtn = document.getElementById('acc-btn');
+        accBtn.className = accBtn.className + "hide";
     }
     ag2data = localStorage.getObject('ag2data');
     if(ag2data) {
         var ag2resultButton = document.getElementById('ag2-results');
         ag2resultButton.className = ag2resultButton.className + " see";
+        var stakeBtn = document.getElementById('stake-btn');
+        stakeBtn.className = stakeBtn.className + "hide";
     }
     ag3data = localStorage.getObject('ag3data');
     if(ag3data){
         var ag3resultButton = document.getElementById('ag3-results');
         ag3resultButton.className = ag3resultButton.className + " see";
+        var dirBtn = document.getElementById('dir-btn');
+        dirBtn.className = dirBtn.className + "hide";
     }
     ag4data = localStorage.getObject('ag4data'); 
     if( ag4data) {
         var ag4resultButton = document.getElementById('ag4-results');
         ag4resultButton.className = ag4resultButton.className + " see";
+        var resBtn = document.getElementById('res-btn');
+        resBtn.className = resBtn.className + "hide";
     }
     ag5data = localStorage.getObject('ag5data');
     if( ag5data){
         var ag5resultButton = document.getElementById('ag5-results');
         ag5resultButton.className = ag5resultButton.className + " see";
+        var enhBtn = document.getElementById('enh-btn');
+        enhBtn.className = enhBtn.className + "hide";
     }
 }
 
