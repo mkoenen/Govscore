@@ -72,6 +72,13 @@ function validate(event) {
          event.preventDefault();
          return false;
        }
+       //check that all answers have been answered
+        if(document.gsForm.g1.value === ""){
+            navigator.notification.alert( "Answer the first question" );
+            document.gsForm.email.focus();
+            event.preventDefault();
+            return false;
+        }
 
         savelocal();
     }
