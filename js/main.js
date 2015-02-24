@@ -75,10 +75,19 @@ function validate(event) {
        //check that all answers have been answered
         if(document.gsForm.g1.value === ""){
             navigator.notification.alert( "Answer the first question" );
-            document.gsForm.email.focus();
+            document.gsForm.g1.focus();
             event.preventDefault();
             return false;
         }
+        /*var elements = document.getElementById(“gsForm").elements;
+
+for (var i = 0, element; element = elements[i++];) {
+    if (element.type === “radio” && element.value === "")
+        navigator.notification.alert("it's an empty radio”);
+    element.focus();
+            event.preventDefault();
+            return false;
+}*/
 
         savelocal();
     }
