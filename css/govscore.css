@@ -31,12 +31,12 @@ label.ui-btn.ui-corner-all.ui-btn-inherit {
 .ui-header .ui-btn-left.ui-icon-home {
 background-color: rgba(51, 51, 51, 0);
 border-color: rgba(0, 0, 0, 0);
-text-shadow: 0 0px 0 #111;
+text-shadow: none;
 }
 .ui-header .ui-btn-left.ui-icon-home:hover {
-background-color: #1fa106;
-border-color: #1fa106;
-text-shadow: 0 0px 0 #111;
+background-color: #aaaaaa;
+border-color: #aaaaaa;
+text-shadow: none;
 }
 
 /* questionnaire ---------------------------------*/
