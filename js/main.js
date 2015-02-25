@@ -79,15 +79,18 @@ function validate(event) {
             event.preventDefault();
             return false;
         }
-        /*var elements = document.getElementById(“gsForm").elements;
 
-for (var i = 0, element; element = elements[i++];) {
-    if (element.type === “radio” && element.value === "")
-        navigator.notification.alert("it's an empty radio”);
-    element.focus();
-            event.preventDefault();
-            return false;
-}*/
+        var elements = document.getElementById("gsForm").elements;
+
+        for (var i = 0, element; element = elements[i++];) {
+            if (element.type === “radio” && element.value === ""){
+                navigator.notification.alert("it's an empty radio");
+                element.focus();
+                event.preventDefault();
+                return false;
+            }
+        }
+        
 
         savelocal();
     }
