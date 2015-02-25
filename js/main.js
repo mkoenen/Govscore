@@ -81,9 +81,8 @@ function validate(event) {
         }
 
         var elements = document.getElementById("gsForm").elements;
-
-        for (var i = 0, element; element = elements[i++];) {
-            if (element.type === “radio” && element.value === ""){
+        for(i=0; i<elements.length; i++){
+            if (elements[i].type === "radio" && element.value === ""){
                 navigator.notification.alert("it's an empty radio");
                 element.focus();
                 event.preventDefault();
