@@ -97,7 +97,7 @@ function validate(event) {
             document.gsForm.g22.value === "" ||
             document.gsForm.g23.value === "" ||
             document.gsForm.g24.value === "" ||
-            document.gsForm.g25.value === "" ||){
+            document.gsForm.g25.value === "" ){
             navigator.notification.alert( "Please answer all questions" );
             event.preventDefault();
             return false;
@@ -158,7 +158,7 @@ function ag1validate(){
        document.ag1Form.ag21.value === "" ||
        document.ag1Form.ag22.value === "" ||
        document.ag1Form.ag23.value === "" ||
-       document.ag1Form.ag24.value === "" ||){
+       document.ag1Form.ag24.value === "" ){
             navigator.notification.alert( "Please answer all questions" );
             event.preventDefault();
             return false;
@@ -202,7 +202,7 @@ function ag2validate(){
        document.ag2Form.ag45.value === "" ||
        document.ag2Form.ag46.value === "" ||
        document.ag2Form.ag47.value === "" ||
-       document.ag2Form.ag48.value === "" ||){
+       document.ag2Form.ag48.value === "" ){
             navigator.notification.alert( "Please answer all questions" );
             event.preventDefault();
             return false;
@@ -234,7 +234,7 @@ function ag3validate(){
        document.ag3Form.ag57.value === "" ||
        document.ag3Form.ag58.value === "" ||
        document.ag3Form.ag59.value === "" ||
-       document.ag3Form.ag60.value === "" ||){
+       document.ag3Form.ag60.value === "" ){
             navigator.notification.alert( "Please answer all questions" );
             event.preventDefault();
             return false;
@@ -278,7 +278,7 @@ function ag4validate(){
         document.ag4Form.ag81.value === "" ||
         document.ag4Form.ag82.value === "" ||
         document.ag4Form.ag83.value === "" ||
-        document.ag4Form.ag84.value === "" ||){
+        document.ag4Form.ag84.value === "" ){
             navigator.notification.alert( "Please answer all questions" );
             event.preventDefault();
             return false;
@@ -312,8 +312,7 @@ function ag5validate(){
         document.ag5Form.ag97.value === "" ||
         document.ag5Form.ag98.value === "" ||
         document.ag5Form.ag99.value === "" ||
-        document.ag5Form.ag100.value === "" ||
-        ){
+        document.ag5Form.ag100.value === "" ){
             navigator.notification.alert( "Please answer all questions" );
             event.preventDefault();
             return false;
