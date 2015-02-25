@@ -13,11 +13,11 @@ window.onload = function(){
 function setbuttons() {
 
     document.getElementById('btnStore').addEventListener('click', validate, false);
-    document.getElementById('ag1Store').addEventListener('click', ag1savelocal, false);
-    document.getElementById('ag2Store').addEventListener('click', ag2savelocal, false);
-    document.getElementById('ag3Store').addEventListener('click', ag3savelocal, false);
-    document.getElementById('ag4Store').addEventListener('click', ag4savelocal, false);
-    document.getElementById('ag5Store').addEventListener('click', ag5savelocal, false);
+    document.getElementById('ag1Store').addEventListener('click', ag1validate, false);
+    document.getElementById('ag2Store').addEventListener('click', ag2validate, false);
+    document.getElementById('ag3Store').addEventListener('click', ag3validate, false);
+    document.getElementById('ag4Store').addEventListener('click', ag4validate, false);
+    document.getElementById('ag5Store').addEventListener('click', ag5validate, false);
     
 }
 
@@ -73,23 +73,35 @@ function validate(event) {
          return false;
        }
        //check that all answers have been answered
-        if(document.gsForm.g1.value === ""){
-            navigator.notification.alert( "Answer the first question" );
-            document.gsForm.g1.focus();
+        if( document.gsForm.g1.value === "" ||
+            document.gsForm.g2.value === "" ||
+            document.gsForm.g3.value === "" ||
+            document.gsForm.g4.value === "" ||
+            document.gsForm.g5.value === "" ||
+            document.gsForm.g6.value === "" ||
+            document.gsForm.g7.value === "" ||
+            document.gsForm.g8.value === "" ||
+            document.gsForm.g9.value === "" ||
+            document.gsForm.g10.value === "" ||
+            document.gsForm.g11.value === "" ||
+            document.gsForm.g12.value === "" ||
+            document.gsForm.g13.value === "" ||
+            document.gsForm.g14.value === "" ||
+            document.gsForm.g15.value === "" ||
+            document.gsForm.g16.value === "" ||
+            document.gsForm.g17.value === "" ||
+            document.gsForm.g18.value === "" ||
+            document.gsForm.g19.value === "" ||
+            document.gsForm.g20.value === "" ||
+            document.gsForm.g21.value === "" ||
+            document.gsForm.g22.value === "" ||
+            document.gsForm.g23.value === "" ||
+            document.gsForm.g24.value === "" ||
+            document.gsForm.g25.value === "" ||){
+            navigator.notification.alert( "Please answer all questions" );
             event.preventDefault();
             return false;
         }
-
-        var elements = document.getElementById("gsForm").elements;
-        for(i=0; i<elements.length; i++){
-            if (elements[i].type === "radio" && element.value === ""){
-                navigator.notification.alert("it's an empty radio");
-                element.focus();
-                event.preventDefault();
-                return false;
-            }
-        }
-        
 
         savelocal();
     }
@@ -111,6 +123,204 @@ function validateEmail() {
 
    return( true );
 
+}
+
+function ag1validate(){
+    if(ag1data){
+
+        alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
+
+    }else{
+       if( document.ag1Form.ag1.value === "" ||
+       document.ag1Form.ag2.value === "" ||
+       document.ag1Form.ag3.value === "" ||
+       document.ag1Form.ag4.value === "" ||
+       document.ag1Form.ag5.value === "" ||
+       document.ag1Form.ag6.value === "" ||
+       document.ag1Form.ag7.value === "" ||
+       document.ag1Form.ag8.value === "" ||
+       document.ag1Form.ag9.value === "" ||
+       document.ag1Form.ag10.value === "" ||
+       document.ag1Form.ag11.value === "" ||
+       document.ag1Form.ag12.value === "" ||
+       document.ag1Form.ag13.value === "" ||
+       document.ag1Form.ag14.value === "" ||
+       document.ag1Form.ag15.value === "" ||
+       document.ag1Form.ag16.value === "" ||
+       document.ag1Form.ag17.value === "" ||
+       document.ag1Form.ag18.value === "" ||
+       document.ag1Form.ag19.value === "" ||
+       document.ag1Form.ag20.value === "" ||
+       document.ag1Form.ag21.value === "" ||
+       document.ag1Form.ag22.value === "" ||
+       document.ag1Form.ag23.value === "" ||
+       document.ag1Form.ag24.value === "" ||){
+            navigator.notification.alert( "Please answer all questions" );
+            event.preventDefault();
+            return false;
+        }
+
+        ag1savelocal();
+    } 
+}
+
+
+function ag2validate(){
+    if(ag2data){
+
+        alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
+
+    }else{
+       if( document.ag2Form.ag25.value === "" ||
+       document.ag2Form.ag26.value === "" ||
+       document.ag2Form.ag27.value === "" ||
+       document.ag2Form.ag28.value === "" ||
+       document.ag2Form.ag29.value === "" ||
+       document.ag2Form.ag30.value === "" ||
+       document.ag2Form.ag31.value === "" ||
+       document.ag2Form.ag32.value === "" ||
+       document.ag2Form.ag33.value === "" ||
+       document.ag2Form.ag34.value === "" ||
+       document.ag2Form.ag35.value === "" ||
+       document.ag2Form.ag36.value === "" ||
+       document.ag2Form.ag37.value === "" ||
+       document.ag2Form.ag38.value === "" ||
+       document.ag2Form.ag39.value === "" ||
+       document.ag2Form.ag40.value === "" ||
+       document.ag2Form.ag41.value === "" ||
+       document.ag2Form.ag42.value === "" ||
+       document.ag2Form.ag43.value === "" ||
+       document.ag2Form.ag44.value === "" ||
+       document.ag2Form.ag45.value === "" ||
+       document.ag2Form.ag46.value === "" ||
+       document.ag2Form.ag47.value === "" ||
+       document.ag2Form.ag48.value === "" ||){
+            navigator.notification.alert( "Please answer all questions" );
+            event.preventDefault();
+            return false;
+        }
+
+        ag2savelocal();
+    }
+}
+
+
+function ag3validate(){
+    if(ag3data){
+
+        alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
+
+    }else{
+       if( document.ag3Form.ag49.value === "" ||
+       document.ag3Form.ag50.value === "" ||
+       document.ag3Form.ag51.value === "" ||
+       document.ag3Form.ag52.value === "" ||
+       document.ag3Form.ag53.value === "" ||
+       document.ag3Form.ag54.value === "" ||
+       document.ag3Form.ag55.value === "" ||
+       document.ag3Form.ag56.value === "" ||
+       document.ag3Form.ag57.value === "" ||
+       document.ag3Form.ag58.value === "" ||
+       document.ag3Form.ag59.value === "" ||
+       document.ag3Form.ag60.value === "" ||){
+            navigator.notification.alert( "Please answer all questions" );
+            event.preventDefault();
+            return false;
+        }
+
+        ag3savelocal();
+    }
+}
+
+
+function ag4validate(){
+    if(ag4data){
+
+        alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
+
+    }else{
+       if( document.ag4Form.ag61.value === "" ||
+        document.ag4Form.ag62.value === "" ||
+        document.ag4Form.ag63.value === "" ||
+        document.ag4Form.ag64.value === "" ||
+        document.ag4Form.ag65.value === "" ||
+        document.ag4Form.ag66.value === "" ||
+        document.ag4Form.ag67.value === "" ||
+        document.ag4Form.ag68.value === "" ||
+        document.ag4Form.ag69.value === "" ||
+        document.ag4Form.ag70.value === "" ||
+        document.ag4Form.ag71.value === "" ||
+        document.ag4Form.ag72.value === "" ||
+        document.ag4Form.ag73.value === "" ||
+        document.ag4Form.ag74.value === "" ||
+        document.ag4Form.ag75.value === "" ||
+        document.ag4Form.ag76.value === "" ||
+        document.ag4Form.ag77.value === "" ||
+        document.ag4Form.ag78.value === "" ||
+        document.ag4Form.ag79.value === "" ||
+        document.ag4Form.ag80.value === "" ||
+        document.ag4Form.ag81.value === "" ||
+        document.ag4Form.ag82.value === "" ||
+        document.ag4Form.ag83.value === "" ||
+        document.ag4Form.ag84.value === "" ||){
+            navigator.notification.alert( "Please answer all questions" );
+            event.preventDefault();
+            return false;
+        }
+
+        ag4savelocal();
+    }
+}
+function ag5validate(){
+    if(ag5data){
+
+        alreadySaved();
+
+    }else if(gsdata = null){
+
+        gsFirst();
+
+    }else{
+       if( document.ag5Form.ag85.value === "" ||
+        document.ag5Form.ag86.value === "" ||
+        document.ag5Form.ag87.value === "" ||
+        document.ag5Form.ag88.value === "" ||
+        document.ag5Form.ag89.value === "" ||
+        document.ag5Form.ag90.value === "" ||
+        document.ag5Form.ag91.value === "" ||
+        document.ag5Form.ag92.value === "" ||
+        document.ag5Form.ag93.value === "" ||
+        document.ag5Form.ag94.value === "" ||
+        document.ag5Form.ag95.value === "" ||
+        document.ag5Form.ag96.value === "" ||
+        document.ag5Form.ag97.value === "" ||
+        document.ag5Form.ag98.value === "" ||
+        document.ag5Form.ag99.value === "" ||
+        document.ag5Form.ag100.value === "" ||
+        ){
+            navigator.notification.alert( "Please answer all questions" );
+            event.preventDefault();
+            return false;
+        }
+
+        ag5savelocal();
+    }
 }
 
 /* Notifications ----------------------------------*/
@@ -294,31 +504,21 @@ function saveServer() {
 
 function ag1savelocal() {
 
-    if(ag1data){
+    var ag1date;
 
-        alreadySaved();
+    gsdata = localStorage.getObject('gsdata');
 
-    }else if(gsdata = null){
+    ag1date = formatDate(new Date());
 
-        gsFirst();
+    ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'answers': [-1]};
+    ag1data = getinputs(ag1data,1,24,"ag");
 
-    }else{
+    localStorage.setObject('ag1data', ag1data);
 
-        var ag1date;
-
-        gsdata = localStorage.getObject('gsdata');
-
-        ag1date = formatDate(new Date());
-
-        ag1data = { 'ag1date':ag1date, 'email': gsdata.email, 'answers': [-1]};
-        ag1data = getinputs(ag1data,1,24,"ag");
-
-        localStorage.setObject('ag1data', ag1data);
-
-        calcResults()
-        //now that everything is saved check the connection
-        checkConnection("cag1");
-    }
+    calcResults()
+    //now that everything is saved check the connection
+    checkConnection("cag1");
+    
 }
 
 /* Save on Server */
@@ -335,31 +535,22 @@ function ag1saveServer() {
 /* store locally */
 
 function ag2savelocal() {
-    if(ag2data){
 
-        alreadySaved();
+    var ag2date;
 
-    }else if(gsdata = null){
+    gsdata = localStorage.getObject('gsdata');
 
-        gsFirst();
+    ag2date = formatDate(new Date());
 
-    }else{
+    ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
+    ag2data = getinputs(ag2data,25,48,"ag");
 
-        var ag2date;
+    localStorage.setObject('ag2data', ag2data);
 
-        gsdata = localStorage.getObject('gsdata');
-
-        ag2date = formatDate(new Date());
-
-        ag2data = { 'ag2date':ag2date, 'email': gsdata.email, 'answers': [-1]};
-        ag2data = getinputs(ag2data,25,48,"ag");
-
-        localStorage.setObject('ag2data', ag2data);
-
-        calcResults()
-        //now that everything is saved check the connection
-        checkConnection("cag2");
-    }
+    calcResults()
+    //now that everything is saved check the connection
+    checkConnection("cag2");
+    
 }
 
 /* Save on Server */
@@ -377,32 +568,22 @@ function ag2saveServer() {
 
 function ag3savelocal() {
 
-    if(ag3data){
+    var ag3date;
 
-        alreadySaved();
+    gsdata = localStorage.getObject('gsdata');
 
-    }else if(gsdata = null){
+    ag3date = formatDate(new Date());
 
-        gsFirst();
+    ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'answers': [-1]};
+    ag3data = getinputs(ag3data,49,60,"ag");
 
-    }else{
+    localStorage.setObject('ag3data', ag3data);
 
-        var ag3date;
+    calcResults()
 
-        gsdata = localStorage.getObject('gsdata');
-
-        ag3date = formatDate(new Date());
-
-        ag3data = { 'ag3date':ag3date, 'email': gsdata.email, 'answers': [-1]};
-        ag3data = getinputs(ag3data,49,60,"ag");
-
-        localStorage.setObject('ag3data', ag3data);
-
-        calcResults()
-
-        //now that everything is saved check the connection
-        checkConnection("cag3");
-    }
+    //now that everything is saved check the connection
+    checkConnection("cag3");
+    
 }
 
 /* Save on Server */
@@ -420,32 +601,22 @@ function ag3saveServer() {
 
 function ag4savelocal() {
 
-    if(ag4data){
+    var ag4date;
 
-        alreadySaved();
+    gsdata = localStorage.getObject('gsdata');
 
-    }else if(gsdata = null){
+    ag4date = formatDate(new Date());
 
-        gsFirst();
+    ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
+    ag4data = getinputs(ag4data,61,84,"ag");
 
-    }else{
+    localStorage.setObject('ag4data', ag4data);
 
-        var ag4date;
+    calcResults()
 
-        gsdata = localStorage.getObject('gsdata');
-
-        ag4date = formatDate(new Date());
-
-        ag4data = { 'ag4date':ag4date, 'email': gsdata.email, 'answers': [-1]};
-        ag4data = getinputs(ag4data,61,84,"ag");
-
-        localStorage.setObject('ag4data', ag4data);
-
-        calcResults()
-
-        //now that everything is saved check the connection
-        checkConnection("cag4");
-    }
+    //now that everything is saved check the connection
+    checkConnection("cag4");
+    
 }
 
 /* Save on Server */
@@ -463,31 +634,21 @@ function ag4saveServer() {
 
 function ag5savelocal() {
 
-    if(ag5data){
+    var ag5date;
 
-        alert("You have already finished this assessment");
+    gsdata = localStorage.getObject('gsdata');
 
-    }else if(gsdata = null){
+    ag5date = formatDate(new Date());
 
-        gsFirst();
+    ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'answers': [-1]};
+    ag5data = getinputs(ag5data,85,100,"ag");
+    
+    localStorage.setObject('ag5data', ag5data);
 
-    }else{
-
-        var ag5date;
-
-        gsdata = localStorage.getObject('gsdata');
-
-        ag5date = formatDate(new Date());
-
-        ag5data = { 'ag5date':ag5date, 'email': gsdata.email, 'answers': [-1]};
-        ag5data = getinputs(ag5data,85,100,"ag");
-        
-        localStorage.setObject('ag5data', ag5data);
-
-        calcResults()
-        //now that everything is saved check the connection
-        checkConnection("cag5");
-    }
+    calcResults()
+    //now that everything is saved check the connection
+    checkConnection("cag5");
+    
 }
 
 /* Save on Server */
