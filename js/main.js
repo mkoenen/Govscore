@@ -763,63 +763,65 @@ Questions 9, 15, 18, 19, 20 and 24 are based on the practice of continuous gover
 //add up the numbers
 function calcResults() {
 
-    var ag1results,ag2results,ag3results,ag4results,ag5results,res, resag;
+    var ag1results,ag2results,ag3results,ag4results,ag5results,res,resag,ag1percent,ag2percent,ag3percent,ag4percent,ag5percent;
+
+    function getPercent(score,possible){
+        return Math.round(score/possible*100);
+    }
+
+    function findLevel(score){
+        switch(true) {
+            case( score < 25 ):
+                level = "Clear need of governance development (first level/4)";
+                break;
+            case( score >= 25 && score < 50 ):
+                level = "Basic level of governance (second level/4)";
+                break;
+            case( score >= 50 && score < 75 ):
+                level = "Goal-Driven and dynamic governance (third level/4)";
+                break;
+            case( score >= 75 ): 
+                level = "Transformational governance (highest level/4)";
+        }
+        return level;
+    }
 
    if(gsdata){
 
-        var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel;
+        var percentArray = [], accScore, stakeScore, dirScore, resScore, enhScore, totalScore, mlevel, ag1level, ag2level, ag3level, ag4level, ag5level;
         
 
         accScore = parseInt(gsdata.answers[1]) + parseInt(gsdata.answers[2]) + parseInt(gsdata.answers[5]) + parseInt(gsdata.answers[8]) + parseInt(gsdata.answers[10]) + parseInt(gsdata.answers[13]);
-        var accPossible = 24;
-        var accPercent = Math.round(accScore/accPossible*100);
+        var accPercent = getPercent(accScore,24);
         percentArray.push(accPercent);
 
         stakeScore = parseInt(gsdata.answers[11]) + parseInt(gsdata.answers[14]) + parseInt(gsdata.answers[22]);
-        var stakePossible = 12;
-        var stakePercent = Math.round(stakeScore/stakePossible*100);
+        var stakePercent = getPercent(stakeScore,12);
         percentArray.push(stakePercent);
 
         dirScore = parseInt(gsdata.answers[6]) +parseInt(gsdata.answers[7]) +parseInt(gsdata.answers[12]) +parseInt(gsdata.answers[16]);
-        var dirPossible = 16;
-        var dirPercent = Math.round(dirScore/dirPossible*100);
+        var dirPercent = getPercent(dirScore,16);
         percentArray.push(dirPercent);
 
         resScore = parseInt(gsdata.answers[3]) +parseInt(gsdata.answers[4]) +parseInt(gsdata.answers[17]) +parseInt(gsdata.answers[21]) +parseInt(gsdata.answers[23]) +parseInt(gsdata.answers[25]);
-        var resPossible = 24;
-        var resPercent = Math.round(resScore/resPossible*100);
+        var resPercent = getPercent(resScore,24);
         percentArray.push(resPercent);
 
         enhScore = parseInt(gsdata.answers[9]) +parseInt(gsdata.answers[15]) +parseInt(gsdata.answers[18]) +parseInt(gsdata.answers[19]) +parseInt(gsdata.answers[20]) +parseInt(gsdata.answers[24]);
-        var enhPossible = 24;
-        var enhPercent = Math.round(enhScore/enhPossible*100);
+        var enhPercent = getPercent(enhScore,24);
         percentArray.push(enhPercent);
 
         totalScore = accScore+stakeScore+dirScore+resScore+enhScore;
         
-
-        switch(true) {
-            case( totalScore < 25 ):
-                mlevel = "Clear need of governance development (first level/4)";
-                break;
-            case( totalScore >= 25 && totalScore < 50 ):
-                mlevel = "Basic level of governance (second level/4)";
-                break;
-            case( totalScore >= 50 && totalScore < 75 ):
-                mlevel = "Goal-Driven and dynamic governance (third level/4)";
-                break;
-            case( totalScore >= 75 ): 
-                mlevel = "Transformational governance (highest level/4)";
-        }
-
+        mlevel = findLevel(totalScore);
 
         //list each area with the score
         res = "<h2>Govscore Assessment</h2><p>You assessed your organization as follows: </p>";
-        res += "<div id=\"accountability\"><h3>Cultivating Accountability</h3><p>" + accScore + " out of " + accPossible + " points - " + accPercent + "%.</p></div>";
-        res += "<div id=\"stakeholders\"><h3>Engaging Stakeholders</h3><p>" + stakeScore + " out of " + stakePossible + " points - " + stakePercent + "%.</p></div>";
-        res += "<div id=\"direction\"><h3>Shared Strategic Direction</h3><p>" + dirScore + " out of " + dirPossible + " points - " + dirPercent + "%.</p></div>";
-        res += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " out of " + resPossible + " points - " + resPercent + "%.</p></div>";
-        res += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of " + enhPossible + " points - " + enhPercent + "%.</p></div>";
+        res += "<div id=\"accountability\"><h3>Cultivating Accountability</h3><p>" + accScore + " out of 24 points - " + accPercent + "%.</p></div>";
+        res += "<div id=\"stakeholders\"><h3>Engaging Stakeholders</h3><p>" + stakeScore + " out of 12 points - " + stakePercent + "%.</p></div>";
+        res += "<div id=\"direction\"><h3>Shared Strategic Direction</h3><p>" + dirScore + " out of 16 points - " + dirPercent + "%.</p></div>";
+        res += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " out of 24 points - " + resPercent + "%.</p></div>";
+        res += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of 24 points - " + enhPercent + "%.</p></div>";
         res += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
         res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the organization code " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
         //document.getElementById('gs-results').innerHTML = res;
@@ -843,21 +845,33 @@ function calcResults() {
         if(ag3data){ag3results = getAgResults(ag3data,ag3results,49);}
         if(ag4data){ag4results = getAgResults(ag4data,ag4results,61);}
         if(ag5data){ag5results = getAgResults(ag5data,ag5results,85);}
+
+        ag1percent = getPercent(ag1results,24);
+        ag2percent = getPercent(ag2results,24);
+        ag3percent = getPercent(ag3results,12);
+        ag4percent = getPercent(ag4results,24);
+        ag5percent = getPercent(ag5results,16);
+
+        ag1level = findLevel(ag1percent);
+        ag2level = findLevel(ag2percent);
+        ag3level = findLevel(ag3percent);
+        ag4level = findLevel(ag4percent);
+        ag5level = findLevel(ag5percent);
         
         if(ag1results){
-            res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24</p></div>";
+            res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24 - " + ag1percent + "%</p><p>This places your organization at:</p><p>" + ag1level + "</p></div>";
         }
         if(ag2results){
-            res += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " out of 24</p></div>";
+            res += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " out of 24 - " + ag2percent + "%</p><p>This places your organization at:</p><p>" + ag2level + "</p></div>";
         }
         if(ag3results){
-            res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 12</p></div>";
+            res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 12 - " + ag3percent + "%</p><p>This places your organization at:</p><p>" + ag3level + "</p></div>";
         }
         if(ag4results){
-            res += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " out of 24</p></div>";
+            res += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " out of 24 - " + ag4percent + "%</p><p>This places your organization at:</p><p>" + ag4level + "</p></div>";
         }
         if(ag5results){
-            res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 16</p></div>";
+            res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 16 - " + ag5percent + "%</p><p>This places your organization at:</p><p>" + ag5level + "</p></div>";
         }
     }
     localStorage.setItem("result", res);
