@@ -840,7 +840,7 @@ function calcResults() {
             return resSet;
         }
 
-        if(ag1data){ag1results = getAgResults(ag1data,ag1results,0);}
+        if(ag1data){ag1results = getAgResults(ag1data,ag1results,1);}
         if(ag2data){ag2results = getAgResults(ag2data,ag2results,25);}
         if(ag3data){ag3results = getAgResults(ag3data,ag3results,49);}
         if(ag4data){ag4results = getAgResults(ag4data,ag4results,61);}
@@ -858,19 +858,19 @@ function calcResults() {
         ag4level = findLevel(ag4percent);
         ag5level = findLevel(ag5percent);
         
-        if(ag1results){
+        if(ag1results >= 0){
             res += "<div id=\"adv-govscore\"><h3>Cultivating Accountability</h3><p>" + ag1results + " out of 24 - " + ag1percent + "%</p><p>This places your organization at:</p><p>" + ag1level + "</p></div>";
         }
-        if(ag2results){
+        if(ag2results >= 0){
             res += "<div id=\"adv-govscore\"><h3>Engaging Stakeholders</h3><p>" + ag2results + " out of 24 - " + ag2percent + "%</p><p>This places your organization at:</p><p>" + ag2level + "</p></div>";
         }
-        if(ag3results){
+        if(ag3results >= 0){
             res += "<div id=\"adv-govscore\"><h3>Shared Strategic Direction</h3><p>" + ag3results + " out of 12 - " + ag3percent + "%</p><p>This places your organization at:</p><p>" + ag3level + "</p></div>";
         }
-        if(ag4results){
+        if(ag4results >= 0){
             res += "<div id=\"adv-govscore\"><h3>Stewarding Resources</h3><p>" + ag4results + " out of 24 - " + ag4percent + "%</p><p>This places your organization at:</p><p>" + ag4level + "</p></div>";
         }
-        if(ag5results){
+        if(ag5results >= 0){
             res += "<div id=\"adv-govscore\"><h3>Continuous Governance Enhancement</h3><p>" + ag5results + " out of 16 - " + ag5percent + "%</p><p>This places your organization at:</p><p>" + ag5level + "</p></div>";
         }
     }
