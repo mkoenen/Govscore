@@ -493,7 +493,7 @@ function saveServer() {
     //get the data from local storage
     gsdata = localStorage.getObject('gsdata');
 
-    saveToServer("http://sensi.wpengine.com/store-gs.php", gsdata, "gsSaved");
+    saveToServer("http://leadernet.solutions/store-gs.php", gsdata, "gsSaved");
 
 }
 
