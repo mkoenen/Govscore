@@ -327,12 +327,12 @@ function ag5validate(){
 
 function messageAfterSaveLocal() {
     var saveLocal = 'Your answers have been stored on your device. They will be saved to our server when you get reconnected to the internet.';
-    navigator.notification.alert(saveLocal, goTo(), "Update", "OK");
+    navigator.notification.alert(saveLocal, goTo(), "No Internet Connection", "OK");
 }
 
 function alreadySaved() {
     var alSaved = 'You previously finished this assessment. Please check your results.';
-    navigator.notification.alert(alSaved, goTo(), "Update", "OK");
+    navigator.notification.alert(alSaved, goTo(), "Already Completed", "OK");
 }
 
 function gsFirst() {
@@ -441,7 +441,8 @@ function saveToServer(address,dataset,datasaved){
             data       : dataset,
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
-            success    : function(responseData) {
+            success    : function(responseData, textStatus, jqXHR) {
+                        alert(responseData + ", " + textStatus + ", " + jqXHR);
                         navigator.notification.alert(responseData, goTo(), "Update", "OK");
                         localStorage.setItem(datasaved, "true");
                         showResultsButtons();
@@ -823,7 +824,7 @@ function calcResults() {
         res += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " out of 24 points - " + resPercent + "%.</p></div>";
         res += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of 24 points - " + enhPercent + "%.</p></div>";
         res += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res += "<div id=\"link\"><p>Learn more at <a href=\"#\">our website</a></p><p>Enter the organization code " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
+        res += "<div id=\"link\"><p>Learn more at <a href=\"http://developers.leadernet.solutions/\">our website</a></p><p>Enter the organization code " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
         //document.getElementById('gs-results').innerHTML = res;
         
     }
