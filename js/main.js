@@ -441,8 +441,7 @@ function saveToServer(address,dataset,datasaved){
             data       : dataset,
             contentType: 'application/json; charset=utf-8',
             ////dataType   : 'json',
-            success    : function(responseData, textStatus, jqXHR) {
-                        alert(responseData + ", " + textStatus + ", " + jqXHR);
+            success    : function(responseData) {
                         navigator.notification.alert(responseData, goTo(), "Update", "OK");
                         localStorage.setItem(datasaved, "true");
                         showResultsButtons();
@@ -526,7 +525,7 @@ function ag1savelocal() {
 function ag1saveServer() {
           
     ag1data = localStorage.getObject('ag1data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag1data, "ag1Saved");
+    saveToServer("http://leadernet.solutions/store-ag.php", ag1data, "ag1Saved");
         
 }
 
@@ -558,7 +557,7 @@ function ag2savelocal() {
 function ag2saveServer() {
  
     ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag2data, "ag2Saved");
+    saveToServer("http://leadernet.solutions/store-ag.php", ag2data, "ag2Saved");
         
 }
 
@@ -591,7 +590,7 @@ function ag3savelocal() {
 function ag3saveServer() {
 
     ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag3data, "ag3Saved");
+    saveToServer("http://leadernet.solutions/store-ag.php", ag3data, "ag3Saved");
 
 }
 
@@ -624,7 +623,7 @@ function ag4savelocal() {
 function ag4saveServer() {
     
     ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag4data, "ag4Saved");
+    saveToServer("http://leadernet.solutions/store-ag.php", ag4data, "ag4Saved");
 
 }
 
@@ -656,7 +655,7 @@ function ag5savelocal() {
 function ag5saveServer() {
 
     ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://sensi.wpengine.com/store-ag.php", ag5data, "ag5Saved");
+    saveToServer("http://leadernet.solutions/store-ag.php", ag5data, "ag5Saved");
 
     
 } 
