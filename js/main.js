@@ -493,7 +493,7 @@ function saveServer() {
     //get the data from local storage
     gsdata = localStorage.getObject('gsdata');
 
-    saveToServer("http://leadernet.solutions/store-gs.php", gsdata, "gsSaved");
+    saveToServer("http://mshlmg.wpengine.com/store-gs.php", gsdata, "gsSaved");
 
 }
 
@@ -525,7 +525,7 @@ function ag1savelocal() {
 function ag1saveServer() {
           
     ag1data = localStorage.getObject('ag1data');
-    saveToServer("http://leadernet.solutions/store-ag.php", ag1data, "ag1Saved");
+    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag1data, "ag1Saved");
         
 }
 
@@ -557,7 +557,7 @@ function ag2savelocal() {
 function ag2saveServer() {
  
     ag2data = localStorage.getObject('ag2data');
-    saveToServer("http://leadernet.solutions/store-ag.php", ag2data, "ag2Saved");
+    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag2data, "ag2Saved");
         
 }
 
@@ -590,7 +590,7 @@ function ag3savelocal() {
 function ag3saveServer() {
 
     ag3data = localStorage.getObject('ag3data');
-    saveToServer("http://leadernet.solutions/store-ag.php", ag3data, "ag3Saved");
+    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag3data, "ag3Saved");
 
 }
 
@@ -623,7 +623,7 @@ function ag4savelocal() {
 function ag4saveServer() {
     
     ag4data = localStorage.getObject('ag4data');
-    saveToServer("http://leadernet.solutions/store-ag.php", ag4data, "ag4Saved");
+    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag4data, "ag4Saved");
 
 }
 
@@ -655,7 +655,7 @@ function ag5savelocal() {
 function ag5saveServer() {
 
     ag5data = localStorage.getObject('ag5data');
-    saveToServer("http://leadernet.solutions/store-ag.php", ag5data, "ag5Saved");
+    saveToServer("http://mshlmg.wpengine.com/store-ag.php", ag5data, "ag5Saved");
 
     
 } 

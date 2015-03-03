@@ -70,13 +70,15 @@ label.ui-btn img {
 button.hide {
 	display:none;
 }
-.legend {
-	width: 5%;
-	float: right;
-	text-align: right;
-	padding: 0 0 0 2%;
-	text-decoration: none;	
-	background-color: #fff;
+a.legend.ui-link {
+	background: #CBE8C5;
+	color: #333;
+	font-weight: 500;
+	position: absolute;
+	right: 5%;
+	text-align: center;
+	padding: 0 8px 0 8px;
+	text-decoration: none;
 }
 /* adv gs links page -----------------------------*/
 
