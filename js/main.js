@@ -923,7 +923,7 @@ function calcResults() {
 // }
 
 function initPushwoosh() {
-  var pushNotification = window.plugins.pushNotification;
+    var pushNotification = window.plugins.pushNotification;
  
     //set push notification callback before we initialize the plugin
     document.addEventListener('push-notification', function(event) {
@@ -938,7 +938,7 @@ function initPushwoosh() {
                             });
  
     //initialize the plugin
-    pushNotification.onDeviceReady({pw_appid:"P4C804-675D6"});
+    pushNotification.onDeviceReady({pw_appid:"4C804-675D6"});
      
     //register for pushes
     pushNotification.registerDevice(
