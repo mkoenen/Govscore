@@ -882,7 +882,7 @@ function calcResults() {
 
 /* Pushwoosh ---------------------------------------------------*/
 function initPushwoosh() {
-      var pushNotification = window.plugins.pushNotification;
+      //var pushNotification = window.plugins.pushNotification;
       if(device.platform == "Android")
       {
         registerPushwooshAndroid();
