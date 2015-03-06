@@ -9,6 +9,7 @@ window.onload = function(){
     document.addEventListener("deviceready", onOnline, true);
 };
 
+
 //listen for click events      
 function setbuttons() {
 
@@ -29,6 +30,8 @@ function validate(event) {
         alreadySaved();
 
     }else{
+        window.alert(device.platform);
+        
         if( document.gsForm.username.value === "" ) {
 
              navigator.notification.alert( "Please enter your full name!" );
@@ -883,7 +886,7 @@ function calcResults() {
 /* Pushwoosh ---------------------------------------------------*/
 function initPushwoosh() {
       var pushNotification = window.plugins.pushNotification;
-      window.alert(device.platform);
+
       if(device.platform == "Android")
       {
         registerPushwooshAndroid();
