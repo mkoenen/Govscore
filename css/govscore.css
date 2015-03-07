@@ -74,9 +74,8 @@ button.hide {
 	display:none;
 }
 a.legend.ui-link {
-	background: #CBE8C5;
-	color: #333;
-	font-weight: 500;
+	color: #9BB895;
+	font-weight: 700;
 	position: absolute;
 	right: 5%;
 	text-align: center;
