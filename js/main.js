@@ -30,7 +30,7 @@ function validate(event) {
         alreadySaved();
 
     }else{
-        window.alert(device.platform);
+        
         
         if( document.gsForm.username.value === "" ) {
 
