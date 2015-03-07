@@ -896,7 +896,7 @@ function initPushwoosh() {
       }
     }
 
-function registerPushwooshAndroid(); {
+function registerPushwooshAndroid() {
     var pushNotification = window.plugins.pushNotification;
  
     //set push notifications handler
@@ -926,7 +926,7 @@ function registerPushwooshAndroid(); {
     );
 }
 
-function registerPushwooshIOS(); {
+function registerPushwooshIOS() {
     var pushNotification = window.plugins.pushNotification;
  
     //set push notification callback before we initialize the plugin
