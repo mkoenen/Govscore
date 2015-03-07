@@ -33,6 +33,9 @@ background-color: #aaaaaa !important;
 border-color: #aaaaaa !important;
 text-shadow: none !important;
 }
+.ui-header, .ui-footer {
+border-top-width: 2px !important;
+}
 
 /* questionnaire ---------------------------------*/
 label.ui-btn img {
