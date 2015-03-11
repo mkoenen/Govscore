@@ -25,38 +25,38 @@ function setbuttons() {
 /* Form Validation -------------------------------------*/
 
 function validate(event) {
-    if(gsdata){
+  if(gsdata){
 
         alreadySaved();
 
-    }else{
+  }else{
         
         
-        if( document.gsForm.username.value === "" ) {
+      if( document.gsForm.username.value === "" ) {
 
              navigator.notification.alert( "Please enter your full name!" );
              document.gsForm.username.focus();
              event.preventDefault();
              return false;
              
-        }
-        if( document.gsForm.email.value !== document.gsForm.email2.value ) {
+      }
+      if( document.gsForm.email.value !== document.gsForm.email2.value ) {
 
             navigator.notification.alert( "Email entries don't match. Please try again" );
             document.gsForm.email.focus();
             event.preventDefault();
             return false;
             
-        }
+      }
 
-        if( document.gsForm.email.value === "" ) {
+      if( document.gsForm.email.value === "" ) {
 
             navigator.notification.alert( "Please enter your email address!" );
             document.gsForm.email.focus();
             event.preventDefault();
             return false;
 
-        }else{
+      }else{
 
             // Put extra check for data format
             var ret = validateEmail();
@@ -65,46 +65,58 @@ function validate(event) {
                 return false;
 
              }
-        }
+      }
 
 
-       if( document.gsForm.organization.value === "-1" ) {
+      if( document.gsForm.organization.value === "-1" ) {
 
          navigator.notification.alert( "Please enter your organization!" );
          document.gsForm.organization.focus();
          event.preventDefault();
          return false;
-       }
+      }
        //check that all answers have been answered
-        if( document.gsForm.g1.value === "" ||
-            document.gsForm.g2.value === "" ||
-            document.gsForm.g3.value === "" ||
-            document.gsForm.g4.value === "" ||
-            document.gsForm.g5.value === "" ||
-            document.gsForm.g6.value === "" ||
-            document.gsForm.g7.value === "" ||
-            document.gsForm.g8.value === "" ||
-            document.gsForm.g9.value === "" ||
-            document.gsForm.g10.value === "" ||
-            document.gsForm.g11.value === "" ||
-            document.gsForm.g12.value === "" ||
-            document.gsForm.g13.value === "" ||
-            document.gsForm.g14.value === "" ||
-            document.gsForm.g15.value === "" ||
-            document.gsForm.g16.value === "" ||
-            document.gsForm.g17.value === "" ||
-            document.gsForm.g18.value === "" ||
-            document.gsForm.g19.value === "" ||
-            document.gsForm.g20.value === "" ||
-            document.gsForm.g21.value === "" ||
-            document.gsForm.g22.value === "" ||
-            document.gsForm.g23.value === "" ||
-            document.gsForm.g24.value === "" ||
-            document.gsForm.g25.value === "" ){
-            navigator.notification.alert( "Please answer all questions" );
-            event.preventDefault();
-            return false;
-        }
+
+      var i, key, value;
+      //loop through the entries, grab value and store in array
+      for(i=num1; i<=24; i++) {
+          key = "'" + g + i +"'";
+          value = $('input[name = ' + key + ']:checked').val();
+          if(value === "" || "undefined") {
+              navigator.notification.alert( "Please answer all questions" );
+              event.preventDefault();
+              return false;
+          }
+      }
+        // if( document.gsForm.g1.value === "" ||
+        //     document.gsForm.g2.value === "" ||
+        //     document.gsForm.g3.value === "" ||
+        //     document.gsForm.g4.value === "" ||
+        //     document.gsForm.g5.value === "" ||
+        //     document.gsForm.g6.value === "" ||
+        //     document.gsForm.g7.value === "" ||
+        //     document.gsForm.g8.value === "" ||
+        //     document.gsForm.g9.value === "" ||
+        //     document.gsForm.g10.value === "" ||
+        //     document.gsForm.g11.value === "" ||
+        //     document.gsForm.g12.value === "" ||
+        //     document.gsForm.g13.value === "" ||
+        //     document.gsForm.g14.value === "" ||
+        //     document.gsForm.g15.value === "" ||
+        //     document.gsForm.g16.value === "" ||
+        //     document.gsForm.g17.value === "" ||
+        //     document.gsForm.g18.value === "" ||
+        //     document.gsForm.g19.value === "" ||
+        //     document.gsForm.g20.value === "" ||
+        //     document.gsForm.g21.value === "" ||
+        //     document.gsForm.g22.value === "" ||
+        //     document.gsForm.g23.value === "" ||
+        //     document.gsForm.g24.value === "" ||
+        //     document.gsForm.g25.value === "" ){
+        //     navigator.notification.alert( "Please answer all questions" );
+        //     event.preventDefault();
+        //     return false;
+        // }
 
         savelocal();
     }
@@ -774,16 +786,16 @@ function calcResults() {
 
     function findLevel(score){
         switch(true) {
-            case( score < 25 ):
+            case( score <= 25 ):
                 level = "Clear need of governance development (first level/4)";
                 break;
-            case( score >= 25 && score < 50 ):
+            case( score > 25 && score <= 50 ):
                 level = "Basic level of governance (second level/4)";
                 break;
-            case( score >= 50 && score < 75 ):
+            case( score > 50 && score <= 75 ):
                 level = "Goal-Driven and dynamic governance (third level/4)";
                 break;
-            case( score >= 75 ): 
+            case( score > 75 ): 
                 level = "Transformational governance (highest level/4)";
         }
         return level;
