@@ -88,37 +88,9 @@ function validate(event) {
               return false;
           }
       }
-        // if( document.gsForm.g1.value === "" ||
-        //     document.gsForm.g2.value === "" ||
-        //     document.gsForm.g3.value === "" ||
-        //     document.gsForm.g4.value === "" ||
-        //     document.gsForm.g5.value === "" ||
-        //     document.gsForm.g6.value === "" ||
-        //     document.gsForm.g7.value === "" ||
-        //     document.gsForm.g8.value === "" ||
-        //     document.gsForm.g9.value === "" ||
-        //     document.gsForm.g10.value === "" ||
-        //     document.gsForm.g11.value === "" ||
-        //     document.gsForm.g12.value === "" ||
-        //     document.gsForm.g13.value === "" ||
-        //     document.gsForm.g14.value === "" ||
-        //     document.gsForm.g15.value === "" ||
-        //     document.gsForm.g16.value === "" ||
-        //     document.gsForm.g17.value === "" ||
-        //     document.gsForm.g18.value === "" ||
-        //     document.gsForm.g19.value === "" ||
-        //     document.gsForm.g20.value === "" ||
-        //     document.gsForm.g21.value === "" ||
-        //     document.gsForm.g22.value === "" ||
-        //     document.gsForm.g23.value === "" ||
-        //     document.gsForm.g24.value === "" ||
-        //     document.gsForm.g25.value === "" ){
-        //     navigator.notification.alert( "Please answer all questions" );
-        //     event.preventDefault();
-        //     return false;
-        // }
+        
 
-        savelocal();
+    savelocal();
     }
 }
 
