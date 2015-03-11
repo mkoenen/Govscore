@@ -80,7 +80,7 @@ function validate(event) {
       var i, key, value;
       //loop through the entries, grab value and store in array
       for(i=1; i<=24; i++) {
-          key = "'" + g + i +"'";
+          key = "'g" + i +"'";
           value = $('input[name = ' + key + ']:checked').val();
           if(value === "" || "undefined") {
               navigator.notification.alert( "Please answer all questions" );
