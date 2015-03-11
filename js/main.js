@@ -79,7 +79,7 @@ function validate(event) {
 
       var i, key, value;
       //loop through the entries, grab value and store in array
-      for(i=1; i<=24; i++) {
+      for(i=1; i<=25; i++) {
           key = "'g" + i +"'";
           value = $('input[name = ' + key + ']:checked').val();
           if(value === "" || value == undefined) {
@@ -89,9 +89,9 @@ function validate(event) {
           }
       }
         
+      savelocal();
 
-    savelocal();
-    }
+      }
 }
 
 
@@ -122,37 +122,21 @@ function ag1validate(){
         gsFirst();
 
     }else{
-       if( document.ag1Form.ag1.value === "" ||
-       document.ag1Form.ag2.value === "" ||
-       document.ag1Form.ag3.value === "" ||
-       document.ag1Form.ag4.value === "" ||
-       document.ag1Form.ag5.value === "" ||
-       document.ag1Form.ag6.value === "" ||
-       document.ag1Form.ag7.value === "" ||
-       document.ag1Form.ag8.value === "" ||
-       document.ag1Form.ag9.value === "" ||
-       document.ag1Form.ag10.value === "" ||
-       document.ag1Form.ag11.value === "" ||
-       document.ag1Form.ag12.value === "" ||
-       document.ag1Form.ag13.value === "" ||
-       document.ag1Form.ag14.value === "" ||
-       document.ag1Form.ag15.value === "" ||
-       document.ag1Form.ag16.value === "" ||
-       document.ag1Form.ag17.value === "" ||
-       document.ag1Form.ag18.value === "" ||
-       document.ag1Form.ag19.value === "" ||
-       document.ag1Form.ag20.value === "" ||
-       document.ag1Form.ag21.value === "" ||
-       document.ag1Form.ag22.value === "" ||
-       document.ag1Form.ag23.value === "" ||
-       document.ag1Form.ag24.value === "" ){
-            navigator.notification.alert( "Please answer all questions" );
-            event.preventDefault();
-            return false;
-        }
+      var i, key, value;
+      //loop through the entries, grab value and store in array
+      for(i=1; i<=24; i++) {
+          key = "'ag" + i +"'";
+          value = $('input[name = ' + key + ']:checked').val();
+          if(value === "" || value == undefined) {
+              navigator.notification.alert( "Please answer all questions" );
+              event.preventDefault();
+              return false;
+          }
+      }
 
-        ag1savelocal();
-    } 
+      ag1savelocal();
+
+      } 
 }
 
 
@@ -166,37 +150,21 @@ function ag2validate(){
         gsFirst();
 
     }else{
-       if( document.ag2Form.ag25.value === "" ||
-       document.ag2Form.ag26.value === "" ||
-       document.ag2Form.ag27.value === "" ||
-       document.ag2Form.ag28.value === "" ||
-       document.ag2Form.ag29.value === "" ||
-       document.ag2Form.ag30.value === "" ||
-       document.ag2Form.ag31.value === "" ||
-       document.ag2Form.ag32.value === "" ||
-       document.ag2Form.ag33.value === "" ||
-       document.ag2Form.ag34.value === "" ||
-       document.ag2Form.ag35.value === "" ||
-       document.ag2Form.ag36.value === "" ||
-       document.ag2Form.ag37.value === "" ||
-       document.ag2Form.ag38.value === "" ||
-       document.ag2Form.ag39.value === "" ||
-       document.ag2Form.ag40.value === "" ||
-       document.ag2Form.ag41.value === "" ||
-       document.ag2Form.ag42.value === "" ||
-       document.ag2Form.ag43.value === "" ||
-       document.ag2Form.ag44.value === "" ||
-       document.ag2Form.ag45.value === "" ||
-       document.ag2Form.ag46.value === "" ||
-       document.ag2Form.ag47.value === "" ||
-       document.ag2Form.ag48.value === "" ){
-            navigator.notification.alert( "Please answer all questions" );
-            event.preventDefault();
-            return false;
-        }
+      var i, key, value;
+      //loop through the entries, grab value and store in array
+      for(i=1; i<=24; i++) {
+          key = "'ag" + (i + 24) +"'";
+          value = $('input[name = ' + key + ']:checked').val();
+          if(value === "" || value == undefined) {
+              navigator.notification.alert( "Please answer all questions" );
+              event.preventDefault();
+              return false;
+          }
+      }
 
-        ag2savelocal();
-    }
+      ag2savelocal();
+
+      }
 }
 
 
@@ -210,25 +178,22 @@ function ag3validate(){
         gsFirst();
 
     }else{
-       if( document.ag3Form.ag49.value === "" ||
-       document.ag3Form.ag50.value === "" ||
-       document.ag3Form.ag51.value === "" ||
-       document.ag3Form.ag52.value === "" ||
-       document.ag3Form.ag53.value === "" ||
-       document.ag3Form.ag54.value === "" ||
-       document.ag3Form.ag55.value === "" ||
-       document.ag3Form.ag56.value === "" ||
-       document.ag3Form.ag57.value === "" ||
-       document.ag3Form.ag58.value === "" ||
-       document.ag3Form.ag59.value === "" ||
-       document.ag3Form.ag60.value === "" ){
-            navigator.notification.alert( "Please answer all questions" );
-            event.preventDefault();
-            return false;
-        }
 
-        ag3savelocal();
-    }
+      var i, key, value;
+      //loop through the entries, grab value and store in array
+      for(i=1; i<=12; i++) {
+          key = "'ag" + (i + 48) +"'";
+          value = $('input[name = ' + key + ']:checked').val();
+          if(value === "" || value == undefined) {
+              navigator.notification.alert( "Please answer all questions" );
+              event.preventDefault();
+              return false;
+          }
+      }
+
+      ag3savelocal();
+
+      }
 }
 
 
@@ -242,37 +207,22 @@ function ag4validate(){
         gsFirst();
 
     }else{
-       if( document.ag4Form.ag61.value === "" ||
-        document.ag4Form.ag62.value === "" ||
-        document.ag4Form.ag63.value === "" ||
-        document.ag4Form.ag64.value === "" ||
-        document.ag4Form.ag65.value === "" ||
-        document.ag4Form.ag66.value === "" ||
-        document.ag4Form.ag67.value === "" ||
-        document.ag4Form.ag68.value === "" ||
-        document.ag4Form.ag69.value === "" ||
-        document.ag4Form.ag70.value === "" ||
-        document.ag4Form.ag71.value === "" ||
-        document.ag4Form.ag72.value === "" ||
-        document.ag4Form.ag73.value === "" ||
-        document.ag4Form.ag74.value === "" ||
-        document.ag4Form.ag75.value === "" ||
-        document.ag4Form.ag76.value === "" ||
-        document.ag4Form.ag77.value === "" ||
-        document.ag4Form.ag78.value === "" ||
-        document.ag4Form.ag79.value === "" ||
-        document.ag4Form.ag80.value === "" ||
-        document.ag4Form.ag81.value === "" ||
-        document.ag4Form.ag82.value === "" ||
-        document.ag4Form.ag83.value === "" ||
-        document.ag4Form.ag84.value === "" ){
-            navigator.notification.alert( "Please answer all questions" );
-            event.preventDefault();
-            return false;
-        }
 
-        ag4savelocal();
-    }
+      var i, key, value;
+      //loop through the entries, grab value and store in array
+      for(i=1; i<=24; i++) {
+          key = "'ag" + (i + 60) + "'";
+          value = $('input[name = ' + key + ']:checked').val();
+          if(value === "" || value == undefined) {
+              navigator.notification.alert( "Please answer all questions" );
+              event.preventDefault();
+              return false;
+          }
+      }
+        
+      ag4savelocal();
+
+      }
 }
 function ag5validate(){
     if(ag5data){
@@ -284,29 +234,22 @@ function ag5validate(){
         gsFirst();
 
     }else{
-       if( document.ag5Form.ag85.value === "" ||
-        document.ag5Form.ag86.value === "" ||
-        document.ag5Form.ag87.value === "" ||
-        document.ag5Form.ag88.value === "" ||
-        document.ag5Form.ag89.value === "" ||
-        document.ag5Form.ag90.value === "" ||
-        document.ag5Form.ag91.value === "" ||
-        document.ag5Form.ag92.value === "" ||
-        document.ag5Form.ag93.value === "" ||
-        document.ag5Form.ag94.value === "" ||
-        document.ag5Form.ag95.value === "" ||
-        document.ag5Form.ag96.value === "" ||
-        document.ag5Form.ag97.value === "" ||
-        document.ag5Form.ag98.value === "" ||
-        document.ag5Form.ag99.value === "" ||
-        document.ag5Form.ag100.value === "" ){
-            navigator.notification.alert( "Please answer all questions" );
-            event.preventDefault();
-            return false;
-        }
 
-        ag5savelocal();
-    }
+      var i, key, value;
+      //loop through the entries, grab value and store in array
+      for(i=1; i<=16; i++) {
+          key = "'ag" + (i + 84) +"'";
+          value = $('input[name = ' + key + ']:checked').val();
+          if(value === "" || value == undefined) {
+              navigator.notification.alert( "Please answer all questions" );
+              event.preventDefault();
+              return false;
+          }
+      }
+
+      ag5savelocal();
+
+      }
 }
 
 /* Notifications ----------------------------------*/
