@@ -82,7 +82,7 @@ function validate(event) {
       for(i=1; i<=24; i++) {
           key = "'g" + i +"'";
           value = $('input[name = ' + key + ']:checked').val();
-          if(value === "" || "undefined") {
+          if(value === "" || value === "undefined") {
               navigator.notification.alert( "Please answer all questions" );
               event.preventDefault();
               return false;
