@@ -19,7 +19,7 @@ function setbuttons() {
     document.getElementById('ag3Store').addEventListener('click', ag3validate, false);
     document.getElementById('ag4Store').addEventListener('click', ag4validate, false);
     document.getElementById('ag5Store').addEventListener('click', ag5validate, false);
-    
+
 }
 
 /* Form Validation -------------------------------------*/
@@ -753,7 +753,7 @@ function calcResults() {
         res += "<div id=\"resources\"><h3>Stewarding Resources</h3><p>" + resScore + " out of 24 points - " + resPercent + "%.</p></div>";
         res += "<div id=\"enhancement\"><h3>Continuous Governance Enhancement</h3><p>" + enhScore + " out of 24 points - " + enhPercent + "%.</p></div>";
         res += "<div id=\"total\"><h3>Total Score</h3><p>" + totalScore +" points out of 100</p><p>This places your organization at:</p><p class=\"level\">" + mlevel + "</p></div>";
-        res += "<div id=\"link\"><p>Learn more at <a href=\"http://developers.leadernet.solutions/\">our website</a></p><p>Enter the organization code " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
+        res += "<div id=\"link\"><p>Learn more at <a href=\"http://govscoreapp.net/\">govscoreapp.net</a></p><p>Enter the organization code " + gsdata.organization + " to see how your organization was evaluated collectively.</p></div>";
         //document.getElementById('gs-results').innerHTML = res;
         
     }
