@@ -34,11 +34,14 @@
                 <h2>Steps</h2>
 
                 <ul>
-                <li>Answer the 25 questions in the GovScore survey</li>
+                <li>Answer the 25 questions in the GovScore survey and click Submit</li>
                 <li>View your results on your phone.</li>
-                <li>Examine the combined result of all evaluators of our organization at govscoreapp.net and read our recommendations for next improvement steps.</li>
-                <li>Answer the recommended Advanced GovScore questions on your app.</li>
-                <li>Review your results on govscoreapp.net and get further recommendations for improvement.</li>
+                <li>Invite other board members to download App and complete GovScore survey.</li>
+                <li>Examine the combined result of all evaluators of your organization at <a href="http://govscoreapp.net">govscoreapp.net</a> (a unique institutional code will have been provided in the App’s results tab). View individual analysis for your institution and recommendations for next improvement steps.</li>
+                <li>Present GovScore analysis and recommendations to your board colleagues.</li>
+                <li>Answer the Advanced GovScore questions on your app for improvement areas identified for your organization.</li>
+                <li>View your results on your phone.</li>
+                <li>Examine the combined Advanced GovScore result of all evaluators of your organization on govscoreapp.net and get further individualized analysis and recommendations for improvement. See how your organizations results compares to the aggregate results of all organizations.</li>
                 </ul>
 
                 <p>Good governance leads to effective and efficient management of people, money, medicines and information. Sound management in turn facilitates the work of doctors, nurses, other clinicians and health workers and enables them to provide safe, timely, effective, and efficient care and services that are respectful of and responsive to individual patient and health service user preferences, needs, and values. Good governance essentially assures sound management which in turn enables reliable service delivery and higher organizational performance.</p>
@@ -80,55 +83,52 @@
                         <input type="email" id="email" name="email" placeholder="Email" required />
                     <label for="email2" class="ui-hidden-accessible">Confirm Email</label>
                         <input type="email" id="email2" name="email2" placeholder="Enter Email Again" required />
-                    
-                    <div data-role="fieldcontain">
-                        <label for="organization" class="select ui-hidden-accessible">Organization</label>
-                            <select name="organization" id="organization">
-                                <option value="-1">Select Your Organization</option>
-                                <option value="6027">African Institute of Health Leadership and Management</option>
-                                <option value="6009">AMREF Health Africa</option>
-                                <option value="6024">BroadReach Healthcare</option>
-                                <option value="6035">Centers for Disease Control and Prevention (CDC)</option>
-                                <option value="6021">Centre Africain d'Etudes Superieures en Gestion</option>
-                                <option value="6003">Centre de Recherche et d'Action en Santé Publique (CRASP)</option>
-                                <option value="6012">Centre for African Studies</option>
-                                <option value="6032">Christian Social Services Commission (CSSC)</option>
-                                <option value="6013">Dept of Technical Planning & Coordination, Ministry of Health</option>
-                                <option value="6031">East and Southern Africa Management Institute (ESAMI)</option>
-                                <option value="6029">East Central & Southern Africa Health Community (ECSA-HC)</option>
-                                <option value="6001">Ecole Nationale de Santé Publique</option>
-                                <option value="6018">Health Reform Foundation of Nigeria</option>
-                                <option value="6023">Health Systems Trust South Africa</option>
-                                <option value="6036">HRH Department, World Health Organisation Headquarters</option>
-                                <option value="6002">HRH Programme, World Health Organisation Regional Office for Africa</option>
-                                <option value="6037">Institut de Santé et Développement (ISED)</option>
-                                <option value="6004">Institut National de la Santé Publique (INSP)</option>
-                                <option value="6000">Institute of Development Management (IDM)</option>
-                                <option value="6006">Institute of Management and Public Administration (GIMPA)</option>
-                                <option value="6019">Instituto de Higiene e Medecina Tropical</option>
-                                <option value="6015">Johnson & Johnson Group of Companies</option>
-                                <option value="6008">Kenya Medical Traning College</option>
-                                <option value="6014">Kenya Methodist University</option>
-                                <option value="6020">Kigali Health Institute</option>
-                                <option value="6028">Mananga Centre for Regional Integration and Management Development</option>
-                                <option value="6038">Medwise Solutions</option>
-                                <option value="6030">MS-TCDC</option>
-                                <option value="6011">Multiply and Divide International</option>
-                                <option value="6010">Regional AIDS Training Network (RATN)</option>
-                                <option value="6017">Royal Tropical Institute (KIT)</option>
-                                <option value="6005">School of Public Health, College of Health Sciences, University of Ghana</option>
-                                <option value="6025">School of Public Health, University of Pretoria</option>
-                                <option value="6007">School of Public Health, University of Nairobi</option>
-                                <option value="6026">School of Public Health, Witwatersrand University </option>
-                                <option value="6039">Strathmore Business School</option>
-                                <option value="6034">Uganda Management Institute</option>
-                                <option value="6016">Universidad Eduardo Modlane</option>
-                                <option value="6022">Université Cheikh Anta Diop (UCAD)</option>
-                                <option value="6033">University Research Co LLC</option>
-                                <option value="5999">Other</option>
-                              
-                            </select>
-                        </div>
+                    <label for="organization" class="select ui-hidden-accessible">Organization</label>
+                        <select name="organization" id="organization" data-native-menu="false">
+                            <option value="-1">Select Your Organization</option>
+                            <option value="6027">African Institute of Health Leadership and Management</option>
+                            <option value="6009">AMREF Health Africa</option>
+                            <option value="6024">BroadReach Healthcare</option>
+                            <option value="6035">Centers for Disease Control and Prevention (CDC)</option>
+                            <option value="6021">Centre Africain d'Etudes Superieures en Gestion</option>
+                            <option value="6003">Centre de Recherche et d'Action en Santé Publique (CRASP)</option>
+                            <option value="6012">Centre for African Studies</option>
+                            <option value="6032">Christian Social Services Commission (CSSC)</option>
+                            <option value="6013">Dept of Technical Planning & Coordination, Ministry of Health</option>
+                            <option value="6031">East and Southern Africa Management Institute (ESAMI)</option>
+                            <option value="6029">East Central & Southern Africa Health Community (ECSA-HC)</option>
+                            <option value="6001">Ecole Nationale de Santé Publique</option>
+                            <option value="6018">Health Reform Foundation of Nigeria</option>
+                            <option value="6023">Health Systems Trust South Africa</option>
+                            <option value="6036">HRH Department, World Health Organisation Headquarters</option>
+                            <option value="6002">HRH Programme, World Health Organisation Regional Office for Africa</option>
+                            <option value="6037">Institut de Santé et Développement (ISED)</option>
+                            <option value="6004">Institut National de la Santé Publique (INSP)</option>
+                            <option value="6000">Institute of Development Management (IDM)</option>
+                            <option value="6006">Institute of Management and Public Administration (GIMPA)</option>
+                            <option value="6019">Instituto de Higiene e Medecina Tropical</option>
+                            <option value="6015">Johnson & Johnson Group of Companies</option>
+                            <option value="6008">Kenya Medical Traning College</option>
+                            <option value="6014">Kenya Methodist University</option>
+                            <option value="6020">Kigali Health Institute</option>
+                            <option value="6028">Mananga Centre for Regional Integration and Management Development</option>
+                            <option value="6038">Medwise Solutions</option>
+                            <option value="6030">MS-TCDC</option>
+                            <option value="6011">Multiply and Divide International</option>
+                            <option value="6010">Regional AIDS Training Network (RATN)</option>
+                            <option value="6017">Royal Tropical Institute (KIT)</option>
+                            <option value="6005">School of Public Health, College of Health Sciences, University of Ghana</option>
+                            <option value="6025">School of Public Health, University of Pretoria</option>
+                            <option value="6007">School of Public Health, University of Nairobi</option>
+                            <option value="6026">School of Public Health, Witwatersrand University </option>
+                            <option value="6039">Strathmore Business School</option>
+                            <option value="6034">Uganda Management Institute</option>
+                            <option value="6016">Universidad Eduardo Modlane</option>
+                            <option value="6022">Université Cheikh Anta Diop (UCAD)</option>
+                            <option value="6033">University Research Co LLC</option>
+                            <option value="5999">Other</option>
+                        </select>
+                        
                     <br />
                     
                     <fieldset data-role="controlgroup" data-type="horizontal" data-mini="true" >
