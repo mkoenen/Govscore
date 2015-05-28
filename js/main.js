@@ -1,5 +1,5 @@
 /* Events -----------------------------------------*/
-window.onload = function(){
+function init(){
     document.addEventListener("online", onOnline, true);
     document.addEventListener("deviceready", onOnline, true); 
     document.addEventListener("deviceready", showResults, false);
@@ -7,7 +7,7 @@ window.onload = function(){
     document.addEventListener("deviceready", initPushwoosh, true);
     document.addEventListener("deviceready", showResultsButtons, false);
     document.addEventListener("deviceready", onOnline, true);
-};
+}
 
 
 //listen for click events      
