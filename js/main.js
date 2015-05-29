@@ -879,7 +879,7 @@ function registerPushwooshIOS() {
         },
         function(status) {
             console.warn('failed to register : ' + JSON.stringify(status));
-            alert(JSON.stringify(['failed to register ', status]));
+            //alert(JSON.stringify(['failed to register ', status]));
         }
     );
      
