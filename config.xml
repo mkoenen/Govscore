@@ -68,7 +68,6 @@
     <preference name="Fullscreen" value="true" />
     <preference name="webviewbounce" value="true" />
     <preference name="prerendered-icon" value="true" />
-    <preference name="stay-in-webview" value="false" />
     <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="show-splash-screen-spinner" value="true" />
     <preference name="SplashScreenDelay" value="5000"/>
